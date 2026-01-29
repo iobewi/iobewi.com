@@ -1,0 +1,19 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>{{ .Site.Params.companyName }}</strong>
+      <p>Vitrine statique Hugo-only, maintenable et sécurisée.</p>
+    </div>
+    <div>
+      <div class="tag">GitHub Pages</div>
+      <p>Déploiement automatisé via GitHub Actions sans Node/npm.</p>
+    </div>
+    <div>
+      <div class="tag">Contact</div>
+      <p>{{ .Site.Params.contactEmail }}</p>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 2rem;">
+    © {{ now.Format "2006" }} {{ .Site.Params.companyName }} · Tous droits réservés.
+  </div>
+</footer>

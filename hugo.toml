@@ -1,12 +1,16 @@
-baseURL = "https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/"
+baseURL = "https://<user>.github.io/<repo>/"
 languageCode = "fr-fr"
 title = "IOBEWI"
 disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+      unsafe = false
 
 [params]
   companyName = "IOBEWI"
+  description = "Site vitrine statique Hugo-only pour présenter IOBEWI avec un design sobre et responsive."
+  contactEmail = "contact@exemple.com"
+  logo = ""
