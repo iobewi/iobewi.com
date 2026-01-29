@@ -95,7 +95,7 @@ h6,
   box-shadow: var(--shadow-soft);
   margin: 2.5rem auto 3rem;
   max-width: 1180px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .site-frame .header {
