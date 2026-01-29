@@ -1,0 +1,12 @@
+baseURL = "https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/"
+languageCode = "fr-fr"
+title = "IOBEWI"
+disableKinds = ["taxonomy", "term"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  companyName = "IOBEWI"

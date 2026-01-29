@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "assets/css/helium.css" | relURL }}" />
+    <link rel="stylesheet" href="{{ "assets/css/custom.css" | relURL }}" />
+    <style>
+      /* Minimal glue styles to make the imported CSS usable without Gantry markup */
+      .poc-container { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+      .poc-nav { display:flex; align-items:center; justify-content:space-between; gap: 1rem; flex-wrap:wrap; }
+      .poc-nav a { text-decoration:none; }
+      .poc-menu { display:flex; gap: 1rem; flex-wrap:wrap; }
+      .poc-hero { padding: 2rem 0; }
+      .poc-card { border: 1px solid rgba(0,0,0,.08); border-radius: 12px; padding: 1rem; }
+      .poc-footer { margin-top: 3rem; padding: 2rem 0; border-top: 1px solid rgba(0,0,0,.08); font-size: .95rem; }
+      .poc-logo { display:flex; align-items:center; gap:.75rem; }
+      .poc-logo img { height: 44px; width: auto; }
+    </style>
+  </head>
+  <body>
+    <header class="poc-container">
+      <nav class="poc-nav">
+        <div class="poc-logo">
+          <img src="{{ "assets/images/iobewi/logos/github-mark.png" | relURL }}" alt="Logo" />
+          <strong>{{ .Site.Params.companyName }}</strong>
+        </div>
+        <div class="poc-menu">
+          <a href="{{ "/" | relURL }}">Accueil</a>
+          <a href="{{ "/a-propos/" | relURL }}">À propos</a>
+          <a href="{{ "/contact/" | relURL }}">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="poc-container">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="poc-container poc-footer">
+      <div>© {{ now.Format "2006" }} {{ .Site.Params.companyName }} · Site statique (Hugo + GitHub Pages)</div>
+    </footer>
+  </body>
+</html>

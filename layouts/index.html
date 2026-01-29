@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section class="poc-hero">
+  <h1>{{ .Site.Title }}</h1>
+  <p>POC de migration Joomla → statique. Objectif : réduire la surface d’attaque et simplifier la maintenance.</p>
+</section>
+
+<section class="poc-card">
+  <h2>Ce qui est déjà repris depuis l’export</h2>
+  <ul>
+    <li>Images (dossier <code>images/iobewi</code>)</li>
+    <li>CSS compilé Gantry/Helium (repris en mode “best effort”)</li>
+  </ul>
+  <p><strong>À faire ensuite :</strong> exporter le contenu (articles/menus) depuis la base Joomla ou via un export dédié.</p>
+</section>
+{{ end }}
