@@ -40,6 +40,14 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
   logo = ""
   defaultTheme = "light"
 
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/iobewi"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/"
+
   [params.home]
     heroEyebrow = "POC Hugo + GitHub Pages"
     heroTitle = "IOBEWI modernise son site vitrine sans perdre en simplicité."

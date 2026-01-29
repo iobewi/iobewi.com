@@ -5,6 +5,46 @@
   padding: 2.5rem 0 1rem;
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  margin: auto var(--gap);
+  gap: 0.75rem;
+}
+
+.nav__right #menu {
+  margin: 0;
+}
+
+.nav__social .social-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__social .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav__social .social-icons a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav__social .social-icons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
 .home-hero__eyebrow {
   font-weight: 600;
   letter-spacing: 0.08em;
