@@ -1,3 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --theme: #ffffff;
+  --entry: #f5fbfc;
+  --primary: #0a2633;
+  --secondary: #4d6672;
+  --tertiary: #bfeaf0;
+  --content: #0a2633;
+  --code-bg: #edf6f8;
+  --border: #d3e6ea;
+  --link: #19c8da;
+}
+
+.dark {
+  --theme: #0a2633;
+  --entry: #103442;
+  --primary: #f2fbfd;
+  --secondary: #b7d1d9;
+  --tertiary: #2fd1e2;
+  --content: #f2fbfd;
+  --code-bg: #0e2a36;
+  --border: #1c4a59;
+  --link: #38d8e7;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo a,
+.nav {
+  font-family: "Poppins", "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.logo-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.logo a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo img {
+  height: 42px;
+  width: auto;
+}
+
 .home-hero {
   display: grid;
   gap: 2.5rem;

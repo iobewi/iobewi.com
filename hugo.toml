@@ -40,6 +40,10 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
   logo = ""
   defaultTheme = "light"
 
+  [params.label]
+    icon = "assets/images/iobewi/logos/iobewi_logo.png"
+    iconHeight = 42
+
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/iobewi"
