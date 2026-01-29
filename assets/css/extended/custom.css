@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg-main: #f8fafc;
+  --bg-main: #f6f8fb;
   --bg-section: #ffffff;
-  --text-main: #020617;
-  --text-muted: #475569;
-  --accent-primary: #6366f1;
-  --accent-success: #22c55e;
+  --bg-soft: #eef1f7;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --accent-primary: #a5b4fc;
+  --accent-secondary: #99d6c9;
   --accent-soft: #eef2ff;
-  --border-soft: #e5e7eb;
-  --shadow-soft: 0 10px 30px rgba(2, 6, 23, 0.08);
+  --border-soft: #e2e8f0;
+  --shadow-soft: 0 12px 28px rgba(15, 23, 42, 0.06);
   --theme: var(--bg-main);
   --entry: var(--bg-section);
   --primary: var(--text-main);
@@ -22,15 +23,16 @@
 }
 
 .dark {
-  --bg-main: #0b1020;
-  --bg-section: #111827;
-  --text-main: #e5e7eb;
-  --text-muted: #9ca3af;
-  --accent-primary: #38bdf8;
-  --accent-success: #22c55e;
-  --accent-soft: #1e293b;
-  --border-soft: #1f2937;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --bg-main: #0e1324;
+  --bg-section: #141a2e;
+  --bg-soft: #1a2040;
+  --text-main: #e6eaf2;
+  --text-muted: #aab1c5;
+  --accent-primary: #9aa7ff;
+  --accent-secondary: #7dd3c7;
+  --accent-soft: #1f264a;
+  --border-soft: #1f2640;
+  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.55);
   --theme: var(--bg-main);
   --entry: var(--bg-section);
   --primary: var(--text-main);
@@ -82,7 +84,7 @@ h6,
 }
 
 .dark .logo img {
-  filter: brightness(1.2) saturate(1.15) drop-shadow(0 2px 8px rgba(56, 189, 248, 0.35));
+  filter: brightness(1.15) saturate(0.95) drop-shadow(0 2px 10px rgba(154, 167, 255, 0.35));
 }
 
 .home-hero {
