@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="{{ "/" | relURL }}">
+      {{ with .Site.Params.logo }}
+        <img src="{{ . | relURL }}" alt="Logo {{ $.Site.Params.companyName }}" />
+      {{ end }}
+      <span>{{ .Site.Params.companyName }}</span>
+    </a>
+    <nav class="nav-links">
+      <a href="{{ "/" | relURL }}">Accueil</a>
+      <a href="{{ "/a-propos/" | relURL }}">À propos</a>
+      <a href="{{ "/contact/" | relURL }}">Contact</a>
+      <a class="btn btn-ghost" href="{{ "/contact/" | relURL }}">Nous écrire</a>
+    </nav>
+  </div>
+</header>
