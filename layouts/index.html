@@ -1,0 +1,58 @@
+{{ define "main" }}
+<section class="home-hero">
+  <div class="home-hero__content">
+    <p class="home-hero__eyebrow">{{ .Site.Params.home.heroEyebrow }}</p>
+    <h1>{{ .Site.Params.home.heroTitle }}</h1>
+    <p class="home-hero__lead">{{ .Site.Params.home.heroDescription }}</p>
+    <div class="home-hero__actions">
+      <a class="home-cta home-cta--primary" href="{{ .Site.Params.home.primaryCtaUrl | relURL }}">
+        {{ .Site.Params.home.primaryCtaLabel }}
+      </a>
+      <a class="home-cta home-cta--secondary" href="{{ .Site.Params.home.secondaryCtaUrl | relURL }}">
+        {{ .Site.Params.home.secondaryCtaLabel }}
+      </a>
+    </div>
+  </div>
+  <div class="home-hero__panel">
+    <h2>Objectif : une landing page moderne et fiable</h2>
+    <div class="home-hero__intro">
+      {{ .Content }}
+    </div>
+    <ul>
+      <li>Design inspiré des patterns de landing page modernes.</li>
+      <li>Performance et simplicité grâce à Hugo + PaperMod.</li>
+      <li>Déploiement continu via GitHub Pages.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="home-section__header">
+    <h2>Ce que couvre le POC</h2>
+    <p>Un socle solide pour accélérer la migration complète du site et des contenus.</p>
+  </div>
+  <div class="home-cards">
+    {{ range .Site.Params.home.pocCards }}
+      <article class="home-card">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="home-section home-section--surface">
+  <div class="home-section__header">
+    <h2>Architecture &amp; maintenabilité</h2>
+    <p>Une montée en gamme progressive sans dette technique.</p>
+  </div>
+  <div class="home-cards">
+    {{ range .Site.Params.home.architecturePoints }}
+      <article class="home-card">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
