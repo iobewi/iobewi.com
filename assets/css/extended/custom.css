@@ -94,6 +94,8 @@ h6,
   padding: 2.5rem 0 1rem;
   text-align: center;
   justify-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .nav__right {
@@ -156,6 +158,10 @@ h6,
   max-width: 60ch;
 }
 
+.home-hero__content {
+  max-width: 720px;
+}
+
 .home-hero__actions {
   display: flex;
   flex-wrap: wrap;
@@ -196,7 +202,7 @@ h6,
 }
 
 .home-section__content {
-  max-width: 920px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -206,57 +212,15 @@ h6,
 
 .home-content {
   background: var(--entry);
-  border-radius: 28px;
+  border-radius: 24px;
   padding: clamp(2rem, 1.6rem + 1.5vw, 3.25rem);
-  box-shadow: var(--shadow-soft);
   border: 1px solid var(--border);
-}
-
-.home-content h2 {
-  margin-top: 2.5rem;
-  font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2.1rem);
-  position: relative;
-}
-
-.home-content h2:first-of-type {
-  margin-top: 0;
-}
-
-.home-content h2::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 4px;
-  margin-top: 0.5rem;
-  border-radius: 999px;
-  background: linear-gradient(120deg, var(--accent-primary), var(--accent-secondary));
-}
-
-.home-content h3 {
-  margin-top: 1.75rem;
-  font-size: 1.15rem;
-}
-
-.home-content h4 {
-  margin-top: 1.5rem;
-  font-size: 1rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
 }
 
 .home-content p {
   color: var(--secondary);
-}
-
-.home-content ul {
-  margin: 0.8rem 0 1.5rem;
-  padding-left: 1.2rem;
-  color: var(--secondary);
-  display: grid;
-  gap: 0.35rem 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.home-content ul li {
-  list-style: disc;
+  line-height: 1.65;
 }
 
 .home-content strong {
@@ -267,13 +231,89 @@ h6,
   font-weight: 600;
 }
 
-.home-content blockquote {
-  margin: 1.5rem 0;
-  padding: 1rem 1.5rem;
-  border-left: 4px solid var(--accent-secondary);
+.home-block + .home-block {
+  margin-top: 2.75rem;
+  padding-top: 2.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.home-block h2 {
+  margin-top: 0;
+  font-size: clamp(1.6rem, 1.4rem + 1vw, 2.2rem);
+}
+
+.home-block h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.home-block__body {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.home-columns {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-column {
   background: var(--accent-soft);
-  border-radius: 12px;
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.home-column h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.home-column__body ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
   color: var(--secondary);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.home-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-card {
+  padding: 1.5rem;
+  background: var(--entry);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+.home-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.home-card__body p {
+  margin-top: 0;
+}
+
+.home-card__body ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--secondary);
+  display: grid;
+  gap: 0.4rem;
 }
 
 .home-section__header {
@@ -299,36 +339,9 @@ h6,
   border-radius: 24px;
 }
 
-.home-cards {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.home-card {
-  padding: 1.5rem;
-  background: var(--entry);
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  text-align: left;
-}
-
-.home-card h3 {
-  margin-top: 0;
-}
-
-.home-card p {
-  color: var(--secondary);
-}
-
 @media (max-width: 900px) {
 
   .home-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .home-cards {
     grid-template-columns: 1fr;
   }
 
@@ -340,7 +353,8 @@ h6,
     border-radius: 20px;
   }
 
-  .home-content ul {
+  .home-columns,
+  .home-grid {
     grid-template-columns: 1fr;
   }
 }
