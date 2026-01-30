@@ -1,10 +1,11 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
-ARG HUGO_VERSION=0.146.0
+ARG HUGO_VERSION=0.151.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates curl git bash-completion \
     golang-go \
+    nodejs npm \
  && rm -rf /var/lib/apt/lists/*
 
 # hugo extended
