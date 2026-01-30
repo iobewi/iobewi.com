@@ -1,30 +1,28 @@
-# Hugo POC (Joomla → statique)
+# Site IOBEWI (Eleventy)
 
-Ce dépôt est un **POC rapide** pour héberger une vitrine sur **GitHub Pages** en utilisant **Hugo**.
+Ce dépôt héberge le site vitrine **iobewi.fr** en version statique via **Eleventy (11ty)**.
+L’objectif est d’avoir une base simple, lisible et contrôlable, tout en conservant la structure validée (5 pages + mentions légales).
 
-## Ce qui est inclus
-- Un site Hugo minimal (sans thème) avec 3 pages : Accueil / À propos / Contact
-- Reprise d'assets depuis l'export Joomla :
-  - `static/assets/images/iobewi/...`
-  - `static/assets/css/helium.css` + `static/assets/css/custom.css` (compilés Gantry)
+## Structure
 
-> Note: le CSS Gantry est prévu pour le markup Joomla/Gantry, donc l'intégration ici est "best effort".
+- `src/` : contenu (pages) et assets
+- `src/_includes/` : layouts
+- `src/_data/` : données globales (navigation, métadonnées)
+- `_site/` : sortie générée par Eleventy
 
 ## Lancer en local
-Installer Hugo, puis :
 
 ```bash
-hugo server -D
+npm install
+npm run start
 ```
 
-## Déployer sur GitHub Pages
-1. Pousser ce repo sur GitHub
-2. Repo → Settings → Pages → Source : **GitHub Actions**
-3. Le workflow `.github/workflows/hugo.yml` publie automatiquement.
+## Build
 
-## Point important : contenu Joomla
-Un export de fichiers Joomla **ne contient généralement pas** les articles / menus (stockés en base MySQL).
-Pour migrer le contenu, il faudra :
-- soit un export DB (tables `#__content`, `#__menu`, etc.)
-- soit un export via outil (ex: extension ou dump JSON/HTML)
+```bash
+npm run build
+```
 
+## Déploiement GitHub Pages
+
+Le workflow `.github/workflows/eleventy.yml` construit le site et le publie via GitHub Pages.

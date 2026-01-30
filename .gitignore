@@ -1,7 +1,8 @@
-# Hugo generated output
-public/
-resources/
-.hugo_build.lock
+# Eleventy output
+_site/
+
+# Node
+node_modules/
 
 # OS / editor
 .DS_Store
