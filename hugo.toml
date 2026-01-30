@@ -13,7 +13,7 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = false
+      unsafe = true
 
 [menu]
   [[menu.main]]
@@ -21,22 +21,26 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "À propos"
-    url = "/a-propos/"
+    name = "Activités"
+    url = "/activites/"
     weight = 2
   [[menu.main]]
-    name = "Projet"
-    url = "/projet/"
+    name = "Réalisations"
+    url = "/realisations/"
     weight = 3
+  [[menu.main]]
+    name = "À propos"
+    url = "/a-propos/"
+    weight = 4
   [[menu.main]]
     name = "Contact"
     url = "/contact/"
-    weight = 4
+    weight = 5
 
 [params]
   companyName = "IOBEWI"
-  description = "Site vitrine statique Hugo-only pour présenter IOBEWI avec un design sobre et responsive."
-  contactEmail = "contact@exemple.com"
+  description = "IOBEWI accompagne la structuration et la maturation de projets techniques autour des systèmes embarqués."
+  contactEmail = "contact@iobewi.com"
   logo = ""
   defaultTheme = "light"
 
@@ -50,37 +54,16 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
 
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://www.linkedin.com/"
+    url = "https://www.linkedin.com/company/iobewi"
 
   [params.home]
-    heroEyebrow = "POC Hugo + GitHub Pages"
-    heroTitle = "IOBEWI modernise son site vitrine sans perdre en simplicité."
-    heroDescription = "Un socle PaperMod, des overrides ciblés et une CI/CD fiable pour livrer une landing page moderne, performante et maintenable."
-    primaryCtaLabel = "Découvrir IOBEWI"
-    primaryCtaUrl = "/a-propos/"
-    secondaryCtaLabel = "Parler du projet"
+    heroEyebrow = "IOBEWI — systèmes embarqués"
+    heroTitle = "IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel."
+    heroDescription = "Avec une méthodologie et des outils pensés pour faire grandir les projets."
+    primaryCtaLabel = "Comment IOBEWI peut vous accompagner ?"
+    primaryCtaUrl = "/activites/"
+    secondaryCtaLabel = "Échangeons sur votre accompagnement"
     secondaryCtaUrl = "/contact/"
 
-  [[params.home.pocCards]]
-    title = "Architecture Hugo-only"
-    description = "Zéro JavaScript custom, un socle Hugo + PaperMod et un code lisible pour évoluer rapidement."
-
-  [[params.home.pocCards]]
-    title = "Réutilisation des assets"
-    description = "Structure claire pour intégrer logo, visuels et contenus existants sans effort de refonte."
-
-  [[params.home.pocCards]]
-    title = "Déploiement GitHub Pages"
-    description = "Pipeline CI/CD léger avec Hugo extended pour livrer un site rapide et sécurisé."
-
-  [[params.home.architecturePoints]]
-    title = "Homepage custom"
-    description = "Override localisé sur layouts/index.html pour une landing page graphique sans toucher au thème."
-
-  [[params.home.architecturePoints]]
-    title = "Pages internes intactes"
-    description = "À propos, Projet et Contact héritent de PaperMod pour garder une mise en page sobre."
-
-  [[params.home.architecturePoints]]
-    title = "Maintenance progressive"
-    description = "Mises à jour du thème possibles sans conflits grâce à des surcharges limitées."
+  [params.footer]
+    text = "[Mentions légales](/mentions-legales/) · [GitHub](https://github.com/iobewi)"
