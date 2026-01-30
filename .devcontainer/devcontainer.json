@@ -24,6 +24,6 @@
     }
   },
   "postCreateCommand": "npm install",
-  "postStartCommand": "npm run start -- --host 0.0.0.0 --port 8080",
+  "postStartCommand": "npm run start -- --port 8080",
   "remoteUser": "root"
 }

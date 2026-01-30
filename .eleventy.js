@@ -1,5 +1,8 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.setServerOptions({
+    host: "0.0.0.0",
+  });
 
   return {
     dir: {
