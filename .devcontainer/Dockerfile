@@ -6,6 +6,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates curl git bash-completion \
     golang-go \
     nodejs npm \
+ && npm install -g \
+    tailwindcss \
+    @tailwindcss/cli \
+    @tailwindcss/forms \
+    @tailwindcss/typography \
+    tailwind-bootstrap-grid \
  && rm -rf /var/lib/apt/lists/*
 
 # hugo extended
