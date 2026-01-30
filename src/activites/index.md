@@ -1,6 +1,8 @@
 ---
 title: "Activités"
 description: "Les activités d’IOBEWI pour structurer et faire mûrir des projets embarqués."
+layout: layouts/base.njk
+permalink: "/activites/"
 ---
 
 Les activités d’IOBEWI couvrent l’ensemble des phases techniques nécessaires à la structuration et à la maturation de projets embarqués et robotiques.

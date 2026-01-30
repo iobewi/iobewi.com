@@ -1,12 +1,11 @@
 {
-  "name": "Hugo Web Dev",
+  "name": "Eleventy Web Dev",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "customizations": {
     "vscode": {
       "extensions": [
-        "budparr.language-hugo-vscode",
         "yzhang.markdown-all-in-one",
         "davidanson.vscode-markdownlint",
         "streetsidesoftware.code-spell-checker"
@@ -17,14 +16,14 @@
       }
     }
   },
-  "forwardPorts": [1313],
+  "forwardPorts": [8080],
   "portsAttributes": {
-    "1313": {
-      "label": "Hugo server",
+    "8080": {
+      "label": "Eleventy server",
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "hugo version",
-  "postStartCommand": "hugo server --bind 0.0.0.0 --baseURL http://localhost:1313 --appendPort --disableFastRender -D",
+  "postCreateCommand": "npm install",
+  "postStartCommand": "npm run start -- --host 0.0.0.0 --port 8080",
   "remoteUser": "root"
 }

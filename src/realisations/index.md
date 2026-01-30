@@ -1,6 +1,8 @@
 ---
 title: "Réalisations"
 description: "Réalisations et travaux de recherche appliquée autour des systèmes embarqués."
+layout: layouts/base.njk
+permalink: "/realisations/"
 ---
 
 **IOBEWI est une structure récente, construite sur un travail préparatoire de long terme autour des systèmes embarqués, de la robotique et de l’outillage technique.**

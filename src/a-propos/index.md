@@ -1,6 +1,8 @@
 ---
 title: "À propos"
 description: "Présentation d'IOBEWI et de sa posture d'accompagnement technique."
+layout: layouts/base.njk
+permalink: "/a-propos/"
 ---
 
 IOBEWI est une société par actions simplifiée (SAS) dédiée à l’accompagnement de projets techniques autour des systèmes embarqués, de la robotique et de l’outillage associé.

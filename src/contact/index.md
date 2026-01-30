@@ -1,6 +1,8 @@
 ---
 title: "Contact"
 description: "Prendre contact avec IOBEWI pour un projet embarqué ou robotique."
+layout: layouts/base.njk
+permalink: "/contact/"
 ---
 
 Vous souhaitez échanger autour d’un projet technique, d’une démarche d’accompagnement ou d’un besoin de structuration autour des systèmes embarqués ou de la robotique.
