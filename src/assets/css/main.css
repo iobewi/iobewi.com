@@ -57,6 +57,21 @@ a:hover {
   color: var(--text);
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-link img {
+  width: 56px;
+  height: 56px;
+}
+
+.brand-name {
+  letter-spacing: 0.04em;
+}
+
 .tagline {
   margin: 0.25rem 0 0;
   color: var(--muted);
