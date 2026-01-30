@@ -25,6 +25,6 @@
     }
   },
   "postCreateCommand": "hugo version",
-  "postStartCommand": "hugo server --bind 0.0.0.0 --baseURL http://localhost:1313 --appendPort --disableFastRender -D",
+  "postStartCommand": "npm install && hugo server --bind 0.0.0.0 --baseURL http://localhost:1313 --appendPort --disableFastRender -D",
   "remoteUser": "root"
 }
