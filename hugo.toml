@@ -1,19 +1,145 @@
 baseURL = "https://iobewi.github.io/iobewi.com/"
 languageCode = "fr-fr"
 title = "IOBEWI"
+timeZone = "Europe/Paris"
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
+summaryLength = 10
 
-theme = ["github.com/adityatelange/hugo-PaperMod"]
+theme = ["github.com/zeon-studio/hugoplate"]
 
 [module]
   [[module.imports]]
-    path = "github.com/adityatelange/hugo-PaperMod"
+    path = "github.com/zeon-studio/hugoplate"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/search"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/pwa"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/images"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/videos"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/icons/font-awesome"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/gzip-caching"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/adsense"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/accordion"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/table-of-contents"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/tab"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/modal"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/gallery-slider"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/preloader"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/social-share"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/cookie-consent"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/announcement"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/custom-script"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/components/render-link"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/button"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/notice"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/shortcodes/mermaid"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/basic-seo"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/site-verifications"
+
+  [[module.imports]]
+    path = "github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager"
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    disableWatch = true
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = "assets/notwatching/hugo_stats\\.json"
+    target = "css"
+
+[outputs]
+  home = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
+
+[imaging]
+  quality = 80
+  resampleFilter = "Lanczos"
+
+[caches]
+  [caches.images]
+    dir = ":resourceDir/_gen"
+    maxAge = "720h"
+  [caches.assets]
+    dir = ":resourceDir/_gen"
+    maxAge = "720h"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNumbersInTable = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = true
+
+[mediaTypes]
+  [mediaTypes."application/manifest+json"]
+    suffixes = ["webmanifest"]
+
+[outputFormats]
+  [outputFormats.WebAppManifest]
+    mediaType = "application/manifest+json"
+    rel = "manifest"
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "searchindex"
+    isPlainText = true
+    notAlternative = true
 
 [menu]
   [[menu.main]]
@@ -37,33 +163,143 @@ theme = ["github.com/adityatelange/hugo-PaperMod"]
     url = "/contact/"
     weight = 5
 
-[params]
-  companyName = "IOBEWI"
-  description = "IOBEWI accompagne la structuration et la maturation de projets techniques autour des systèmes embarqués."
-  contactEmail = "contact@iobewi.com"
-  logo = ""
-  defaultTheme = "light"
-
-  [params.label]
-    icon = "assets/images/iobewi/logos/iobewi_logo.png"
-    iconHeight = 42
-
-  [[params.socialIcons]]
-    name = "github"
+  [[menu.footer]]
+    name = "Mentions légales"
+    url = "/mentions-legales/"
+    weight = 1
+  [[menu.footer]]
+    name = "GitHub"
     url = "https://github.com/iobewi"
+    weight = 2
 
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/company/iobewi"
+[params]
+  favicon = "assets/images/iobewi/logos/iobewi_logo.png"
+  logo = "assets/images/iobewi/logos/iobewi_logo.png"
+  logo_darkmode = "assets/images/iobewi/logos/iobewi_logo.png"
+  logo_width = "180px"
+  logo_height = "42px"
+  logo_webp = true
+  logo_text = "IOBEWI"
+  navbar_fixed = true
+  theme_switcher = true
+  theme_default = "light"
+  mainSections = []
+  contact_form_action = "mailto:contact@iobewi.com"
+  google_tag_manager = ""
+  google_adsense = ""
+  custom_script = ""
+  copyright = "© IOBEWI"
 
-  [params.home]
-    heroEyebrow = "IOBEWI — systèmes embarqués"
-    heroTitle = "IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel."
-    heroDescription = "Avec une méthodologie et des outils pensés pour faire grandir les projets."
-    primaryCtaLabel = "Comment IOBEWI peut vous accompagner ?"
-    primaryCtaUrl = "/activites/"
-    secondaryCtaLabel = "Échangeons sur votre accompagnement"
-    secondaryCtaUrl = "/contact/"
+  [params.preloader]
+    enable = false
+    preloader = ""
 
-  [params.footer]
-    text = "[Mentions légales](/mentions-legales/) · [GitHub](https://github.com/iobewi)"
+  [params.navigation_button]
+    enable = true
+    label = "Contact"
+    link = "/contact/"
+
+  [params.search]
+    enable = false
+    primary_color = "#121212"
+    include_sections = []
+    show_image = false
+    show_description = false
+    show_tags = false
+    show_categories = false
+
+  [params.announcement]
+    enable = false
+    expire_days = 7
+    content = ""
+
+  [params.metadata]
+    keywords = ["systèmes embarqués", "ingénierie", "prototypage", "robotique"]
+    description = "IOBEWI accompagne la structuration et la maturation de projets techniques autour des systèmes embarqués."
+    author = "IOBEWI"
+    twitter = ""
+    image = "assets/images/iobewi/logos/iobewi_logo.png"
+
+  [params.site_verification]
+    google = ""
+    bing = ""
+    baidu = ""
+    facebook = ""
+    mastodon = ""
+
+  [params.cookies]
+    enable = false
+    expire_days = 60
+    content = "Ce site utilise des cookies."
+    button = "J'accepte"
+
+  [params.mermaid]
+    js_url = "https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs"
+
+  [params.widgets]
+    sidebar = []
+
+  [params.google_map]
+    enable = false
+    map_api_key = ""
+    map_latitude = ""
+    map_longitude = ""
+    map_marker = ""
+
+  [params.subscription]
+    enable = false
+    mailchimp_form_action = ""
+    mailchimp_form_name = ""
+
+  [[params.plugins.css]]
+    link = "plugins/swiper/swiper-bundle.css"
+
+  [[params.plugins.css]]
+    link = "plugins/glightbox/glightbox.css"
+
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/brands.css"
+
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/solid.css"
+
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/regular.css"
+
+  [[params.plugins.css]]
+    link = "plugins/font-awesome/v6/icons.css"
+
+  [[params.plugins.css]]
+    link = "css/placeholder.css"
+    lazy = true
+
+  [[params.plugins.js]]
+    link = "js/search.js"
+
+  [[params.plugins.js]]
+    link = "plugins/swiper/swiper-bundle.js"
+
+  [[params.plugins.js]]
+    link = "plugins/glightbox/glightbox.js"
+
+  [[params.plugins.js]]
+    link = "js/gallery-slider.js"
+
+  [[params.plugins.js]]
+    link = "plugins/cookie.js"
+
+  [[params.plugins.js]]
+    link = "js/accordion.js"
+
+  [[params.plugins.js]]
+    link = "js/tab.js"
+
+  [[params.plugins.js]]
+    link = "js/modal.js"
+
+  [[params.plugins.js]]
+    link = "plugins/youtube-lite.js"
+
+  [[params.plugins.js]]
+    link = "js/placeholder.js"
+    lazy = true

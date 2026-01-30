@@ -1,0 +1,23 @@
+{
+  "name": "iobewi.com",
+  "version": "1.0.0",
+  "description": "Ce dépôt est un **POC rapide** pour héberger une vitrine sur **GitHub Pages** en utilisant **Hugo**.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwind-bootstrap-grid": "^7.0.0",
+    "tailwindcss": "^4.1.18"
+  }
+}
