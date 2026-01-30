@@ -1,11 +1,13 @@
 :root {
   color-scheme: light;
-  --bg: #ffffff;
+  --bg: #f6f8fb;
   --text: #1f2933;
   --muted: #52616b;
-  --accent: #004d7a;
+  --accent: #1d4ed8;
+  --accent-strong: #1e3a8a;
   --border: #d9e2ec;
-  --surface: #f5f7fa;
+  --surface: #ffffff;
+  --surface-alt: #eef2ff;
 }
 
 * {
@@ -25,6 +27,7 @@ a {
 }
 
 a:hover {
+  color: var(--accent-strong);
   text-decoration: underline;
 }
 
@@ -35,7 +38,7 @@ a:hover {
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  background: linear-gradient(120deg, #eef2ff 0%, #f8fafc 60%, #ffffff 100%);
 }
 
 .site-header .container {
@@ -76,6 +79,7 @@ a:hover {
 
 .nav a[aria-current="page"] {
   border-bottom: 2px solid var(--accent);
+  color: var(--accent-strong);
 }
 
 .main-content {
@@ -91,6 +95,16 @@ a:hover {
   font-size: 2rem;
 }
 
+.page-header h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.2rem;
+  background: var(--accent);
+  margin-top: 0.5rem;
+  border-radius: 999px;
+}
+
 .lead {
   margin: 0;
   color: var(--muted);
@@ -98,8 +112,11 @@ a:hover {
 
 .section {
   margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
 }
 
 .section:last-of-type {
@@ -115,8 +132,9 @@ a:hover {
 .card {
   padding: 1.25rem;
   border: 1px solid var(--border);
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background: #fff;
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.08);
 }
 
 .columns {
@@ -130,9 +148,25 @@ a:hover {
   font-weight: 600;
 }
 
+.cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.cta a:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-alt);
   padding: 2rem 0;
   text-align: center;
 }
