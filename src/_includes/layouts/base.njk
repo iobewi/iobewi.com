@@ -52,10 +52,12 @@
 
     <main class="main-content">
       <div class="container">
-        <header class="page-header">
-          <h1>{{ title }}</h1>
-          {% if description %}<p class="lead">{{ description }}</p>{% endif %}
-        </header>
+        {% if page.url != "/" %}
+          <header class="page-header">
+            <h1>{{ title }}</h1>
+            {% if description %}<p class="lead">{{ description }}</p>{% endif %}
+          </header>
+        {% endif %}
         {{ content | safe }}
       </div>
     </main>
