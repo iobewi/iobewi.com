@@ -5,53 +5,44 @@ layout: layouts/base.njk
 permalink: "/"
 ---
 
-<section class="hero">
-  <div class="hero-grid">
+<section class="hero hero--circuit">
+  <div class="container hero-grid">
     <div>
-      <p class="eyebrow">Conception &amp; maturation de plateformes embarquées</p>
-      <h1>IOBEWI structure vos projets matériels &amp; logiciels pour passer du prototype à l’exploitation.</h1>
-      <p class="lead">
-        IOBEWI intervient sur la conception et la montée en maturité d’ensembles embarqués, en s’appuyant sur des pratiques open source,
-        des retours terrain et une méthodologie progressive.
-      </p>
+      <p class="eyebrow">IOBEWI</p>
+      <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
+      <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
+      <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d’outils qui rendent les projets exploitables et transmissibles.</p>
       <div class="hero-actions">
-        <a class="button primary" href="/contact/">Parler de votre projet</a>
-        <a class="button ghost" href="/activites/">Voir les activités</a>
-      </div>
-      <div class="pill-list">
-        <span class="pill">Matériel + logiciel</span>
-        <span class="pill">Open source</span>
-        <span class="pill">CI/CD embarquée</span>
-        <span class="pill">Algorithmes décisionnels</span>
-      </div>
-    </div>
-    <div class="hero-card">
-      <h2>Une trajectoire claire</h2>
-      <ul class="check-list">
-        <li>Explorer, prototyper, cadrer</li>
-        <li>Structurer l’architecture et l’outillage</li>
-        <li>Industrialiser progressivement</li>
-        <li>Transmettre pour autonomiser</li>
-      </ul>
-      <div class="stat-grid">
-        <div class="stat-card">
-          <strong>Matériel</strong>
-          <span>Prototypage, intégration, tests</span>
-        </div>
-        <div class="stat-card">
-          <strong>Logiciel</strong>
-          <span>ROS 2, ESP-IDF, CI/CD</span>
-        </div>
-        <div class="stat-card">
-          <strong>Méthode</strong>
-          <span>Documentation &amp; transmission</span>
-        </div>
+        <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
+        <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section container">
+  <div class="section-title">
+    <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel.</h2>
+  </div>
+  <div class="columns">
+    <div>
+      <p>
+        IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
+        des retours terrain et une méthodologie progressive.
+      </p>
+      <p class="lead">
+        Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l’exploitation.
+      </p>
+    </div>
+    <div>
+      <p>
+        L’approche favorise la collaboration, la documentation et la transmission pour permettre aux équipes de reprendre la main sur leurs systèmes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
   <div class="section-title">
     <p class="eyebrow">Positionnement</p>
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
@@ -60,11 +51,9 @@ permalink: "/"
     <div class="card soft-card">
       <h3>Ce que fait IOBEWI</h3>
       <ul class="feature-list">
-        <li>Structuration matériel-logiciel</li>
-        <li>Plateformes embarquées</li>
+        <li>Structuration matériel / logiciel</li>
         <li>Prototypage et montée en maturité</li>
-        <li>Outillage et méthodologie</li>
-        <li>Exploitation et livraison continue</li>
+        <li>Outillage, reproductibilité et exploitation</li>
         <li>Algorithmes décisionnels embarqués</li>
         <li>Accompagnement sur le cycle de vie</li>
       </ul>
@@ -72,47 +61,45 @@ permalink: "/"
     <div class="card soft-card">
       <h3>Ce que IOBEWI ne fait pas</h3>
       <ul class="feature-list muted-list">
-        <li>Intégration de solutions clés en main</li>
-        <li>Revente de matériel ou de licences</li>
-        <li>Conception de composants électroniques</li>
+        <li>Intégration clé en main</li>
+        <li>Revente de matériel ou licences</li>
         <li>Développement applicatif généraliste</li>
-        <li>Production industrielle de masse</li>
-        <li>Prestations sans continuité technique</li>
+        <li>Production industrielle</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section container">
   <div class="section-title">
-    <p class="eyebrow">Activités clés</p>
+    <p class="eyebrow">Nos activités</p>
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
   <div class="grid">
-    <article class="card">
+    <article class="card activity-item">
+      <div class="activity-index">01</div>
       <h3>Structuration d’écosystèmes embarqués</h3>
-      <p>Structuration d’écosystèmes matériels et logiciels autour de plateformes existantes&nbsp;: conception mécanique, intégration électronique, prototypage FDM/résine et usinage léger.</p>
-      <p class="cta"><a href="/activites/">Découvrir cette activité</a></p>
+      <p>Structuration matériel / logiciel, intégration, prototypage physique et industrialisation progressive.</p>
     </article>
-    <article class="card">
+    <article class="card activity-item">
+      <div class="activity-index">02</div>
       <h3>Prototypage et montée en maturité</h3>
-      <p>Transformation de prototypes fonctionnels en bases techniques exploitables, du cadrage des besoins au découpage en éléments simples pour un développement maîtrisé.</p>
-      <p class="cta"><a href="/activites/">Voir la démarche</a></p>
+      <p>Transformation du prototype exploratoire en base technique exploitable, cadrage et découpage fonctionnel.</p>
     </article>
-    <article class="card">
+    <article class="card activity-item">
+      <div class="activity-index">03</div>
       <h3>Outillage, reproductibilité et exploitation</h3>
-      <p>Environnements conteneurisés, chaînes CI/CD, tests et non-régression, gestion des évolutions et documentation pour un socle durable.</p>
-      <p class="cta"><a href="/activites/">Comprendre l’approche</a></p>
+      <p>Environnements conteneurisés, CI/CD, tests, documentation et gestion des évolutions.</p>
     </article>
-    <article class="card">
+    <article class="card activity-item">
+      <div class="activity-index">04</div>
       <h3>Algorithmes décisionnels embarqués</h3>
-      <p>Intégration progressive d’algorithmes de traitement, de perception ou de décision, du microcontrôleur aux plateformes avancées.</p>
-      <p class="cta"><a href="/activites/">Explorer les usages</a></p>
+      <p>Traitement, perception et décision embarquée du microcontrôleur aux plateformes avancées.</p>
     </article>
   </div>
 </section>
 
-<section class="section">
+<section class="section container">
   <div class="section-title">
     <p class="eyebrow">Éléments de crédibilité</p>
     <h2>Des projets concrets, des contributions ouvertes</h2>
@@ -182,7 +169,7 @@ permalink: "/"
   </article>
 </section>
 
-<section class="section">
+<section class="section container">
   <div class="section-title">
     <p class="eyebrow">Posture &amp; méthode</p>
     <h2>Une approche progressive, au rythme du terrain</h2>
@@ -197,7 +184,7 @@ permalink: "/"
   </div>
 </section>
 
-<section class="section">
+<section class="section container">
   <div class="callout">
     <div>
       <p class="eyebrow">Échangeons</p>
@@ -205,7 +192,7 @@ permalink: "/"
       <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s’adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
     </div>
     <div class="cta">
-      <a href="/contact/">Échangeons sur votre accompagnement</a>
+      <a class="btn btn-primary" href="/contact/">Échangeons sur votre accompagnement</a>
     </div>
   </div>
 </section>

@@ -1,5 +1,25 @@
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
-  font-family:system-ui, sans-serif;
+  font-family:"Segoe UI", "Inter", system-ui, sans-serif;
   background:var(--paper);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1100px, 92vw);
+  margin:0 auto;
 }
