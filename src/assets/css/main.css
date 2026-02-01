@@ -277,6 +277,7 @@ a:hover {
 .button:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+  text-decoration: none;
 }
 
 .button.primary {
@@ -284,9 +285,17 @@ a:hover {
   color: #fff;
 }
 
+.button.primary:hover {
+  color: #fff;
+}
+
 .button.ghost {
   background: #fff;
   border-color: rgba(148, 163, 184, 0.4);
+  color: var(--accent-strong);
+}
+
+.button.ghost:hover {
   color: var(--accent-strong);
 }
 
