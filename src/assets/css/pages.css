@@ -16,8 +16,10 @@
 }
 
 .has-hero .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   background: transparent;
   border-bottom: 1px solid transparent;
   backdrop-filter: none;
@@ -55,7 +57,6 @@
 }
 
 .has-hero .hero {
-  margin-top: calc(-1 * var(--header-h));
   padding-top: calc(6rem + var(--header-h));
 }
 
