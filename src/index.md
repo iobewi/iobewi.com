@@ -28,9 +28,11 @@ bodyClass: "has-hero"
     <div class="columns">
       <div>
         <p>
-          IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
-          des retours terrain et une méthodologie progressive.
+          IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source
+          et une méthodologie progressive.
         </p>
+      </div>
+      <div>
         <p class="lead">
           Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l’exploitation.
         </p>

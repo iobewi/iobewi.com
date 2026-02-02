@@ -124,15 +124,6 @@
   overflow: hidden;
 }
 
-.hero-band::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(7, 11, 14, 0.82) 0%, rgba(7, 11, 14, 0.7) 55%, rgba(7, 11, 14, 0.45) 75%, rgba(247, 248, 251, 0.95) 100%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .hero-band::after {
   content: "";
   position: absolute;
@@ -141,7 +132,7 @@
   background-attachment: fixed;
   opacity: 0.06;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 
   /* adoucit le motif derrière le texte à gauche */
   -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
@@ -150,8 +141,8 @@
 
 .hero {
   position: relative;
-  min-height: 65vh;
-  padding: 6rem 0 3rem;
+  min-height: 70vh;
+  padding: 6rem 0 4rem;
   background: transparent;
 }
 
@@ -161,7 +152,7 @@
   gap: 2rem;
   align-items: center;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -179,10 +170,10 @@
 
 .hero-intro {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   color: #f8fafc;
-  padding-top: 1.5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .hero-intro .section-title h2 {
