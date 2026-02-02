@@ -1,7 +1,0 @@
-[
-  { "label": "Accueil", "url": "/" },
-  { "label": "Activités", "url": "/activites/" },
-  { "label": "Réalisations", "url": "/realisations/" },
-  { "label": "À propos", "url": "/a-propos/" },
-  { "label": "Contact", "url": "/contact/" }
-]

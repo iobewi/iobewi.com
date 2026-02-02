@@ -5,7 +5,7 @@ layout: layouts/base.njk
 permalink: "/"
 ---
 
-<section class="hero hero--circuit">
+<section class="hero">
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">IOBEWI</p>
