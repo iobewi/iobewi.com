@@ -17,6 +17,29 @@ bodyClass: "has-hero"
           <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
         </div>
+
+        <div class="hero-tech" aria-label="Technologies">
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="Espressif" />
+            ESP-IDF
+          </span>
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="Espressif" />
+            ESP32
+          </span>
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="ROS" />
+            ROS 2
+          </span>
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="micro-ROS" />
+            micro-ROS
+          </span>
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="CI/CD" />
+            CI/CD
+          </span>
+        </div>
       </div>
     </div>
   </section>
