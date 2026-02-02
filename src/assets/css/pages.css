@@ -191,6 +191,27 @@
   margin-top: 1.75rem;
 }
 
+.hero-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.5rem;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e6f2f7;
+  border: 1px solid rgba(24, 207, 227, 0.35);
+  background: rgba(13, 32, 41, 0.6);
+  box-shadow: 0 6px 18px rgba(10, 15, 20, 0.25);
+}
+
 .section {
   background: var(--paper);
   border-radius: 0;
