@@ -1,54 +1,19 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
-    {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
-    <link rel="stylesheet" href="/assets/css/main.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <div class="brand">
-          <a href="/" class="brand-link">
-            <img src="/assets/images/iobewi-logo.png" alt="IOBEWI" />
-            <span class="brand-name">{{ site.title }}</span>
-          </a>
-          <p class="tagline">{{ site.description }}</p>
-        </div>
-        <nav aria-label="Navigation principale">
-          <ul class="nav">
-            {% for item in navigation %}
-              {% set isActive = page.url == item.url %}
-              <li>
-                <a href="{{ item.url }}"{% if isActive %} aria-current="page"{% endif %}>
-                  {{ item.label }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="main-content">
-      <div class="container">
-        <header class="page-header">
-          <h1>{{ title }}</h1>
-          {% if description %}<p class="lead">{{ description }}</p>{% endif %}
-        </header>
-        {{ content | safe }}
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>
-          <a href="/mentions-legales/">Mentions légales</a>
-        </p>
-        <p>© {{ site.title }}</p>
-      </div>
-    </footer>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} · {{ site.name }}</title>
+  <meta name="description" content="{{ site.description }}" />
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  {% include "partials/header.njk" %}
+  <main>{{ content | safe }}</main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/header.js" defer></script>
+</body>
 </html>

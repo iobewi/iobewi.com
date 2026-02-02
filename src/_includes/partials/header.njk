@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="/">
+      {% include "partials/iobewi.svg" %}
+    </a>
+    <nav class="nav">
+      {% for item in nav %}
+        <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

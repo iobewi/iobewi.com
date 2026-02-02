@@ -1,0 +1,15 @@
+:root {
+  --bg: #25292c;
+  --paper: #f6f7fb;
+  --text: #1f2a37;
+  --muted: #5b6776;
+  --border: #d6dde7;
+  --accent: #18c6d6;
+  --accent-strong: #0ea5b7;
+  --surface: #ffffff;
+  --logo-text-color: #e6f2f7;
+  --nav-text: rgba(230, 242, 247, 0.75);
+  --nav-text-hover: #18cfe3;
+  --nav-text-active: #ffffff;
+  --header-h: 72px;
+}
