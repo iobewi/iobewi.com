@@ -3,6 +3,7 @@ title: "Accueil"
 description: "IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel."
 layout: layouts/base.njk
 permalink: "/"
+bodyClass: "has-hero"
 ---
 
 <section class="hero">
