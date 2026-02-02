@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 256 256"
+     width="256"
+     height="256"
+     role="img"
+     aria-label="Microcontroller icon">
+
+  <defs>
+    <style>
+      .chip { fill: #5f6f89; }
+      .inner { fill: #000000; }
+      .label    { fill: #5f6f89; font: 700 120px/1 system-ui, sans-serif; }
+      .chip-stroke { fill: none; stroke: #ffffff; stroke-width: 6; }
+    </style>
+
+        <!-- Mask that cuts pins under the chip body -->
+    <mask id="pins-mask">
+      <!-- Everything visible by default -->
+      <rect width="100%" height="100%" fill="white"  stroke-width="6" />
+
+      <!-- Area that becomes transparent (chip body) -->
+      <path fill="black" d="
+        M28 52
+        a24 24 0 0 1 24 -24
+        h152
+        a24 24 0 0 1 24 24
+        v152
+        a24 24 0 0 1 -24 24
+        h-152
+        a24 24 0 0 1 -24 -24
+        z
+      "/>
+    </mask>
+
+  </defs>
+
+  <!-- Pins -->
+  <g class="chip"  mask="url(#pins-mask)">
+    <!-- Top -->
+    <rect x="64" y="0" width="24" height="32" rx="4"/>
+    <rect x="116" y="0" width="24" height="32" rx="4"/>
+    <rect x="168" y="0" width="24" height="32" rx="4"/>
+
+    <!-- Bottom -->
+    <rect x="64" y="224" width="24" height="32" rx="4"/>
+    <rect x="116" y="224" width="24" height="32" rx="4"/>
+    <rect x="168" y="224" width="24" height="32" rx="4"/>
+
+    <!-- Left -->
+    <rect x="0" y="64" width="32" height="24" rx="4"/>
+    <rect x="0" y="116" width="32" height="24" rx="4"/>
+    <rect x="0" y="168" width="32" height="24" rx="4"/>
+
+    <!-- Right -->
+    <rect x="224" y="64" width="32" height="24" rx="4"/>
+    <rect x="224" y="116" width="32" height="24" rx="4"/>
+    <rect x="224" y="168" width="32" height="24" rx="4"/>
+  </g>
+
+  <!-- Chip body WITH HOLE -->
+  <path class="chip" fill-rule="evenodd" d="
+
+    M32 56
+    a24 24 0 0 1 24 -24
+    h144
+    a24 24 0 0 1 24 24
+    v144
+    a24 24 0 0 1 -24 24
+    h-144
+    a24 24 0 0 1 -24 -24
+    z
+
+    M72 88
+    a16 16 0 0 1 16 -16
+    h80
+    a16 16 0 0 1 16 16
+    v80
+    a16 16 0 0 1 -16 16
+    h-80
+    a16 16 0 0 1 -16 -16
+    z
+  "/>
+
+
+  <text class="label" x="90" y="150">µ</text>
+</svg>
