@@ -6,46 +6,48 @@ permalink: "/"
 bodyClass: "has-hero"
 ---
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">IOBEWI</p>
-      <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
-      <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
-      <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d’outils qui rendent les projets exploitables et transmissibles.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
-        <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
+<div class="hero-band">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
+        <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
+        <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d’outils qui rendent les projets exploitables et transmissibles.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
+          <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section container hero-intro">
+    <div class="section-title">
+      <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel.</h2>
+    </div>
+    <div class="columns">
+      <div>
+        <p>
+          IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
+          des retours terrain et une méthodologie progressive.
+        </p>
+      </div>
+      <div>
+        <p class="lead">
+          Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l’exploitation.
+        </p>
+      </div>
+      <div>
+        <p>
+          L’approche favorise la collaboration, la documentation et la transmission pour permettre aux équipes de reprendre la main sur leurs systèmes.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
 
 <section class="section container">
   <div class="section-title">
-    <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel.</h2>
-  </div>
-  <div class="columns">
-    <div>
-      <p>
-        IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
-        des retours terrain et une méthodologie progressive.
-      </p>
-      <p class="lead">
-        Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l’exploitation.
-      </p>
-    </div>
-    <div>
-      <p>
-        L’approche favorise la collaboration, la documentation et la transmission pour permettre aux équipes de reprendre la main sur leurs systèmes.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section container">
-  <div class="section-title">
-    <p class="eyebrow">Positionnement</p>
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
   <div class="columns">
@@ -73,7 +75,6 @@ bodyClass: "has-hero"
 
 <section class="section container">
   <div class="section-title">
-    <p class="eyebrow">Nos activités</p>
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
   <div class="grid">
@@ -102,7 +103,6 @@ bodyClass: "has-hero"
 
 <section class="section container">
   <div class="section-title">
-    <p class="eyebrow">Éléments de crédibilité</p>
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
   <div class="columns">
@@ -172,7 +172,6 @@ bodyClass: "has-hero"
 
 <section class="section container">
   <div class="section-title">
-    <p class="eyebrow">Posture &amp; méthode</p>
     <h2>Une approche progressive, au rythme du terrain</h2>
   </div>
   <div class="columns">
@@ -188,7 +187,6 @@ bodyClass: "has-hero"
 <section class="section container">
   <div class="callout">
     <div>
-      <p class="eyebrow">Échangeons</p>
       <h2>Structurons votre prochaine étape</h2>
       <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s’adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
     </div>

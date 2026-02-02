@@ -116,19 +116,20 @@
   color: var(--nav-text-active);
 }
 
-.hero {
+.hero-band {
   position: relative;
-  min-height: 70vh;
-  padding: 6rem 0;
   background: linear-gradient(180deg, #0b0f12, #070b0e);
+  background-attachment: fixed;
+  background-position: center top;
   overflow: hidden;
 }
 
-.hero::after {
+.hero-band::after {
   content: "";
   position: absolute;
   inset: 0;
   background: url("/assets/images/pcb-pattern.svg") center / cover no-repeat;
+  background-attachment: fixed;
   opacity: 0.06;
   pointer-events: none;
   z-index: 0;
@@ -138,21 +139,48 @@
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
 }
 
+.hero {
+  position: relative;
+  min-height: 70vh;
+  padding: 6rem 0 4rem;
+  background: transparent;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: clamp(2.2rem, 4vw, 3.1rem);
   line-height: 1.15;
   margin: 0 0 1rem;
+  color: #f8fafc;
+  text-shadow: 0 2px 12px rgba(11, 15, 18, 0.55);
 }
 
 .hero p {
   margin: 0 0 1rem;
+  color: rgba(248, 250, 252, 0.78);
+}
+
+.hero-intro {
+  position: relative;
+  z-index: 1;
+  color: #f8fafc;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.hero-intro .section-title h2 {
+  color: #f8fafc;
+}
+
+.hero-intro p {
   color: rgba(248, 250, 252, 0.78);
 }
 
@@ -164,12 +192,16 @@
 }
 
 .section {
-  background: transparent;
+  background: var(--paper);
   border-radius: 0;
   padding: 2.5rem 0;
   margin: 0 auto;
   box-shadow: none;
   border: none;
+}
+
+.hero-band .section {
+  background: transparent;
 }
 
 .section+.section {
