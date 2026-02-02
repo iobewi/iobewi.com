@@ -1,5 +1,5 @@
 const header = document.querySelector(".site-header");
-const hero = document.querySelector(".hero");
+const hero = document.querySelector(".hero-band") || document.querySelector(".hero");
 
 if (header && hero && document.body.classList.contains("has-hero")) {
   const updateHeaderState = () => {
