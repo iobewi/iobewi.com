@@ -21,18 +21,22 @@ bodyClass: "has-hero"
         <div class="hero-tech" aria-label="Technologies">
           <span class="tech-chip">
             <img class="tech-logo" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="Espressif" />
-            ESP-IDF
+            ESP
           </span>
           <span class="tech-chip">
-            <img class="tech-logo" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="Espressif" />
-            ESP32
+            <img class="tech-logo" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="Raspberry" />
+            RASPBERRY
+          </span>
+          <span class="tech-chip">
+            <img class="tech-logo" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="Jetson" />
+            JETSON
           </span>
           <span class="tech-chip">
             <img class="tech-logo" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="ROS" />
             ROS 2
           </span>
           <span class="tech-chip">
-            <img class="tech-logo" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="micro-ROS" />
+            <img class="tech-logo" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="micro-ROS" />
             micro-ROS
           </span>
           <span class="tech-chip">
