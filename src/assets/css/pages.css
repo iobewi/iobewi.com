@@ -119,6 +119,8 @@
 .hero-band {
   position: relative;
   background: linear-gradient(180deg, #0b0f12, #070b0e);
+  background-attachment: fixed;
+  background-position: center top;
   overflow: hidden;
 }
 
@@ -127,6 +129,7 @@
   position: absolute;
   inset: 0;
   background: url("/assets/images/pcb-pattern.svg") center / cover no-repeat;
+  background-attachment: fixed;
   opacity: 0.06;
   pointer-events: none;
   z-index: 0;
@@ -189,12 +192,16 @@
 }
 
 .section {
-  background: transparent;
+  background: var(--paper);
   border-radius: 0;
   padding: 2.5rem 0;
   margin: 0 auto;
   box-shadow: none;
   border: none;
+}
+
+.hero-band .section {
+  background: transparent;
 }
 
 .section+.section {
