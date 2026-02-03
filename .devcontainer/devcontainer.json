@@ -16,7 +16,16 @@
       }
     }
   },
-  "forwardPorts": [8080],
+  "runArgs": [
+    "--privileged",
+    "--network=host"
+  ],
+  "mounts": [
+    "source=claude-config,target=/root/.claude,type=volume"
+  ],
+  "forwardPorts": [
+    8080
+  ],
   "portsAttributes": {
     "8080": {
       "label": "Eleventy server",
@@ -25,5 +34,8 @@
   },
   "postCreateCommand": "npm install",
   "postStartCommand": "npm run start -- --port 8080",
-  "remoteUser": "root"
+  "remoteUser": "root",
+  "remoteEnv": {
+    "ANTHROPIC_MODEL": "claude-sonnet-4-5-20250929"
+  }
 }
