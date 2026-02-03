@@ -14,13 +14,24 @@
    * Configure et initialise l'IntersectionObserver pour les animations au scroll
    */
   function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
     // Vérifier si le navigateur supporte IntersectionObserver
     if (!('IntersectionObserver' in window)) {
       // Fallback: rendre tous les éléments visibles immédiatement
-      const animatedElements = document.querySelectorAll('.animate-on-scroll');
       animatedElements.forEach(el => el.classList.add('is-visible'));
       return;
     }
+
+    // D'abord, marquer comme visible tous les éléments déjà dans le viewport
+    // pour éviter les clignotements au chargement
+    animatedElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        el.classList.add('is-visible');
+      }
+    });
 
     // Options pour l'observer
     const observerOptions = {
@@ -47,7 +58,6 @@
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     // Observer tous les éléments avec la classe .animate-on-scroll
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach(el => observer.observe(el));
   }
 
@@ -233,6 +243,9 @@
       document.addEventListener('DOMContentLoaded', init);
       return;
     }
+
+    // Ajouter la classe js-ready au body pour activer les animations
+    document.body.classList.add('js-ready');
 
     // Initialiser toutes les animations
     initScrollAnimations();

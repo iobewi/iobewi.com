@@ -120,14 +120,20 @@
    UTILITY CLASSES FOR SCROLL ANIMATIONS
    ========================================================= */
 
-/* Base state - elements are invisible before animation */
+/* Base state - elements are VISIBLE by default (progressive enhancement) */
 .animate-on-scroll {
+  opacity: 1;
+}
+
+/* Only hide if JS is ready (body gets .js-ready class) */
+body.js-ready .animate-on-scroll:not(.is-visible) {
   opacity: 0;
 }
 
 /* When element becomes visible */
 .animate-on-scroll.is-visible {
   animation-fill-mode: forwards;
+  opacity: 1;
 }
 
 /* Animation variants */
