@@ -8,43 +8,56 @@ bodyClass: "has-hero"
 
 <div class="hero-band">
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container hero-grid has-sidebar">
       <div>
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
         <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
-        <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d’outils qui rendent les projets exploitables et transmissibles.</p>
+        <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d'outils qui rendent les projets exploitables et transmissibles.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
         </div>
-        <div class="hero-tech" aria-label="Technologies" markdown="0">
-          <span class="tech-chip" data-label="ESP32 / Espressif">
-            <img class="tech-logo" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">ESP</span>
-          </span>
-          <span class="tech-chip" data-label="Raspberry Pi">
-            <img class="tech-logo" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">RASPBERRY</span>
-          </span>
-          <span class="tech-chip" data-label="NVIDIA Jetson">
-            <img class="tech-logo" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">JETSON</span>
-          </span>
-          <span class="tech-chip" data-label="ROS 2">
-            <img class="tech-logo" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">ROS 2</span>
-          </span>
-          <span class="tech-chip" data-label="micro-ROS">
-            <img class="tech-logo" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">micro-ROS</span>
-          </span>
-          <span class="tech-chip" data-label="CI/CD">
-            <img class="tech-logo" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" aria-hidden="true" />
-            <span class="tech-text">CI/CD</span>
-          </span>
-        </div>
-        </div>
       </div>
+
+      <!-- Tech Sidebar - Context technique discret -->
+      <aside class="tech-sidebar" aria-label="Technologies maîtrisées" markdown="0">
+        <div class="tech-sidebar-section">
+          <div class="tech-sidebar-label">Hardware</div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" />
+            <span>ESP32</span>
+          </div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" />
+            <span>Raspberry Pi</span>
+          </div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" />
+            <span>Jetson</span>
+          </div>
+        </div>
+
+        <div class="tech-sidebar-section">
+          <div class="tech-sidebar-label">Middleware</div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
+            <span>ROS 2</span>
+          </div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" />
+            <span>micro-ROS</span>
+          </div>
+        </div>
+
+        <div class="tech-sidebar-section">
+          <div class="tech-sidebar-label">Tooling</div>
+          <div class="tech-sidebar-item">
+            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" />
+            <span>CI/CD</span>
+          </div>
+        </div>
+      </aside>
+    </div>
   </section>
 
   <section class="section container hero-intro">

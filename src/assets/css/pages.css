@@ -152,6 +152,15 @@
   grid-template-columns: 1fr;
   gap: var(--gap-3);
   align-items: start;
+  position: relative;
+}
+
+/* Hero grid with sidebar (desktop only) */
+@media (min-width: 1024px) {
+  .hero-grid.has-sidebar {
+    grid-template-columns: 1fr auto;
+    gap: clamp(40px, 5vw, 80px);
+  }
 }
 
 @media (max-width: 560px) {
@@ -186,6 +195,79 @@
   flex-wrap: wrap;
   margin-top: var(--stack-3);
   gap: var(--gap-1);
+}
+
+/* =========================================================
+   TECH SIDEBAR (technical context)
+   ========================================================= */
+
+.tech-sidebar {
+  display: none; /* Hidden on mobile */
+}
+
+@media (min-width: 1024px) {
+  .tech-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 3vh, 40px);
+    padding: clamp(24px, 3vh, 32px) clamp(20px, 2.5vw, 28px);
+    background: rgba(var(--c-hero-0), 0.4);
+    border: 1px solid rgba(var(--c-white), 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    min-width: 180px;
+    max-width: 220px;
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    align-self: start;
+  }
+}
+
+.tech-sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-1);
+}
+
+.tech-sidebar-section:not(:last-child) {
+  padding-bottom: clamp(20px, 2.5vh, 28px);
+  border-bottom: 1px solid rgba(var(--c-white), 0.06);
+}
+
+.tech-sidebar-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(var(--c-white), 0.4);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tech-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+  color: rgba(var(--c-white), 0.75);
+  font-size: 0.875rem;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.tech-sidebar-item:hover {
+  color: rgba(var(--c-white), 0.95);
+}
+
+.tech-sidebar-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  filter: grayscale(0.3);
+  flex-shrink: 0;
+}
+
+.tech-sidebar-item:hover .tech-sidebar-icon {
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 /* Intro sur hero */
