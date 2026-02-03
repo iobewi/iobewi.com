@@ -1,15 +1,169 @@
 :root {
+  /* =========================================================
+     PRIMITIFS (palette + neutrals)
+     ========================================================= */
+  --c-ink: 31 42 55;
+  /* #1f2a37 */
+  --c-slate: 91 103 118;
+  /* #5b6776 */
+  --c-paper: 246 247 251;
+  /* #f6f7fb */
+  --c-white: 255 255 255;
+  --c-black: 0 0 0;
+
+  --c-hero-0: 11 15 18;
+  /* #0b0f12 */
+  --c-hero-1: 7 11 14;
+  /* #070b0e */
+
+  --c-accent: 24 198 214;
+  /* #18c6d6 */
+  --c-accent-strong: 14 165 183;
+  /* #0ea5b7 */
+  --c-accent-hover: 24 207 227;
+  /* #18cfe3 */
+
+  /* Helpers rgb() */
+  --ink: rgb(var(--c-ink));
+  --slate: rgb(var(--c-slate));
+  --paper: rgb(var(--c-paper));
+  --white: rgb(var(--c-white));
+  --black: rgb(var(--c-black));
+  --accent: rgb(var(--c-accent));
+  --accent-strong: rgb(var(--c-accent-strong));
+  --accent-hover: rgb(var(--c-accent-hover));
+
+  /* =========================================================
+     SEMANTIQUES (app)
+     ========================================================= */
   --bg: #25292c;
-  --paper: #f6f7fb;
-  --text: #1f2a37;
-  --muted: #5b6776;
+  /* si tu l'utilises vraiment */
+  --surface: var(--white);
+
+  --text: var(--ink);
+  --muted: var(--slate);
   --border: #d6dde7;
-  --accent: #18c6d6;
-  --accent-strong: #0ea5b7;
-  --surface: #ffffff;
-  --logo-text-color: #e6f2f7;
-  --nav-text: rgba(230, 242, 247, 0.75);
-  --nav-text-hover: #18cfe3;
-  --nav-text-active: #ffffff;
+
+  /* Typo / sizing */
   --header-h: 72px;
+  --measure: 68ch;
+  --measure-narrow: 58ch;
+
+  /* Rhythm */
+  --section-pad-y: clamp(56px, 7vh, 104px);
+  --section-pad-y-lg: clamp(72px, 9vh, 132px);
+
+  --stack-1: clamp(12px, 1.2vh, 16px);
+  --stack-2: clamp(18px, 2.2vh, 28px);
+  --stack-3: clamp(28px, 3.4vh, 48px);
+
+  --gap-1: clamp(12px, 2vw, 18px);
+  --gap-2: clamp(18px, 3vw, 28px);
+  --gap-3: clamp(24px, 4vw, 40px);
+
+  --hero-min-h: 80vh;
+  --hero-min-h-mobile: 72vh;
+
+  /* =========================================================
+     ELEVATION / BLUR / RADIUS (primitifs UI)
+     ========================================================= */
+  --radius-sm: 12px;
+  --radius-lg: 24px;
+
+  --blur-lg: blur(10px);
+  --blur-md: blur(6px);
+
+  --shadow-hero-tile:
+    0 0 0 1px rgba(0, 0, 0, 0.28) inset,
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  --shadow-header-scrolled: 0 12px 24px rgba(15, 23, 42, 0.08);
+
+  /* =========================================================
+     HEADER STATES (tokens sémantiques)
+     ========================================================= */
+  /* Top / overlay */
+  --header-top-bg: var(--hero-band-bg);
+  --header-top-border: transparent;
+  --header-top-blur: none;
+  --header-top-shadow: none;
+
+  /* Hero glass */
+  --header-hero-bg: rgba(var(--c-hero-0), 0.55);
+  --header-hero-border: rgba(var(--c-white), 0.06);
+  --header-hero-blur: var(--blur-lg);
+  --header-hero-shadow: none;
+
+  /* Scrolled light glass */
+  --header-scroll-bg: rgba(var(--c-paper), 0.95);
+  --header-scroll-border: rgba(var(--c-ink), 0.12);
+  --header-scroll-blur: var(--blur-md);
+  --header-scroll-shadow: var(--shadow-header-scrolled);
+
+  /* =========================================================
+     NAV / LOGO (tokens sémantiques)
+     ========================================================= */
+  --logo-on-dark: rgb(230 242 247);
+  /* #e6f2f7 */
+  --logo-on-light: var(--ink);
+
+  --nav-on-dark: rgba(230, 242, 247, 0.75);
+  --nav-on-dark-hover: var(--accent-hover);
+  --nav-on-dark-active: var(--white);
+
+  --nav-on-light: rgba(var(--c-ink), 0.70);
+  --nav-on-light-hover: var(--accent-strong);
+  --nav-on-light-active: var(--ink);
+
+  /* =========================================================
+     HERO BAND
+     ========================================================= */
+  --hero-band-bg: linear-gradient(180deg, rgb(var(--c-hero-0)), rgb(var(--c-hero-1)));
+  --hero-text: rgb(248 250 252);
+  --hero-text-muted: rgba(248, 250, 252, 0.78);
+  --hero-text-shadow: 0 2px 12px rgba(11, 15, 18, 0.55);
+  --hero-pattern-mask: linear-gradient(to right,
+      rgba(var(--c-black), 0) 0%,
+      rgba(var(--c-black), 1) 45%);
+
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  --btn-text: rgb(0 16 24);
+  --btn-primary-text: rgb(3 20 24);
+  --btn-ghost-border: rgba(var(--c-accent), 0.5);
+
+  /* =========================================================
+     CHIP (hero-tech) tokens
+     ========================================================= */
+  --chip-bg: rgba(var(--c-white), 0.04);
+  --chip-border: rgba(var(--c-white), 0.10);
+  --chip-hover-bg: rgba(var(--c-white), 0.06);
+  --chip-hover-border: rgba(120, 200, 210, 0.60);
+  --chip-hover-glow: rgba(120, 200, 210, 0.22);
+  --chip-focus-ring: rgba(120, 200, 210, 0.22);
+  --chip-shadow: var(--shadow-hero-tile);
+  --chip-hover-shadow:
+    0 0 0 1px rgba(120, 200, 210, 0.12) inset,
+    0 14px 40px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(120, 200, 210, 0.22);
+  --chip-focus-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  --chip-tooltip-text: rgba(var(--c-white), 0.88);
+  --chip-tooltip-bg: rgba(var(--c-black), 0.72);
+  --chip-tooltip-border: rgba(var(--c-white), 0.10);
+
+  /* =========================================================
+     CARDS
+     ========================================================= */
+  --card-surface-border: rgba(var(--c-ink), 0.10);
+  --card-surface-border-soft: rgba(var(--c-ink), 0.08);
+  --card-border-subtle: rgba(var(--c-ink), 0.12);
+  --card-soft-bg: rgba(var(--c-paper), 0.75);
+  --card-highlight-bg: rgba(var(--c-paper), 0.95);
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  --footer-bg: rgb(var(--c-hero-0));
+  --footer-text: rgb(226 232 240);
 }
