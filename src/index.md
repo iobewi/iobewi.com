@@ -19,7 +19,7 @@ bodyClass: "has-hero"
         </div>
       </div>
       <aside class="tech-sidebar" aria-label="Technologies maîtrisées" markdown="0">
-        <div class="tech-sidebar-section">
+        <div class="tech-sidebar-row">
           <div class="tech-sidebar-label">Hardware</div>
           <div class="tech-sidebar-item">
             <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" />
@@ -27,15 +27,14 @@ bodyClass: "has-hero"
           </div>
           <div class="tech-sidebar-item">
             <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" />
-            <span>Raspberry Pi</span>
+            <span>RPi</span>
           </div>
           <div class="tech-sidebar-item">
             <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" />
             <span>Jetson</span>
           </div>
         </div>
-
-        <div class="tech-sidebar-section">
+        <div class="tech-sidebar-row">
           <div class="tech-sidebar-label">Middleware</div>
           <div class="tech-sidebar-item">
             <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
@@ -46,8 +45,7 @@ bodyClass: "has-hero"
             <span>micro-ROS</span>
           </div>
         </div>
-
-        <div class="tech-sidebar-section">
+        <div class="tech-sidebar-row">
           <div class="tech-sidebar-label">Tooling</div>
           <div class="tech-sidebar-item">
             <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" />
