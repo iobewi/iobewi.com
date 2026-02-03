@@ -24,25 +24,3 @@ img {
   margin: 0 auto;
   padding-inline: clamp(16px, 3vw, 28px);
 }
-
-/* reading measure utilities */
-.measure {
-  max-width: var(--measure);
-}
-
-.measure-narrow {
-  max-width: var(--measure-narrow);
-}
-
-/* stack utilities: rhythm inside a block */
-.stack>*+* {
-  margin-top: var(--stack-2);
-}
-
-.stack-tight>*+* {
-  margin-top: var(--stack-1);
-}
-
-.stack-loose>*+* {
-  margin-top: var(--stack-3);
-}
