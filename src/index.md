@@ -9,7 +9,7 @@ bodyClass: "has-hero"
 <div class="hero-band">
   <section class="hero">
     <div class="container hero-grid has-sidebar">
-      <div>
+      <div class="hero-content">
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
         <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
         <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d'outils qui rendent les projets exploitables et transmissibles.</p>
