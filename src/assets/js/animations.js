@@ -40,16 +40,16 @@
       threshold: 0.1 // 10% de l'élément doit être visible
     };
 
-    // Callback quand un élément devient visible
+    // Callback quand un élément devient visible/invisible
     const observerCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Ajouter la classe is-visible pour déclencher l'animation
           entry.target.classList.add('is-visible');
-
-          // Optionnel: arrêter d'observer cet élément après animation
-          // (pour de meilleures performances)
-          observer.unobserve(entry.target);
+        } else {
+          // Retirer la classe quand l'élément sort du viewport
+          // pour que l'animation se rejoue au retour
+          entry.target.classList.remove('is-visible');
         }
       });
     };
