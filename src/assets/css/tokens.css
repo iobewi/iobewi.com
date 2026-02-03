@@ -122,6 +122,16 @@
   --hero-text: rgb(248 250 252);
   --hero-text-muted: rgba(248, 250, 252, 0.78);
   --hero-text-shadow: 0 2px 12px rgba(11, 15, 18, 0.55);
+  --hero-pattern-mask: linear-gradient(to right,
+      rgba(var(--c-black), 0) 0%,
+      rgba(var(--c-black), 1) 45%);
+
+  /* =========================================================
+     BUTTONS
+     ========================================================= */
+  --btn-text: rgb(0 16 24);
+  --btn-primary-text: rgb(3 20 24);
+  --btn-ghost-border: rgba(var(--c-accent), 0.5);
 
   /* =========================================================
      CHIP (hero-tech) tokens
@@ -132,4 +142,24 @@
   --chip-hover-border: rgba(120, 200, 210, 0.60);
   --chip-hover-glow: rgba(120, 200, 210, 0.22);
   --chip-focus-ring: rgba(120, 200, 210, 0.22);
+  --chip-shadow: var(--shadow-hero-tile);
+  --chip-hover-shadow:
+    0 0 0 1px rgba(120, 200, 210, 0.12) inset,
+    0 14px 40px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(120, 200, 210, 0.22);
+  --chip-focus-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  --chip-tooltip-text: rgba(var(--c-white), 0.88);
+  --chip-tooltip-bg: rgba(var(--c-black), 0.72);
+  --chip-tooltip-border: rgba(var(--c-white), 0.10);
+
+  /* =========================================================
+     CARDS
+     ========================================================= */
+  --card-border-subtle: rgba(var(--c-ink), 0.12);
+
+  /* =========================================================
+     FOOTER
+     ========================================================= */
+  --footer-bg: rgb(var(--c-hero-0));
+  --footer-text: rgb(226 232 240);
 }
