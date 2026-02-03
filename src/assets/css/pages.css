@@ -8,83 +8,57 @@
   z-index: 10;
   overflow: hidden;
 
-  /* valeurs courantes (remplacées par les states) */
-  --header-bg: var(--header-hero-bg);
-  --header-border: var(--header-hero-border);
-  --header-blur: var(--header-hero-blur);
-  --header-shadow: var(--header-hero-shadow);
+  background: rgba(var(--c-hero-0), 0.5);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--c-white), 0.06);
 
   --logo-text-color: var(--logo-on-dark);
   --nav-text: var(--nav-on-dark);
   --nav-text-hover: var(--nav-on-dark-hover);
   --nav-text-active: var(--nav-on-dark-active);
-
-  background: var(--header-bg);
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: var(--header-shadow);
-  backdrop-filter: var(--header-blur);
 
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.site-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 0;
-  transition: opacity 0.25s ease;
-}
-
-.site-header .header-row {
-  position: relative;
-  z-index: 1;
+.has-hero .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
 }
 
 .has-hero .site-header.is-top {
-  --header-bg: var(--header-top-bg);
-  --header-border: var(--header-top-border);
-  --header-blur: var(--header-top-blur);
-  --header-shadow: var(--header-top-shadow);
-
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
   --logo-text-color: var(--logo-on-dark);
   --nav-text: var(--nav-on-dark);
   --nav-text-hover: var(--nav-on-dark-hover);
-  --nav-text-active: var(--nav-on-dark-active);
-
-  background-attachment: fixed;
-  background-position: center top;
-}
-
-.has-hero .site-header.is-top::before {
-  background: url("/assets/images/pcb-pattern.svg") center / cover no-repeat;
-  background-attachment: fixed;
-  opacity: 0.06;
+  --nav-text-active: var(--white);
 }
 
 .has-hero .site-header.is-hero {
-  --header-bg: var(--header-hero-bg);
-  --header-border: var(--header-hero-border);
-  --header-blur: var(--header-hero-blur);
-  --header-shadow: var(--header-hero-shadow);
-
+  background: rgba(var(--c-hero-0), 0.55);
+  border-bottom: 1px solid rgba(var(--c-white), 0.06);
+  backdrop-filter: blur(10px);
   --logo-text-color: var(--logo-on-dark);
-  --nav-text: var(--nav-on-dark);
-  --nav-text-hover: var(--nav-on-dark-hover);
-  --nav-text-active: var(--nav-on-dark-active);
+  --nav-text: rgba(230, 242, 247, 0.78);
+  --nav-text-hover: var(--accent-hover);
+  --nav-text-active: var(--white);
 }
 
 .has-hero .site-header.is-scrolled {
-  --header-bg: var(--header-scroll-bg);
-  --header-border: var(--header-scroll-border);
-  --header-blur: var(--header-scroll-blur);
-  --header-shadow: var(--header-scroll-shadow);
-
+  background: rgba(var(--c-paper), 0.95);
+  border-bottom: 1px solid rgba(var(--c-ink), 0.12);
+  box-shadow: var(--shadow-header-scrolled);
+  backdrop-filter: blur(6px);
   --logo-text-color: var(--logo-on-light);
-  --nav-text: var(--nav-on-light);
-  --nav-text-hover: var(--nav-on-light-hover);
-  --nav-text-active: var(--nav-on-light-active);
+  --nav-text: rgba(31, 42, 55, 0.7);
+  --nav-text-hover: var(--accent-strong);
+  --nav-text-active: var(--ink);
 }
 
 
