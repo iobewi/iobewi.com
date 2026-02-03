@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow: hidden;
 
   /* valeurs courantes (remplacées par les states) */
   --header-bg: var(--header-hero-bg);
@@ -26,6 +27,21 @@
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.25s ease;
+}
+
+.site-header .header-row {
+  position: relative;
+  z-index: 1;
+}
+
 .has-hero .site-header.is-top {
   --header-bg: var(--header-top-bg);
   --header-border: var(--header-top-border);
@@ -36,6 +52,15 @@
   --nav-text: var(--nav-on-dark);
   --nav-text-hover: var(--nav-on-dark-hover);
   --nav-text-active: var(--nav-on-dark-active);
+
+  background-attachment: fixed;
+  background-position: center top;
+}
+
+.has-hero .site-header.is-top::before {
+  background: url("/assets/images/pcb-pattern.svg") center / cover no-repeat;
+  background-attachment: fixed;
+  opacity: 0.06;
 }
 
 .has-hero .site-header.is-hero {
