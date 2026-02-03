@@ -51,22 +51,22 @@ bodyClass: "has-hero"
     <div class="section-title animate-on-scroll fade-in">
       <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel.</h2>
     </div>
-    <div class="columns animate-on-scroll slide-up delay-200">
-      <div>
-        <p>
-          IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
-          des retours terrain et une méthodologie progressive.
-        </p>
-      </div>
-      <div>
-        <p class="lead">
-          Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l’exploitation.
-        </p>
-      </div>
-      <div>
-        <p>
-          L’approche favorise la collaboration, la documentation et la transmission pour permettre aux équipes de reprendre la main sur leurs systèmes.
-        </p>
+    <div class="animate-on-scroll slide-up delay-200">
+      <p class="lead" style="text-align: center; max-width: 850px; margin: 0 auto var(--stack-3);">
+        Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l'exploitation.
+      </p>
+      <div class="two-col-editorial" style="color: var(--hero-text-muted);">
+        <div>
+          <p>
+            IOBEWI intervient sur la conception et la montée en maturité d'ensembles matériels et logiciels, en s'appuyant sur des pratiques open source,
+            des retours terrain et une méthodologie progressive.
+          </p>
+        </div>
+        <div>
+          <p>
+            L'approche favorise la collaboration, la documentation et la transmission pour permettre aux équipes de reprendre la main sur leurs systèmes.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -76,10 +76,10 @@ bodyClass: "has-hero"
   <div class="section-title animate-on-scroll fade-in">
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
-  <div class="columns">
-    <div class="card soft-card animate-on-scroll slide-up stagger-1">
+  <div class="comparison-grid">
+    <div class="comparison-do animate-on-scroll slide-up stagger-1">
       <h3>Ce que fait IOBEWI</h3>
-      <ul class="feature-list">
+      <ul>
         <li>Structuration matériel / logiciel</li>
         <li>Prototypage et montée en maturité</li>
         <li>Outillage, reproductibilité et exploitation</li>
@@ -87,9 +87,9 @@ bodyClass: "has-hero"
         <li>Accompagnement sur le cycle de vie</li>
       </ul>
     </div>
-    <div class="card soft-card animate-on-scroll slide-up stagger-2">
+    <div class="comparison-dont animate-on-scroll slide-up stagger-2">
       <h3>Ce que IOBEWI ne fait pas</h3>
-      <ul class="feature-list muted-list">
+      <ul>
         <li>Intégration clé en main</li>
         <li>Revente de matériel ou licences</li>
         <li>Développement applicatif généraliste</li>
@@ -103,24 +103,24 @@ bodyClass: "has-hero"
   <div class="section-title animate-on-scroll fade-in">
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
-  <div class="grid">
-    <article class="card activity-item animate-on-scroll slide-up stagger-1">
-      <div class="activity-index" data-counter="1">01</div>
-      <h3>Structuration d’écosystèmes embarqués</h3>
+  <div class="expertise-grid">
+    <article class="expertise-item animate-on-scroll slide-up stagger-1">
+      <div class="expertise-number" data-counter="1">01</div>
+      <h3>Structuration d'écosystèmes embarqués</h3>
       <p>Structuration matériel / logiciel, intégration, prototypage physique et industrialisation progressive.</p>
     </article>
-    <article class="card activity-item animate-on-scroll slide-up stagger-2">
-      <div class="activity-index" data-counter="2">02</div>
+    <article class="expertise-item animate-on-scroll slide-up stagger-2">
+      <div class="expertise-number" data-counter="2">02</div>
       <h3>Prototypage et montée en maturité</h3>
       <p>Transformation du prototype exploratoire en base technique exploitable, cadrage et découpage fonctionnel.</p>
     </article>
-    <article class="card activity-item animate-on-scroll slide-up stagger-3">
-      <div class="activity-index" data-counter="3">03</div>
+    <article class="expertise-item animate-on-scroll slide-up stagger-3">
+      <div class="expertise-number" data-counter="3">03</div>
       <h3>Outillage, reproductibilité et exploitation</h3>
       <p>Environnements conteneurisés, CI/CD, tests, documentation et gestion des évolutions.</p>
     </article>
-    <article class="card activity-item animate-on-scroll slide-up stagger-4">
-      <div class="activity-index" data-counter="4">04</div>
+    <article class="expertise-item animate-on-scroll slide-up stagger-4">
+      <div class="expertise-number" data-counter="4">04</div>
       <h3>Algorithmes décisionnels embarqués</h3>
       <p>Traitement, perception et décision embarquée du microcontrôleur aux plateformes avancées.</p>
     </article>
@@ -218,14 +218,10 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container">
-  <div class="callout animate-on-scroll scale-in">
-    <div>
-      <h2>Structurons votre prochaine étape</h2>
-      <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s’adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
-    </div>
-    <div class="cta">
-      <a class="btn btn-primary" href="/contact/">Échangeons sur votre accompagnement</a>
-    </div>
+<section class="section container section-major">
+  <div class="cta-hero animate-on-scroll scale-in">
+    <h2>Structurons votre prochaine étape</h2>
+    <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s'adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
+    <a class="btn btn-primary" href="/contact/">Échangeons sur votre accompagnement</a>
   </div>
 </section>
