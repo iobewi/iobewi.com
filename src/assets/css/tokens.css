@@ -83,7 +83,7 @@
      HEADER STATES (tokens sémantiques)
      ========================================================= */
   /* Top / overlay */
-  --header-top-bg: transparent;
+  --header-top-bg: var(--hero-band-bg);
   --header-top-border: transparent;
   --header-top-blur: none;
   --header-top-shadow: none;

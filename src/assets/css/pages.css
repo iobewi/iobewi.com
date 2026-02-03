@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow: hidden;
 
   background: rgba(var(--c-hero-0), 0.5);
   backdrop-filter: blur(10px);
