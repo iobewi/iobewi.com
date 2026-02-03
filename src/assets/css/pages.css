@@ -387,6 +387,19 @@
   margin-top: var(--stack-3);
 }
 
+/* Section spacing variants for better rhythm */
+.section-major {
+  margin-top: clamp(80px, 10vh, 120px);
+}
+
+.section-minor {
+  margin-top: var(--stack-3);
+}
+
+.content-group > * + * {
+  margin-top: var(--stack-2);
+}
+
 /* =========================================================
    GRIDS / CARDS
    ========================================================= */
@@ -520,6 +533,244 @@
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+/* =========================================================
+   HIERARCHICAL CONTENT BLOCKS
+   ========================================================= */
+
+/* Editorial banner - for key positioning content */
+.editorial-banner {
+  background: linear-gradient(135deg,
+    rgba(var(--c-accent), 0.03) 0%,
+    rgba(var(--c-accent), 0.01) 100%);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: clamp(24px, 3vh, 36px) clamp(24px, 4vw, 48px);
+  margin-block: var(--stack-3);
+}
+
+.editorial-banner h3 {
+  color: var(--accent-strong);
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  margin-bottom: var(--stack-2);
+  font-weight: 600;
+}
+
+.editorial-banner ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-1);
+}
+
+.editorial-banner li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.editorial-banner li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Two-column editorial layout */
+.two-col-editorial {
+  display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .two-col-editorial {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.two-col-editorial h3 {
+  margin-bottom: var(--stack-2);
+  color: var(--ink);
+}
+
+.two-col-editorial ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.two-col-editorial li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.two-col-editorial li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Featured block - for highlighting key technical content */
+.featured-block {
+  background: linear-gradient(135deg,
+    rgba(var(--c-accent), 0.04) 0%,
+    rgba(var(--c-paper), 1) 100%);
+  border: 2px solid rgba(var(--c-accent), 0.15);
+  border-radius: 16px;
+  padding: clamp(28px, 4vh, 48px) clamp(24px, 4vw, 48px);
+  margin-block: var(--stack-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+}
+
+.featured-block h3 {
+  color: var(--ink);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: var(--stack-2);
+  font-weight: 700;
+}
+
+.featured-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--stack-2);
+}
+
+.featured-block li {
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.featured-block li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.featured-block strong {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+/* Note block - for secondary/contextual information */
+.note-block {
+  background: rgba(var(--c-slate), 0.04);
+  border: 1px solid rgba(var(--c-slate), 0.12);
+  border-radius: 12px;
+  padding: clamp(20px, 3vh, 28px) clamp(20px, 3vw, 32px);
+  margin-block: var(--stack-3);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.note-block h3 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  margin-bottom: var(--stack-2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.note-block h3::before {
+  content: "⚠";
+  font-size: 1rem;
+}
+
+.note-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-block li {
+  padding: 0.4rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.note-block li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--slate);
+}
+
+/* Compact project cards */
+.project-card-compact {
+  background: var(--surface);
+  border: 1px solid var(--card-surface-border);
+  border-radius: 16px;
+  padding: clamp(18px, 2.5vh, 24px);
+  transition: transform var(--duration-base) var(--ease-smooth),
+              box-shadow var(--duration-base) var(--ease-smooth),
+              border-color var(--duration-base) var(--ease-smooth);
+  box-shadow: var(--shadow-card-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-1);
+}
+
+.project-card-compact:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--c-accent), 0.25);
+}
+
+.project-card-compact h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  margin: 0;
+}
+
+.project-card-compact h3::before {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.project-card-compact p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+}
+
+.project-card-compact .card-foot {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Project icons via data attribute */
+.project-card-compact[data-icon="robot"] h3::before { content: "🤖"; }
+.project-card-compact[data-icon="puzzle"] h3::before { content: "🧩"; }
+.project-card-compact[data-icon="radar"] h3::before { content: "📡"; }
+.project-card-compact[data-icon="brain"] h3::before { content: "🧠"; }
 
 /* Lists */
 .feature-list {

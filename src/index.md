@@ -72,7 +72,7 @@ bodyClass: "has-hero"
   </section>
 </div>
 
-<section class="section container">
+<section class="section container section-major">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
@@ -99,7 +99,7 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container">
+<section class="section container section-major">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
@@ -127,22 +127,24 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container">
+<section class="section container section-major">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
-  <div class="columns">
-    <div class="card soft-card animate-on-scroll slide-up stagger-1">
+
+  <!-- Niveau 1 : Narratif / Positionnement (grille 2 colonnes, pas de cartes) -->
+  <div class="two-col-editorial animate-on-scroll slide-up">
+    <div>
       <h3>Types de projets / contextes</h3>
-      <ul class="feature-list">
+      <ul>
         <li>Démonstrateurs techniques</li>
         <li>Collaboration open source</li>
         <li>Mise en place de socles techniques embarqués</li>
       </ul>
     </div>
-    <div class="card soft-card animate-on-scroll slide-up stagger-2">
+    <div>
       <h3>Rôle d'IOBEWI</h3>
-      <ul class="feature-list">
+      <ul>
         <li>Explorer et prototyper</li>
         <li>Structurer des bases techniques</li>
         <li>Intégrer matériel, logiciel et outillage</li>
@@ -151,10 +153,11 @@ bodyClass: "has-hero"
     </div>
   </div>
 
-  <article class="card highlight-card animate-on-scroll scale-in delay-300">
+  <!-- Niveau 2 : Contributions open source (bloc featured, pièce centrale) -->
+  <article class="featured-block animate-on-scroll scale-in delay-200">
     <h3>Contributions et travaux open source</h3>
-    <ul class="feature-list">
-      <li>Portage et intégration <strong>ROS 2 / ros2_control</strong> d’actionneurs <strong>MyActuator</strong></li>
+    <ul>
+      <li>Portage et intégration <strong>ROS 2 / ros2_control</strong> d'actionneurs <strong>MyActuator</strong></li>
       <li>Portage et intégration <strong>ROS 2</strong> de contrôleurs moteurs <strong>VESC</strong> via <strong>ESP micro-ROS</strong></li>
       <li>Support <strong>BMS Daly</strong> pour <strong>ROS 2</strong> via <strong>ESP micro-ROS</strong></li>
       <li>Développement et publication de composants et de drivers pour <strong>ESP-IDF</strong></li>
@@ -162,45 +165,50 @@ bodyClass: "has-hero"
     </ul>
   </article>
 
-  <div class="grid">
-    <article class="card animate-on-scroll slide-up stagger-1">
-      <h3>RHACOBOT</h3>
-      <p>Projet robotique open source servant de démonstrateur technique autour de <strong>ROS 2</strong>, du contrôle d’actionneurs et de l’intégration embarquée.</p>
-      <p class="card-foot">Plateforme matérielle dédiée à l’expérimentation d’architectures logicielles et d’outillage.</p>
-    </article>
-    <article class="card animate-on-scroll slide-up stagger-2">
-      <h3>R2BEWI</h3>
-      <p>Projet open source issu de RHACOBOT, visant une plateforme polyvalente avec perception enrichie.</p>
-      <p class="card-foot">Support d'expérimentation CI/CD pour la robotique et les systèmes embarqués.</p>
-    </article>
-    <article class="card animate-on-scroll slide-up stagger-3">
-      <h3>SCANBEWI</h3>
-      <p>Travail exploratoire autour de la captation LiDAR et de cartographies 2D exploitables.</p>
-      <p class="card-foot">Intégration de capteurs, traitement embarqué et restitution logicielle.</p>
-    </article>
-    <article class="card animate-on-scroll slide-up stagger-4">
-      <h3>BALBEWI</h3>
-      <p>Projet conceptuel exploratoire pour structurer des socles techniques embarqués.</p>
-      <p class="card-foot">Cadre de réflexion pour faire émerger des axes méthodologiques.</p>
-    </article>
+  <!-- Niveau 3 : Projets (cartes compactes avec icônes) -->
+  <div class="content-group section-minor">
+    <h3 style="margin-bottom: var(--stack-2);">Projets démonstrateurs</h3>
+    <div class="grid grid-tight">
+      <article class="project-card-compact animate-on-scroll slide-up stagger-1" data-icon="robot">
+        <h3>RHACOBOT</h3>
+        <p>Démonstrateur robotique open source autour de <strong>ROS 2</strong>, du contrôle d'actionneurs et de l'intégration embarquée.</p>
+        <p class="card-foot">Plateforme d'expérimentation d'architectures logicielles et d'outillage</p>
+      </article>
+      <article class="project-card-compact animate-on-scroll slide-up stagger-2" data-icon="puzzle">
+        <h3>R2BEWI</h3>
+        <p>Plateforme polyvalente issue de RHACOBOT, avec perception enrichie.</p>
+        <p class="card-foot">Support d'expérimentation CI/CD pour la robotique</p>
+      </article>
+      <article class="project-card-compact animate-on-scroll slide-up stagger-3" data-icon="radar">
+        <h3>SCANBEWI</h3>
+        <p>Exploration LiDAR et cartographies 2D exploitables.</p>
+        <p class="card-foot">Captation, traitement embarqué et restitution logicielle</p>
+      </article>
+      <article class="project-card-compact animate-on-scroll slide-up stagger-4" data-icon="brain">
+        <h3>BALBEWI</h3>
+        <p>Cadre conceptuel pour structurer des socles techniques embarqués.</p>
+        <p class="card-foot">Réflexion sur les axes méthodologiques</p>
+      </article>
+    </div>
   </div>
 
-  <article class="card soft-card animate-on-scroll fade-in delay-400">
+  <!-- Niveau 4 : Contraintes (note discrète) -->
+  <article class="note-block animate-on-scroll fade-in delay-400">
     <h3>Contraintes notables</h3>
-    <ul class="feature-list muted-list">
+    <ul>
       <li>Contraintes spécifiques aux systèmes embarqués et robotiques (déploiement, tests, reproductibilité)</li>
-      <li>Dépendance forte au matériel, aux chaînes d’outillage et aux cycles de test physiques</li>
+      <li>Dépendance forte au matériel, aux chaînes d'outillage et aux cycles de test physiques</li>
       <li>Projets à fort contenu technique, en cours de structuration et de consolidation</li>
       <li>Ressources et équipes volontairement limitées, favorisant des démarches itératives</li>
     </ul>
   </article>
 </section>
 
-<section class="section container">
+<section class="section container section-major">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Une approche progressive, au rythme du terrain</h2>
   </div>
-  <div class="columns animate-on-scroll slide-up delay-200">
+  <div class="two-col-editorial animate-on-scroll slide-up">
     <div>
       <p>Les projets sont abordés de manière progressive, de l’exploration et des retours d’expérience jusqu’au cadrage, au découpage et au développement.</p>
     </div>
