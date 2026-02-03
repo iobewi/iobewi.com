@@ -18,8 +18,6 @@ bodyClass: "has-hero"
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
         </div>
       </div>
-
-      <!-- Tech Sidebar - Context technique discret -->
       <aside class="tech-sidebar" aria-label="Technologies maîtrisées" markdown="0">
         <div class="tech-sidebar-section">
           <div class="tech-sidebar-label">Hardware</div>
