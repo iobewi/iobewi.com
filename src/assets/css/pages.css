@@ -8,9 +8,8 @@
   z-index: 10;
   overflow: hidden;
 
-  background: rgba(var(--c-hero-0), 0.5);
+  background: var(--header-hero-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(var(--c-white), 0.06);
 
   --logo-text-color: var(--logo-on-dark);
   --nav-text: var(--nav-on-dark);
@@ -26,13 +25,11 @@
   left: 0;
   right: 0;
   background: transparent;
-  border-bottom: 1px solid transparent;
   backdrop-filter: none;
 }
 
 .has-hero .site-header.is-top {
   background: transparent;
-  border-bottom: 1px solid transparent;
   backdrop-filter: none;
   --logo-text-color: var(--logo-on-dark);
   --nav-text: var(--nav-on-dark);
@@ -41,13 +38,13 @@
 }
 
 .has-hero .site-header.is-hero {
-  background: rgba(var(--c-hero-0), 0.55);
-  border-bottom: 1px solid rgba(var(--c-white), 0.06);
+  background: var(--header-hero-bg);
   backdrop-filter: blur(10px);
   --logo-text-color: var(--logo-on-dark);
-  --nav-text: rgba(230, 242, 247, 0.78);
-  --nav-text-hover: var(--accent-hover);
-  --nav-text-active: var(--white);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+  --nav-text-active: var(--nav-on-dark-active);
+
 }
 
 .has-hero .site-header.is-scrolled {
