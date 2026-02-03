@@ -48,10 +48,10 @@ bodyClass: "has-hero"
   </section>
 
   <section class="section container hero-intro">
-    <div class="section-title">
-      <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu’au logiciel.</h2>
+    <div class="section-title animate-on-scroll fade-in">
+      <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel.</h2>
     </div>
-    <div class="columns">
+    <div class="columns animate-on-scroll slide-up delay-200">
       <div>
         <p>
           IOBEWI intervient sur la conception et la montée en maturité d’ensembles matériels et logiciels, en s’appuyant sur des pratiques open source,
@@ -73,11 +73,11 @@ bodyClass: "has-hero"
 </div>
 
 <section class="section container">
-  <div class="section-title">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
   <div class="columns">
-    <div class="card soft-card">
+    <div class="card soft-card animate-on-scroll slide-up stagger-1">
       <h3>Ce que fait IOBEWI</h3>
       <ul class="feature-list">
         <li>Structuration matériel / logiciel</li>
@@ -87,7 +87,7 @@ bodyClass: "has-hero"
         <li>Accompagnement sur le cycle de vie</li>
       </ul>
     </div>
-    <div class="card soft-card">
+    <div class="card soft-card animate-on-scroll slide-up stagger-2">
       <h3>Ce que IOBEWI ne fait pas</h3>
       <ul class="feature-list muted-list">
         <li>Intégration clé en main</li>
@@ -100,27 +100,27 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container">
-  <div class="section-title">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
   <div class="grid">
-    <article class="card activity-item">
-      <div class="activity-index">01</div>
+    <article class="card activity-item animate-on-scroll slide-up stagger-1">
+      <div class="activity-index" data-counter="1">01</div>
       <h3>Structuration d’écosystèmes embarqués</h3>
       <p>Structuration matériel / logiciel, intégration, prototypage physique et industrialisation progressive.</p>
     </article>
-    <article class="card activity-item">
-      <div class="activity-index">02</div>
+    <article class="card activity-item animate-on-scroll slide-up stagger-2">
+      <div class="activity-index" data-counter="2">02</div>
       <h3>Prototypage et montée en maturité</h3>
       <p>Transformation du prototype exploratoire en base technique exploitable, cadrage et découpage fonctionnel.</p>
     </article>
-    <article class="card activity-item">
-      <div class="activity-index">03</div>
+    <article class="card activity-item animate-on-scroll slide-up stagger-3">
+      <div class="activity-index" data-counter="3">03</div>
       <h3>Outillage, reproductibilité et exploitation</h3>
       <p>Environnements conteneurisés, CI/CD, tests, documentation et gestion des évolutions.</p>
     </article>
-    <article class="card activity-item">
-      <div class="activity-index">04</div>
+    <article class="card activity-item animate-on-scroll slide-up stagger-4">
+      <div class="activity-index" data-counter="4">04</div>
       <h3>Algorithmes décisionnels embarqués</h3>
       <p>Traitement, perception et décision embarquée du microcontrôleur aux plateformes avancées.</p>
     </article>
@@ -128,11 +128,11 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container">
-  <div class="section-title">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
   <div class="columns">
-    <div class="card soft-card">
+    <div class="card soft-card animate-on-scroll slide-up stagger-1">
       <h3>Types de projets / contextes</h3>
       <ul class="feature-list">
         <li>Démonstrateurs techniques</li>
@@ -140,8 +140,8 @@ bodyClass: "has-hero"
         <li>Mise en place de socles techniques embarqués</li>
       </ul>
     </div>
-    <div class="card soft-card">
-      <h3>Rôle d’IOBEWI</h3>
+    <div class="card soft-card animate-on-scroll slide-up stagger-2">
+      <h3>Rôle d'IOBEWI</h3>
       <ul class="feature-list">
         <li>Explorer et prototyper</li>
         <li>Structurer des bases techniques</li>
@@ -151,7 +151,7 @@ bodyClass: "has-hero"
     </div>
   </div>
 
-  <article class="card highlight-card">
+  <article class="card highlight-card animate-on-scroll scale-in delay-300">
     <h3>Contributions et travaux open source</h3>
     <ul class="feature-list">
       <li>Portage et intégration <strong>ROS 2 / ros2_control</strong> d’actionneurs <strong>MyActuator</strong></li>
@@ -163,29 +163,29 @@ bodyClass: "has-hero"
   </article>
 
   <div class="grid">
-    <article class="card">
+    <article class="card animate-on-scroll slide-up stagger-1">
       <h3>RHACOBOT</h3>
       <p>Projet robotique open source servant de démonstrateur technique autour de <strong>ROS 2</strong>, du contrôle d’actionneurs et de l’intégration embarquée.</p>
       <p class="card-foot">Plateforme matérielle dédiée à l’expérimentation d’architectures logicielles et d’outillage.</p>
     </article>
-    <article class="card">
+    <article class="card animate-on-scroll slide-up stagger-2">
       <h3>R2BEWI</h3>
       <p>Projet open source issu de RHACOBOT, visant une plateforme polyvalente avec perception enrichie.</p>
-      <p class="card-foot">Support d’expérimentation CI/CD pour la robotique et les systèmes embarqués.</p>
+      <p class="card-foot">Support d'expérimentation CI/CD pour la robotique et les systèmes embarqués.</p>
     </article>
-    <article class="card">
+    <article class="card animate-on-scroll slide-up stagger-3">
       <h3>SCANBEWI</h3>
       <p>Travail exploratoire autour de la captation LiDAR et de cartographies 2D exploitables.</p>
       <p class="card-foot">Intégration de capteurs, traitement embarqué et restitution logicielle.</p>
     </article>
-    <article class="card">
+    <article class="card animate-on-scroll slide-up stagger-4">
       <h3>BALBEWI</h3>
       <p>Projet conceptuel exploratoire pour structurer des socles techniques embarqués.</p>
       <p class="card-foot">Cadre de réflexion pour faire émerger des axes méthodologiques.</p>
     </article>
   </div>
 
-  <article class="card soft-card">
+  <article class="card soft-card animate-on-scroll fade-in delay-400">
     <h3>Contraintes notables</h3>
     <ul class="feature-list muted-list">
       <li>Contraintes spécifiques aux systèmes embarqués et robotiques (déploiement, tests, reproductibilité)</li>
@@ -197,10 +197,10 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container">
-  <div class="section-title">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Une approche progressive, au rythme du terrain</h2>
   </div>
-  <div class="columns">
+  <div class="columns animate-on-scroll slide-up delay-200">
     <div>
       <p>Les projets sont abordés de manière progressive, de l’exploration et des retours d’expérience jusqu’au cadrage, au découpage et au développement.</p>
     </div>
@@ -211,7 +211,7 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container">
-  <div class="callout">
+  <div class="callout animate-on-scroll scale-in">
     <div>
       <h2>Structurons votre prochaine étape</h2>
       <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s’adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>

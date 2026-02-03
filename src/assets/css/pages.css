@@ -232,10 +232,14 @@
   box-shadow: var(--chip-shadow);
 
   transition:
-    transform .15s ease,
-    border-color .15s ease,
-    background .15s ease,
-    box-shadow .15s ease;
+    transform var(--duration-base) var(--ease-smooth),
+    border-color var(--duration-base) var(--ease-smooth),
+    background var(--duration-base) var(--ease-smooth),
+    box-shadow var(--duration-base) var(--ease-smooth);
+
+  cursor: pointer;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .tech-logo {
@@ -243,7 +247,9 @@
   height: 24px;
   opacity: 0.92;
   filter: grayscale(1) saturate(0);
-  transition: filter .15s ease, opacity .15s ease;
+  transition: filter var(--duration-base) var(--ease-smooth),
+              opacity var(--duration-base) var(--ease-smooth),
+              transform var(--duration-base) var(--ease-smooth);
 }
 
 /* Texte optionnel masqué visuellement (a11y) */
@@ -260,7 +266,7 @@
 }
 
 .tech-chip:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) rotateX(5deg) rotateY(5deg);
   background: var(--chip-hover-bg);
   border-color: var(--chip-hover-border);
   box-shadow: var(--chip-hover-shadow);
@@ -269,6 +275,11 @@
 .tech-chip:hover .tech-logo {
   filter: none;
   opacity: 1;
+  transform: scale(1.05);
+}
+
+.tech-chip:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Tooltip basé sur data-label */
@@ -339,27 +350,105 @@
 
 .lead {
   color: var(--muted);
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.7;
 }
 
 .section-title {
   margin-bottom: var(--stack-3);
 }
 
+.section-title h2 {
+  margin-bottom: var(--stack-2);
+}
+
+/* Section dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(var(--c-ink), 0.1) 20%,
+    rgba(var(--c-ink), 0.1) 80%,
+    transparent);
+  margin-block: var(--section-pad-y);
+}
+
+/* Content spacing utilities */
+.stack-sm > * + * {
+  margin-top: var(--stack-1);
+}
+
+.stack-md > * + * {
+  margin-top: var(--stack-2);
+}
+
+.stack-lg > * + * {
+  margin-top: var(--stack-3);
+}
+
 /* =========================================================
    GRIDS / CARDS
    ========================================================= */
 
-/* Grids génériques */
+/* Grids génériques - Auto-responsive avec minmax intelligent */
 .columns {
   display: grid;
-  gap: var(--gap-2);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
 .grid {
   display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+/* Variantes de grilles */
+.grid-2 {
+  display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.grid-4 {
+  display: grid;
   gap: var(--gap-2);
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+/* Grille asymétrique - pour featured content */
+.grid-featured {
+  display: grid;
+  gap: var(--gap-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-featured {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-featured {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+/* Grid avec gaps personnalisés */
+.grid-tight {
+  gap: var(--gap-1);
+}
+
+.grid-loose {
+  gap: var(--gap-3);
 }
 
 /* Cards */
@@ -368,11 +457,42 @@
   border: 1px solid var(--card-surface-border);
   border-radius: 20px;
   padding: clamp(16px, 2.2vh, 22px);
+  transition: transform var(--duration-base) var(--ease-smooth),
+              box-shadow var(--duration-base) var(--ease-smooth),
+              border-color var(--duration-base) var(--ease-smooth);
+  box-shadow: var(--shadow-card-base);
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--c-accent), 0.2);
 }
 
 .soft-card {
   background: var(--card-soft-bg);
   border: 1px solid var(--card-surface-border-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.soft-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(var(--c-accent), 0.04),
+    transparent);
+  transition: left var(--duration-slow) var(--ease-smooth);
+}
+
+.soft-card:hover::before {
+  left: 100%;
 }
 
 .highlight-card {
@@ -386,6 +506,14 @@
   border-radius: 24px;
   padding: clamp(16px, 2.8vh, 26px);
   background: var(--surface);
+  transition: transform var(--duration-base) var(--ease-smooth),
+              box-shadow var(--duration-base) var(--ease-smooth);
+  box-shadow: var(--shadow-card-base);
+}
+
+.proof-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .card-foot {
@@ -470,4 +598,255 @@
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  /* Container tighter on small screens */
+  .container {
+    width: 100%;
+    padding-inline: clamp(16px, 4vw, 20px);
+  }
+
+  /* Buttons full width on small mobile */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Smaller tech chips */
+  .tech-chip {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Hero adjustments */
+  .hero-band {
+    min-height: var(--hero-min-h-mobile);
+  }
+
+  .hero-intro h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  /* Reduced spacing */
+  .section {
+    padding-block: clamp(48px, 8vh, 64px);
+  }
+
+  /* Cards full width */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-2);
+  }
+}
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+  /* Header adjustments */
+  .site-header {
+    --header-h: 64px;
+  }
+
+  .header-inner {
+    height: 64px;
+  }
+
+  /* Logo smaller */
+  .logo {
+    font-size: 1.125rem;
+  }
+
+  /* Navigation adjustments */
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+
+  /* Hero title smaller */
+  .hero-intro h1 {
+    font-size: clamp(2.25rem, 7vw, 2.75rem);
+  }
+
+  .hero-intro p {
+    font-size: 1rem;
+  }
+
+  /* Hero tech chips wrap better */
+  .hero-tech {
+    gap: 12px;
+  }
+
+  /* Section titles smaller */
+  h2 {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.125rem, 3.5vw, 1.375rem);
+  }
+
+  /* Card padding reduced */
+  .card,
+  .proof-card {
+    padding: clamp(14px, 2vh, 18px);
+  }
+
+  /* CTA buttons stack */
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta .btn {
+    width: 100%;
+  }
+
+  /* Footer stack */
+  .footer-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Container medium width */
+  .container {
+    width: min(960px, 90vw);
+  }
+
+  /* Grid adjustments */
+  .grid,
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero on tablet */
+  .hero-intro {
+    max-width: 700px;
+  }
+
+  /* Section padding medium */
+  .section {
+    padding-block: clamp(64px, 10vh, 96px);
+  }
+}
+
+/* Desktop (≥ 1025px) */
+@media (min-width: 1025px) {
+  /* Full width grids on large screens */
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Hero wider on desktop */
+  .hero-intro {
+    max-width: 800px;
+  }
+
+  /* Larger cards hover effects more pronounced */
+  .card:hover,
+  .proof-card:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Tech chips larger hover effect */
+  .tech-chip:hover {
+    transform: translateY(-4px) rotateX(7deg) rotateY(7deg);
+  }
+}
+
+/* Large Desktop (≥ 1440px) */
+@media (min-width: 1440px) {
+  .container {
+    width: min(1200px, 90vw);
+  }
+
+  /* Increase spacing on very large screens */
+  .section {
+    padding-block: clamp(96px, 12vh, 160px);
+  }
+
+  /* Larger gaps */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    gap: var(--gap-3);
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .btn {
+    padding: 14px 24px;
+    min-height: 44px;
+  }
+
+  .tech-chip {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+  }
+
+  /* Remove hover-only effects on touch devices */
+  .card:hover,
+  .proof-card:hover {
+    transform: none;
+  }
+
+  .tech-chip:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Disable complex animations on touch */
+  .tech-chip:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card,
+  .soft-card,
+  .proof-card {
+    border-width: 2px;
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+}
+
+/* Dark mode support (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  /* Ready for dark mode tokens if needed */
 }
