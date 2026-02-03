@@ -155,7 +155,11 @@
   /* =========================================================
      CARDS
      ========================================================= */
+  --card-surface-border: rgba(var(--c-ink), 0.10);
+  --card-surface-border-soft: rgba(var(--c-ink), 0.08);
   --card-border-subtle: rgba(var(--c-ink), 0.12);
+  --card-soft-bg: rgba(var(--c-paper), 0.75);
+  --card-highlight-bg: rgba(var(--c-paper), 0.95);
 
   /* =========================================================
      FOOTER
