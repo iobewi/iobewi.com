@@ -8,7 +8,7 @@ bodyClass: "has-hero"
 
 <div class="hero-band">
   <section class="hero">
-    <div class="container hero-grid has-sidebar">
+    <div class="container hero-grid">
       <div class="hero-content">
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
         <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
@@ -18,42 +18,34 @@ bodyClass: "has-hero"
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
         </div>
       </div>
-      <aside class="tech-sidebar" aria-label="Technologies maîtrisées" markdown="0">
-        <div class="tech-sidebar-row">
-          <div class="tech-sidebar-label">Hardware</div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" />
-            <span>ESP32</span>
-          </div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" />
-            <span>RPi</span>
-          </div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" />
-            <span>Jetson</span>
-          </div>
-        </div>
-        <div class="tech-sidebar-row">
-          <div class="tech-sidebar-label">Middleware</div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
-            <span>ROS 2</span>
-          </div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" />
-            <span>micro-ROS</span>
-          </div>
-        </div>
-        <div class="tech-sidebar-row">
-          <div class="tech-sidebar-label">Tooling</div>
-          <div class="tech-sidebar-item">
-            <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" />
-            <span>CI/CD</span>
-          </div>
-        </div>
-      </aside>
     </div>
+
+    <aside class="tech-sidebar tech-footer" aria-label="Technologies maîtrisées" markdown="0">
+      <div class="tech-sidebar-item" data-label="ESP32" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" />
+        <span>ESP32</span>
+      </div>
+      <div class="tech-sidebar-item" data-label="RPi" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" />
+        <span>RPi</span>
+      </div>
+      <div class="tech-sidebar-item" data-label="Jetson" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" />
+        <span>Jetson</span>
+      </div>
+      <div class="tech-sidebar-item" data-label="ROS 2" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
+        <span>ROS 2</span>
+      </div>
+      <div class="tech-sidebar-item" data-label="MicroROS" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" />
+        <span>micro-ROS</span>
+      </div>
+      <div class="tech-sidebar-item" data-label="CI/CD" tabindex="0">
+        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" />
+        <span>CI/CD</span>
+      </div>
+    </aside>
   </section>
 
   <section class="section container hero-intro">
@@ -177,7 +169,7 @@ bodyClass: "has-hero"
   <!-- Niveau 3 : Projets (cartes compactes avec icônes) -->
   <div class="content-group section-minor">
     <h3 style="margin-bottom: var(--stack-2);">Projets démonstrateurs</h3>
-    <div class="grid grid-tight">
+    <div class="grid grid-tight grid-centered" style="--card-max-width: 360px">
       <article class="project-card-compact animate-on-scroll slide-up stagger-1" data-icon="robot">
         <h3>RHACOBOT</h3>
         <p>Démonstrateur robotique open source autour de <strong>ROS 2</strong>, du contrôle d'actionneurs et de l'intégration embarquée.</p>

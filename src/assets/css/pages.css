@@ -137,11 +137,19 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(var(--c-black), 0.65) 0%,
-    rgba(var(--c-black), 0.55) 50%,
-    rgba(var(--c-black), 0.70) 100%);
+      rgba(var(--c-black), 0.65) 0%,
+      rgba(var(--c-black), 0.55) 50%,
+      rgba(var(--c-black), 0.70) 100%);
   pointer-events: none;
   z-index: 0;
+}
+
+/* Fix : désactiver background-attachment: fixed sur mobile/tablette (évite jank) */
+@media (max-width: 1024px) {
+  .hero-band,
+  .hero-band::after {
+    background-attachment: scroll;
+  }
 }
 
 .hero {
@@ -164,33 +172,7 @@
   position: relative;
 }
 
-/* Hero grid with sidebar (desktop only) - Layout 2x2 */
-@media (min-width: 1024px) {
-  .hero-grid.has-sidebar {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr auto;
-    min-height: calc(100vh - var(--header-h));
-    gap: clamp(32px, 4vw, 64px);
-    padding-block: clamp(48px, 6vh, 80px);
-    align-items: start;
-  }
-
-  /* Tech stack: top-right (context/proof) */
-  .hero-grid.has-sidebar .tech-sidebar {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: start;
-  }
-
-  /* Hero content: bottom-left (anchored message) */
-  .hero-grid.has-sidebar .hero-content {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: end;
-    max-width: 720px;
-    padding-bottom: clamp(32px, 4vh, 56px);
-  }
-}
+/* Hero grid layout (simplifié - sidebar supprimée) */
 
 @media (max-width: 560px) {
   .hero {
@@ -227,111 +209,123 @@
 }
 
 /* =========================================================
-   TECH SIDEBAR (technical context)
+   TECH FOOTER — bandeau horizontal dans le HERO
    ========================================================= */
 
-.tech-sidebar {
-  display: none;
-  /* Hidden on mobile */
-}
-
-@media (min-width: 1024px) {
-  .tech-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(20px, 2.5vh, 28px);
-    padding: clamp(32px, 4vh, 48px) clamp(28px, 3.5vw, 40px);
-    background: rgba(var(--c-hero-0), 0.4);
-    border: 1px solid rgba(var(--c-white), 0.08);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    width: 280px;
-    flex-shrink: 0;
-    opacity: 0.85;
-    transition: opacity var(--duration-base) var(--ease-smooth);
-  }
-
-  .tech-sidebar:hover {
-    opacity: 1;
-  }
-}
-
-/* Triangle structure 3-2-1 */
-.tech-sidebar-row {
+/* Bandeau horizontal */
+.tech-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(12px, 1.5vw, 16px);
-  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 18px);
+
+  margin-top: clamp(24px, 5vh, 44px);
+  padding: 14px 16px;
+
+  background: rgba(var(--c-hero-0), 0.28);
+  border-top: 1px solid rgba(var(--c-white), 0.08);
+  border-radius: 14px;
+
+  backdrop-filter: blur(10px);
 }
 
-/* Reverse order for visual triangle (tooling at top) */
-.tech-sidebar-row:nth-child(1) {
-  order: 3;
-  /* Base: 3 items (Hardware) */
+/* Aplatit la structure rows/labels sans changer le HTML */
+.tech-footer .tech-sidebar-row {
+  display: contents;
+}
+.tech-footer .tech-sidebar-label {
+  display: none;
 }
 
-.tech-sidebar-row:nth-child(2) {
-  order: 2;
-  /* Middle: 2 items (Middleware) */
-}
+/* Item carré */
+.tech-footer .tech-sidebar-item {
+  position: relative;
+  display: grid;
+  place-items: center;
 
-.tech-sidebar-row:nth-child(3) {
-  order: 1;
-  /* Top: 1 item (Tooling) */
-}
+  width: 44px;
+  height: 44px;
 
-.tech-sidebar-label {
-  width: 100%;
-  text-align: center;
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(var(--c-white), 0.35);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.tech-sidebar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: clamp(10px, 1.5vh, 14px) clamp(12px, 1.5vw, 16px);
-  color: rgba(var(--c-white), 0.75);
-  font-size: 0.8125rem;
-  transition: color var(--duration-fast) var(--ease-smooth),
-    transform var(--duration-fast) var(--ease-smooth),
-    background var(--duration-fast) var(--ease-smooth);
   border-radius: 12px;
-  background: rgba(var(--c-white), 0.02);
-  border: 1px solid rgba(var(--c-white), 0.05);
-  min-width: 72px;
-  text-align: center;
+  background: rgba(var(--c-white), 0.04);
+  border: 1px solid rgba(var(--c-white), 0.08);
+
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
-.tech-sidebar-item:hover {
-  color: rgba(var(--c-white), 1);
+.tech-footer .tech-sidebar-item:hover {
   transform: translateY(-2px);
-  background: rgba(var(--c-white), 0.06);
-  border-color: rgba(var(--c-white), 0.12);
+  background: rgba(var(--c-white), 0.07);
+  border-color: rgba(var(--c-white), 0.14);
 }
 
-.tech-sidebar-icon {
-  width: 36px;
-  height: 36px;
-  opacity: 0.85;
-  filter: grayscale(0.15);
-  flex-shrink: 0;
-  transition: opacity var(--duration-fast) var(--ease-smooth),
-    filter var(--duration-fast) var(--ease-smooth),
-    transform var(--duration-fast) var(--ease-smooth);
+/* Icônes standardisées à 24px */
+.tech-footer .tech-sidebar-icon {
+  height: 24px;
+  width: auto;
+  opacity: 0.95;
+
+  filter: grayscale(0.3) saturate(0.5) brightness(1.1);
+  transition: filter 0.15s ease, opacity 0.15s ease;
 }
 
-.tech-sidebar-item:hover .tech-sidebar-icon {
+.tech-footer .tech-sidebar-item:hover .tech-sidebar-icon {
+  filter: none;
   opacity: 1;
-  filter: grayscale(0);
-  transform: scale(1.1);
+}
+
+/* Texte conservé pour a11y, masqué visuellement */
+.tech-footer .tech-sidebar-item span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Tooltip */
+.tech-footer .tech-sidebar-item::after {
+  content: attr(data-label);
+  position: absolute;
+
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(var(--c-black), 0.9);
+  color: white;
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 10;
+}
+
+.tech-footer .tech-sidebar-item:hover::after,
+.tech-footer .tech-sidebar-item:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Focus ring */
+.tech-footer .tech-sidebar-item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--c-accent), 0.6);
+}
+
+/* Mobile: wrap propre */
+@media (max-width: 640px) {
+  .tech-footer {
+    gap: 12px;
+  }
 }
 
 /* Intro sur hero */
@@ -608,6 +602,40 @@
 
 .grid-loose {
   gap: var(--gap-3);
+}
+
+.grid-centered {
+  justify-content: center;
+}
+
+.grid-centered>article {
+  width: 100%;
+  max-width: var(--card-max-width, 360px);
+}
+
+
+/* ===== Orphelins ===== */
+
+/* Cas "2 colonnes" (typiquement tablette) */
+@media (min-width: 640px) {
+
+  /* si le dernier est l'élément numéro (2n+1) => orphelin */
+  .grid-centered> :last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+    /* prend toute la ligne */
+    justify-self: center;
+    /* centre la carte */
+  }
+}
+
+/* Cas "3 colonnes" (typiquement desktop, comme ton screenshot) */
+@media (min-width: 1024px) {
+
+  /* si le dernier est l'élément numéro (3n+1) => orphelin */
+  .grid-centered> :last-child:nth-child(3n + 1) {
+    grid-column: 2;
+    /* se place au milieu (colonne 2) */
+  }
 }
 
 /* Cards */
