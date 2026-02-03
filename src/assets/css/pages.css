@@ -1,74 +1,71 @@
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
 
-  /* État sur le hero (plus léger) */
-  background: rgba(11, 15, 18, 0.50);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  /* valeurs courantes (remplacées par les states) */
+  --header-bg: var(--header-hero-bg);
+  --header-border: var(--header-hero-border);
+  --header-blur: var(--header-hero-blur);
+  --header-shadow: var(--header-hero-shadow);
 
-  --logo-text-color: #e6f2f7;
+  --logo-text-color: var(--logo-on-dark);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+  --nav-text-active: var(--nav-on-dark-active);
 
-  transition: background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: var(--header-shadow);
+  backdrop-filter: var(--header-blur);
 
-.has-hero .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  backdrop-filter: none;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .has-hero .site-header.is-top {
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  backdrop-filter: none;
-  --logo-text-color: #e6f2f7;
-  --nav-text: rgba(230, 242, 247, 0.75);
-  --nav-text-hover: #18cfe3;
-  --nav-text-active: #ffffff;
+  --header-bg: var(--header-top-bg);
+  --header-border: var(--header-top-border);
+  --header-blur: var(--header-top-blur);
+  --header-shadow: var(--header-top-shadow);
+
+  --logo-text-color: var(--logo-on-dark);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+  --nav-text-active: var(--nav-on-dark-active);
 }
 
 .has-hero .site-header.is-hero {
-  background: rgba(11, 15, 18, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  --logo-text-color: #e6f2f7;
-  --nav-text: rgba(230, 242, 247, 0.78);
-  --nav-text-hover: #18cfe3;
-  --nav-text-active: #ffffff;
+  --header-bg: var(--header-hero-bg);
+  --header-border: var(--header-hero-border);
+  --header-blur: var(--header-hero-blur);
+  --header-shadow: var(--header-hero-shadow);
+
+  --logo-text-color: var(--logo-on-dark);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+  --nav-text-active: var(--nav-on-dark-active);
 }
 
 .has-hero .site-header.is-scrolled {
-  background: rgba(246, 247, 251, 0.95);
-  border-bottom: 1px solid rgba(31, 42, 55, 0.12);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(6px);
-  --logo-text-color: #1f2a37;
-  --nav-text: rgba(31, 42, 55, 0.7);
-  --nav-text-hover: #0ea5b7;
-  --nav-text-active: #1f2a37;
+  --header-bg: var(--header-scroll-bg);
+  --header-border: var(--header-scroll-border);
+  --header-blur: var(--header-scroll-blur);
+  --header-shadow: var(--header-scroll-shadow);
+
+  --logo-text-color: var(--logo-on-light);
+  --nav-text: var(--nav-on-light);
+  --nav-text-hover: var(--nav-on-light-hover);
+  --nav-text-active: var(--nav-on-light-active);
 }
 
-.has-hero .hero {
-  padding-top: calc(6rem + var(--header-h));
-}
 
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-  color: var(--text);
-  flex-wrap: wrap;
-}
+/* =========================================================
+   BRAND + NAV
+   ========================================================= */
 
 .brand {
   text-decoration: none;
@@ -85,7 +82,6 @@
   width: auto;
   display: block;
 }
-
 
 .brand-tagline {
   font-size: 0.95rem;
@@ -116,6 +112,10 @@
   color: var(--nav-text-active);
 }
 
+/* =========================================================
+   HERO BAND
+   ========================================================= */
+
 .hero-band {
   position: relative;
   background: linear-gradient(180deg, #0b0f12, #070b0e);
@@ -134,25 +134,52 @@
   pointer-events: none;
   z-index: 0;
 
-  /* adoucit le motif derrière le texte à gauche */
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
+  /* Adoucit le motif derrière le texte à gauche */
+  -webkit-mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 45%);
+  mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 45%);
 }
 
 .hero {
   position: relative;
-  min-height: 70vh;
-  padding: 6rem 0 4rem;
+  min-height: var(--hero-min-h);
+  padding: clamp(56px, 8vh, 96px) 0 clamp(40px, 6vh, 72px);
   background: transparent;
+}
+
+/* Compensation du header fixé */
+.has-hero .hero {
+  padding-top: calc(clamp(56px, 8vh, 96px) + var(--header-h));
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--gap-3);
   align-items: center;
-  position: relative;
-  z-index: 1;
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: var(--hero-min-h-mobile);
+  }
+}
+
+.hero-content {
+  max-width: var(--measure);
+}
+
+.hero-content>*+* {
+  margin-top: var(--stack-2);
 }
 
 .hero h1 {
@@ -168,6 +195,14 @@
   color: rgba(248, 250, 252, 0.78);
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--stack-3);
+  gap: var(--gap-1);
+}
+
+/* Intro sur hero */
 .hero-intro {
   position: relative;
   z-index: 1;
@@ -184,88 +219,138 @@
   color: rgba(248, 250, 252, 0.78);
 }
 
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.75rem;
-}
+/* =========================================================
+   HERO TECH (badges)
+   ========================================================= */
 
 .hero-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
+  gap: 14px;
+  align-items: center;
+  margin-top: 18px;
 }
 
 .tech-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #e6f2f7;
-  border: 1px solid rgba(24, 207, 227, 0.35);
-  background: rgba(13, 32, 41, 0.6);
-  box-shadow: 0 6px 18px rgba(10, 15, 20, 0.25);
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.28) inset,
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform .15s ease,
+    border-color .15s ease,
+    background .15s ease,
+    box-shadow .15s ease;
 }
 
 .tech-logo {
-  height: 1.1rem;
-  width: auto;
-  max-width: 2.6rem;
-  display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35));
+  width: 24px;
+  height: 24px;
+  opacity: 0.92;
+  filter: grayscale(1) saturate(0);
+  transition: filter .15s ease, opacity .15s ease;
 }
 
-.hero-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
+/* Texte optionnel masqué visuellement (a11y) */
+.tech-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.tech-chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #e6f2f7;
-  border: 1px solid rgba(24, 207, 227, 0.35);
-  background: rgba(13, 32, 41, 0.6);
-  box-shadow: 0 6px 18px rgba(10, 15, 20, 0.25);
+.tech-chip:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(120, 200, 210, 0.60);
+  box-shadow:
+    0 0 0 1px rgba(120, 200, 210, 0.12) inset,
+    0 14px 40px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(120, 200, 210, 0.22);
 }
+
+.tech-chip:hover .tech-logo {
+  filter: none;
+  opacity: 1;
+}
+
+/* Tooltip basé sur data-label */
+.tech-chip::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 50%;
+  bottom: -34px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 5px 8px;
+  border-radius: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease;
+}
+
+.tech-chip:hover::after {
+  opacity: 1;
+}
+
+.tech-chip:focus-visible {
+  outline: none;
+  border-color: rgba(120, 200, 210, 0.70);
+  box-shadow:
+    0 0 0 3px rgba(120, 200, 210, 0.22),
+    0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   SECTIONS (layout global)
+   ========================================================= */
 
 .section {
   background: var(--paper);
   border-radius: 0;
-  padding: 2.5rem 0;
+  padding-block: var(--section-pad-y);
   margin: 0 auto;
   box-shadow: none;
   border: none;
 }
 
+.section.section-lg {
+  padding-block: var(--section-pad-y-lg);
+}
+
+/* IMPORTANT: supprimer l’inter-section margin */
+.section+.section {
+  margin-top: 0;
+}
+
+/* Hero band: sections transparentes */
 .hero-band .section {
   background: transparent;
 }
 
-.section+.section {
-  margin-top: 0.5rem;
-}
-
-.section-title {
-  display: grid;
-  gap: 0.5rem;
-  margin-bottom: 1.75rem;
-}
-
+/* Typo helpers */
 .eyebrow {
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -279,12 +364,57 @@
   color: var(--muted);
 }
 
+/* =========================================================
+   GRIDS / CARDS
+   ========================================================= */
+
+/* Grids génériques */
 .columns {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Cadre (fait / ne fait pas) */
+.frame-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-3);
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .frame-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4 piliers */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap-2);
+}
+
+@media (max-width: 980px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
 .card {
   border: none;
   border-radius: 0;
@@ -296,6 +426,24 @@
   background: transparent;
 }
 
+.highlight-card {
+  border: none;
+  background: transparent;
+}
+
+.proof-card {
+  border: 1px solid rgba(31, 42, 55, 0.12);
+  border-radius: 24px;
+  padding: clamp(16px, 2.8vh, 26px);
+  background: var(--surface);
+}
+
+.card-foot {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Lists */
 .feature-list {
   list-style: none;
   padding: 0;
@@ -315,12 +463,7 @@
   color: var(--muted);
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
+/* Activity */
 .activity-item {
   display: grid;
   gap: 0.75rem;
@@ -332,16 +475,7 @@
   font-weight: 600;
 }
 
-.highlight-card {
-  border: none;
-  background: transparent;
-}
-
-.card-foot {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
+/* Callouts / CTA blocks */
 .callout {
   display: flex;
   flex-wrap: wrap;
@@ -355,6 +489,22 @@
   align-items: center;
   gap: 1rem;
 }
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.cta-final {
+  padding-block: var(--section-pad-y-lg);
+}
+
+.cta-inner {
+  max-width: var(--measure-narrow);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
   background: #0b0f12;
