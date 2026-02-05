@@ -1,5 +1,6 @@
 /* =========================================================
    HEADER
+   → FUTURE FILE: layout/header.css
    ========================================================= */
 
 .site-header {
@@ -80,6 +81,7 @@
 
 /* =========================================================
    BRAND + NAV
+   → FUTURE FILE: layout/header.css (suite)
    ========================================================= */
 
 .brand {
@@ -129,6 +131,7 @@
 
 /* =========================================================
    HERO BAND
+   → FUTURE FILE: components/hero.css
    ========================================================= */
 
 .hero-band {
@@ -172,7 +175,7 @@
 }
 
 /* Fix : désactiver background-attachment: fixed sur mobile/tablette (évite jank) */
-@media (max-width: 1024px) {
+@media (max-width: var(--bp-desktop)) {
 
   .hero-band,
   .hero-band::after {
@@ -182,6 +185,7 @@
 
 /* =========================================================
    PAGE HERO — Hero simplifié pour pages internes
+   → FUTURE FILE: components/hero.css (suite)
    ========================================================= */
 
 .page-hero {
@@ -267,14 +271,14 @@
 }
 
 /* Hero grid layout fluide et dynamique */
-@media (min-width: 1024px) {
+@media (min-width: var(--bp-desktop)) {
   .hero-grid {
     align-items: start;
     padding-top: clamp(40px, 8vh, 80px);
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: var(--bp-mobile)) {
   .hero {
     min-height: 100svh;
     /* Small viewport height pour mobile */
@@ -309,7 +313,7 @@
 }
 
 /* Layout desktop - pleine largeur, tout l'espace utilisé */
-@media (min-width: 1024px) {
+@media (min-width: var(--bp-desktop)) {
   .hero-grid {
     padding: 0 clamp(32px, 4vw, 64px);
   }
@@ -443,7 +447,7 @@
 }
 
 /* Mobile : layout simple et empilé */
-@media (max-width: 1023px) {
+@media (max-width: calc(var(--bp-desktop) - 1px)) {
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -457,6 +461,7 @@
 
 /* =========================================================
    TECH FOOTER — bandeau horizontal dans le HERO
+   → FUTURE FILE: components/hero.css (suite)
    ========================================================= */
 
 /* Bandeau horizontal - imposant et ancré en bas du hero */
@@ -579,7 +584,7 @@
 }
 
 /* Mobile: wrap propre + tailles adaptées */
-@media (max-width: 640px) {
+@media (max-width: var(--bp-mobile-lg)) {
   .tech-footer {
     gap: 12px;
   }
@@ -718,10 +723,12 @@
 
 /* =========================================================
    SECTIONS (layout global)
+   → FUTURE FILE: components/sections.css
    ========================================================= */
 
 /* ===============================================
    SCROLL SNAP - Architecture à deux niveaux
+   → FUTURE FILE: components/sections.css
    =============================================== */
 
 /* Unité de navigation principale */
@@ -845,6 +852,7 @@
 
 /* =========================================================
    GRIDS / CARDS
+   → FUTURE FILE: components/cards.css
    ========================================================= */
 
 /* Grids génériques - Auto-responsive avec minmax intelligent */
@@ -886,13 +894,13 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-tablet)) {
   .grid-featured {
     grid-template-columns: 2fr 1fr;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: var(--bp-desktop)) {
   .grid-featured {
     grid-template-columns: 1.5fr 1fr 1fr;
   }
@@ -932,7 +940,7 @@
 }
 
 /* Cas "3 colonnes" (typiquement desktop, comme ton screenshot) */
-@media (min-width: 1024px) {
+@media (min-width: var(--bp-desktop)) {
 
   /* si le dernier est l'élément numéro (3n+1) => orphelin */
   .grid-centered> :last-child:nth-child(3n + 1) {
@@ -1013,6 +1021,7 @@
 
 /* =========================================================
    HIERARCHICAL CONTENT BLOCKS
+   → FUTURE FILE: components/cards.css (suite)
    ========================================================= */
 
 /* Editorial banner - for key positioning content */
@@ -1062,7 +1071,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-tablet)) {
   .two-col-editorial {
     grid-template-columns: 1fr 1.2fr;
   }
@@ -1288,6 +1297,7 @@
 
 /* =========================================================
    COMPARISON GRID (do / don't)
+   → FUTURE FILE: components/cards.css (suite)
    ========================================================= */
 
 .comparison-grid {
@@ -1296,7 +1306,7 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-tablet)) {
   .comparison-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1422,13 +1432,13 @@
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-tablet)) {
   .expertise-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: var(--bp-desktop)) {
   .expertise-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1483,6 +1493,7 @@
 
 /* =========================================================
    CTA HERO (final call-to-action)
+   → FUTURE FILE: components/cta.css
    ========================================================= */
 
 .cta-hero {
@@ -1601,6 +1612,7 @@
 
 /* =========================================================
    FOOTER
+   → FUTURE FILE: layout/footer.css
    ========================================================= */
 
 .site-footer {
@@ -1675,7 +1687,7 @@ body:has(.hero-band) .site-footer {
    ========================================================= */
 
 /* Small Mobile (≤ 480px) */
-@media (max-width: 480px) {
+@media (max-width: var(--bp-mobile-xs)) {
 
   /* Container tighter on small screens */
   .container {
@@ -1725,7 +1737,7 @@ body:has(.hero-band) .site-footer {
 }
 
 /* Mobile (≤ 640px) */
-@media (max-width: 640px) {
+@media (max-width: var(--bp-mobile-lg)) {
 
   /* Header adjustments */
   .site-header {
@@ -1797,7 +1809,7 @@ body:has(.hero-band) .site-footer {
 }
 
 /* Tablet (641px - 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (min-width: calc(var(--bp-mobile-lg) + 1px)) and (max-width: 1024px) {
 
   /* Container medium width */
   .container {
@@ -1830,7 +1842,7 @@ body:has(.hero-band) .site-footer {
 }
 
 /* Desktop (≥ 1025px) */
-@media (min-width: 1025px) {
+@media (min-width: calc(var(--bp-desktop) + 1px)) {
 
   /* Full width grids on large screens */
   .grid-4 {
@@ -1855,7 +1867,7 @@ body:has(.hero-band) .site-footer {
 }
 
 /* Large Desktop (≥ 1440px) */
-@media (min-width: 1440px) {
+@media (min-width: var(--bp-desktop-lg)) {
   .container {
     width: min(1200px, 90vw);
   }

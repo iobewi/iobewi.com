@@ -97,6 +97,14 @@
   --color-hero-40: rgba(var(--c-hero-0), 0.4);
   --color-hero-50: rgba(var(--c-hero-0), 0.5);
 
+  /* Breakpoints standardisés */
+  --bp-mobile-xs: 480px;
+  --bp-mobile: 560px;
+  --bp-mobile-lg: 640px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-desktop-lg: 1440px;
+
   /* Rhythm */
   --section-pad-y: clamp(72px, 9vh, 128px);
   --section-pad-y-lg: clamp(96px, 12vh, 160px);
