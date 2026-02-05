@@ -1,34 +1,33 @@
 # Backlog qualité — opportunités d'amélioration
 
-Ce backlog liste 4 tâches ciblées identifiées après une revue rapide du code et du contenu.
+Ce backlog liste 4 tâches ciblées identifiées après revue du code (contenu, JS, docs, tests).
 
 ## 1) Corriger une coquille typographique
 
-- **Constat** : le titre « Ce que IOBEWI ne fait pas » est grammaticalement incorrect.
+- **Constat** : dans la home, la puce technologie affiche `MicroROS` alors que la graphie utilisée ailleurs est `micro-ROS`.
 - **Source** : `src/index.md`.
-- **Tâche proposée** : remplacer par « Ce qu’IOBEWI ne fait pas ».
-- **Critère d'acceptation** : la section d'accueil affiche « Ce qu’IOBEWI ne fait pas » sans modifier le style ni la structure de la page.
+- **Tâche proposée** : harmoniser le libellé en `micro-ROS` (au minimum pour `data-label`, et éventuellement le texte visible si nécessaire).
+- **Critère d'acceptation** : la terminologie affichée dans l'interface est cohérente sur toute la page d'accueil.
 
-## 2) Corriger un bug JavaScript (offset de scroll)
+## 2) Corriger un bug JavaScript (ripple non appliqué)
 
-- **Constat** : le smooth scroll calcule la hauteur de header avec le sélecteur `.header`, alors que le composant utilise `.site-header`.
-- **Source** : `src/assets/js/animations.js` et `src/_includes/partials/header.njk`.
-- **Tâche proposée** : aligner le sélecteur sur `.site-header` et vérifier le positionnement des ancres sur mobile/desktop.
-- **Critère d'acceptation** : un clic sur un lien d'ancre n'est plus masqué par le header fixe.
+- **Constat** : `initRippleEffect()` cible `.tech-chip`, mais les éléments interactifs présents sur la page sont rendus avec `.tech-sidebar-item`.
+- **Source** : `src/assets/js/animations.js` + `src/index.md`.
+- **Tâche proposée** : étendre le sélecteur JS aux classes réellement utilisées (ex. `.tech-chip, .tech-sidebar-item`) ou normaliser le markup vers une seule classe.
+- **Critère d'acceptation** : l'effet ripple est déclenché sur les chips technologiques visibles en page d'accueil.
 
-## 3) Corriger un commentaire / anomalie de documentation interne du code
+## 3) Corriger une anomalie de documentation
 
-- **Constat** : un commentaire indique « Log pour debug (à retirer en production) » alors que le `console.log` est encore exécuté.
-- **Source** : `src/assets/js/animations.js`.
-- **Tâche proposée** : soit retirer le log, soit le protéger derrière une condition d'environnement explicite (mode dev).
-- **Critère d'acceptation** : aucun log debug non nécessaire en production, et commentaire cohérent avec le comportement réel.
+- **Constat** : la documentation d'architecture parle encore de **Hugo** et du domaine **iobewi.fr**, alors que le projet courant est en **Eleventy** et utilise `iobewi.com`.
+- **Source** : `docs/cdc.md`.
+- **Tâche proposée** : mettre à jour le CDC pour refléter la stack et le domaine actuels (Eleventy, arborescence `src/`, scripts npm réels).
+- **Critère d'acceptation** : un nouveau contributeur peut suivre la documentation sans contradiction avec le code du dépôt.
 
-## 4) Améliorer la stratégie de test
+## 4) Améliorer un test (couverture comportementale)
 
-- **Constat** : le projet ne contient pas de tests automatisés alors qu'il y a de la logique front (scroll, classes dynamiques, ancres).
-- **Source** : scripts npm de `package.json` + JS front.
-- **Tâche proposée** : ajouter un test E2E minimal (Playwright) qui valide :
-  1. l'état du header en haut de page ;
-  2. l'état après scroll ;
-  3. le bon positionnement après clic sur une ancre.
-- **Critère d'acceptation** : une commande dédiée (ex. `npm run test:e2e`) s'exécute en CI et couvre ces trois cas.
+- **Constat** : les tests E2E vérifient la visibilité des chips mais pas l'effet d'interaction (injection/suppression de `.ripple-effect`).
+- **Source** : `tests/e2e/homepage.spec.js` + `src/assets/js/animations.js`.
+- **Tâche proposée** : ajouter un test Playwright qui clique une puce techno et vérifie :
+  1. apparition d'un élément `.ripple-effect` ;
+  2. disparition après le délai prévu (600 ms).
+- **Critère d'acceptation** : le test échoue si l'effet ripple n'est pas câblé sur les bons sélecteurs.
