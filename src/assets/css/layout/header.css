@@ -335,8 +335,13 @@
     min-height: 44px;
     padding: 0.5rem;
     margin: -0.5rem;
-    color: inherit;
+    color: var(--nav-text); /* Même couleur que les liens de navigation */
     text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .social-link:hover {
+    color: var(--nav-text-hover);
   }
 
   .social-link svg {
