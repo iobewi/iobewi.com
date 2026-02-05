@@ -5,6 +5,8 @@ const hasHero = document.body.classList.contains("has-hero");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 const navLinks = document.querySelectorAll(".nav-link");
 
+document.documentElement.classList.add("js-enabled");
+
 if (header) {
   if (hero && hasHero) {
     // Pages avec hero : gestion dynamique des états
