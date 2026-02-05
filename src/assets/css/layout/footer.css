@@ -60,3 +60,15 @@
   flex-wrap: wrap;
   font-size: 0.95rem;
 }
+
+/* Footer compact en mobile */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 0.5rem 0;
+  }
+
+  .footer-row {
+    gap: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
