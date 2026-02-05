@@ -1,26 +1,28 @@
-# Cahier des charges — Site vitrine iobewi.fr
+# Cahier des charges — Site vitrine iobewi.com
 
 ## 1. Contexte & objectif
 
-IOBEWI a validé l’utilisation de **Hugo** comme générateur de site statique à l’issue d’une phase de prototypage rapide.
-Le présent document constitue le **cahier des charges normatif** pour la **structure, la navigation et la forme des contenus** du site vitrine **iobewi.fr**.
+IOBEWI a validé l’utilisation de **Eleventy** comme générateur de site statique à l’issue d’une phase de prototypage rapide.
+Le présent document constitue le **cahier des charges normatif** pour la **structure, la navigation et la forme des contenus** du site vitrine **iobewi.com**.
 
 Objectifs :
 
 * cadrer le périmètre fonctionnel du site,
 * figer les décisions structurantes avant toute production de contenu,
-* servir de référence unique pour l’implémentation Hugo.
+* servir de référence unique pour l’implémentation Eleventy.
 
 ---
 
 ## 2. Principes directeurs (figés)
 
-* Site **statique** (Hugo only)
+* Site **statique** (Eleventy/11ty)
 * Sobriété visuelle et fonctionnelle
 * Navigation courte et lisible
-* Aucun JavaScript tiers opaque
-* Contenu prioritaire sur l’esthétique
+* JavaScript minimal et maîtrisé (animations, header states)
+* Contenu prioritaire sur l'esthétique
 * Pérennité et maintenabilité
+* Architecture CSS modulaire
+* Tests automatisés (E2E + validation CSS)
 
 ---
 
@@ -58,26 +60,35 @@ Aucune navigation complexe ou redondante.
 
 ---
 
-## 6. Arborescence Hugo (figée)
+## 6. Arborescence Eleventy (figée)
 
 ```text
-content/
-├── _index.md              # Accueil
+src/
+├── index.md              # Accueil
 │
 ├── activites/
-│   └── _index.md          # Activités
+│   └── index.md          # Activités
 │
 ├── realisations/
-│   └── _index.md          # Réalisations
+│   └── index.md          # Réalisations
 │
 ├── a-propos/
-│   └── _index.md          # À propos
+│   └── index.md          # À propos
 │
 ├── contact/
-│   └── _index.md          # Contact
+│   └── index.md          # Contact
 │
 └── mentions-legales/
-    └── _index.md          # Mentions légales
+    └── index.md          # Mentions légales
+```
+
+**Build et développement :**
+
+```bash
+npm install              # Installer les dépendances
+npm start                # Serveur de développement (localhost:8080)
+npm run build            # Build de production dans _site/
+npm test                 # Lancer les tests E2E et unitaires
 ```
 
 Les URLs sont en français, explicites et stables.
@@ -135,7 +146,7 @@ Les URLs sont en français, explicites et stables.
 
 La production du contenu final est réalisée **exclusivement** à partir du document séparé :
 
-**FORM – Contenus site iobewi.fr**
+**FORM – Contenus site iobewi.com**
 
 Ce document regroupe les formulaires normatifs pour l’ensemble des pages :
 
@@ -153,8 +164,9 @@ Aucun contenu ne doit être rédigé directement dans le présent CDC.
 
 * Document **normatif** pour la structure et la forme
 * Toute modification nécessite une révision explicite
-* Toute implémentation Hugo doit être strictement conforme à ce cadre
+* Toute implémentation Eleventy doit être strictement conforme à ce cadre
+* Les tests automatisés garantissent la conformité technique
 
 ---
 
-**Fin du CDC — iobewi.fr**
+**Fin du CDC — iobewi.com**

@@ -1,0 +1,97 @@
+name: Qualité du Code
+
+on:
+  push:
+    branches: [ main, upgrade-ux ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality:
+    name: Vérifications Qualité
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Installation de Playwright (pour tests unit)
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests unitaires CSS uniquement
+        run: npx playwright test tests/unit/
+        continue-on-error: false
+
+      - name: Vérifier la structure des fichiers
+        run: |
+          echo "## 📁 Structure du projet" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Vérifier les dossiers critiques
+          if [ ! -d "src" ]; then
+            echo "❌ Dossier src/ manquant" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+          if [ ! -d "tests" ]; then
+            echo "❌ Dossier tests/ manquant" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+          echo "✅ Structure du projet valide" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Statistiques
+          echo "### Statistiques" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers CSS**: $(find src/assets/css -name "*.css" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers JS**: $(find src/assets/js -name "*.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Pages Markdown**: $(find src -name "*.md" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tests E2E**: $(find tests/e2e -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tests Unit**: $(find tests/unit -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Vérifier les fichiers package.json
+        run: |
+          if [ ! -f "package.json" ]; then
+            echo "❌ package.json manquant"
+            exit 1
+          fi
+
+          if [ ! -f "package-lock.json" ]; then
+            echo "⚠️  package-lock.json manquant (recommandé pour la reproductibilité)"
+          fi
+
+          echo "✅ Configuration npm valide"
+
+      - name: Lister les fichiers problématiques
+        run: |
+          echo "## 🔍 Fichiers à surveiller" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Fichiers de backup ou temporaires
+          backup_files=$(find . -name "*.original" -o -name "*.backup" -o -name "*~" 2>/dev/null || true)
+          if [ -n "$backup_files" ]; then
+            echo "### ⚠️ Fichiers de backup trouvés:" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "$backup_files" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Pas de fichiers de backup" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Résumé qualité
+        run: |
+          echo "## ✅ Qualité du code validée" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Tests unitaires CSS passent" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Structure du projet valide" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Configuration npm correcte" >> $GITHUB_STEP_SUMMARY

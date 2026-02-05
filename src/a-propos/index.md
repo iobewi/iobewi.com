@@ -3,30 +3,92 @@ title: "À propos"
 description: "Présentation d'IOBEWI et de sa posture d'accompagnement technique."
 layout: layouts/base.njk
 permalink: "/a-propos/"
+bodyClass: "has-hero"
 ---
 
-IOBEWI est une société par actions simplifiée (SAS) dédiée à l’accompagnement de projets techniques autour des systèmes embarqués, de la robotique et de l’outillage associé.
-Son positionnement repose sur une pratique ancrée dans le réel, construite par l’expérimentation, la structuration progressive et la transmission de bases techniques exploitables.
+<div class="page-hero snap-item">
+  <div class="container">
+    <div class="page-hero-content">
+      <h1>À propos d'IOBEWI</h1>
+      <p class="lead">
+        Une société dédiée à l'accompagnement de projets techniques autour des systèmes embarqués, de la robotique et de l'outillage associé. Un positionnement ancré dans le réel, construit par l'expérimentation, la structuration progressive et la transmission de bases techniques exploitables.
+      </p>
+    </div>
+  </div>
+</div>
 
-## Parcours / positionnement
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
+    <h2>Parcours / positionnement</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p>
+      <strong>IOBEWI est née du parcours technique de son fondateur</strong>, construit sur une progression allant du support et de l'intégration logicielle vers l'administration système, l'ingénierie système et les pratiques DevOps. Bien que principalement orienté logiciel et infrastructure, ce parcours a été régulièrement confronté à des contraintes proches de l'embarqué, notamment à travers des systèmes distribués, des environnements contraints et des problématiques de fiabilité en conditions réelles.
+    </p>
+  </div>
 
-**IOBEWI est née du parcours technique de son fondateur**, construit sur une progression allant du support et de l’intégration logicielle vers l’administration système, l’ingénierie système et les pratiques DevOps.
-Bien que principalement orienté logiciel et infrastructure, ce parcours a été régulièrement confronté à des contraintes proches de l’embarqué, notamment à travers des systèmes distribués, des environnements contraints et des problématiques de fiabilité en conditions réelles.
+  <div class="content-group animate-on-scroll fade-in delay-200">
+    <p>
+      Avec le temps, un besoin de renouer plus directement avec le matériel s'est imposé, conduisant à une réappropriation progressive des plateformes embarquées, des environnements de prototypage jusqu'aux microcontrôleurs. Cette trajectoire a permis de faire cohabiter des méthodes issues du monde système et DevOps avec les contraintes propres aux MCU, à la robotique et aux systèmes embarqués, en prenant ROS et la robotique comme terrain naturel de convergence.
+    </p>
+  </div>
 
-Avec le temps, un besoin de renouer plus directement avec le matériel s’est imposé, conduisant à une réappropriation progressive des plateformes embarquées, des environnements de prototypage jusqu’aux microcontrôleurs.
-Cette trajectoire a permis de faire cohabiter des méthodes issues du monde système et DevOps avec les contraintes propres aux MCU, à la robotique et aux systèmes embarqués, en prenant ROS et la robotique comme terrain naturel de convergence.
+  <div class="note-block animate-on-scroll fade-in delay-300">
+    <p>
+      C'est de cette hybridation entre pratiques logicielles structurantes et ancrage matériel que s'est construit le positionnement d'IOBEWI aujourd'hui.
+    </p>
+  </div>
+</section>
 
-C’est de cette hybridation entre pratiques logicielles structurantes et ancrage matériel que s’est construit le positionnement d’IOBEWI aujourd’hui.
+<section class="section container section-major snap-item">
+  <div style="max-width: 900px; margin-left: auto; margin-right: auto;">
+    <div class="section-title animate-on-scroll fade-in" style="margin-bottom: 2rem;">
+      <h2>Principes de travail</h2>
+    </div>
 
-## Principes de travail
+    <div class="content-group animate-on-scroll fade-in delay-100" style="margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Accompagnement structuré et contractualisé</h3>
+      <p style="margin: 0;">
+        IOBEWI intervient dans un cadre défini, aux côtés des équipes, pour structurer et faire mûrir les projets, sans s'y substituer.
+      </p>
+    </div>
 
-- **Accompagnement structuré et contractualisé**
-  IOBEWI intervient dans un cadre défini, aux côtés des équipes, pour structurer et faire mûrir les projets, sans s’y substituer.
-- **Confrontation au terrain et au matériel**
-  Les choix techniques sont guidés par le matériel, les contraintes physiques et les conditions d’exploitation réelles, avant toute abstraction théorique.
-- **Hybridation des pratiques**
-  IOBEWI transpose des pratiques d’outillage, d’automatisation et de reproductibilité issues du monde DevOps vers les contraintes des microcontrôleurs, des plateformes embarquées et de la robotique.
-- **Structuration progressive et lisibilité**
-  Les outils, architectures et pratiques sont introduits progressivement, au rythme du projet, avec pour objectif la compréhension et la maintenabilité.
-- **Autonomie comme objectif final**
-  L’accompagnement vise à rendre les équipes capables d’exploiter, de faire évoluer et de maintenir leur socle technique de manière autonome.
+    <div class="content-group animate-on-scroll fade-in delay-200" style="margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Confrontation au terrain et au matériel</h3>
+      <p style="margin: 0;">
+        Les choix techniques sont guidés par le matériel, les contraintes physiques et les conditions d'exploitation réelles, avant toute abstraction théorique.
+      </p>
+    </div>
+
+    <div class="content-group animate-on-scroll fade-in delay-300" style="margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Hybridation des pratiques</h3>
+      <p style="margin: 0;">
+        IOBEWI transpose des pratiques d'outillage, d'automatisation et de reproductibilité issues du monde DevOps vers les contraintes des microcontrôleurs, des plateformes embarquées et de la robotique.
+      </p>
+    </div>
+
+    <div class="content-group animate-on-scroll fade-in delay-400" style="margin-bottom: 3rem;">
+      <h3 style="margin-bottom: 1rem;">Structuration progressive et lisibilité</h3>
+      <p style="margin: 0;">
+        Les outils, architectures et pratiques sont introduits progressivement, au rythme du projet, avec pour objectif la compréhension et la maintenabilité.
+      </p>
+    </div>
+
+    <div class="content-group animate-on-scroll fade-in delay-500" style="margin-bottom: 2rem;">
+      <h3 style="margin-bottom: 1rem;">Autonomie comme objectif final</h3>
+      <p style="margin: 0;">
+        L'accompagnement vise à rendre les équipes capables d'exploiter, de faire évoluer et de maintenir leur socle technique de manière autonome.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="cta-hero animate-on-scroll scale-in">
+    <h2>Découvrir comment IOBEWI peut accompagner votre projet</h2>
+    <p>
+      <strong>Une approche progressive, ancrée dans le réel, pour structurer et faire mûrir vos systèmes embarqués.</strong>
+    </p>
+    <a class="btn btn-primary" href="/contact/">Prendre contact</a>
+  </div>
+</section>

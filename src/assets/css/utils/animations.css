@@ -1,0 +1,263 @@
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Counter animation */
+@keyframes counter-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   UTILITY CLASSES FOR SCROLL ANIMATIONS
+   ========================================================= */
+
+/* Base state - elements are VISIBLE by default (progressive enhancement) */
+.animate-on-scroll {
+  opacity: 1;
+}
+
+/* Only hide if JS is ready (body gets .js-ready class) */
+body.js-ready .animate-on-scroll:not(.is-visible) {
+  opacity: 0;
+}
+
+/* When element becomes visible */
+.animate-on-scroll.is-visible {
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+/* Animation variants */
+.fade-in.is-visible {
+  animation: fade-in var(--duration-slow) var(--ease-smooth);
+}
+
+.slide-up.is-visible {
+  animation: slide-up var(--duration-slow) var(--ease-smooth);
+}
+
+.slide-down.is-visible {
+  animation: slide-down var(--duration-slow) var(--ease-smooth);
+}
+
+.slide-left.is-visible {
+  animation: slide-left var(--duration-slow) var(--ease-smooth);
+}
+
+.slide-right.is-visible {
+  animation: slide-right var(--duration-slow) var(--ease-smooth);
+}
+
+.scale-in.is-visible {
+  animation: scale-in var(--duration-slow) var(--ease-smooth);
+}
+
+/* Stagger delays for sequential animations */
+.stagger-1 {
+  animation-delay: var(--stagger-1);
+}
+
+.stagger-2 {
+  animation-delay: var(--stagger-2);
+}
+
+.stagger-3 {
+  animation-delay: var(--stagger-3);
+}
+
+.stagger-4 {
+  animation-delay: var(--stagger-4);
+}
+
+/* Custom delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* =========================================================
+   SPECIAL EFFECTS
+   ========================================================= */
+
+/* Parallax effect - applied by JS */
+.parallax {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Reveal animation container */
+.reveal-container {
+  overflow: hidden;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-smooth),
+              transform var(--duration-slow) var(--ease-smooth);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading spinner (optional) */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* =========================================================
+   ACCESSIBILITY - RESPECT USER PREFERENCES
+   ========================================================= */
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+  }
+
+  .parallax {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,71 @@
+name: Build et Validation
+
+on:
+  push:
+    branches: [ main, upgrade-ux ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build Eleventy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Build du site
+        run: npm run build
+
+      - name: Vérifier que _site existe
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "❌ Le dossier _site n'a pas été créé"
+            exit 1
+          fi
+          echo "✅ Build réussi"
+
+      - name: Vérifier les fichiers générés
+        run: |
+          echo "Fichiers générés:"
+          ls -lah _site/
+
+          # Vérifier que les pages principales existent
+          required_pages=("index.html" "activites/index.html" "realisations/index.html" "a-propos/index.html" "contact/index.html")
+
+          for page in "${required_pages[@]}"; do
+            if [ ! -f "_site/$page" ]; then
+              echo "❌ Page manquante: $page"
+              exit 1
+            fi
+          done
+
+          echo "✅ Toutes les pages principales sont générées"
+
+      - name: Upload du site généré
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: _site/
+          retention-days: 7
+
+      - name: Statistiques du build
+        run: |
+          echo "## 📊 Statistiques du build" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Taille totale**: $(du -sh _site/ | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers HTML**: $(find _site/ -name "*.html" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers CSS**: $(find _site/ -name "*.css" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers JS**: $(find _site/ -name "*.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Images**: $(find _site/ -name "*.svg" -o -name "*.png" -o -name "*.jpg" | wc -l)" >> $GITHUB_STEP_SUMMARY
