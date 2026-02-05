@@ -29,8 +29,7 @@
   padding-right: var(--padding-container-x);
 }
 
-.header-row,
-.footer-row {
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -309,5 +308,44 @@
   /* Quand menu ouvert, hamburger en blanc */
   .site-header.is-menu-open .hamburger-icon span {
     background: white !important;
+  }
+}
+
+/* =========================================================
+   ICÔNES SOCIALES DANS LE HEADER (mobile uniquement)
+   ========================================================= */
+
+.header-social {
+  display: none; /* Caché par défaut (desktop) */
+}
+
+/* Afficher les icônes sociales en mobile uniquement */
+@media (max-width: 768px) {
+  .header-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    color: var(--nav-text); /* Même couleur que les liens de navigation */
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .social-link:hover {
+    color: var(--nav-text-hover);
+  }
+
+  .social-link svg {
+    width: 22px;
+    height: 22px;
   }
 }

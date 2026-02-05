@@ -3,17 +3,7 @@
    ========================================================= */
 
 .site-footer {
-  /* Footer par défaut : position normale */
-  background: var(--header-scroll-bg);
-  border-top: 1px solid var(--header-scroll-border);
-  color: var(--nav-on-light);
-  padding: 2rem 0;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-}
-
-/* Footer fixe uniquement sur page d'accueil avec hero-band */
-.hero-band ~ * .site-footer,
-body:has(.hero-band) .site-footer {
+  /* Footer fixé sur desktop uniquement */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -31,6 +21,21 @@ body:has(.hero-band) .site-footer {
   /* Variables de couleur - gérées par JS */
   --footer-text: var(--nav-on-dark);
   color: var(--footer-text);
+
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* En mobile : footer normal en fin de page */
+@media (max-width: 768px) {
+  .site-footer {
+    position: static;
+    background: var(--header-scroll-bg);
+    backdrop-filter: none;
+    border-top: 1px solid var(--header-scroll-border);
+    box-shadow: none;
+    color: var(--nav-on-light);
+    padding: 1.5rem 0;
+  }
 }
 
 /* Footer states - gérés par header.js */
@@ -67,4 +72,51 @@ body:has(.hero-band) .site-footer {
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Par défaut : afficher le texte complet, cacher les icônes */
+.link-icon {
+  display: none;
+}
+
+.link-full {
+  display: inline;
+}
+
+.link-icon svg {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.copyright {
+  white-space: nowrap;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem;
+  margin: -0.5rem;
+}
+
+/* Footer simple en mobile - juste le copyright */
+@media (max-width: 768px) {
+  .footer-row {
+    justify-content: center;
+    font-size: 0.875rem;
+  }
+
+  /* Cacher les liens sociaux en mobile (ils seront dans le header) */
+  .footer-links {
+    display: none;
+  }
 }
