@@ -17,8 +17,15 @@ body {
 }
 
 main {
-  /* Padding pour éviter que le contenu soit caché par le footer fixe */
+  /* Padding pour éviter que le contenu soit caché par le footer fixe (desktop uniquement) */
   padding-bottom: 5rem;
+}
+
+/* En mobile : pas de padding-bottom (footer non fixe) */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 0;
+  }
 }
 
 /* Typography - Improved hierarchy */

@@ -310,3 +310,37 @@
     background: white !important;
   }
 }
+
+/* =========================================================
+   ICÔNES SOCIALES DANS LE HEADER (mobile uniquement)
+   ========================================================= */
+
+.header-social {
+  display: none; /* Caché par défaut (desktop) */
+}
+
+/* Afficher les icônes sociales en mobile uniquement */
+@media (max-width: 768px) {
+  .header-social {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+}
