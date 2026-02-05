@@ -3,6 +3,15 @@
     <a class="brand" href="/">
       {% include "partials/iobewi.svg" %}
     </a>
+
+    <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
     <nav class="nav">
       {% for item in nav %}
         <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>

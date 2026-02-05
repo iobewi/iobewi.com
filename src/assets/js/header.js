@@ -2,6 +2,10 @@ const header = document.querySelector(".site-header");
 const footer = document.querySelector(".site-footer");
 const hero = document.querySelector(".hero-band") || document.querySelector(".hero") || document.querySelector(".page-hero");
 const hasHero = document.body.classList.contains("has-hero");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const navLinks = document.querySelectorAll(".nav-link");
+
+document.documentElement.classList.add("js-enabled");
 
 if (header) {
   if (hero && hasHero) {
@@ -35,4 +39,71 @@ if (header) {
       footer.classList.add("is-scrolled");
     }
   }
+}
+
+// =========================================================
+// MENU MOBILE HAMBURGER
+// =========================================================
+
+if (mobileMenuToggle && header) {
+  let scrollPosition = 0;
+  const mobileViewport = window.matchMedia('(max-width: 768px)');
+
+  // Fonction pour bloquer le scroll sans "jump"
+  const lockScroll = () => {
+    scrollPosition = window.pageYOffset;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.width = '100%';
+  };
+
+  // Fonction pour débloquer le scroll
+  const unlockScroll = () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollPosition);
+  };
+
+  const closeMobileMenu = () => {
+    header.classList.remove("is-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    unlockScroll();
+  };
+
+  // Toggle du menu mobile
+  mobileMenuToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", isOpen);
+
+    // Bloquer/débloquer le scroll sans jump
+    if (isOpen) {
+      lockScroll();
+    } else {
+      closeMobileMenu();
+    }
+  });
+
+  // Fermer le menu quand on clique sur un lien
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  // Fermer le menu avec la touche Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && header.classList.contains("is-menu-open")) {
+      closeMobileMenu();
+    }
+  });
+
+  const handleViewportChange = () => {
+    if (!mobileViewport.matches && header.classList.contains("is-menu-open")) {
+      closeMobileMenu();
+    }
+  };
+
+  mobileViewport.addEventListener("change", handleViewportChange);
+  window.addEventListener("resize", handleViewportChange);
 }
