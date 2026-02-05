@@ -1,0 +1,130 @@
+/* =========================================================
+   HEADER
+   → FUTURE FILE: layout/header.css
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+
+  --logo-text-color: var(--logo-on-dark);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+  --nav-text-active: var(--nav-on-dark-active);
+
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Container pleine largeur dans header/footer - éléments dans les coins */
+.site-header .container,
+.site-footer .container {
+  max-width: none;
+  width: 100%;
+  padding-left: var(--padding-container-x);
+  padding-right: var(--padding-container-x);
+}
+
+.header-row,
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.has-hero .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* États dark (is-top et is-hero partagent les couleurs) */
+.has-hero .site-header.is-top,
+.has-hero .site-header.is-hero {
+  --logo-text-color: var(--logo-on-dark);
+  --nav-text: var(--nav-on-dark);
+  --nav-text-hover: var(--nav-on-dark-hover);
+}
+
+.has-hero .site-header.is-top {
+  background: transparent;
+  backdrop-filter: none;
+  --nav-text-active: var(--white);
+}
+
+.has-hero .site-header.is-hero {
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+  --nav-text-active: var(--nav-on-dark-active);
+}
+
+/* État scrolled : fond clair avec texte sombre (pages avec ET sans hero) */
+.site-header.is-scrolled {
+  background: var(--header-scroll-bg);
+  border-bottom: 1px solid var(--header-scroll-border);
+  box-shadow: var(--shadow-header-scrolled);
+  backdrop-filter: blur(6px);
+  --logo-text-color: var(--logo-on-light);
+  --nav-text: var(--nav-on-light);
+  --nav-text-hover: var(--accent-strong);
+  --nav-text-active: var(--ink);
+}
+
+
+/* =========================================================
+   BRAND + NAV
+   → FUTURE FILE: layout/header.css (suite)
+   ========================================================= */
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 360px;
+}
+
+.brand .brand-logo,
+.brand svg.logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.brand-tagline {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--nav-text);
+  opacity: 0.85;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  color: var(--nav-text-hover);
+}
+
+.nav-link.active {
+  color: var(--nav-text-active);
+}
