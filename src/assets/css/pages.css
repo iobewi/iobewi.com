@@ -19,6 +19,23 @@
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Container pleine largeur dans header/footer - éléments dans les coins */
+.site-header .container,
+.site-footer .container {
+  max-width: none;
+  width: 100%;
+  padding-left: clamp(24px, 3vw, 48px);
+  padding-right: clamp(24px, 3vw, 48px);
+}
+
+.header-row,
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
 .has-hero .site-header {
   position: fixed;
   top: 0;
@@ -129,6 +146,14 @@
   opacity: 0.08;
   pointer-events: none;
   z-index: 0;
+
+  /* Flou global sur le pattern PCB */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+
+  /* Adoucit le motif derrière le texte à gauche */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 45%);
 }
 
 /* Overlay plus opaque pour meilleure lisibilité (60-70%) */
@@ -146,6 +171,7 @@
 
 /* Fix : désactiver background-attachment: fixed sur mobile/tablette (évite jank) */
 @media (max-width: 1024px) {
+
   .hero-band,
   .hero-band::after {
     background-attachment: scroll;
@@ -154,74 +180,241 @@
 
 .hero {
   position: relative;
-  min-height: var(--hero-min-h);
-  padding: clamp(56px, 8vh, 96px) 0 clamp(40px, 6vh, 72px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--header-h) + clamp(48px, 6vh, 80px)) 0 clamp(32px, 4vh, 56px);
   background: transparent;
 }
 
-/* Compensation du header fixé */
-.has-hero .hero {
-  padding-top: calc(clamp(56px, 8vh, 96px) + var(--header-h));
-}
-
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap-3);
-  align-items: start;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: none !important;
+  padding: 0 clamp(24px, 3vw, 48px);
 }
 
-/* Hero grid layout (simplifié - sidebar supprimée) */
+/* Override du container dans le hero - pleine largeur */
+.hero .container {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
+
+/* Hero grid layout fluide et dynamique */
+@media (min-width: 1024px) {
+  .hero-grid {
+    align-items: start;
+    padding-top: clamp(40px, 8vh, 80px);
+  }
+}
 
 @media (max-width: 560px) {
   .hero {
-    min-height: var(--hero-min-h-mobile);
+    min-height: 100svh;
+    /* Small viewport height pour mobile */
+    padding: calc(var(--header-h) + 32px) 0 24px;
   }
 }
 
 .hero-content {
-  max-width: var(--measure);
+  /* Layout fluide basé sur viewport - pas de max-width fixe */
+  width: 90vw;
+  max-width: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vh, 48px);
+
+  /* Carte conteneur avec fond flouté glassmorphism */
+  background: rgba(var(--c-hero-0), 0.5);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+
+  padding: clamp(32px, 5vh, 56px) clamp(24px, 4vw, 48px);
+  border-radius: 24px;
+  border: 1px solid rgba(var(--c-white), 0.2);
+
+  box-shadow:
+    0 8px 32px rgba(var(--c-black), 0.3),
+    0 4px 16px rgba(var(--c-black), 0.2),
+    inset 0 1px 0 rgba(var(--c-white), 0.1);
+
+  position: relative;
 }
 
-.hero-content>*+* {
-  margin-top: var(--stack-2);
+/* Layout desktop - pleine largeur, tout l'espace utilisé */
+@media (min-width: 1024px) {
+  .hero-grid {
+    padding: 0 clamp(32px, 4vw, 64px);
+  }
+
+  .hero-content {
+    /* Contenu principal occupe 72% de l'écran (environ 3/4) */
+    width: 72vw;
+    max-width: none;
+  }
+
+  .hero h1 {
+    /* H1 sur toute la largeur disponible */
+    width: 100%;
+  }
+
+  .hero .lead {
+    /* Lead sur 75% de la largeur du contenu */
+    width: 75%;
+  }
+
+  /* Post-it calé au bord droit - symétrique au contenu gauche */
+  .hero-postit {
+    position: fixed;
+
+    /* Aligné à DROITE comme le contenu est aligné à GAUCHE */
+    top: clamp(140px, 18vh, 220px);
+    right: clamp(32px, 4vw, 64px);
+    left: auto;
+
+    /* Largeur fixe proportionnelle */
+    width: clamp(280px, 25vw, 400px);
+    margin-left: 0;
+    margin-right: 0;
+
+    z-index: 2;
+    isolation: isolate;
+
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.6;
+    font-weight: 500;
+    padding: clamp(24px, 3.5vh, 36px) clamp(28px, 3.5vw, 40px);
+
+    /* Fond blanc avec transparence fixe (40%) */
+    background: rgba(255, 255, 255, 0.4);
+
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+
+    /* 1 coin arrondi (bas-gauche) + 3 coins droits */
+    border-radius: 0 0 0 20px;
+
+    /* Ombres subtiles */
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 2px 10px rgba(0, 0, 0, 0.2);
+
+    /* Flou du fond derrière - nécessite position + z-index */
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+
+    /* Texte couleur menu header */
+    color: var(--nav-text);
+
+    /* Légère rotation pour dynamisme */
+    transform: rotate(-0.8deg);
+    transform-origin: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hero-postit:hover {
+    transform: rotate(0deg) translateY(-2px);
+    /* Pas de changement de background - reste identique */
+    box-shadow:
+      0 6px 28px rgba(0, 0, 0, 0.35),
+      0 3px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .hero-actions {
+    /* Actions sur 100% de la largeur du contenu */
+    width: 100%;
+  }
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.1rem);
-  line-height: 1.15;
-  margin: 0 0 1rem;
+  font-size: clamp(2.8rem, 6vw + 0.5rem, 4.5rem);
+  line-height: 1.1;
+  margin: 0;
   color: var(--hero-text);
-  text-shadow: var(--hero-text-shadow);
+  text-shadow: 0 2px 8px rgba(var(--c-black), 0.3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(var(--c-white), 0.75);
+  margin: clamp(16px, 2vh, 24px) 0 clamp(20px, 3vh, 32px);
+
+  /* Légère mise en valeur */
+  text-shadow: 0 1px 4px rgba(var(--c-black), 0.2);
+}
+
+.hero .lead {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--hero-text);
+  font-weight: 600;
+  max-width: 28ch;
 }
 
 .hero p {
-  margin: 0 0 1rem;
+  margin: 0;
   color: var(--hero-text-muted);
+}
+
+.hero-postit {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(var(--c-white), 0.85);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  margin-top: var(--stack-3);
-  gap: var(--gap-1);
+  gap: var(--gap-2);
+  margin-top: clamp(16px, 2vh, 24px);
+}
+
+/* Mobile : layout simple et empilé */
+@media (max-width: 1023px) {
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vh, 32px);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
 }
 
 /* =========================================================
    TECH FOOTER — bandeau horizontal dans le HERO
    ========================================================= */
 
-/* Bandeau horizontal - imposant et visible */
+/* Bandeau horizontal - imposant et ancré en bas du hero */
 .tech-footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 24px);
+  gap: clamp(16px, 2.5vw, 28px);
 
-  margin-top: clamp(32px, 6vh, 56px);
-  padding: clamp(20px, 3vh, 32px) clamp(24px, 4vw, 40px);
+  /* Espacement dans la section hero-intro */
+  margin-block: clamp(32px, 5vh, 48px);
+  flex-shrink: 0;
+
+  padding: clamp(24px, 3.5vh, 40px) clamp(24px, 4vw, 40px);
+  width: 100%;
+  max-width: var(--container-width, 1200px);
+  margin-inline: auto;
 
   background: rgba(var(--c-hero-0), 0.4);
   border: 1px solid rgba(var(--c-white), 0.12);
@@ -235,6 +428,7 @@
 .tech-footer .tech-sidebar-row {
   display: contents;
 }
+
 .tech-footer .tech-sidebar-label {
   display: none;
 }
@@ -245,10 +439,10 @@
   display: grid;
   place-items: center;
 
-  width: clamp(56px, 8vw, 68px);
-  height: clamp(56px, 8vw, 68px);
+  width: clamp(72px, 9vw, 96px);
+  height: clamp(72px, 9vw, 96px);
 
-  border-radius: 14px;
+  border-radius: 16px;
   background: rgba(var(--c-white), 0.06);
   border: 1px solid rgba(var(--c-white), 0.12);
 
@@ -324,10 +518,14 @@
   box-shadow: 0 0 0 2px rgba(var(--c-accent), 0.6);
 }
 
-/* Mobile: wrap propre */
+/* Mobile: wrap propre + tailles adaptées */
 @media (max-width: 640px) {
   .tech-footer {
     gap: 12px;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 }
 
@@ -462,6 +660,27 @@
    SECTIONS (layout global)
    ========================================================= */
 
+/* ===============================================
+   SCROLL SNAP - Architecture à deux niveaux
+   =============================================== */
+
+/* Unité de navigation principale */
+.snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-bottom: 25svh;
+}
+
+/* Neutraliser le snap interne pour éviter les conflits */
+.snap-item .section,
+.snap-item .hero {
+  scroll-snap-align: none;
+}
+
+/* ===============================================
+   SECTIONS (layout global)
+   =============================================== */
+
 .section {
   background: var(--paper);
   border-radius: 0;
@@ -469,9 +688,15 @@
   margin: 0 auto;
   box-shadow: none;
   border: none;
+
+  /* Hauteur et centrage vertical */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* IMPORTANT: supprimer l’inter-section margin */
+/* IMPORTANT: supprimer l'inter-section margin */
 .section+.section {
   margin-top: 0;
 }
@@ -851,6 +1076,32 @@
   font-weight: 600;
 }
 
+/* Explore links - discrete navigation from featured content */
+.explore-links {
+  text-align: center;
+  margin-top: clamp(20px, 3vh, 32px);
+  font-size: 0.875rem;
+  color: rgba(var(--c-ink), 0.65);
+}
+
+.explore-links a {
+  color: rgba(var(--c-accent), 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  font-weight: 500;
+}
+
+.explore-links a:hover,
+.explore-links a:focus-visible {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.explore-links .link-separator {
+  margin: 0 clamp(12px, 2vw, 20px);
+  opacity: 0.4;
+}
+
 /* Note block - for secondary/contextual information */
 .note-block {
   background: rgba(var(--c-slate), 0.04);
@@ -1035,29 +1286,31 @@
   font-weight: 700;
 }
 
-/* "Don't" column - neutral/informative */
+/* "Don't" column - cadre neutre (périmètre, pas rejet) */
 .comparison-dont {
-  background: rgba(var(--c-slate), 0.03);
-  border: 1px solid rgba(var(--c-slate), 0.15);
+  background: rgba(var(--c-slate), 0.02);
+  border: 1px dashed rgba(var(--c-slate), 0.2);
   border-radius: 16px;
   padding: clamp(24px, 3vh, 36px) clamp(24px, 3vw, 32px);
-  color: var(--muted);
+  color: rgba(var(--c-ink), 0.6);
+  opacity: 0.85;
 }
 
 .comparison-dont h3 {
-  color: var(--slate);
+  color: rgba(var(--c-ink), 0.65);
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   margin-bottom: var(--stack-2);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 600;
 }
 
 .comparison-dont h3::before {
-  content: "○";
+  content: "◇";
   font-size: 1.5rem;
-  color: var(--slate);
-  opacity: 0.6;
+  color: rgba(var(--c-slate), 0.5);
+  opacity: 0.7;
 }
 
 .comparison-dont ul {
@@ -1276,9 +1529,50 @@
    ========================================================= */
 
 .site-footer {
-  background: var(--footer-bg);
+  /* Footer fixe en bas - même style que header */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(var(--c-white), 0.08);
+  box-shadow: 0 -4px 16px rgba(var(--c-black), 0.1);
+
+  /* Variables de couleur - gérées par JS */
+  --footer-text: var(--nav-on-dark);
   color: var(--footer-text);
-  padding: 2rem 0;
+
+  padding: 1rem 0;
+
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Footer states - gérés par header.js */
+.has-hero .site-footer.is-top {
+  background: transparent;
+  backdrop-filter: none;
+  border-top-color: rgba(var(--c-white), 0.05);
+  --footer-text: var(--nav-on-dark);
+}
+
+.has-hero .site-footer.is-hero {
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+  border-top-color: rgba(var(--c-white), 0.08);
+  --footer-text: var(--nav-on-dark);
+}
+
+.has-hero .site-footer.is-scrolled {
+  background: var(--header-scroll-bg);
+  backdrop-filter: blur(6px);
+  border-top-color: var(--header-scroll-border);
+  box-shadow: 0 -4px 16px rgba(var(--c-black), 0.15);
+  --footer-text: var(--nav-on-light);
 }
 
 .footer-row {

@@ -6,18 +6,24 @@ permalink: "/"
 bodyClass: "has-hero"
 ---
 
-<div class="hero-band">
+<div class="hero-band snap-item">
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
+        <p class="hero-tagline">Architecture · Outillage · Transmission</p>
         <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
-        <p>IOBEWI accompagne la conception matériel-logiciel, la montée en maturité et la mise en place d'outils qui rendent les projets exploitables et transmissibles.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section container hero-intro">
+    <div class="section-title animate-on-scroll fade-in">
+      <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel.</h2>
     </div>
 
     <aside class="tech-sidebar tech-footer" aria-label="Technologies maîtrisées" markdown="0">
@@ -46,12 +52,7 @@ bodyClass: "has-hero"
         <span>CI/CD</span>
       </div>
     </aside>
-  </section>
 
-  <section class="section container hero-intro">
-    <div class="section-title animate-on-scroll fade-in">
-      <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel.</h2>
-    </div>
     <div class="animate-on-scroll slide-up delay-200">
       <p class="lead" style="text-align: center; max-width: 850px; margin: 0 auto var(--stack-3);">
         Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l'exploitation.
@@ -73,7 +74,7 @@ bodyClass: "has-hero"
   </section>
 </div>
 
-<section class="section container section-major">
+<section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
@@ -100,7 +101,7 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container section-major">
+<section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Les expertises qui donnent de la hauteur aux projets embarqués</h2>
   </div>
@@ -128,7 +129,7 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container section-major">
+<section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
@@ -165,6 +166,10 @@ bodyClass: "has-hero"
       <li>Contributions publiques réutilisées, avec retours de la communauté</li>
     </ul>
   </article>
+
+  <p class="explore-links animate-on-scroll fade-in delay-300">
+    <a href="https://github.com/iobewi" target="_blank" rel="noopener">Explorer sur GitHub →</a>
+  </p>
 
   <!-- Niveau 3 : Projets (cartes compactes avec icônes) -->
   <div class="content-group section-minor">
@@ -205,7 +210,7 @@ bodyClass: "has-hero"
   </article>
 </section>
 
-<section class="section container section-major">
+<section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
     <h2>Une approche progressive, au rythme du terrain</h2>
   </div>
@@ -219,7 +224,7 @@ bodyClass: "has-hero"
   </div>
 </section>
 
-<section class="section container section-major">
+<section class="section container section-major snap-item">
   <div class="cta-hero animate-on-scroll scale-in">
     <h2>Structurons votre prochaine étape</h2>
     <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s'adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
