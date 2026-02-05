@@ -1,0 +1,71 @@
+name: Tests E2E et Validation
+
+on:
+  push:
+    branches: [ main, upgrade-ux ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Tests Playwright
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Installation de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Lancer les tests
+        run: npm test
+
+      - name: Upload des résultats (si échec)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+      - name: Upload des vidéos (si échec)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-videos
+          path: test-results/**/*.webm
+          retention-days: 3
+
+      - name: Commentaire PR avec résultats
+        if: github.event_name == 'pull_request' && failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issueNumber = context.issue.number;
+
+            github.rest.issues.createComment({
+              issue_number: issueNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## ❌ Tests échoués
+
+              Les tests automatisés ont échoué. Consultez les artefacts pour plus de détails :
+              - Rapport HTML Playwright
+              - Screenshots et vidéos des échecs
+
+              [Voir les détails de l'exécution](${context.payload.repository.html_url}/actions/runs/${context.runId})`
+            });
