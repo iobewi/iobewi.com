@@ -79,18 +79,24 @@
 /* Footer compact en mobile - une seule ligne avec icônes */
 @media (max-width: 768px) {
   .site-footer {
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
   }
 
   .footer-row {
-    gap: 0.5rem;
-    font-size: 0.7rem;
-    flex-wrap: nowrap; /* Force sur une seule ligne */
+    gap: 0.25rem;
+    font-size: 0.65rem;
+    flex-wrap: nowrap !important; /* Force sur une seule ligne */
     align-items: center;
   }
 
   .footer-row > div:first-child {
     white-space: nowrap; /* Empêche le copyright de se couper */
+    flex-shrink: 0;
+  }
+
+  .footer-links {
+    gap: 0.25rem;
+    flex-shrink: 1;
   }
 
   /* En mobile : afficher les icônes, cacher le texte complet */
@@ -104,6 +110,10 @@
   }
 
   .separator {
-    margin: 0 0.25rem;
+    margin: 0 0.15rem;
+  }
+
+  .footer-links a {
+    flex-shrink: 0;
   }
 }
