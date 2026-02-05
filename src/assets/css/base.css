@@ -28,6 +28,20 @@ main {
   }
 }
 
+/* Zone à risque de wrap du footer : augmenter le padding */
+@media (min-width: 769px) and (max-width: 1200px) {
+  main {
+    padding-bottom: 7rem; /* Plus d'espace car le footer peut wrapper */
+  }
+}
+
+/* Large desktop : le footer ne wrappe pas, padding normal */
+@media (min-width: 1201px) {
+  main {
+    padding-bottom: 5rem;
+  }
+}
+
 /* Typography - Improved hierarchy */
 h1,
 h2,
