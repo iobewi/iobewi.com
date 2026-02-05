@@ -67,53 +67,48 @@
   align-items: center;
 }
 
-/* Par défaut : afficher le texte complet, cacher les icônes */
-.link-icon {
+/* Par défaut : afficher le texte complet, cacher les versions courtes */
+.link-icon,
+.copyright-short {
   display: none;
 }
 
-.link-full {
+.link-full,
+.copyright-full {
   display: inline;
 }
 
 /* Footer compact en mobile - une seule ligne avec icônes */
 @media (max-width: 768px) {
   .site-footer {
-    padding: 0.4rem 0;
+    padding: 0.5rem 0;
   }
 
   .footer-row {
-    gap: 0.25rem;
-    font-size: 0.65rem;
-    flex-wrap: nowrap !important; /* Force sur une seule ligne */
+    justify-content: center; /* Centre le contenu */
+    gap: 0.75rem;
+    font-size: 0.8rem; /* Taille lisible */
+    flex-wrap: nowrap !important;
     align-items: center;
   }
 
-  .footer-row > div:first-child {
-    white-space: nowrap; /* Empêche le copyright de se couper */
-    flex-shrink: 0;
-  }
-
-  .footer-links {
-    gap: 0.25rem;
-    flex-shrink: 1;
-  }
-
-  /* En mobile : afficher les icônes, cacher le texte complet */
+  /* En mobile : versions courtes */
+  .copyright-short,
   .link-icon {
     display: inline;
     font-weight: 600;
   }
 
+  .copyright-full,
   .link-full {
     display: none;
   }
 
-  .separator {
-    margin: 0 0.15rem;
+  .footer-links {
+    gap: 0.5rem;
   }
 
-  .footer-links a {
-    flex-shrink: 0;
+  .separator {
+    margin: 0 0.25rem;
   }
 }
