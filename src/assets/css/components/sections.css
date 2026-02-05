@@ -1,0 +1,132 @@
+/* =========================================================
+   SECTIONS & LAYOUT
+   Sections, Scroll snap
+   ========================================================= */
+
+/* =========================================================
+   SECTIONS (layout global)
+   → FUTURE FILE: components/sections.css
+   ========================================================= */
+
+/* ===============================================
+   SCROLL SNAP - Architecture à deux niveaux
+   → FUTURE FILE: components/sections.css
+   =============================================== */
+
+/* Unité de navigation principale */
+.snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-bottom: 25svh;
+}
+
+/* Neutraliser le snap interne pour éviter les conflits */
+.snap-item .section,
+.snap-item .hero {
+  scroll-snap-align: none;
+}
+
+/* ===============================================
+   SECTIONS (layout global)
+   =============================================== */
+
+.section {
+  background: var(--paper);
+  border-radius: 0;
+  padding-block: var(--section-pad-y);
+  margin: 0 auto;
+  box-shadow: none;
+  border: none;
+
+  /* Hauteur et centrage vertical */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* IMPORTANT: supprimer l'inter-section margin */
+.section+.section {
+  margin-top: 0;
+}
+
+/* Hero band: sections transparentes */
+.hero-band .section {
+  background: transparent;
+}
+
+/* Typo helpers */
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-strong);
+  font-weight: 700;
+  margin: 0;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.section-title {
+  margin-bottom: var(--stack-3);
+}
+
+.section-title h2 {
+  margin-bottom: var(--stack-2);
+}
+
+/* Section dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(var(--c-ink), 0.1) 20%,
+      rgba(var(--c-ink), 0.1) 80%,
+      transparent);
+  margin-block: var(--section-pad-y);
+}
+
+/* Content spacing utilities */
+.stack-sm>*+* {
+  margin-top: var(--stack-1);
+}
+
+.stack-md>*+* {
+  margin-top: var(--stack-2);
+}
+
+.stack-lg>*+* {
+  margin-top: var(--stack-3);
+}
+
+/* Section spacing variants for better rhythm */
+.section-major {
+  margin-top: clamp(80px, 10vh, 120px);
+}
+
+.section-minor {
+  margin-top: var(--stack-3);
+}
+
+/* Espacement entre les content-group */
+.content-group + .content-group {
+  margin-top: var(--stack-4);
+}
+
+/* Espacement interne des enfants d'un content-group */
+.content-group>*+* {
+  margin-top: var(--stack-2);
+}
+
+/* Espace plus important entre h3 et contenu précédent */
+.content-group h3 {
+  margin-top: var(--stack-3);
+}
+
+.content-group h3:first-child {
+  margin-top: 0;

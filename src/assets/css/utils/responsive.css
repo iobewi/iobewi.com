@@ -1,0 +1,251 @@
+@media (max-width: 480px) {
+
+  /* Container tighter on small screens */
+  .container {
+    width: 100%;
+    padding-inline: clamp(16px, 4vw, 20px);
+  }
+
+  /* Buttons full width on small mobile */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Smaller tech chips */
+  .tech-chip {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Hero adjustments */
+  .hero-band {
+    min-height: var(--hero-min-h-mobile);
+  }
+
+  .hero-intro h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  /* Reduced spacing */
+  .section {
+    padding-block: clamp(48px, 8vh, 64px);
+  }
+
+  /* Cards full width */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--gap-2);
+  }
+}
+
+/* Mobile (≤ 640px) */
+@media (max-width: 640px) {
+
+  /* Header adjustments */
+  .site-header {
+    --header-h: 64px;
+  }
+
+  .header-inner {
+    height: 64px;
+  }
+
+  /* Logo smaller */
+  .logo {
+    font-size: 1.125rem;
+  }
+
+  /* Navigation adjustments */
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+
+  /* Hero title smaller */
+  .hero-intro h1 {
+    font-size: clamp(2.25rem, 7vw, 2.75rem);
+  }
+
+  .hero-intro p {
+    font-size: 1rem;
+  }
+
+  /* Hero tech chips wrap better */
+  .hero-tech {
+    gap: 12px;
+  }
+
+  /* Section titles smaller */
+  h2 {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.125rem, 3.5vw, 1.375rem);
+  }
+
+  /* Card padding reduced */
+  .card,
+  .proof-card {
+    padding: clamp(14px, 2vh, 18px);
+  }
+
+  /* CTA buttons stack */
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta .btn {
+    width: 100%;
+  }
+
+  /* Footer stack */
+  .footer-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  /* Container medium width */
+  .container {
+    width: min(960px, 90vw);
+  }
+
+  /* Grid adjustments */
+  .grid,
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero on tablet */
+  .hero-intro {
+    max-width: 700px;
+  }
+
+  /* Section padding medium */
+  .section {
+    padding-block: clamp(64px, 10vh, 96px);
+  }
+}
+
+/* Desktop (≥ 1025px) */
+@media (min-width: 1025px) {
+
+  /* Full width grids on large screens */
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Hero wider on desktop */
+  .hero-intro {
+    max-width: 800px;
+  }
+
+  /* Larger cards hover effects more pronounced */
+  .card:hover,
+  .proof-card:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Tech chips larger hover effect */
+  .tech-chip:hover {
+    transform: translateY(-4px) rotateX(7deg) rotateY(7deg);
+  }
+}
+
+/* Large Desktop (≥ 1440px) */
+@media (min-width: 1440px) {
+  .container {
+    width: min(1200px, 90vw);
+  }
+
+  /* Increase spacing on very large screens */
+  .section {
+    padding-block: clamp(96px, 12vh, 160px);
+  }
+
+  /* Larger gaps */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    gap: var(--gap-3);
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Larger touch targets */
+  .btn {
+    padding: 14px 24px;
+    min-height: 44px;
+  }
+
+  .tech-chip {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+  }
+
+  /* Remove hover-only effects on touch devices */
+  .card:hover,
+  .proof-card:hover {
+    transform: none;
+  }
+
+  .tech-chip:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Disable complex animations on touch */
+  .tech-chip:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+
+  .card,
+  .soft-card,
+  .proof-card {
+    border-width: 2px;
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+}
+
+/* Dark mode support (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  /* Ready for dark mode tokens if needed */
+}

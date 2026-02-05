@@ -1,0 +1,89 @@
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+}
+
+/* =========================================================
+   FOOTER
+   → FUTURE FILE: layout/footer.css
+   ========================================================= */
+
+.site-footer {
+  /* Footer par défaut : position normale */
+  background: var(--header-scroll-bg);
+  border-top: 1px solid var(--header-scroll-border);
+  color: var(--nav-on-light);
+  padding: 2rem 0;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Footer fixe uniquement sur page d'accueil avec hero-band */
+.hero-band ~ * .site-footer,
+body:has(.hero-band) .site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem 0;
+
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(var(--c-white), 0.08);
+  box-shadow: 0 -4px 16px var(--color-black-10);
+
+  /* Variables de couleur - gérées par JS */
+  --footer-text: var(--nav-on-dark);
+  color: var(--footer-text);
+}
+
+/* Footer states - gérés par header.js */
+/* États dark footer (is-top et is-hero partagent la couleur texte) */
+.has-hero .site-footer.is-top,
+.has-hero .site-footer.is-hero {
+  --footer-text: var(--nav-on-dark);
+}
+
+.has-hero .site-footer.is-top {
+  background: transparent;
+  backdrop-filter: none;
+  border-top-color: rgba(var(--c-white), 0.05);
+}
+
+.has-hero .site-footer.is-hero {
+  background: var(--header-hero-bg);
+  backdrop-filter: blur(10px);
+  border-top-color: rgba(var(--c-white), 0.08);
+}
+
+/* État scrolled : fond clair avec texte sombre (pages avec ET sans hero) */
+.site-footer.is-scrolled {
+  background: var(--header-scroll-bg);
+  backdrop-filter: blur(6px);
+  border-top-color: var(--header-scroll-border);
+  box-shadow: 0 -4px 16px var(--color-black-15);
+  --footer-text: var(--nav-on-light);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================= */
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+
+  /* Container tighter on small screens */
+  .container {
+    width: 100%;
+    padding-inline: clamp(16px, 4vw, 20px);
