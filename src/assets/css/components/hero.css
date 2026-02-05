@@ -592,3 +592,5 @@
   border-color: var(--chip-hover-border);
   box-shadow:
     0 0 0 3px var(--chip-focus-ring),
+    0 6px 16px rgba(0, 0, 0, 0.12);
+}

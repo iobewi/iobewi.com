@@ -2,13 +2,6 @@
    FOOTER
    ========================================================= */
 
-}
-
-/* =========================================================
-   FOOTER
-   → FUTURE FILE: layout/footer.css
-   ========================================================= */
-
 .site-footer {
   /* Footer par défaut : position normale */
   background: var(--header-scroll-bg);
@@ -75,15 +68,3 @@ body:has(.hero-band) .site-footer {
   flex-wrap: wrap;
   font-size: 0.95rem;
 }
-
-/* =========================================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================================= */
-
-/* Small Mobile (≤ 480px) */
-@media (max-width: 480px) {
-
-  /* Container tighter on small screens */
-  .container {
-    width: 100%;
-    padding-inline: clamp(16px, 4vw, 20px);
