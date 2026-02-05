@@ -19,9 +19,12 @@ test.describe('Menu Hamburger Mobile', () => {
       // Le menu existe mais n'est pas visible (opacity: 0, pointer-events: none)
       await expect(nav).toBeAttached();
 
-      // Vérifier que le menu n'est pas interactif par défaut
+      // Attendre que les transitions CSS soient terminées et que .js-enabled soit appliqué
+      await page.waitForTimeout(500);
+
+      // Vérifier que le menu n'est pas interactif par défaut (avec .js-enabled)
       const opacity = await nav.evaluate(el => window.getComputedStyle(el).opacity);
-      expect(parseFloat(opacity)).toBeLessThan(0.5);
+      expect(parseFloat(opacity)).toBeLessThan(0.1);
     });
 
     test('3. Cliquer sur le hamburger ouvre le menu', async ({ page }) => {
