@@ -29,8 +29,7 @@
   padding-right: var(--padding-container-x);
 }
 
-.header-row,
-.footer-row {
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
