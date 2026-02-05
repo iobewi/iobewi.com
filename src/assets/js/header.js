@@ -45,6 +45,7 @@ if (header) {
 
 if (mobileMenuToggle && header) {
   let scrollPosition = 0;
+  const mobileViewport = window.matchMedia('(max-width: 768px)');
 
   // Fonction pour bloquer le scroll sans "jump"
   const lockScroll = () => {
@@ -62,6 +63,12 @@ if (mobileMenuToggle && header) {
     window.scrollTo(0, scrollPosition);
   };
 
+  const closeMobileMenu = () => {
+    header.classList.remove("is-menu-open");
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    unlockScroll();
+  };
+
   // Toggle du menu mobile
   mobileMenuToggle.addEventListener("click", () => {
     const isOpen = header.classList.toggle("is-menu-open");
@@ -71,25 +78,30 @@ if (mobileMenuToggle && header) {
     if (isOpen) {
       lockScroll();
     } else {
-      unlockScroll();
+      closeMobileMenu();
     }
   });
 
   // Fermer le menu quand on clique sur un lien
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      header.classList.remove("is-menu-open");
-      mobileMenuToggle.setAttribute("aria-expanded", "false");
-      unlockScroll();
+      closeMobileMenu();
     });
   });
 
   // Fermer le menu avec la touche Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && header.classList.contains("is-menu-open")) {
-      header.classList.remove("is-menu-open");
-      mobileMenuToggle.setAttribute("aria-expanded", "false");
-      unlockScroll();
+      closeMobileMenu();
     }
   });
+
+  const handleViewportChange = () => {
+    if (!mobileViewport.matches && header.classList.contains("is-menu-open")) {
+      closeMobileMenu();
+    }
+  };
+
+  mobileViewport.addEventListener("change", handleViewportChange);
+  window.addEventListener("resize", handleViewportChange);
 }

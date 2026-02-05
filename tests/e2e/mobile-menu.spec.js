@@ -236,5 +236,32 @@ test.describe('Menu Hamburger Mobile', () => {
       );
       expect(parseFloat(opacity)).toBeLessThan(0.5);
     });
+
+    test('13. Le menu ouvert se ferme quand on passe en desktop', async ({ page }) => {
+      await page.goto('/');
+      const hamburger = page.locator('.mobile-menu-toggle');
+      const header = page.locator('.site-header');
+
+      // Ouvrir en mobile
+      await page.setViewportSize({ width: 375, height: 667 });
+      await hamburger.click();
+      await page.waitForTimeout(400);
+
+      await expect(header).toHaveClass(/is-menu-open/);
+      await expect(hamburger).toHaveAttribute('aria-expanded', 'true');
+
+      let bodyPosition = await page.evaluate(() => document.body.style.position);
+      expect(bodyPosition).toBe('fixed');
+
+      // Passer en desktop doit forcer la fermeture
+      await page.setViewportSize({ width: 1200, height: 800 });
+      await page.waitForTimeout(400);
+
+      await expect(header).not.toHaveClass(/is-menu-open/);
+      await expect(hamburger).toHaveAttribute('aria-expanded', 'false');
+
+      bodyPosition = await page.evaluate(() => document.body.style.position);
+      expect(bodyPosition).toBe('');
+    });
   });
 });
