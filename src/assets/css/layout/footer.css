@@ -61,7 +61,7 @@
   font-size: 0.95rem;
 }
 
-/* Footer compact en mobile */
+/* Footer compact en mobile - une seule ligne */
 @media (max-width: 768px) {
   .site-footer {
     padding: 0.5rem 0;
@@ -69,6 +69,12 @@
 
   .footer-row {
     gap: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    flex-wrap: nowrap; /* Force sur une seule ligne */
+    align-items: center;
+  }
+
+  .footer-row > div:first-child {
+    white-space: nowrap; /* Empêche le copyright de se couper */
   }
 }
