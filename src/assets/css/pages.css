@@ -64,7 +64,8 @@
 
 }
 
-.has-hero .site-header.is-scrolled {
+/* État scrolled : fond clair avec texte sombre (pages avec ET sans hero) */
+.site-header.is-scrolled {
   background: var(--header-scroll-bg);
   border-bottom: 1px solid var(--header-scroll-border);
   box-shadow: var(--shadow-header-scrolled);
@@ -176,6 +177,64 @@
   .hero-band::after {
     background-attachment: scroll;
   }
+}
+
+/* =========================================================
+   PAGE HERO — Hero simplifié pour pages internes
+   ========================================================= */
+
+.page-hero {
+  position: relative;
+  min-height: clamp(280px, 40vh, 400px);
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-h) + clamp(40px, 6vh, 64px)) 0 clamp(40px, 6vh, 64px);
+  background: linear-gradient(135deg,
+      rgb(var(--c-hero-0)) 0%,
+      rgb(var(--c-hero-1)) 100%);
+  overflow: hidden;
+}
+
+/* Pattern PCB en arrière-plan */
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/pcb-pattern.svg") center / cover no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(1px);
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 clamp(16px, 2vh, 24px);
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(var(--c-black), 0.4);
+  font-weight: 800;
+}
+
+.page-hero .lead {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  margin: 0;
+  color: var(--hero-text);
+  font-weight: 600;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .hero {
@@ -764,8 +823,23 @@
   margin-top: var(--stack-3);
 }
 
+/* Espacement entre les content-group */
+.content-group + .content-group {
+  margin-top: var(--stack-4);
+}
+
+/* Espacement interne des enfants d'un content-group */
 .content-group>*+* {
   margin-top: var(--stack-2);
+}
+
+/* Espace plus important entre h3 et contenu précédent */
+.content-group h3 {
+  margin-top: var(--stack-3);
+}
+
+.content-group h3:first-child {
+  margin-top: 0;
 }
 
 /* =========================================================
@@ -1529,12 +1603,23 @@
    ========================================================= */
 
 .site-footer {
-  /* Footer fixe en bas - même style que header */
+  /* Footer par défaut : position normale */
+  background: var(--header-scroll-bg);
+  border-top: 1px solid var(--header-scroll-border);
+  color: var(--nav-on-light);
+  padding: 2rem 0;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* Footer fixe uniquement sur page d'accueil avec hero-band */
+.hero-band ~ * .site-footer,
+body:has(.hero-band) .site-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 10;
+  padding: 1rem 0;
 
   background: var(--header-hero-bg);
   backdrop-filter: blur(10px);
@@ -1546,10 +1631,6 @@
   /* Variables de couleur - gérées par JS */
   --footer-text: var(--nav-on-dark);
   color: var(--footer-text);
-
-  padding: 1rem 0;
-
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 /* Footer states - gérés par header.js */
@@ -1567,7 +1648,8 @@
   --footer-text: var(--nav-on-dark);
 }
 
-.has-hero .site-footer.is-scrolled {
+/* État scrolled : fond clair avec texte sombre (pages avec ET sans hero) */
+.site-footer.is-scrolled {
   background: var(--header-scroll-bg);
   backdrop-filter: blur(6px);
   border-top-color: var(--header-scroll-border);
