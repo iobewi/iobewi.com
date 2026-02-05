@@ -78,6 +78,11 @@
   display: inline;
 }
 
+.link-icon svg {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 /* Footer compact en mobile - une seule ligne avec icônes */
 @media (max-width: 768px) {
   .site-footer {
