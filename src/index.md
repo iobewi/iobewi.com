@@ -90,7 +90,7 @@ bodyClass: "has-hero"
       </ul>
     </div>
     <div class="comparison-dont animate-on-scroll slide-up stagger-2">
-      <h3>Ce que IOBEWI ne fait pas</h3>
+      <h3>Ce qu'IOBEWI ne fait pas</h3>
       <ul>
         <li>Intégration clé en main</li>
         <li>Revente de matériel ou licences</li>

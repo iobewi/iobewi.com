@@ -218,7 +218,7 @@
           e.preventDefault();
 
           // Calculer l'offset pour le header fixe
-          const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+          const headerHeight = document.querySelector('.site-header')?.offsetHeight || 0;
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
           window.scrollTo({
@@ -253,9 +253,6 @@
     initParallax();
     initRippleEffect();
     initSmoothScroll();
-
-    // Log pour debug (à retirer en production)
-    console.log('🎨 Animations initialisées');
   }
 
   // Lancer l'initialisation
