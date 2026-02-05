@@ -49,6 +49,54 @@
   --measure: 68ch;
   --measure-narrow: 58ch;
 
+  /* Spacing helpers (valeurs clamp répétées) */
+  --space-responsive-sm: clamp(16px, 2vh, 24px);
+  --space-responsive-md: clamp(24px, 3vh, 36px);
+  --space-responsive-lg: clamp(40px, 6vh, 64px);
+  --space-responsive-xl: clamp(48px, 6vh, 80px);
+
+  /* Padding helpers (container/sections) */
+  --padding-container-x: clamp(24px, 3vw, 48px);
+  --padding-container-y: clamp(24px, 4vw, 48px);
+
+  /* Sizes helpers */
+  --size-icon-md: clamp(72px, 9vw, 96px);
+
+  /* Opacités courantes */
+  --opacity-overlay-light: 0.4;
+  --opacity-overlay-medium: 0.6;
+  --opacity-overlay-heavy: 0.85;
+
+  /* Couleurs rgba courantes */
+  --color-white-10: rgba(var(--c-white), 0.1);
+  --color-white-12: rgba(var(--c-white), 0.12);
+  --color-white-20: rgba(var(--c-white), 0.2);
+  --color-white-75: rgba(var(--c-white), 0.75);
+  --color-white-85: rgba(var(--c-white), 0.85);
+  --color-white-90: rgba(var(--c-white), 0.9);
+
+  --color-black-10: rgba(var(--c-black), 0.1);
+  --color-black-15: rgba(var(--c-black), 0.15);
+  --color-black-20: rgba(var(--c-black), 0.2);
+  --color-black-30: rgba(var(--c-black), 0.3);
+  --color-black-40: rgba(var(--c-black), 0.4);
+
+  --color-accent-02: rgba(var(--c-accent), 0.02);
+  --color-accent-06: rgba(var(--c-accent), 0.06);
+  --color-accent-20: rgba(var(--c-accent), 0.2);
+  --color-accent-60: rgba(var(--c-accent), 0.6);
+  --color-accent-85: rgba(var(--c-accent), 0.85);
+
+  --color-slate-03: rgba(var(--c-slate), 0.03);
+  --color-slate-04: rgba(var(--c-slate), 0.04);
+  --color-slate-15: rgba(var(--c-slate), 0.15);
+
+  --color-ink-60: rgba(var(--c-ink), 0.6);
+  --color-ink-65: rgba(var(--c-ink), 0.65);
+
+  --color-hero-40: rgba(var(--c-hero-0), 0.4);
+  --color-hero-50: rgba(var(--c-hero-0), 0.5);
+
   /* Rhythm */
   --section-pad-y: clamp(72px, 9vh, 128px);
   --section-pad-y-lg: clamp(96px, 12vh, 160px);
