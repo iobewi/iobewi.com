@@ -13,9 +13,9 @@ test.describe('Page d\'accueil', () => {
   });
 
   test('Affiche le hero principal', async ({ page }) => {
-    // Vérifier que le hero est présent
-    const hero = page.locator('.hero-band, .hero');
-    await expect(hero).toBeVisible();
+    // Vérifier que le hero band est présent
+    const heroBand = page.locator('.hero-band').first();
+    await expect(heroBand).toBeVisible();
 
     // Vérifier le titre principal
     const h1 = page.locator('h1').first();
