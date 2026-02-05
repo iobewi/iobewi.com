@@ -43,7 +43,7 @@ bodyClass: "has-hero"
         <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
         <span>ROS 2</span>
       </div>
-      <div class="tech-sidebar-item" data-label="MicroROS" tabindex="0">
+      <div class="tech-sidebar-item" data-label="micro-ROS" tabindex="0">
         <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" />
         <span>micro-ROS</span>
       </div>

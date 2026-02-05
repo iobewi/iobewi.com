@@ -156,7 +156,7 @@
    * Ajoute un effet ripple au clic sur les éléments désignés
    */
   function initRippleEffect() {
-    const rippleElements = document.querySelectorAll('.tech-chip');
+    const rippleElements = document.querySelectorAll('.tech-chip, .tech-sidebar-item');
 
     rippleElements.forEach(element => {
       element.addEventListener('click', function(e) {
