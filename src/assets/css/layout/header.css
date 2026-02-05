@@ -221,14 +221,17 @@
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
 
-    /* Caché par défaut */
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
     /* Au-dessus de tout sauf le hamburger */
     z-index: 9999 !important;
+  }
+
+  /* Ne masquer le menu mobile par défaut que si JavaScript est actif */
+  .js-enabled .nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   /* Afficher le menu quand ouvert - TOUJOURS, peu importe les autres classes */
