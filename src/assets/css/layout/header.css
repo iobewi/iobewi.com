@@ -190,7 +190,7 @@
     display: block !important;
   }
 
-  /* IMPORTANT : Le nav doit sortir complètement du flux du header */
+  /* Fallback sans JavaScript : garder la nav visible dans le flux */
   .nav {
     /* Reset TOUS les styles desktop */
     display: flex !important;
@@ -205,6 +205,22 @@
     margin-bottom: 0 !important;
     padding: 0 !important;
 
+    /* Par défaut (no-JS), rester dans le flux de page */
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    z-index: auto !important;
+  }
+
+  /* En JS, la nav devient un panneau mobile plein écran piloté par le toggle */
+  .js-enabled .nav {
     /* Position fixe pour couvrir tout l'écran */
     position: fixed !important;
     top: 0 !important;
@@ -225,10 +241,8 @@
 
     /* Au-dessus de tout sauf le hamburger */
     z-index: 9999 !important;
-  }
 
-  /* Ne masquer le menu mobile par défaut que si JavaScript est actif */
-  .js-enabled .nav {
+    /* Ne masquer le menu mobile par défaut que si JavaScript est actif */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
