@@ -40,7 +40,9 @@ npm run test:report
 
 ## Structure des tests
 
-### `tests/e2e/header.spec.js`
+### Tests E2E (End-to-End)
+
+#### `tests/e2e/header.spec.js`
 Tests du header et de la navigation, couvrant les 3 scénarios du backlog qualité :
 
 1. **État du header en haut de page**
@@ -61,7 +63,7 @@ Tests du header et de la navigation, couvrant les 3 scénarios du backlog qualit
    - Vérifie que les liens de navigation fonctionnent
    - Vérifie que le header est présent sur toutes les pages
 
-### `tests/e2e/homepage.spec.js`
+#### `tests/e2e/homepage.spec.js`
 Tests de la page d'accueil :
 
 - Affichage du hero principal
@@ -72,6 +74,37 @@ Tests de la page d'accueil :
 - Responsive design (mobile/desktop)
 - Animations au scroll
 - Accessibilité de base
+- **Nouveau** : Tech chips visibles et interactifs
+- **Nouveau** : Glassmorphism (backdrop-filter) sur header/footer
+- **Nouveau** : Gradient du hero
+- **Nouveau** : Animations CSS définies
+- **Nouveau** : Variables CSS chargées
+
+#### `tests/e2e/responsive-grids.spec.js` 🎯
+**Tests de régression critiques** pour les grids responsive :
+
+- Expertise-grid : 4 colonnes sur desktop (≥1024px)
+- Expertise-grid : 2 colonnes sur tablet (768px-1023px)
+- Expertise-grid : 1 colonne sur mobile (≤640px)
+- Grids génériques responsive (.grid, .grid-2, etc.)
+- Comparison-grid : 2 colonnes sur tablet+, 1 sur mobile
+- Pas de débordement horizontal sur mobile
+
+**Contexte** : Bug critique où l'expertise-grid restait en colonne unique à cause de variables CSS dans les media queries.
+
+### Tests unitaires
+
+#### `tests/unit/css-validation.spec.js` ✅
+**Tests de validation CSS** pour détecter les problèmes automatiquement :
+
+1. **Accolades équilibrées** : Tous les fichiers CSS doivent avoir autant d'ouvertures que de fermetures
+2. **Pas de variables dans media queries** : Les media queries ne supportent pas `var(--bp-*)`
+3. **Breakpoints cohérents** : Seuls les breakpoints standardisés sont autorisés (480px, 560px, 640px, 768px, 1024px, 1440px)
+4. **Pas de @import** : Utiliser `<link>` dans HTML plutôt que `@import` CSS
+5. **Fichiers non vides** : Détecter les fichiers CSS vides ou corrompus
+6. **Pas de code mort** : Avertir si plus de 50% de commentaires (probable code mort)
+
+**Contexte** : Plusieurs bugs CSS rencontrés (accolades manquantes, variables dans media queries, footer avec code bizarre).
 
 ## Configuration
 

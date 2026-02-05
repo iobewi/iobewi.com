@@ -149,4 +149,126 @@ test.describe('Page d\'accueil', () => {
       expect(text || ariaLabel).toBeTruthy();
     }
   });
+
+  test('Tech chips sont visibles et interactifs', async ({ page }) => {
+    // Chercher les tech chips (dans le footer tech ou ailleurs)
+    const techChips = page.locator('.tech-sidebar-item, .tech-chip');
+
+    if (await techChips.count() > 0) {
+      const firstChip = techChips.first();
+
+      // Vérifier que le chip est visible
+      await expect(firstChip).toBeVisible();
+
+      // Vérifier qu'il a un label
+      const label = await firstChip.getAttribute('data-label');
+      expect(label).toBeTruthy();
+
+      // Vérifier que l'image/icône est visible
+      const icon = firstChip.locator('img, .tech-sidebar-icon, .tech-logo');
+      if (await icon.count() > 0) {
+        await expect(icon.first()).toBeVisible();
+      }
+
+      // Hover pour voir le tooltip (si implémenté avec ::after)
+      await firstChip.hover();
+      await page.waitForTimeout(200);
+
+      // Le tooltip devrait être visible après hover
+      // (Difficile à tester avec ::after, on vérifie juste que le hover ne casse rien)
+    }
+  });
+
+  test('Header et footer ont backdrop-filter (glassmorphism)', async ({ page }) => {
+    // Scroller pour activer le mode scrolled
+    await page.evaluate(() => {
+      const hero = document.querySelector('.hero-band') || document.querySelector('.hero');
+      if (hero) {
+        const heroBottom = hero.offsetTop + hero.offsetHeight + 100;
+        window.scrollTo(0, heroBottom);
+      } else {
+        window.scrollTo(0, 1000);
+      }
+    });
+
+    await page.waitForTimeout(500);
+
+    // Vérifier le header
+    const header = page.locator('.site-header');
+    const headerBackdrop = await header.evaluate(el => {
+      const style = window.getComputedStyle(el);
+      return style.backdropFilter || style.webkitBackdropFilter;
+    });
+
+    // Devrait avoir blur (glassmorphism)
+    expect(headerBackdrop).toContain('blur');
+
+    // Vérifier le footer (si fixe)
+    const footer = page.locator('.site-footer');
+    if (await footer.count() > 0) {
+      const footerBackdrop = await footer.evaluate(el => {
+        const style = window.getComputedStyle(el);
+        return style.backdropFilter || style.webkitBackdropFilter;
+      });
+
+      // Le footer peut avoir backdrop-filter selon l'état
+      if (footerBackdrop && footerBackdrop !== 'none') {
+        expect(footerBackdrop).toContain('blur');
+      }
+    }
+  });
+
+  test('Hero a le bon gradient et overlay', async ({ page }) => {
+    const heroBand = page.locator('.hero-band').first();
+
+    if (await heroBand.count() > 0) {
+      const background = await heroBand.evaluate(el => {
+        const style = window.getComputedStyle(el);
+        return style.background || style.backgroundColor;
+      });
+
+      // Devrait avoir un background (gradient ou couleur)
+      expect(background).toBeTruthy();
+      expect(background).not.toBe('rgba(0, 0, 0, 0)');
+      expect(background).not.toBe('transparent');
+    }
+  });
+
+  test('Animations CSS sont définies', async ({ page }) => {
+    // Vérifier que les classes d'animation existent
+    const animatedElements = page.locator('.animate-on-scroll');
+
+    if (await animatedElements.count() > 0) {
+      const firstAnimated = animatedElements.first();
+
+      // Vérifier qu'il a une transition ou animation définie
+      const transition = await firstAnimated.evaluate(el => {
+        const style = window.getComputedStyle(el);
+        return style.transition;
+      });
+
+      // Devrait avoir une transition définie
+      expect(transition).toBeTruthy();
+      expect(transition).not.toBe('all 0s ease 0s');
+    }
+  });
+
+  test('Variables CSS sont chargées', async ({ page }) => {
+    // Vérifier que les variables CSS importantes sont définies
+    const variables = await page.evaluate(() => {
+      const root = getComputedStyle(document.documentElement);
+      return {
+        accent: root.getPropertyValue('--accent'),
+        ink: root.getPropertyValue('--ink'),
+        paper: root.getPropertyValue('--paper'),
+        headerH: root.getPropertyValue('--header-h')
+      };
+    });
+
+    // Toutes les variables principales devraient être définies
+    expect(variables.accent).toBeTruthy();
+    expect(variables.ink).toBeTruthy();
+    expect(variables.paper).toBeTruthy();
+    expect(variables.headerH).toBeTruthy();
+  });
 });
