@@ -3,17 +3,7 @@
    ========================================================= */
 
 .site-footer {
-  /* Footer par défaut : position normale */
-  background: var(--header-scroll-bg);
-  border-top: 1px solid var(--header-scroll-border);
-  color: var(--nav-on-light);
-  padding: 2rem 0;
-  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-}
-
-/* Footer fixe uniquement sur page d'accueil avec hero-band */
-.hero-band ~ * .site-footer,
-body:has(.hero-band) .site-footer {
+  /* Footer fixé sur toutes les pages */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -31,6 +21,8 @@ body:has(.hero-band) .site-footer {
   /* Variables de couleur - gérées par JS */
   --footer-text: var(--nav-on-dark);
   color: var(--footer-text);
+
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 /* Footer states - gérés par header.js */

@@ -16,6 +16,11 @@ body {
   line-height: 1.6;
 }
 
+main {
+  /* Padding pour éviter que le contenu soit caché par le footer fixe */
+  padding-bottom: 5rem;
+}
+
 /* Typography - Improved hierarchy */
 h1,
 h2,
