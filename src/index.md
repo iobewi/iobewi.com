@@ -52,7 +52,6 @@ bodyClass: "has-hero"
         <span>CI/CD</span>
       </div>
     </aside>
-
     <div class="animate-on-scroll slide-up delay-200">
       <p class="lead" style="text-align: center; max-width: 850px; margin: 0 auto var(--stack-3);">
         Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l'exploitation.
@@ -172,7 +171,7 @@ bodyClass: "has-hero"
   </p>
 
   <!-- Niveau 3 : Projets (cartes compactes avec icônes) -->
-  <div class="content-group section-minor">
+  <div class="content-group">
     <h3 style="margin-bottom: var(--stack-2);">Projets démonstrateurs</h3>
     <div class="grid grid-tight grid-centered" style="--card-max-width: 360px">
       <article class="project-card-compact animate-on-scroll slide-up stagger-1" data-icon="robot">

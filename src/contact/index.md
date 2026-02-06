@@ -19,7 +19,7 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
 
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300" style="max-width: 700px; margin: var(--stack-3) auto;">
+  <div class="content-group animate-on-scroll fade-in delay-300" style="max-width: 700px; margin: var(--stack-3) auto;">
     <ul style="list-style: none; padding: 0; font-size: 1.125rem;">
       <li style="margin-bottom: var(--stack-2);">
         <strong>Email</strong> : <a href="mailto:contact@iobewi.com">contact@iobewi.com</a>
