@@ -109,13 +109,26 @@
   --section-pad-y: clamp(72px, 9vh, 128px);
   --section-pad-y-lg: clamp(96px, 12vh, 160px);
 
-  --stack-1: clamp(16px, 1.5vh, 20px);
-  --stack-2: clamp(24px, 2.8vh, 36px);
-  --stack-3: clamp(36px, 4.2vh, 56px);
+  /* Espacements universels - marges, gaps, padding */
+  --stack-1: clamp(12px, 1.5vw, 20px);    /* Petit espacement */
+  --stack-2: clamp(20px, 2.5vw, 32px);    /* Moyen - paragraphes, listes, petits gaps */
+  --stack-3: clamp(32px, 4vw, 48px);      /* Large - sections, groupes, gaps */
 
-  --gap-1: clamp(16px, 2.5vw, 24px);
-  --gap-2: clamp(24px, 3.5vw, 36px);
-  --gap-3: clamp(32px, 5vw, 48px);
+  /* Tailles de police - responsive (titres, lead) */
+  --text-h1: clamp(2.5rem, 5vw, 3.75rem);
+  --text-h2: clamp(1.875rem, 4vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 3vw, 1.5rem);
+  --text-h4: clamp(1.125rem, 2.5vw, 1.25rem);
+  --text-lead: clamp(1.125rem, 2.5vw, 1.25rem);
+  --text-body: clamp(1rem, 1.5vw, 1.125rem);
+
+  /* Tailles de police - fixes */
+  --text-xs: 0.875rem;    /* 14px - Très petit */
+  --text-sm: 0.95rem;     /* 15px - Petit */
+  --text-base: 1rem;      /* 16px - Base */
+  --text-lg: 1.125rem;    /* 18px - Large */
+  --text-xl: 1.5rem;      /* 24px - Très large */
+  --text-2xl: 2rem;       /* 32px - Titre */
 
   --hero-min-h: 80vh;
   --hero-min-h-mobile: 72vh;

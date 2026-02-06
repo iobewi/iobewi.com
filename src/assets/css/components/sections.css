@@ -67,8 +67,10 @@
 
 .lead {
   color: var(--muted);
-  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-size: var(--text-lead);
   line-height: 1.7;
+  margin-bottom: var(--stack-3);
+  /* Espace après le paragraphe d'intro */
 }
 
 .section-title {
@@ -100,25 +102,16 @@
   margin-top: var(--stack-2);
 }
 
-.stack-lg>*+* {
-  margin-top: var(--stack-3);
-}
-
 /* Section spacing variants for better rhythm */
 .section-major {
   margin-top: clamp(80px, 10vh, 120px);
 }
 
-.section-minor {
-  margin-top: var(--stack-3);
+/* Content-group : espacement interne et externe */
+.content-group {
+  margin-bottom: var(--stack-3);  /* Espace après chaque groupe */
 }
 
-/* Espacement entre les content-group */
-.content-group + .content-group {
-  margin-top: var(--stack-4);
-}
-
-/* Espacement interne des enfants d'un content-group */
 .content-group>*+* {
   margin-top: var(--stack-2);
 }

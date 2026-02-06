@@ -52,7 +52,7 @@
 }
 
 .cta-hero .btn {
-  font-size: 1.0625rem;
+  font-size: var(--text-lg);
   padding: 16px 32px;
   box-shadow: var(--shadow-btn-hover);
 }
@@ -91,7 +91,7 @@
 }
 
 .activity-index {
-  font-size: 2rem;
+  font-size: var(--text-2xl);
   color: var(--accent);
   font-weight: 600;
 }
@@ -102,13 +102,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: var(--stack-2);
 }
 
 .cta {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--stack-1);
 }
 
 /* =========================================================

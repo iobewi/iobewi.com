@@ -33,7 +33,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: var(--stack-3);
 }
 
 .has-hero .site-header {
@@ -100,13 +100,13 @@
 }
 
 .brand-tagline {
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  gap: var(--stack-1);
   margin-left: auto;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -197,7 +197,7 @@
     flex-wrap: nowrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 2rem !important;
+    gap: var(--stack-3) !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-top: 0 !important;
@@ -256,7 +256,7 @@
 
   /* Styles des liens dans le menu mobile - toujours en blanc */
   .nav-link {
-    font-size: 1.5rem !important;
+    font-size: var(--text-xl) !important;
     padding: 1rem 2rem !important;
     color: white !important;
     opacity: 0.9 !important;
@@ -330,7 +330,7 @@
 @media (max-width: 768px) {
   .header-social {
     display: flex; /* Visible par défaut (fallback no-JS) */
-    gap: 1.5rem; /* Espacement plus important entre les icônes */
+    gap: var(--stack-2); /* Espacement plus important entre les icônes */
     align-items: center;
   }
 

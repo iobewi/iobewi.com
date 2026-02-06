@@ -180,7 +180,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: clamp(24px, 4vh, 48px);
+  gap: var(--stack-3);
 
   /* Carte conteneur avec fond flouté glassmorphism */
   background: var(--color-hero-50);
@@ -329,8 +329,8 @@
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-2);
-  margin-top: var(--space-responsive-sm);
+  gap: var(--stack-2);
+  margin-top: var(--stack-1);
 }
 
 /* Mobile : layout simple et empilé */
@@ -338,7 +338,7 @@
   .hero-content {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 4vh, 32px);
+    gap: var(--stack-2);
   }
 
   .hero h1 {
@@ -361,7 +361,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 28px);
+  gap: var(--stack-2);
 
   /* Espacement dans la section hero-intro */
   margin-block: clamp(32px, 5vh, 48px);
@@ -477,7 +477,7 @@
 /* Mobile: wrap propre + tailles adaptées */
 @media (max-width: 640px) {
   .tech-footer {
-    gap: 12px;
+    gap: var(--stack-1);
   }
 
   .hero-content {
@@ -509,9 +509,9 @@
 .hero-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: var(--stack-1);
   align-items: center;
-  margin-top: 18px;
+  margin-top: var(--stack-1);
 }
 
 .tech-chip {
