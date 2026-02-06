@@ -27,7 +27,7 @@ bodyClass: "has-hero"
     </p>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-200">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
     <p>
       Avec le temps, un besoin de renouer plus directement avec le matériel s'est imposé, conduisant à une réappropriation progressive des plateformes embarquées, des environnements de prototypage jusqu'aux microcontrôleurs. Cette trajectoire a permis de faire cohabiter des méthodes issues du monde système et DevOps avec les contraintes propres aux MCU, à la robotique et aux systèmes embarqués, en prenant ROS et la robotique comme terrain naturel de convergence.
     </p>
@@ -46,35 +46,35 @@ bodyClass: "has-hero"
       <h2>Principes de travail</h2>
     </div>
 
-    <div class="content-group animate-on-scroll fade-in delay-100" style="margin-bottom: 3rem;">
+    <div class="content-group section-minor animate-on-scroll fade-in delay-100" style="margin-bottom: 3rem;">
       <h3 style="margin-bottom: 1rem;">Accompagnement structuré et contractualisé</h3>
       <p style="margin: 0;">
         IOBEWI intervient dans un cadre défini, aux côtés des équipes, pour structurer et faire mûrir les projets, sans s'y substituer.
       </p>
     </div>
 
-    <div class="content-group animate-on-scroll fade-in delay-200" style="margin-bottom: 3rem;">
+    <div class="content-group section-minor animate-on-scroll fade-in delay-200" style="margin-bottom: 3rem;">
       <h3 style="margin-bottom: 1rem;">Confrontation au terrain et au matériel</h3>
       <p style="margin: 0;">
         Les choix techniques sont guidés par le matériel, les contraintes physiques et les conditions d'exploitation réelles, avant toute abstraction théorique.
       </p>
     </div>
 
-    <div class="content-group animate-on-scroll fade-in delay-300" style="margin-bottom: 3rem;">
+    <div class="content-group section-minor animate-on-scroll fade-in delay-300" style="margin-bottom: 3rem;">
       <h3 style="margin-bottom: 1rem;">Hybridation des pratiques</h3>
       <p style="margin: 0;">
         IOBEWI transpose des pratiques d'outillage, d'automatisation et de reproductibilité issues du monde DevOps vers les contraintes des microcontrôleurs, des plateformes embarquées et de la robotique.
       </p>
     </div>
 
-    <div class="content-group animate-on-scroll fade-in delay-400" style="margin-bottom: 3rem;">
+    <div class="content-group section-minor animate-on-scroll fade-in delay-400" style="margin-bottom: 3rem;">
       <h3 style="margin-bottom: 1rem;">Structuration progressive et lisibilité</h3>
       <p style="margin: 0;">
         Les outils, architectures et pratiques sont introduits progressivement, au rythme du projet, avec pour objectif la compréhension et la maintenabilité.
       </p>
     </div>
 
-    <div class="content-group animate-on-scroll fade-in delay-500" style="margin-bottom: 2rem;">
+    <div class="content-group section-minor animate-on-scroll fade-in delay-500" style="margin-bottom: 2rem;">
       <h3 style="margin-bottom: 1rem;">Autonomie comme objectif final</h3>
       <p style="margin: 0;">
         L'accompagnement vise à rendre les équipes capables d'exploiter, de faire évoluer et de maintenir leur socle technique de manière autonome.
