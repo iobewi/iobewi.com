@@ -25,21 +25,19 @@ bodyClass: "has-hero"
     <p class="lead">Plateforme robotique comme support d'accompagnement</p>
   </div>
 
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Contexte</h3>
     <p>
       R2BEWI est une plateforme robotique conçue par IOBEWI comme support central de travail et d'expérimentation. Elle vise à rassembler, au sein d'un même socle, des problématiques de robotique, de contrôle d'actionneurs, de perception de l'environnement et d'outillage logiciel.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Rôle d'IOBEWI</h3>
     <p>
       IOBEWI est à l'origine de la conception et de la structuration de R2BEWI, menée comme un projet interne servant de vitrine du savoir-faire et de la méthode de la structure. Ce projet constitue un cadre de référence sur lequel s'appuie aujourd'hui l'accompagnement proposé aux équipes.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-400">
+  <div class="content-group animate-on-scroll fade-in delay-400">
     <h3>Contraintes principales</h3>
     <ul>
       <li>complexité et hétérogénéité matérielle</li>
@@ -47,8 +45,7 @@ bodyClass: "has-hero"
       <li>nécessité de concilier exploration continue et lisibilité technique</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-500">
+  <div class="content-group animate-on-scroll fade-in delay-500">
     <h3>Livrables / résultats</h3>
     <ul>
       <li>plateforme robotique fonctionnelle conçue en interne</li>
@@ -62,27 +59,23 @@ bodyClass: "has-hero"
   <div class="section-title animate-on-scroll fade-in">
     <h2>Projets contributifs</h2>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>RHACOBOT</h3>
     <p>
       Plateforme robotique open source développée en amont, ayant servi de base pour structurer les briques initiales de contrôle d'actionneurs, d'intégration ROS 2 et d'interfaces embarquées.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>TRXBEWI</h3>
     <p>
       Plateforme robotique basée sur un châssis de type crawler, intégrant des capteurs de perception (LiDAR, vision) et destinée à explorer des problématiques de navigation et de traitement embarqué.
     </p>
   </div>
-
   <div class="note-block animate-on-scroll fade-in delay-400">
     <p>
       Les enseignements issus de ces deux plateformes ont naturellement convergé vers R2BEWI, en combinant la robustesse mécanique de l'une avec les enjeux de perception et d'algorithmie embarquée de l'autre.
     </p>
   </div>
-
   <p class="explore-links animate-on-scroll fade-in delay-500">
     <a href="https://github.com/iobewi" target="_blank" rel="noopener">Explorer les projets sur GitHub →</a>
   </p>
@@ -92,22 +85,19 @@ bodyClass: "has-hero"
   <div class="section-title animate-on-scroll fade-in">
     <h2>SCANBEWI — Outil de cartographie embarquée accessible</h2>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Contexte</h3>
     <p>
       SCANBEWI est un outil de captation LiDAR et de production de cartographies 2D simplifiées, destiné à un public large. Il s'adresse à des contextes où des acteurs non spécialistes — tels que des agents immobiliers ou des architectes — ont besoin d'une représentation fiable et directement exploitable de l'espace, sans recourir à des outils lourds ou complexes.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Rôle d'IOBEWI</h3>
     <p>
-      IOBEWI a conçu SCANBEWI comme un support d'exploration autour de la simplification des chaînes de captation, de traitement et de restitution des données spatiales. L'accent est mis sur l'accessibilité des usages, tout en respectant les contraintes techniques liées aux systèmes embarqués.
+      IOBEWI a conçu SCANBEWI comme un support d'exploration autour de la simplification des chaînes de captation, de traitement et de restitution des données spatiales. L'accent est mis sur l'accessibilité des usages, tout en respectant les contraintes techniques liées aux systèmes embarquées.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-400">
+  <div class="content-group animate-on-scroll fade-in delay-400">
     <h3>Contraintes principales</h3>
     <ul>
       <li>compromis entre précision et simplicité d'usage</li>
@@ -116,8 +106,7 @@ bodyClass: "has-hero"
       <li>contraintes de calcul et d'autonomie</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-500">
+  <div class="content-group animate-on-scroll fade-in delay-500">
     <h3>Livrables / résultats</h3>
     <ul>
       <li>chaîne de captation LiDAR embarquée simplifiée</li>

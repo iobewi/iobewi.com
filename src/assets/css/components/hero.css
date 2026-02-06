@@ -135,7 +135,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: calc(var(--header-h) + clamp(48px, 6vh, 80px)) 0 clamp(32px, 4vh, 56px);
+  padding: calc(var(--header-h) + var(--pad-lg)) 0 clamp(32px, 4vh, 56px);
   background: transparent;
 }
 
@@ -161,7 +161,8 @@
 @media (min-width: 1024px) {
   .hero-grid {
     align-items: start;
-    padding-top: clamp(40px, 8vh, 80px);
+    padding-top: var(--pad-lg);
+    padding-inline: clamp(32px, 4vw, 64px);
   }
 }
 
@@ -180,14 +181,14 @@
 
   display: flex;
   flex-direction: column;
-  gap: clamp(24px, 4vh, 48px);
+  gap: var(--stack-3);
 
   /* Carte conteneur avec fond flouté glassmorphism */
   background: var(--color-hero-50);
   backdrop-filter: blur(24px) saturate(150%);
   -webkit-backdrop-filter: blur(24px) saturate(150%);
 
-  padding: clamp(32px, 5vh, 56px) clamp(24px, 4vw, 48px);
+  padding: clamp(32px, 5vh, 56px) var(--pad-md);
   border-radius: 24px;
   border: 1px solid var(--color-white-20);
 
@@ -201,10 +202,6 @@
 
 /* Layout desktop - pleine largeur, tout l'espace utilisé */
 @media (min-width: 1024px) {
-  .hero-grid {
-    padding: 0 clamp(32px, 4vw, 64px);
-  }
-
   .hero-content {
     /* Contenu principal occupe 72% de l'écran (environ 3/4) */
     width: 72vw;
@@ -241,7 +238,7 @@
     font-size: clamp(0.95rem, 1.5vw, 1.05rem);
     line-height: 1.6;
     font-weight: 500;
-    padding: clamp(24px, 3.5vh, 36px) clamp(28px, 3.5vw, 40px);
+    padding: var(--pad-md) clamp(28px, 3.5vw, 40px);
 
     /* Fond blanc avec transparence fixe (40%) */
     background: rgba(255, 255, 255, 0.4);
@@ -329,8 +326,8 @@
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-2);
-  margin-top: var(--space-responsive-sm);
+  gap: var(--stack-2);
+  margin-top: var(--stack-1);
 }
 
 /* Mobile : layout simple et empilé */
@@ -338,7 +335,7 @@
   .hero-content {
     display: flex;
     flex-direction: column;
-    gap: clamp(20px, 4vh, 32px);
+    gap: var(--stack-2);
   }
 
   .hero h1 {
@@ -361,13 +358,13 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 28px);
+  gap: var(--stack-2);
 
   /* Espacement dans la section hero-intro */
   margin-block: clamp(32px, 5vh, 48px);
   flex-shrink: 0;
 
-  padding: clamp(24px, 3.5vh, 40px) clamp(24px, 4vw, 40px);
+  padding: var(--pad-md) var(--pad-md);
   width: 100%;
   max-width: var(--container-width, 1200px);
   margin-inline: auto;
@@ -477,7 +474,7 @@
 /* Mobile: wrap propre + tailles adaptées */
 @media (max-width: 640px) {
   .tech-footer {
-    gap: 12px;
+    gap: var(--stack-1);
   }
 
   .hero-content {
@@ -509,9 +506,9 @@
 .hero-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: var(--stack-1);
   align-items: center;
-  margin-top: 18px;
+  margin-top: var(--stack-1);
 }
 
 .tech-chip {
