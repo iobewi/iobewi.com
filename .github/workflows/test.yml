@@ -11,6 +11,10 @@ jobs:
     name: Tests Playwright
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
 
     steps:
       - name: Checkout du code
