@@ -2,9 +2,9 @@ name: Tests E2E et Validation
 
 on:
   push:
-    branches: [ main, upgrade-ux ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   test:
