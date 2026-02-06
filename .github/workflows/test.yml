@@ -2,15 +2,19 @@ name: Tests E2E et Validation
 
 on:
   push:
-    branches: [ main, upgrade-ux ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   test:
     name: Tests Playwright
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
 
     steps:
       - name: Checkout du code

@@ -51,10 +51,23 @@
 /* Fix : désactiver background-attachment: fixed sur mobile/tablette (évite jank) */
 @media (max-width: 1024px) {
 
-  .hero-band,
-  .hero-band::after {
+  .hero-band {
     background-attachment: scroll;
+    /* Retirer overflow hidden pour ne pas couper l'image après rotation */
+    overflow: visible;
   }
+
+  /* En mobile : utiliser le SVG déjà roté */
+  .hero-band::after {
+    background: url("/assets/images/pcb-pattern-mobile.svg") center / cover no-repeat;
+    background-attachment: scroll;
+    opacity: 0.08;
+    /* Appliquer le blur comme sur desktop */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+  }
+
+  /* Le ::before garde le gradient overlay */
 }
 
 /* =========================================================
@@ -330,6 +343,10 @@
 
   .hero h1 {
     font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 }
 
