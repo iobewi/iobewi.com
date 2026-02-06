@@ -27,7 +27,7 @@ bodyClass: "has-hero"
     </p>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-200">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>plateforme embarquée hétérogène (MCU, SBC, capteurs, actionneurs)</li>
@@ -37,7 +37,7 @@ bodyClass: "has-hero"
     </ul>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-300">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>ESP32 / ESP-IDF</li>
@@ -62,7 +62,7 @@ bodyClass: "has-hero"
     </p>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-200">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>prototype fonctionnel nécessitant clarification et structuration</li>
@@ -72,7 +72,7 @@ bodyClass: "has-hero"
     </ul>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-300">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>prototypage rapide matériel</li>
@@ -97,7 +97,7 @@ bodyClass: "has-hero"
     </p>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-200">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>difficulté à reproduire un build ou un déploiement</li>
@@ -107,7 +107,7 @@ bodyClass: "has-hero"
     </ul>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-300">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>ESP-IDF</li>
@@ -132,7 +132,7 @@ bodyClass: "has-hero"
     </p>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-200">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>traitement local de données capteurs</li>
@@ -142,7 +142,7 @@ bodyClass: "has-hero"
     </ul>
   </div>
 
-  <div class="content-group animate-on-scroll fade-in delay-300">
+  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>traitement du signal embarqué</li>
