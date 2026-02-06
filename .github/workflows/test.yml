@@ -32,6 +32,9 @@ jobs:
       - name: Installation de Playwright
         run: npx playwright install --with-deps chromium
 
+      - name: Build du site Eleventy
+        run: npx @11ty/eleventy
+
       - name: Lancer les tests
         run: npm test
 
