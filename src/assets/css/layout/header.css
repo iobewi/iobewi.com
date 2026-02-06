@@ -289,6 +289,13 @@
     z-index: 10001 !important;
   }
 
+  /* Quand menu ouvert, positionner le X en haut à droite fixe */
+  .site-header.is-menu-open .mobile-menu-toggle {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+
   /* Couleurs du hamburger selon contexte */
   .hamburger-icon span {
     background: var(--nav-text) !important;
@@ -322,19 +329,32 @@
 /* Afficher les icônes sociales en mobile uniquement */
 @media (max-width: 768px) {
   .header-social {
-    display: flex;
-    gap: 0.75rem;
+    display: flex; /* Visible par défaut (fallback no-JS) */
+    gap: 1.5rem; /* Espacement plus important entre les icônes */
     align-items: center;
+  }
+
+  /* Avec JS : cacher et repositionner en fixe */
+  .js-enabled .header-social {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+  }
+
+  /* Afficher uniquement quand le menu est ouvert (avec JS) */
+  .js-enabled .site-header.is-menu-open .header-social {
+    display: flex;
   }
 
   .social-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0.5rem;
-    margin: -0.5rem;
+    min-width: 56px; /* Zone de clic plus grande */
+    min-height: 56px;
+    padding: 0.75rem;
     color: var(--nav-text); /* Même couleur que les liens de navigation */
     text-decoration: none;
     transition: color 0.2s ease;
@@ -345,7 +365,7 @@
   }
 
   .social-link svg {
-    width: 22px;
-    height: 22px;
+    width: 32px;
+    height: 32px;
   }
 }
