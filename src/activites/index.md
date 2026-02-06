@@ -26,8 +26,7 @@ bodyClass: "has-hero"
       IOBEWI accompagne la structuration d'écosystèmes matériels et logiciels autour de plateformes embarquées existantes. Cela inclut l'intégration mécanique et électronique, l'architecture logicielle, ainsi que la mise en cohérence des différents sous-systèmes constituant le socle technique du projet.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>plateforme embarquée hétérogène (MCU, SBC, capteurs, actionneurs)</li>
@@ -36,8 +35,7 @@ bodyClass: "has-hero"
       <li>démonstrateur technique à consolider</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>ESP32 / ESP-IDF</li>
@@ -46,7 +44,6 @@ bodyClass: "has-hero"
       <li>prototypage mécanique (FDM, résine)</li>
     </ul>
   </div>
-
   <div class="animate-on-scroll fade-in delay-400" style="text-align: center; margin-top: var(--stack-3);">
     <a class="btn btn-primary" href="/contact/">Échanger sur la structuration de votre plateforme</a>
   </div>
@@ -61,8 +58,7 @@ bodyClass: "has-hero"
       À partir de prototypes ou d'idées techniques existantes, IOBEWI aide à transformer des expérimentations en bases exploitables. L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et la formalisation progressive des choix techniques.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>prototype fonctionnel nécessitant clarification et structuration</li>
@@ -71,8 +67,7 @@ bodyClass: "has-hero"
       <li>besoin d'orienter les choix techniques vers des bases plus pérennes</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>prototypage rapide matériel</li>
@@ -81,7 +76,6 @@ bodyClass: "has-hero"
       <li>instrumentation et mesures terrain</li>
     </ul>
   </div>
-
   <div class="animate-on-scroll fade-in delay-400" style="text-align: center; margin-top: var(--stack-3);">
     <a class="btn btn-primary" href="/contact/">Discuter de la maturité de votre prototype</a>
   </div>
@@ -96,8 +90,7 @@ bodyClass: "has-hero"
       IOBEWI accompagne la mise en place d'outils favorisant la reproductibilité, la maintenance et l'exploitation des systèmes embarqués. Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>difficulté à reproduire un build ou un déploiement</li>
@@ -106,8 +99,7 @@ bodyClass: "has-hero"
       <li>besoin de fiabilisation sur la durée</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>ESP-IDF</li>
@@ -116,7 +108,6 @@ bodyClass: "has-hero"
       <li>gestion de versions et documentation technique</li>
     </ul>
   </div>
-
   <div class="animate-on-scroll fade-in delay-400" style="text-align: center; margin-top: var(--stack-3);">
     <a class="btn btn-primary" href="/contact/">Comprendre comment fiabiliser votre socle technique</a>
   </div>
@@ -131,8 +122,7 @@ bodyClass: "has-hero"
       Lorsque la maturité du système le permet, IOBEWI accompagne l'intégration d'algorithmes de traitement, de perception ou de décision directement au niveau embarqué. L'objectif est d'apporter des capacités locales d'analyse et d'autonomie, en cohérence avec les contraintes matérielles et énergétiques.
     </p>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-200">
+  <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Cas d'usage typiques</h3>
     <ul>
       <li>traitement local de données capteurs</li>
@@ -141,8 +131,7 @@ bodyClass: "has-hero"
       <li>réduction de dépendance aux traitements distants</li>
     </ul>
   </div>
-
-  <div class="content-group section-minor animate-on-scroll fade-in delay-300">
+  <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Technologies</h3>
     <ul>
       <li>traitement du signal embarqué</li>
@@ -151,7 +140,6 @@ bodyClass: "has-hero"
       <li>algorithmes embarqués adaptés aux MCU et SBC</li>
     </ul>
   </div>
-
   <div class="animate-on-scroll fade-in delay-400" style="text-align: center; margin-top: var(--stack-3);">
     <a class="btn btn-primary" href="/contact/">Explorer les possibilités de décision embarquée</a>
   </div>
