@@ -114,7 +114,7 @@
   background: var(--surface);
   border: 1px solid var(--card-surface-border);
   border-radius: 20px;
-  padding: clamp(16px, 2.2vh, 22px);
+  padding: var(--pad-sm);
   transition: transform var(--duration-base) var(--ease-smooth),
     box-shadow var(--duration-base) var(--ease-smooth),
     border-color var(--duration-base) var(--ease-smooth);
@@ -162,7 +162,7 @@
 .proof-card {
   border: 1px solid var(--card-border-subtle);
   border-radius: 24px;
-  padding: clamp(16px, 2.8vh, 26px);
+  padding: var(--pad-sm);
   background: var(--surface);
   transition: transform var(--duration-base) var(--ease-smooth),
     box-shadow var(--duration-base) var(--ease-smooth);
@@ -191,7 +191,7 @@
       rgba(var(--c-accent), 0.01) 100%);
   border-left: 4px solid var(--accent);
   border-radius: 12px;
-  padding: var(--space-responsive-md) clamp(24px, 4vw, 48px);
+  padding: var(--space-responsive-md) var(--pad-md);
   margin-block: var(--stack-3);
 }
 
@@ -269,7 +269,7 @@
       rgba(var(--c-paper), 1) 100%);
   border: 2px solid rgba(var(--c-accent), 0.15);
   border-radius: 16px;
-  padding: clamp(28px, 4vh, 48px) clamp(24px, 4vw, 48px);
+  padding: clamp(28px, 4vh, 48px) var(--pad-md);
   margin-block: var(--stack-3);
   position: relative;
   overflow: hidden;
@@ -479,7 +479,7 @@
       var(--color-accent-02) 100%);
   border: 2px solid var(--color-accent-20);
   border-radius: 16px;
-  padding: var(--space-responsive-md) clamp(24px, 3vw, 32px);
+  padding: var(--space-responsive-md) var(--pad-md);
   position: relative;
 }
 
@@ -536,7 +536,7 @@
   background: rgba(var(--c-slate), 0.02);
   border: 1px dashed rgba(var(--c-slate), 0.2);
   border-radius: 16px;
-  padding: var(--space-responsive-md) clamp(24px, 3vw, 32px);
+  padding: var(--space-responsive-md) var(--pad-md);
   color: var(--color-ink-60);
   opacity: 0.85;
 }
@@ -608,7 +608,7 @@
   background: var(--surface);
   border: 1px solid var(--card-surface-border);
   border-radius: 16px;
-  padding: clamp(24px, 3vh, 32px) clamp(20px, 2.5vw, 28px);
+  padding: var(--pad-md) clamp(20px, 2.5vw, 28px);
   position: relative;
   transition: transform var(--duration-base) var(--ease-smooth),
     box-shadow var(--duration-base) var(--ease-smooth),

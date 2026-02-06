@@ -50,14 +50,14 @@
   --measure-narrow: 58ch;
 
   /* Spacing helpers (valeurs clamp répétées) */
-  --space-responsive-sm: clamp(16px, 2vh, 24px);
-  --space-responsive-md: clamp(24px, 3vh, 36px);
-  --space-responsive-lg: clamp(40px, 6vh, 64px);
-  --space-responsive-xl: clamp(48px, 6vh, 80px);
+  --space-responsive-sm: var(--pad-sm);
+  --space-responsive-md: var(--pad-md);
+  --space-responsive-lg: var(--pad-lg);
+  --space-responsive-xl: var(--pad-lg);
 
   /* Padding helpers (container/sections) */
-  --padding-container-x: clamp(24px, 3vw, 48px);
-  --padding-container-y: clamp(24px, 4vw, 48px);
+  --padding-container-x: var(--pad-md);
+  --padding-container-y: var(--pad-md);
 
   /* Sizes helpers */
   --size-icon-md: clamp(72px, 9vw, 96px);
@@ -129,6 +129,11 @@
   --text-lg: 1.125rem;    /* 18px - Large */
   --text-xl: 1.5rem;      /* 24px - Très large */
   --text-2xl: 2rem;       /* 32px - Titre */
+
+  /* Paddings universels */
+  --pad-sm: clamp(16px, 3vw, 24px);     /* Petit padding */
+  --pad-md: clamp(24px, 4vw, 48px);     /* Padding moyen */
+  --pad-lg: clamp(48px, 7vh, 80px);     /* Grand padding */
 
   --hero-min-h: 80vh;
   --hero-min-h-mobile: 72vh;
