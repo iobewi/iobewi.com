@@ -77,6 +77,13 @@
   max-width: var(--card-max-width, 360px);
 }
 
+/* Mobile : centrer chaque carte individuellement */
+@media (max-width: 640px) {
+  .grid-centered>article {
+    justify-self: center;
+  }
+}
+
 
 /* ===== Orphelins ===== */
 
