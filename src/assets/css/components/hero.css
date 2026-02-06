@@ -162,6 +162,7 @@
   .hero-grid {
     align-items: start;
     padding-top: var(--pad-lg);
+    padding-inline: clamp(32px, 4vw, 64px);
   }
 }
 
@@ -201,10 +202,6 @@
 
 /* Layout desktop - pleine largeur, tout l'espace utilisé */
 @media (min-width: 1024px) {
-  .hero-grid {
-    padding: 0 clamp(32px, 4vw, 64px);
-  }
-
   .hero-content {
     /* Contenu principal occupe 72% de l'écran (environ 3/4) */
     width: 72vw;

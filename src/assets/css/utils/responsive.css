@@ -215,10 +215,6 @@
     transform: none;
   }
 
-  .tech-chip:hover {
-    transform: translateY(-2px);
-  }
-
   /* Disable complex animations on touch */
   .tech-chip:hover {
     transform: translateY(-2px);

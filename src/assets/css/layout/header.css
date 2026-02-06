@@ -115,7 +115,8 @@
 /* Sur mobile, le nav ne doit pas être affecté par le flex du parent */
 @media (max-width: 768px) {
   .header-row {
-    position: relative;
+    position: relative !important;
+    z-index: 10000 !important;
   }
 }
 
@@ -187,6 +188,8 @@
   /* Afficher le bouton hamburger sur mobile */
   .mobile-menu-toggle {
     display: block !important;
+    position: relative !important;
+    z-index: 10001 !important;
   }
 
   /* Fallback sans JavaScript : garder la nav visible dans le flux */
@@ -275,18 +278,6 @@
   .site-header {
     position: sticky !important;
     z-index: 10000 !important;
-  }
-
-  /* Container du header */
-  .header-row {
-    position: relative !important;
-    z-index: 10000 !important;
-  }
-
-  /* Bouton hamburger AU-DESSUS du menu */
-  .mobile-menu-toggle {
-    position: relative !important;
-    z-index: 10001 !important;
   }
 
   /* Quand menu ouvert, positionner le X en haut à droite fixe */

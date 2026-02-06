@@ -35,12 +35,58 @@ test.describe('Détection de doublons CSS', () => {
     return files;
   }
 
-  // Parser simple pour extraire les sélecteurs et leurs propriétés
+  // Parser amélioré pour extraire les sélecteurs avec leur contexte
   function parseCssRules(content) {
     const rules = [];
 
     // Supprimer les commentaires
     const cleaned = content.replace(/\/\*[\s\S]*?\*\//g, '');
+
+    // Détecter les media queries et leur contenu (avec compteur d'accolades)
+    const mediaQueries = [];
+    const mqStartPattern = /@media[^{]+\{/g;
+    let mediaMatch;
+
+    while ((mediaMatch = mqStartPattern.exec(cleaned)) !== null) {
+      const query = mediaMatch[0].slice(0, -1).trim();
+      const start = mediaMatch.index;
+      let braceCount = 1;
+      let end = mediaMatch.index + mediaMatch[0].length;
+
+      for (let i = end; i < cleaned.length && braceCount > 0; i++) {
+        if (cleaned[i] === '{') braceCount++;
+        if (cleaned[i] === '}') braceCount--;
+        if (braceCount === 0) {
+          end = i + 1;
+          break;
+        }
+      }
+
+      mediaQueries.push({ start, end, query });
+    }
+
+    // Détecter les @keyframes et leur contenu (avec compteur d'accolades)
+    const keyframes = [];
+    const kfStartPattern = /@keyframes\s+([a-zA-Z0-9_-]+)\s*\{/g;
+    let kfMatch;
+
+    while ((kfMatch = kfStartPattern.exec(cleaned)) !== null) {
+      const name = kfMatch[1];
+      const start = kfMatch.index;
+      let braceCount = 1;
+      let end = kfMatch.index + kfMatch[0].length;
+
+      for (let i = end; i < cleaned.length && braceCount > 0; i++) {
+        if (cleaned[i] === '{') braceCount++;
+        if (cleaned[i] === '}') braceCount--;
+        if (braceCount === 0) {
+          end = i + 1;
+          break;
+        }
+      }
+
+      keyframes.push({ start, end, name: `@keyframes ${name}` });
+    }
 
     // Extraire les règles CSS (sélecteur { propriétés })
     const rulePattern = /([^{}]+)\{([^{}]*)\}/g;
@@ -50,15 +96,37 @@ test.describe('Détection de doublons CSS', () => {
       const selector = match[1].trim();
       const properties = match[2].trim();
 
-      // Ignorer les @media, @keyframes, etc.
+      // Ignorer les @media, @keyframes, @font-face, etc. (définitions, pas contenu)
       if (selector.startsWith('@')) {
         continue;
+      }
+
+      // Trouver le contexte (media query, keyframe, ou base)
+      let context = 'base';
+
+      // Vérifier si c'est dans un @keyframes
+      for (const kf of keyframes) {
+        if (match.index > kf.start && match.index < kf.end) {
+          context = kf.name;
+          break;
+        }
+      }
+
+      // Si pas dans un keyframe, vérifier si c'est dans une media query
+      if (context === 'base') {
+        for (const mq of mediaQueries) {
+          if (match.index > mq.start && match.index < mq.end) {
+            context = mq.query;
+            break;
+          }
+        }
       }
 
       rules.push({
         selector,
         properties,
-        rawProperties: properties
+        rawProperties: properties,
+        context
       });
     }
 
@@ -82,7 +150,7 @@ test.describe('Détection de doublons CSS', () => {
     return props;
   }
 
-  test('Pas de sélecteurs dupliqués dans le même fichier', () => {
+  test('Pas de sélecteurs dupliqués dans le même fichier ET le même contexte', () => {
     const cssFiles = getAllCssFiles(cssDir);
     let hasErrors = false;
 
@@ -91,24 +159,29 @@ test.describe('Détection de doublons CSS', () => {
       const relativePath = path.relative(cssDir, file);
       const rules = parseCssRules(content);
 
-      // Compter les occurrences de chaque sélecteur
-      const selectorCounts = {};
+      // Compter les occurrences de chaque sélecteur DANS LE MÊME CONTEXTE
+      const selectorContextCounts = {};
       rules.forEach(rule => {
-        selectorCounts[rule.selector] = (selectorCounts[rule.selector] || 0) + 1;
+        const key = `${rule.selector}::${rule.context}`;
+        selectorContextCounts[key] = (selectorContextCounts[key] || 0) + 1;
       });
 
-      // Trouver les doublons
-      const duplicates = Object.entries(selectorCounts)
+      // Trouver les doublons (même sélecteur dans même contexte)
+      const duplicates = Object.entries(selectorContextCounts)
         .filter(([_, count]) => count > 1)
-        .map(([selector, count]) => ({ selector, count }));
+        .map(([key, count]) => {
+          const [selector, context] = key.split('::');
+          return { selector, context, count };
+        });
 
       if (duplicates.length > 0) {
         hasErrors = true;
-        console.error(`\n❌ ${relativePath} contient des sélecteurs dupliqués :`);
-        duplicates.forEach(({ selector, count }) => {
-          console.error(`   "${selector}" apparaît ${count} fois`);
+        console.error(`\n❌ ${relativePath} contient des sélecteurs dupliqués dans le même contexte :`);
+        duplicates.forEach(({ selector, context, count }) => {
+          const contextInfo = context === 'base' ? 'hors media query' : context;
+          console.error(`   "${selector}" apparaît ${count} fois (${contextInfo})`);
         });
-        console.error(`\n💡 Solution : Fusionner les règles ou vérifier si c'est intentionnel\n`);
+        console.error(`\n💡 Solution : Fusionner les règles dans ce contexte\n`);
       }
     });
 
@@ -177,7 +250,7 @@ test.describe('Détection de doublons CSS', () => {
     // expect(hasConflicts).toBe(false);
   });
 
-  test('Pas de propriétés CSS redéfinies inutilement pour le même sélecteur', () => {
+  test('Pas de propriétés CSS redéfinies inutilement pour le même sélecteur ET contexte', () => {
     const cssFiles = getAllCssFiles(cssDir);
     let hasErrors = false;
 
@@ -186,18 +259,20 @@ test.describe('Détection de doublons CSS', () => {
       const relativePath = path.relative(cssDir, file);
       const rules = parseCssRules(content);
 
-      // Grouper les règles par sélecteur
-      const rulesBySelector = {};
+      // Grouper les règles par sélecteur + contexte
+      const rulesBySelectorAndContext = {};
       rules.forEach(rule => {
-        if (!rulesBySelector[rule.selector]) {
-          rulesBySelector[rule.selector] = [];
+        const key = `${rule.selector}::${rule.context}`;
+        if (!rulesBySelectorAndContext[key]) {
+          rulesBySelectorAndContext[key] = [];
         }
-        rulesBySelector[rule.selector].push(rule);
+        rulesBySelectorAndContext[key].push(rule);
       });
 
-      // Pour chaque sélecteur ayant plusieurs règles
-      Object.entries(rulesBySelector).forEach(([selector, selectorRules]) => {
+      // Pour chaque sélecteur+contexte ayant plusieurs règles
+      Object.entries(rulesBySelectorAndContext).forEach(([key, selectorRules]) => {
         if (selectorRules.length > 1) {
+          const [selector] = key.split('::');
           // Extraire toutes les propriétés
           const allProps = selectorRules.map(r => extractProperties(r.properties));
 
@@ -231,44 +306,126 @@ test.describe('Détection de doublons CSS', () => {
     expect(hasErrors, 'Aucune propriété redéfinie ne devrait être trouvée').toBe(false);
   });
 
-  test('Pas de variables CSS (--*) dupliquées', () => {
+  test('Pas de variables CSS (--*) dupliquées dans le même contexte', () => {
     const cssFiles = getAllCssFiles(cssDir);
-    const allVars = new Map(); // varName -> [{ file, value }]
+    const allVars = new Map(); // "varName::context::file" -> value
 
     cssFiles.forEach(file => {
       const content = fs.readFileSync(file, 'utf8');
       const relativePath = path.relative(cssDir, file);
 
+      // Supprimer les commentaires
+      const cleaned = content.replace(/\/\*[\s\S]*?\*\//g, '');
+
+      // Détecter les media queries (avec compteur d'accolades)
+      const mediaQueries = [];
+      const mqStartPattern = /@media[^{]+\{/g;
+      let mediaMatch;
+
+      while ((mediaMatch = mqStartPattern.exec(cleaned)) !== null) {
+        const query = mediaMatch[0].slice(0, -1).trim();
+        const start = mediaMatch.index;
+        let braceCount = 1;
+        let end = mediaMatch.index + mediaMatch[0].length;
+
+        for (let i = end; i < cleaned.length && braceCount > 0; i++) {
+          if (cleaned[i] === '{') braceCount++;
+          if (cleaned[i] === '}') braceCount--;
+          if (braceCount === 0) {
+            end = i + 1;
+            break;
+          }
+        }
+
+        mediaQueries.push({ start, end, query });
+      }
+
+      // Détecter les @keyframes (avec compteur d'accolades)
+      const keyframes = [];
+      const kfStartPattern = /@keyframes\s+([a-zA-Z0-9_-]+)\s*\{/g;
+      let kfMatch;
+
+      while ((kfMatch = kfStartPattern.exec(cleaned)) !== null) {
+        const name = kfMatch[1];
+        const start = kfMatch.index;
+        let braceCount = 1;
+        let end = kfMatch.index + kfMatch[0].length;
+
+        for (let i = end; i < cleaned.length && braceCount > 0; i++) {
+          if (cleaned[i] === '{') braceCount++;
+          if (cleaned[i] === '}') braceCount--;
+          if (braceCount === 0) {
+            end = i + 1;
+            break;
+          }
+        }
+
+        keyframes.push({ start, end, name: `@keyframes ${name}` });
+      }
+
       // Extraire les variables CSS (--variable-name: value)
       const varPattern = /--([\w-]+)\s*:\s*([^;]+);/g;
       let match;
 
-      while ((match = varPattern.exec(content)) !== null) {
+      while ((match = varPattern.exec(cleaned)) !== null) {
         const varName = `--${match[1]}`;
         const value = match[2].trim();
 
-        if (!allVars.has(varName)) {
-          allVars.set(varName, []);
+        // Trouver le contexte (keyframe, media query, ou base)
+        let context = 'base';
+
+        // Vérifier si c'est dans un @keyframes
+        for (const kf of keyframes) {
+          if (match.index > kf.start && match.index < kf.end) {
+            context = kf.name;
+            break;
+          }
         }
-        allVars.get(varName).push({
-          file: relativePath,
-          value
-        });
+
+        // Si pas dans un keyframe, vérifier si c'est dans une media query
+        if (context === 'base') {
+          for (const mq of mediaQueries) {
+            if (match.index > mq.start && match.index < mq.end) {
+              context = mq.query;
+              break;
+            }
+          }
+        }
+
+        const key = `${varName}::${context}::${relativePath}`;
+        allVars.set(key, value);
       }
     });
 
-    // Trouver les variables définies plusieurs fois
+    // Grouper par varName+context pour détecter les doublons
+    const varsByContext = new Map(); // "varName::context" -> [{ file, value }]
+
+    allVars.forEach((value, key) => {
+      const [varName, context, file] = key.split('::');
+      const groupKey = `${varName}::${context}`;
+
+      if (!varsByContext.has(groupKey)) {
+        varsByContext.set(groupKey, []);
+      }
+      varsByContext.get(groupKey).push({ file, value });
+    });
+
+    // Trouver les variables définies plusieurs fois dans le même contexte
     let hasDuplicates = false;
     const duplicates = [];
 
-    allVars.forEach((locations, varName) => {
+    varsByContext.forEach((locations, groupKey) => {
+      const [varName, context] = groupKey.split('::');
+
       if (locations.length > 1) {
         // Vérifier si les valeurs sont différentes
         const uniqueValues = new Set(locations.map(l => l.value));
 
         if (uniqueValues.size > 1) {
+          const contextInfo = context === 'base' ? 'hors media query' : context;
           duplicates.push({
             varName,
+            context: contextInfo,
             locations: locations.map(l => `${l.file} (${l.value})`)
           });
         }
