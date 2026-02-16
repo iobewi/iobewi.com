@@ -3,7 +3,7 @@ const footer = document.querySelector(".site-footer");
 const hero = document.querySelector(".hero-band") || document.querySelector(".hero") || document.querySelector(".page-hero");
 const hasHero = document.body.classList.contains("has-hero");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinks = document.querySelectorAll(".nav-link:not(.nav-dropdown-toggle)");
 
 document.documentElement.classList.add("js-enabled");
 
@@ -84,9 +84,17 @@ if (mobileMenuToggle && header) {
     }
   });
 
-  // Fermer le menu quand on clique sur un lien
+  // Fermer le menu quand on clique sur un lien (sauf dropdown toggles)
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  // Fermer le menu quand on clique sur un item de dropdown
+  const dropdownItems = document.querySelectorAll(".nav-dropdown-item");
+  dropdownItems.forEach(item => {
+    item.addEventListener("click", () => {
       closeMobileMenu();
     });
   });
