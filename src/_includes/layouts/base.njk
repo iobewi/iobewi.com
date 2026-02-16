@@ -3,8 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title }} · {{ site.name }}</title>
-  <meta name="description" content="{{ site.description }}" />
+
+  {# SEO: Title et Description #}
+  <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+
+  {# OpenGraph pour partage social #}
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:locale" content="fr_FR" />
+
+  {# Twitter Cards #}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}" />
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+
+  {# Canonical URL #}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   <!-- Variables et base -->
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/base.css">
@@ -23,6 +41,25 @@
   <!-- Utils -->
   <link rel="stylesheet" href="/assets/css/utils/animations.css">
   <link rel="stylesheet" href="/assets/css/utils/responsive.css">
+
+  {# Structured Data pour Google #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ site.name }}",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "https://github.com/iobewi",
+      "https://www.linkedin.com/company/iobewi"
+    ]
+  }
+  </script>
 </head>
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   {% include "partials/header.njk" %}

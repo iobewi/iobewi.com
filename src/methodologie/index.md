@@ -4,8 +4,16 @@ description: "L'approche progressive d'IOBEWI pour structurer et faire mûrir de
 layout: layouts/base.njk
 permalink: "/methodologie/"
 bodyClass: "has-hero"
+breadcrumb:
+  - label: "Accueil"
+    url: "/"
+  - label: "Activités"
+    url: "/activites/"
+  - label: "Méthodologie"
+    url: "/methodologie/"
 ---
 
+{% comment %}<div class="container">{% include "partials/breadcrumb.njk" %}</div>{% endcomment %}
 <div class="page-hero snap-item">
   <div class="container">
     <div class="page-hero-content">

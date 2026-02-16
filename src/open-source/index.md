@@ -4,8 +4,16 @@ description: "Contributions et travaux open source d'IOBEWI autour de ROS 2, mic
 layout: layouts/base.njk
 permalink: "/open-source/"
 bodyClass: "has-hero"
+breadcrumb:
+  - label: "Accueil"
+    url: "/"
+  - label: "Activités"
+    url: "/activites/"
+  - label: "Open Source"
+    url: "/open-source/"
 ---
 
+{% comment %}<div class="container">{% include "partials/breadcrumb.njk" %}</div>{% endcomment %}
 <div class="page-hero snap-item">
   <div class="container">
     <div class="page-hero-content">
