@@ -144,3 +144,25 @@ bodyClass: "has-hero"
     <a class="btn btn-primary" href="/contact/">Explorer les possibilités de décision embarquée</a>
   </div>
 </section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
+    <h2>Aller plus loin</h2>
+  </div>
+  <div class="two-col-editorial animate-on-scroll slide-up">
+    <div>
+      <h3>Contributions open source</h3>
+      <p>
+        Découvrez les contributions techniques d'IOBEWI à l'écosystème ROS 2, micro-ROS et ESP-IDF. Des briques logicielles réutilisables, documentées et validées par la communauté.
+      </p>
+      <a class="btn btn-ghost" href="/open-source/">Voir les contributions →</a>
+    </div>
+    <div>
+      <h3>Méthodologie et approche</h3>
+      <p>
+        Comprenez l'approche progressive d'IOBEWI, les contraintes assumées et les pratiques d'outillage adaptées aux systèmes embarqués et robotiques.
+      </p>
+      <a class="btn btn-ghost" href="/methodologie/">Découvrir la méthodologie →</a>
+    </div>
+  </div>
+</section>

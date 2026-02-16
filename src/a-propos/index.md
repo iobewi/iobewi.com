@@ -74,6 +74,12 @@ bodyClass: "has-hero"
         L'accompagnement vise à rendre les équipes capables d'exploiter, de faire évoluer et de maintenir leur socle technique de manière autonome.
       </p>
   </div>
+
+  <div class="note-block animate-on-scroll fade-in delay-600">
+    <p>
+      Pour comprendre en détail l'approche progressive et les contraintes assumées, consultez la page <a href="/methodologie/">Méthodologie et approche technique →</a>
+    </p>
+  </div>
 </section>
 
 <section class="section container section-major snap-item">
