@@ -412,27 +412,36 @@
     opacity: 1 !important;
   }
 
+  /* Fallback sans JS : dropdown toujours visible */
   .nav-dropdown-menu {
     position: static !important;
     opacity: 1 !important;
-    visibility: hidden !important; /* Caché quand fermé */
-    pointer-events: none !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 !important;
     width: 100% !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
-    transition: max-height 0.3s ease, visibility 0s 0.3s !important; /* Délai sur visibility */
+    max-height: none !important;
+    overflow: visible !important;
   }
 
-  .nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown-menu {
-    visibility: visible !important; /* Visible quand ouvert */
+  /* Avec JS : dropdown fermé par défaut, ouvert sur aria-expanded */
+  .js-enabled .nav-dropdown-menu {
+    visibility: hidden !important;
+    pointer-events: none !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.3s ease, visibility 0s 0.3s !important;
+  }
+
+  .js-enabled .nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown-menu {
+    visibility: visible !important;
     pointer-events: auto !important;
     max-height: 500px !important;
-    transition: max-height 0.3s ease !important; /* Pas de délai sur visibility à l'ouverture */
+    transition: max-height 0.3s ease !important;
   }
 
   .nav-dropdown-item {
