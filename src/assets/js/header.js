@@ -3,7 +3,7 @@ const footer = document.querySelector(".site-footer");
 const hero = document.querySelector(".hero-band") || document.querySelector(".hero") || document.querySelector(".page-hero");
 const hasHero = document.body.classList.contains("has-hero");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const navLinks = document.querySelectorAll(".nav-link");
+const navLinks = document.querySelectorAll(".nav-link:not(.nav-dropdown-toggle)");
 
 document.documentElement.classList.add("js-enabled");
 
@@ -84,9 +84,17 @@ if (mobileMenuToggle && header) {
     }
   });
 
-  // Fermer le menu quand on clique sur un lien
+  // Fermer le menu quand on clique sur un lien (sauf dropdown toggles)
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  // Fermer le menu quand on clique sur un item de dropdown
+  const dropdownItems = document.querySelectorAll(".nav-dropdown-item");
+  dropdownItems.forEach(item => {
+    item.addEventListener("click", () => {
       closeMobileMenu();
     });
   });
@@ -107,3 +115,98 @@ if (mobileMenuToggle && header) {
   mobileViewport.addEventListener("change", handleViewportChange);
   window.addEventListener("resize", handleViewportChange);
 }
+
+// =========================================================
+// DROPDOWN NAVIGATION
+// =========================================================
+
+const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+// Map pour tracker l'état ouvert/fermé indépendamment d'aria-expanded
+// (évite les conflits entre clic et hover)
+const dropdownClickStates = new Map();
+
+dropdownToggles.forEach(toggle => {
+  // Initialiser l'état à false (fermé)
+  dropdownClickStates.set(toggle, false);
+
+  // Gestion du clic sur le bouton dropdown
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    // Lire l'état depuis notre Map interne, pas depuis aria-expanded
+    // (évite que le mouseenter qui précède le clic n'interfère)
+    const isExpanded = dropdownClickStates.get(toggle);
+
+    // Fermer tous les autres dropdowns
+    dropdownToggles.forEach(otherToggle => {
+      if (otherToggle !== toggle) {
+        otherToggle.setAttribute('aria-expanded', 'false');
+        dropdownClickStates.set(otherToggle, false);
+      }
+    });
+
+    // Toggle le dropdown courant
+    const newState = !isExpanded;
+    toggle.setAttribute('aria-expanded', String(newState));
+    dropdownClickStates.set(toggle, newState);
+  });
+});
+
+// Fermer les dropdowns quand on clique à l'extérieur
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-item-dropdown')) {
+    dropdownToggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', 'false');
+      dropdownClickStates.set(toggle, false); // Synchroniser la Map
+    });
+  }
+});
+
+// Fermer les dropdowns avec la touche Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    dropdownToggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', 'false');
+      dropdownClickStates.set(toggle, false); // Synchroniser la Map
+    });
+  }
+});
+
+// Gestion du hover sur desktop uniquement (> 768px)
+document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
+  let closeTimeout = null;
+
+  dropdown.addEventListener('mouseenter', () => {
+    // Seulement en desktop (> 768px)
+    if (window.innerWidth > 768) {
+      // Annuler le délai de fermeture si on revient dans le dropdown
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+        closeTimeout = null;
+      }
+
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    }
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    // Seulement en desktop (> 768px)
+    if (window.innerWidth > 768) {
+      // Attendre 150ms avant de fermer (laisse le temps de descendre dans le menu)
+      closeTimeout = setTimeout(() => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+          dropdownClickStates.set(toggle, false); // Synchroniser la Map
+        }
+        closeTimeout = null;
+      }, 150);
+    }
+  });
+});
+
+// Le comportement au clic fonctionne sur tous les écrans (géré plus haut dans le code)

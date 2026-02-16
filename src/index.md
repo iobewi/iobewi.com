@@ -25,33 +25,6 @@ bodyClass: "has-hero"
     <div class="section-title animate-on-scroll fade-in">
       <h2>IOBEWI vous accompagne dans la conception de systèmes embarqués, du matériel jusqu'au logiciel.</h2>
     </div>
-
-    <aside class="tech-sidebar tech-footer" aria-label="Technologies maîtrisées" markdown="0">
-      <div class="tech-sidebar-item" data-label="ESP32" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/espressif.svg' | url }}" alt="" />
-        <span>ESP32</span>
-      </div>
-      <div class="tech-sidebar-item" data-label="RPi" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Raspberry_Pi_logo.svg' | url }}" alt="" />
-        <span>RPi</span>
-      </div>
-      <div class="tech-sidebar-item" data-label="Jetson" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/Nvidia-jetson-Logo.svg' | url }}" alt="" />
-        <span>Jetson</span>
-      </div>
-      <div class="tech-sidebar-item" data-label="ROS 2" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/ros.svg' | url }}" alt="" />
-        <span>ROS 2</span>
-      </div>
-      <div class="tech-sidebar-item" data-label="micro-ROS" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/uros.svg' | url }}" alt="" />
-        <span>micro-ROS</span>
-      </div>
-      <div class="tech-sidebar-item" data-label="CI/CD" tabindex="0">
-        <img class="tech-sidebar-icon" src="{{ '/assets/images/tech/cicd.svg' | url }}" alt="" />
-        <span>CI/CD</span>
-      </div>
-    </aside>
     <div class="animate-on-scroll slide-up delay-200">
       <p class="lead" style="text-align: center; max-width: 850px; margin: 0 auto var(--stack-3);">
         Les projets sont abordés de manière exploratoire en phase amont, puis structurés et outillés pour atteindre un niveau de maturité compatible avec l'exploitation.
@@ -133,7 +106,6 @@ bodyClass: "has-hero"
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
 
-  <!-- Niveau 1 : Narratif / Positionnement (grille 2 colonnes, pas de cartes) -->
   <div class="two-col-editorial animate-on-scroll slide-up">
     <div>
       <h3>Types de projets / contextes</h3>
@@ -154,59 +126,9 @@ bodyClass: "has-hero"
     </div>
   </div>
 
-  <!-- Niveau 2 : Contributions open source (bloc featured, pièce centrale) -->
-  <article class="featured-block animate-on-scroll scale-in delay-200">
-    <h3>Contributions et travaux open source</h3>
-    <ul>
-      <li>Portage et intégration <strong>ROS 2 / ros2_control</strong> d'actionneurs <strong>MyActuator</strong></li>
-      <li>Portage et intégration <strong>ROS 2</strong> de contrôleurs moteurs <strong>VESC</strong> via <strong>ESP micro-ROS</strong></li>
-      <li>Support <strong>BMS Daly</strong> pour <strong>ROS 2</strong> via <strong>ESP micro-ROS</strong></li>
-      <li>Développement et publication de composants et de drivers pour <strong>ESP-IDF</strong></li>
-      <li>Contributions publiques réutilisées, avec retours de la communauté</li>
-    </ul>
-  </article>
-
-  <p class="explore-links animate-on-scroll fade-in delay-300">
-    <a href="https://github.com/iobewi" target="_blank" rel="noopener">Explorer sur GitHub →</a>
-  </p>
-
-  <!-- Niveau 3 : Projets (cartes compactes avec icônes) -->
-  <div class="content-group">
-    <h3 style="margin-bottom: var(--stack-2);">Projets démonstrateurs</h3>
-    <div class="grid grid-tight grid-centered" style="--card-max-width: 360px">
-      <article class="project-card-compact animate-on-scroll slide-up stagger-1" data-icon="robot">
-        <h3>RHACOBOT</h3>
-        <p>Démonstrateur robotique open source autour de <strong>ROS 2</strong>, du contrôle d'actionneurs et de l'intégration embarquée.</p>
-        <p class="card-foot">Plateforme d'expérimentation d'architectures logicielles et d'outillage</p>
-      </article>
-      <article class="project-card-compact animate-on-scroll slide-up stagger-2" data-icon="puzzle">
-        <h3>R2BEWI</h3>
-        <p>Plateforme polyvalente issue de RHACOBOT, avec perception enrichie.</p>
-        <p class="card-foot">Support d'expérimentation CI/CD pour la robotique</p>
-      </article>
-      <article class="project-card-compact animate-on-scroll slide-up stagger-3" data-icon="radar">
-        <h3>SCANBEWI</h3>
-        <p>Exploration LiDAR et cartographies 2D exploitables.</p>
-        <p class="card-foot">Captation, traitement embarqué et restitution logicielle</p>
-      </article>
-      <article class="project-card-compact animate-on-scroll slide-up stagger-4" data-icon="brain">
-        <h3>BALBEWI</h3>
-        <p>Cadre conceptuel pour structurer des socles techniques embarqués.</p>
-        <p class="card-foot">Réflexion sur les axes méthodologiques</p>
-      </article>
-    </div>
+  <div class="animate-on-scroll fade-in delay-200" style="text-align: center; margin-top: var(--stack-3);">
+    <a class="btn btn-primary" href="/realisations/">Découvrir les réalisations</a>
   </div>
-
-  <!-- Niveau 4 : Contraintes (note discrète) -->
-  <article class="note-block animate-on-scroll fade-in delay-400">
-    <h3>Contraintes notables</h3>
-    <ul>
-      <li>Contraintes spécifiques aux systèmes embarqués et robotiques (déploiement, tests, reproductibilité)</li>
-      <li>Dépendance forte au matériel, aux chaînes d'outillage et aux cycles de test physiques</li>
-      <li>Projets à fort contenu technique, en cours de structuration et de consolidation</li>
-      <li>Ressources et équipes volontairement limitées, favorisant des démarches itératives</li>
-    </ul>
-  </article>
 </section>
 
 <section class="section container section-major snap-item">
