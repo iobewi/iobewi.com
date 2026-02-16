@@ -151,22 +151,38 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Sur desktop, gérer le hover (en plus du clic)
-const mobileBreakpoint = window.matchMedia('(min-width: 769px)');
+// Note : les événements sont ajoutés pour tous les écrans, mais le comportement
+// mobile est géré différemment via CSS (le menu reste fermé par défaut)
+document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
+  let closeTimeout = null;
 
-if (mobileBreakpoint.matches) {
-  document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
-    dropdown.addEventListener('mouseenter', () => {
+  dropdown.addEventListener('mouseenter', () => {
+    // Annuler le délai de fermeture si on revient dans le dropdown
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      closeTimeout = null;
+    }
+
+    // Seulement en desktop (> 768px)
+    if (window.innerWidth > 768) {
       const toggle = dropdown.querySelector('.nav-dropdown-toggle');
       if (toggle) {
         toggle.setAttribute('aria-expanded', 'true');
       }
-    });
-
-    dropdown.addEventListener('mouseleave', () => {
-      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
-      if (toggle) {
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+    }
   });
-}
+
+  dropdown.addEventListener('mouseleave', () => {
+    // Seulement en desktop (> 768px)
+    if (window.innerWidth > 768) {
+      // Attendre 150ms avant de fermer (laisse le temps de descendre dans le menu)
+      closeTimeout = setTimeout(() => {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+        closeTimeout = null;
+      }, 150);
+    }
+  });
+});
