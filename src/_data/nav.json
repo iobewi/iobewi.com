@@ -12,6 +12,19 @@
     "url": "/realisations/"
   },
   {
+    "label": "Ressources",
+    "children": [
+      {
+        "label": "Open Source",
+        "url": "/open-source/"
+      },
+      {
+        "label": "Méthodologie",
+        "url": "/methodologie/"
+      }
+    ]
+  },
+  {
     "label": "À propos",
     "url": "/a-propos/"
   },

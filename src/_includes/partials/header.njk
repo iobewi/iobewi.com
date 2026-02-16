@@ -14,7 +14,23 @@
 
     <nav class="nav">
       {% for item in nav %}
-        <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>
+        {% if item.children %}
+          <div class="nav-item-dropdown">
+            <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              {{ item.label }}
+              <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6 8L2 4h8z"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              {% for child in item.children %}
+                <a class="nav-dropdown-item" href="{{ child.url }}">{{ child.label }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
 

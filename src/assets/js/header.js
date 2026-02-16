@@ -107,3 +107,66 @@ if (mobileMenuToggle && header) {
   mobileViewport.addEventListener("change", handleViewportChange);
   window.addEventListener("resize", handleViewportChange);
 }
+
+// =========================================================
+// DROPDOWN NAVIGATION
+// =========================================================
+
+const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+dropdownToggles.forEach(toggle => {
+  // Gestion du clic sur le bouton dropdown
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+    // Fermer tous les autres dropdowns
+    dropdownToggles.forEach(otherToggle => {
+      if (otherToggle !== toggle) {
+        otherToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Toggle le dropdown courant
+    toggle.setAttribute('aria-expanded', !isExpanded);
+  });
+});
+
+// Fermer les dropdowns quand on clique à l'extérieur
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.nav-item-dropdown')) {
+    dropdownToggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+// Fermer les dropdowns avec la touche Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    dropdownToggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+// Sur desktop, gérer le hover (en plus du clic)
+const mobileBreakpoint = window.matchMedia('(min-width: 769px)');
+
+if (mobileBreakpoint.matches) {
+  document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
