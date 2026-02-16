@@ -79,6 +79,12 @@ bodyClass: "has-hero"
   <p class="explore-links animate-on-scroll fade-in delay-500">
     <a href="https://github.com/iobewi" target="_blank" rel="noopener">Explorer les projets sur GitHub →</a>
   </p>
+
+  <div class="note-block animate-on-scroll fade-in delay-600">
+    <p>
+      Pour approfondir les contributions techniques et comprendre les choix d'architecture, consultez la page <a href="/open-source/">Contributions open source →</a>
+    </p>
+  </div>
 </section>
 
 <section class="section container section-major snap-item">
