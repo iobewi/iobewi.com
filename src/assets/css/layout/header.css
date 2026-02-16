@@ -6,8 +6,8 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  overflow: hidden;
+  z-index: 1000; /* Augmenté pour que le dropdown soit visible */
+  overflow: visible; /* Permet au dropdown de dépasser */
 
   background: var(--header-hero-bg);
   backdrop-filter: blur(10px);
@@ -188,7 +188,7 @@
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-  z-index: 100;
+  z-index: 1100; /* Au-dessus du header */
 }
 
 .nav-item-dropdown:hover .nav-dropdown-menu,
