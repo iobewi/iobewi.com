@@ -150,21 +150,19 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Sur desktop, gérer le hover (en plus du clic)
-// Note : les événements sont ajoutés pour tous les écrans, mais le comportement
-// mobile est géré différemment via CSS (le menu reste fermé par défaut)
+// Gestion du hover sur desktop uniquement (> 768px)
 document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
   let closeTimeout = null;
 
   dropdown.addEventListener('mouseenter', () => {
-    // Annuler le délai de fermeture si on revient dans le dropdown
-    if (closeTimeout) {
-      clearTimeout(closeTimeout);
-      closeTimeout = null;
-    }
-
     // Seulement en desktop (> 768px)
     if (window.innerWidth > 768) {
+      // Annuler le délai de fermeture si on revient dans le dropdown
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+        closeTimeout = null;
+      }
+
       const toggle = dropdown.querySelector('.nav-dropdown-toggle');
       if (toggle) {
         toggle.setAttribute('aria-expanded', 'true');
@@ -186,3 +184,5 @@ document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
     }
   });
 });
+
+// Le comportement au clic fonctionne sur tous les écrans (géré plus haut dans le code)

@@ -392,6 +392,11 @@
     width: 100% !important;
   }
 
+  /* Désactiver la zone de sécurité sur mobile */
+  .nav-item-dropdown::after {
+    display: none !important;
+  }
+
   .nav-dropdown-toggle {
     font-size: var(--text-xl) !important;
     padding: 1rem 2rem !important;
