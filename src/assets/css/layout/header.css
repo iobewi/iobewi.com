@@ -157,19 +157,21 @@
 }
 
 .nav-dropdown-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   cursor: pointer;
   background: none;
   border: none;
   padding: 0;
+  margin: 0;
   font-size: inherit;
   font-family: inherit;
   font-weight: 600;
   color: var(--nav-text);
   opacity: 0.85;
   transition: opacity 0.2s ease, color 0.2s ease;
+  vertical-align: baseline;
 }
 
 .nav-dropdown-toggle:hover {
@@ -438,9 +440,9 @@
     background: transparent !important;
   }
 
-  .nav-dropdown-item:hover {
+  /* Pas de hover sur mobile tactile - on clique directement */
+  .nav-dropdown-item:active {
     color: white !important;
-    background: rgba(255, 255, 255, 0.1) !important;
   }
 
   /* Header au-dessus de tout */
