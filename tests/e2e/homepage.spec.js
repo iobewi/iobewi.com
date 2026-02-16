@@ -24,11 +24,11 @@ test.describe('Page d\'accueil', () => {
   });
 
   test('Affiche la navigation principale', async ({ page }) => {
-    // Vérifier les liens de navigation
-    const navLinks = page.locator('.nav-link');
+    // Vérifier les liens de navigation (exclure les boutons dropdown)
+    const navLinks = page.locator('.nav-link:not(.nav-dropdown-toggle)');
     const count = await navLinks.count();
 
-    expect(count).toBeGreaterThanOrEqual(4);
+    expect(count).toBeGreaterThanOrEqual(3);
 
     // Vérifier que tous les liens ont un href
     for (let i = 0; i < count; i++) {

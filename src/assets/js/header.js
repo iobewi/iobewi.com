@@ -122,21 +122,34 @@ if (mobileMenuToggle && header) {
 
 const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
 
+// Map pour tracker l'état ouvert/fermé indépendamment d'aria-expanded
+// (évite les conflits entre clic et hover)
+const dropdownClickStates = new Map();
+
 dropdownToggles.forEach(toggle => {
+  // Initialiser l'état à false (fermé)
+  dropdownClickStates.set(toggle, false);
+
   // Gestion du clic sur le bouton dropdown
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+    // Lire l'état depuis notre Map interne, pas depuis aria-expanded
+    // (évite que le mouseenter qui précède le clic n'interfère)
+    const isExpanded = dropdownClickStates.get(toggle);
 
     // Fermer tous les autres dropdowns
     dropdownToggles.forEach(otherToggle => {
       if (otherToggle !== toggle) {
         otherToggle.setAttribute('aria-expanded', 'false');
+        dropdownClickStates.set(otherToggle, false);
       }
     });
 
     // Toggle le dropdown courant
-    toggle.setAttribute('aria-expanded', !isExpanded);
+    const newState = !isExpanded;
+    toggle.setAttribute('aria-expanded', String(newState));
+    dropdownClickStates.set(toggle, newState);
   });
 });
 
@@ -145,6 +158,7 @@ document.addEventListener('click', (e) => {
   if (!e.target.closest('.nav-item-dropdown')) {
     dropdownToggles.forEach(toggle => {
       toggle.setAttribute('aria-expanded', 'false');
+      dropdownClickStates.set(toggle, false); // Synchroniser la Map
     });
   }
 });
@@ -154,6 +168,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     dropdownToggles.forEach(toggle => {
       toggle.setAttribute('aria-expanded', 'false');
+      dropdownClickStates.set(toggle, false); // Synchroniser la Map
     });
   }
 });
@@ -186,6 +201,7 @@ document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
         const toggle = dropdown.querySelector('.nav-dropdown-toggle');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'false');
+          dropdownClickStates.set(toggle, false); // Synchroniser la Map
         }
         closeTimeout = null;
       }, 150);

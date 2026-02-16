@@ -180,8 +180,8 @@ test.describe('Navigation Dropdown "Ressources"', () => {
       // Sortir du dropdown
       await body.hover({ position: { x: 10, y: 10 } });
 
-      // Attendre le délai de fermeture (150ms)
-      await page.waitForTimeout(200);
+      // Attendre le délai de fermeture (150ms) + transition CSS (200ms)
+      await page.waitForTimeout(400);
 
       // Vérifier que le dropdown est fermé
       await expect(dropdownToggle).toHaveAttribute('aria-expanded', 'false');

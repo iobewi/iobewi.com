@@ -415,8 +415,8 @@
   .nav-dropdown-menu {
     position: static !important;
     opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
+    visibility: hidden !important; /* Caché quand fermé */
+    pointer-events: none !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
@@ -425,11 +425,14 @@
     width: 100% !important;
     max-height: 0 !important;
     overflow: hidden !important;
-    transition: max-height 0.3s ease !important;
+    transition: max-height 0.3s ease, visibility 0s 0.3s !important; /* Délai sur visibility */
   }
 
   .nav-dropdown-toggle[aria-expanded="true"] + .nav-dropdown-menu {
+    visibility: visible !important; /* Visible quand ouvert */
+    pointer-events: auto !important;
     max-height: 500px !important;
+    transition: max-height 0.3s ease !important; /* Pas de délai sur visibility à l'ouverture */
   }
 
   .nav-dropdown-item {
