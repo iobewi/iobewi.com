@@ -27,7 +27,12 @@ breadcrumb:
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>Contributions ROS 2 et ros2_control</h2>
+    <div class="section-title-row">
+      <h2>Contributions ROS 2 et ros2_control</h2>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
+      </div>
+    </div>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Portage et intégration d'actionneurs MyActuator</h3>
@@ -50,11 +55,21 @@ breadcrumb:
       Cette contribution a été utilisée dans plusieurs projets robotiques et a reçu des retours positifs de la communauté. Elle illustre la capacité d'IOBEWI à structurer des briques logicielles réutilisables et à documenter des choix techniques complexes.
     </p>
   </div>
+  <div class="section-link-end animate-on-scroll fade-in delay-400">
+    <a href="https://github.com/ioio2995/myactuator_ros2_control" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </div>
 </section>
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>Intégration de contrôleurs moteurs VESC via ESP micro-ROS</h2>
+    <div class="section-title-row">
+      <h2>Intégration de contrôleurs moteurs VESC via ESP micro-ROS</h2>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
+        <img class="tech-badge" src="/assets/images/tech/uros.svg" alt="micro-ROS">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Contexte</h3>
@@ -83,11 +98,21 @@ breadcrumb:
       Cette intégration a été validée sur plusieurs plateformes robotiques et a permis de simplifier l'architecture logicielle en remplaçant des solutions custom par une brique standardisée ROS 2. La contribution a été publiée sur GitHub et documentée pour favoriser sa réutilisation.
     </p>
   </div>
+  <div class="section-link-end animate-on-scroll fade-in delay-500">
+    <a href="https://github.com/iobewi" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </div>
 </section>
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>Support BMS Daly pour ROS 2 via ESP micro-ROS</h2>
+    <div class="section-title-row">
+      <h2>Support BMS Daly pour ROS 2 via ESP micro-ROS</h2>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
+        <img class="tech-badge" src="/assets/images/tech/uros.svg" alt="micro-ROS">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Contexte</h3>
@@ -110,31 +135,42 @@ breadcrumb:
       Cette brique logicielle a été publiée sur GitHub et documentée. Elle permet de fiabiliser la gestion énergétique des plateformes mobiles en centralisant les données de batterie dans le graphe ROS 2, facilitant ainsi la supervision et la prise de décision.
     </p>
   </div>
+  <div class="section-link-end animate-on-scroll fade-in delay-400">
+    <a href="https://github.com/ioio2995/uros_DalyBMS" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </div>
 </section>
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>Composants et drivers ESP-IDF</h2>
+    <div class="section-title-row">
+      <h2>Librairie de composants pour ESP-IDF</h2>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-100">
-    <p>
-      Au-delà des contributions ROS 2, IOBEWI développe et publie régulièrement des composants pour <strong>ESP-IDF</strong>, le framework officiel des microcontrôleurs ESP32. Ces composants couvrent des besoins récurrents en robotique embarquée : communication série, gestion de capteurs, interfaçage de périphériques.
-    </p>
+    <p>Au-delà des contributions ROS 2, IOBEWI développe et maintient une librairie de composants pour <strong>ESP-IDF</strong>, le framework officiel des microcontrôleurs ESP32.</p>
+    <p>Ce dépôt constitue une base modulaire destinée à structurer le développement de systèmes embarqués. Les composants sont organisés de manière cohérente afin de distinguer clairement l'accès matériel, la logique applicative et les mécanismes d'intégration.</p>
+    <p>L'objectif n'est pas de proposer des exemples isolés, mais de mettre à disposition un ensemble de briques réutilisables, maintenables et évolutives.</p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Exemples de composants publiés</h3>
+    <h3>Organisation des composants</h3>
+    <p>La librairie regroupe notamment :</p>
     <ul>
-      <li>Drivers de communication pour protocoles propriétaires</li>
-      <li>Abstraction de périphériques I2C, SPI, UART</li>
-      <li>Utilitaires de diagnostic et de logging</li>
-      <li>Exemples d'intégration avec micro-ROS</li>
+      <li>Des composants dédiés à l'interfaçage matériel</li>
+      <li>Des bibliothèques indépendantes du matériel</li>
+      <li>Des modules d'intégration</li>
+      <li>Des applications de référence démontrant des chaînes fonctionnelles complètes</li>
     </ul>
+    <p>Cette organisation facilite la lisibilité, la réutilisation et l'intégration progressive dans des projets embarqués plus larges.</p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Démarche</h3>
-    <p>
-      Ces composants sont documentés, testés et publiés sous licence open source. Ils reflètent les besoins réels rencontrés sur les projets d'accompagnement et visent à réduire le temps de démarrage sur des problématiques récurrentes.
-    </p>
+    <p>Les composants sont documentés, versionnés et pensés pour s'intégrer dans une architecture cohérente. Le dépôt reflète une approche d'ingénierie structurée visant à améliorer la maintenabilité et la reproductibilité des développements.</p>
+  </div>
+  <div class="section-link-end animate-on-scroll fade-in delay-400">
+    <a href="https://github.com/iobewi/iobewi-idf-components" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </div>
 </section>
 
@@ -161,20 +197,6 @@ breadcrumb:
         <li>Contribution à l'écosystème robotique embarqué</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
-    <h2>Explorer les contributions</h2>
-  </div>
-  <div class="animate-on-scroll fade-in delay-100">
-    <p class="lead" style="text-align: center; max-width: 750px; margin: 0 auto var(--stack-3);">
-      L'ensemble des contributions d'IOBEWI est disponible sur GitHub. Chaque dépôt est documenté et accompagné d'exemples d'utilisation.
-    </p>
-  </div>
-  <div class="animate-on-scroll fade-in delay-200" style="text-align: center; margin-top: var(--stack-3);">
-    <a class="btn btn-primary" href="https://github.com/iobewi" target="_blank" rel="noopener">Voir les dépôts sur GitHub →</a>
   </div>
 </section>
 

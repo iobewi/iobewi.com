@@ -67,6 +67,38 @@ breadcrumb:
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
+    <h2>Approche système — de la conception à l'intégration</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">IOBEWI adopte une démarche intégrée où la mécanique, l'électronique et le logiciel sont pensés simultanément. Cette vision système évite les incohérences tardives et réduit les itérations correctrices.</p>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-200">
+    <h3>Chaîne d'intégration typique</h3>
+    <ol>
+      <li>Analyse des contraintes fonctionnelles et physiques</li>
+      <li>Conception mécanique et architecture des volumes</li>
+      <li>Architecture électronique adaptée à l'intégration</li>
+      <li>Conception PCB</li>
+      <li>Fabrication et prototypage</li>
+      <li>Intégration firmware</li>
+      <li>Tests croisés matériel / logiciel</li>
+      <li>Itérations maîtrisées</li>
+    </ol>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-300">
+    <h3>Rôle structurant de la mécanique</h3>
+    <p>La conception mécanique intervient en amont et conditionne :</p>
+    <ul>
+      <li>la gestion des contraintes thermiques</li>
+      <li>la fiabilité des assemblages</li>
+      <li>l'accessibilité à la maintenance</li>
+      <li>la robustesse globale du système</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Approche progressive par phases</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
