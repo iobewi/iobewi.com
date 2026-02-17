@@ -20,7 +20,7 @@ permalink: "/mentions-legales/"
     <p><strong>Forme juridique</strong> : Société par Actions Simplifiée (SAS)</p>
     <p><strong>Capital social</strong> : 1000 €</p>
     <p><strong>Siège social</strong> : 18, rue de Gisors, 95750 CHARS</p>
-    <p><strong>RCS</strong> : PONTOISE, 939 683 629</p>
+    <p><strong>RCS</strong> : Pontoise 939 683 629</p>
     <p><strong>SIRET</strong> : 939 683 629 00017</p>
     <p><strong>Directeur de la publication</strong> : Lionel ORCIL, Président</p>
     <p><strong>Contact</strong> : <a href="mailto:contact@iobewi.com">contact@iobewi.com</a></p>
@@ -32,6 +32,7 @@ permalink: "/mentions-legales/"
     88 Colin P Kelly Jr St<br>
     San Francisco, CA 94107<br>
     États-Unis<br>
+    Téléphone : +1 (415) 735-4488<br>
     <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a></p>
   </div>
   <div class="content-group">

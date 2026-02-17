@@ -17,7 +17,8 @@ permalink: "/confidentialite/"
 <section class="section container section-major snap-item">
   <div class="content-group">
     <h2>Responsable du traitement</h2>
-    <p>IOBEWI SAS, <a href="mailto:contact@iobewi.com">contact@iobewi.com</a></p>
+    <p>IOBEWI SAS, représentée par son Président, Lionel ORCIL<br>
+    <a href="mailto:contact@iobewi.com">contact@iobewi.com</a></p>
   </div>
   <div class="content-group">
     <h2>Données collectées</h2>
@@ -34,12 +35,13 @@ permalink: "/confidentialite/"
   </div>
   <div class="content-group">
     <h2>Durée de conservation</h2>
-    <p>Les emails sont conservés le temps nécessaire au traitement de la demande, sans archivage systématique au-delà.</p>
+    <p>Les emails sont conservés uniquement le temps nécessaire au traitement de la demande et peuvent être supprimés à l'issue des échanges, sauf obligation légale contraire.</p>
   </div>
   <div class="content-group">
     <h2>Cookies et traceurs</h2>
     <p>Ce site <strong>ne dépose aucun cookie applicatif</strong>. Aucun outil de tracking ou d'analytics n'est actif côté visiteur.</p>
     <p>Google Search Console est utilisé comme outil de suivi de l'indexation du site, côté propriétaire uniquement. Il ne génère aucun cookie ni traceur côté visiteur.</p>
+    <p>IOBEWI ne déploie aucun mécanisme de suivi ou d'analyse d'audience sur ce site.</p>
     <p>L'hébergeur (GitHub, Inc.) peut déposer des cookies techniques liés à l'infrastructure. Ces cookies sont hors du contrôle d'IOBEWI.</p>
   </div>
   <div class="content-group">
