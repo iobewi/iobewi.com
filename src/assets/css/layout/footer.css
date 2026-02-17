@@ -108,6 +108,25 @@
   margin: -0.5rem;
 }
 
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: var(--text-xs);
+  opacity: 0.6;
+  padding-top: 0.25rem;
+}
+
+.footer-legal a {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+}
+
 /* Footer simple en mobile - juste le copyright */
 @media (max-width: 768px) {
   .footer-row {
