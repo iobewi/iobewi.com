@@ -18,12 +18,12 @@ permalink: "/mentions-legales/"
     <h2>Éditeur du site</h2>
     <p><strong>Raison sociale</strong> : IOBEWI</p>
     <p><strong>Forme juridique</strong> : Société par Actions Simplifiée (SAS)</p>
-    <p><strong>Capital social</strong> : [À COMPLÉTER] €</p>
-    <p><strong>Siège social</strong> : [À COMPLÉTER]</p>
-    <p><strong>RCS</strong> : [Ville], [Numéro RCS]</p>
-    <p><strong>SIRET</strong> : [À COMPLÉTER]</p>
-    <p><strong>Directeur de la publication</strong> : [Prénom Nom], Président</p>
-    <p><strong>Contact</strong> : <a href="/contact/">via le formulaire de contact</a></p>
+    <p><strong>Capital social</strong> : 1000 €</p>
+    <p><strong>Siège social</strong> : 18, rue de Gisors, 95750 CHARS</p>
+    <p><strong>RCS</strong> : PONTOISE, 939 683 629</p>
+    <p><strong>SIRET</strong> : 939 683 629 00017</p>
+    <p><strong>Directeur de la publication</strong> : Lionel ORCIL, Président</p>
+    <p><strong>Contact</strong> : <a href="mailto:contact@iobewi.com">contact@iobewi.com</a></p>
   </div>
   <div class="content-group">
     <h2>Hébergement</h2>

@@ -17,7 +17,7 @@ permalink: "/confidentialite/"
 <section class="section container section-major snap-item">
   <div class="content-group">
     <h2>Responsable du traitement</h2>
-    <p>IOBEWI SAS : <a href="/contact/">contact via le formulaire</a></p>
+    <p>IOBEWI SAS, <a href="mailto:contact@iobewi.com">contact@iobewi.com</a></p>
   </div>
   <div class="content-group">
     <h2>Données collectées</h2>
@@ -44,7 +44,7 @@ permalink: "/confidentialite/"
   </div>
   <div class="content-group">
     <h2>Droits des personnes</h2>
-    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ces droits : <a href="/contact/">contacter IOBEWI</a>.</p>
+    <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ces droits : <a href="mailto:contact@iobewi.com">contact@iobewi.com</a>.</p>
   </div>
   <div class="content-group">
     <h2>Réclamation</h2>
