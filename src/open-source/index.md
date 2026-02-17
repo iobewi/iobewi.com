@@ -52,7 +52,7 @@ breadcrumb:
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Résultats</h3>
     <p>
-      Cette contribution a été utilisée dans plusieurs projets robotiques et a reçu des retours positifs de la communauté. Elle illustre la capacité d'IOBEWI à structurer des briques logicielles réutilisables et à documenter des choix techniques complexes.
+      Publiée sur GitHub avec documentation et exemples d'usage, conçue pour respecter les conventions ros2_control. Brique réutilisable et structurée, éprouvée sur les plateformes robotiques internes d'IOBEWI.
     </p>
   </div>
   <div class="section-link-end animate-on-scroll fade-in delay-400">
@@ -60,46 +60,39 @@ breadcrumb:
   </div>
 </section>
 
+
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
     <div class="section-title-row">
-      <h2>Intégration de contrôleurs moteurs VESC via ESP micro-ROS</h2>
+      <h2>Driver ROS 2 pour capteurs IMU WitMotion</h2>
       <div class="tech-badges">
         <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
-        <img class="tech-badge" src="/assets/images/tech/uros.svg" alt="micro-ROS">
-        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
       </div>
     </div>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Contexte</h3>
     <p>
-      Les contrôleurs moteurs <strong>VESC</strong> sont largement utilisés dans les projets de robotique mobile et de traction électrique. IOBEWI a réalisé le portage complet de l'interface VESC pour <strong>ROS 2</strong> en passant par un microcontrôleur <strong>ESP32</strong> exécutant <strong>micro-ROS</strong>.
+      Les capteurs <strong>WitMotion</strong> (IMU, magnétomètre, baromètre, GPS) sont utilisés dans de nombreux projets robotiques et embarqués. IOBEWI a développé et publié un driver <strong>ROS 2</strong> en C++ permettant d'intégrer ces capteurs directement dans un graphe ROS 2, avec communication série asynchrone via <strong>asio</strong>.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Architecture technique</h3>
+    <h3>Points techniques</h3>
     <ul>
-      <li>Communication UART entre ESP32 et VESC (protocole propriétaire)</li>
-      <li>Agent micro-ROS embarqué sur ESP32 pour publier les données dans ROS 2</li>
-      <li>Intégration dans un graphe ROS 2 standard (topics, services, paramètres)</li>
-      <li>Gestion des modes de contrôle (courant, vitesse, position)</li>
+      <li>Communication série asynchrone (asio) — indépendante de la plateforme</li>
+      <li>Publication de 12 topics ROS 2 selon les messages activés sur le capteur</li>
+      <li>Configuration par fichier ou ligne de commande (port, débit, fréquence, frame)</li>
+      <li>Documentation, exemples de lancement et paramètres exposés</li>
     </ul>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
-    <h3>Choix techniques</h3>
+    <h3>Résultats</h3>
     <p>
-      Le passage par micro-ROS permet de déporter la logique de communication sur un microcontrôleur dédié, libérant ainsi les ressources du système principal (SBC) tout en maintenant une intégration native dans ROS 2. Cette approche est particulièrement adaptée aux plateformes mobiles contraintes en ressources.
+      8 étoiles GitHub et 1 fork — signal de réutilisation réelle par d'autres équipes. Brique publiée, documentée et utilisable sans modification dans un projet ROS 2 standard.
     </p>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-400">
-    <h3>Retours d'expérience</h3>
-    <p>
-      Cette intégration a été validée sur plusieurs plateformes robotiques et a permis de simplifier l'architecture logicielle en remplaçant des solutions custom par une brique standardisée ROS 2. La contribution a été publiée sur GitHub et documentée pour favoriser sa réutilisation.
-    </p>
-  </div>
-  <div class="section-link-end animate-on-scroll fade-in delay-500">
-    <a href="https://github.com/iobewi" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  <div class="section-link-end animate-on-scroll fade-in delay-400">
+    <a href="https://github.com/ioio2995/witmotion_ros2" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </div>
 </section>
 

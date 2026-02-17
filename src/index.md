@@ -12,7 +12,7 @@ bodyClass: "has-hero"
       <div class="hero-content">
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
         <p class="hero-tagline">Architecture · Intégration · Transmission</p>
-        <p class="lead">Du concept à l'intégration système complète.</p>
+        <p class="lead">Du prototype fragile au système que votre équipe maîtrise.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
@@ -48,6 +48,36 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
+    <h2>Vous reconnaissez-vous dans l'une de ces situations&nbsp;?</h2>
+  </div>
+  <div class="columns animate-on-scroll slide-up">
+    <div class="proof-card">
+      <p>Votre prototype fonctionne, mais reste fragile, difficile à reproduire ou à transmettre à une autre personne.</p>
+    </div>
+    <div class="proof-card">
+      <p>L'intégration hardware&nbsp;/ software avance en silos — chaque partie tient, mais l'ensemble manque de cohérence.</p>
+    </div>
+    <div class="proof-card">
+      <p>La dette technique s'accumule et commence à ralentir les itérations ou à compliquer les recrutements.</p>
+    </div>
+    <div class="proof-card">
+      <p>Le projet est bloqué entre POC et produit livrable&nbsp;: l'étape suivante n'est pas claire.</p>
+    </div>
+    <div class="proof-card">
+      <p>L'équipe peine à reprendre la main sur un système peu documenté, mal structuré ou dépendant d'une seule personne.</p>
+    </div>
+    <div class="proof-card">
+      <p>Vous avancez vite, mais vous sentez que les fondations ne tiendront pas à l'échelle ou sous contrainte.</p>
+    </div>
+  </div>
+  <div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
+    <p class="lead" style="margin-bottom: var(--stack-2);">Si au moins une de ces situations vous parle, c'est précisément là qu'IOBEWI intervient.</p>
+    <a class="btn btn-primary" href="/contact/">Échangeons sur votre situation</a>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Ce que fait (et ne fait pas) IOBEWI</h2>
   </div>
   <div class="comparison-grid">
@@ -67,9 +97,25 @@ bodyClass: "has-hero"
         <li>Intégration clé en main</li>
         <li>Revente de matériel ou licences</li>
         <li>Développement applicatif généraliste</li>
-        <li>Production industrielle</li>
+        <li>Fabrication en série ou production à l'échelle industrielle</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
+    <h2>Ce que votre équipe maîtrise à la fin</h2>
+  </div>
+  <div class="featured-block animate-on-scroll slide-up">
+    <h3>L'accompagnement est actif et ancré dans le terrain — l'objectif est que votre équipe reprenne la main, pas qu'elle reçoive une solution.</h3>
+    <ul>
+      <li><strong>Maintenir et faire évoluer l'architecture</strong> — sans dépendance externe, sans "homme-clé".</li>
+      <li><strong>Travailler en autonomie sur un dépôt structuré</strong> — versionné, reproductible, compréhensible par tous.</li>
+      <li><strong>Piloter et adapter la chaîne CI/CD</strong> — intégrée au rythme réel du projet, pas imposée.</li>
+      <li><strong>Prendre des décisions sur un périmètre clair</strong> — composants identifiés, interfaces stabilisées, découpage assumé.</li>
+      <li><strong>Itérer sereinement sur une base solide</strong> — capable d'accueillir de nouvelles personnes ou de monter en charge.</li>
+    </ul>
   </div>
 </section>
 
@@ -105,50 +151,56 @@ bodyClass: "has-hero"
   <div class="section-title animate-on-scroll fade-in">
     <h2>Des projets concrets, des contributions ouvertes</h2>
   </div>
-
-  <div class="two-col-editorial animate-on-scroll slide-up">
-    <div>
-      <h3>Types de projets / contextes</h3>
-      <ul>
-        <li>Démonstrateurs techniques</li>
-        <li>Collaboration open source</li>
-        <li>Mise en place de socles techniques embarqués</li>
-      </ul>
+  <div class="grid-2 animate-on-scroll slide-up">
+    <div class="project-card-compact" data-icon="robot">
+      <h3>R2BEWI</h3>
+      <p>Plateforme robotique intégrant contrôle d'actionneurs, perception et outillage logiciel sur un socle multi-SoC.</p>
+      <a href="/realisations/" class="card-link">Voir le projet →</a>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+        <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
+        <img class="tech-badge" src="/assets/images/tech/Raspberry_Pi_logo.svg" alt="Raspberry Pi">
+        <img class="tech-badge" src="/assets/images/tech/Nvidia-jetson-Logo.svg" alt="NVIDIA Jetson">
+      </div>
     </div>
-    <div>
-      <h3>Rôle d'IOBEWI</h3>
-      <ul>
-        <li>Explorer et prototyper</li>
-        <li>Structurer des bases techniques</li>
-        <li>Intégrer matériel, logiciel et outillage</li>
-        <li>Formaliser et transmettre des démarches techniques</li>
-      </ul>
+    <div class="project-card-compact" data-icon="radar">
+      <h3>SCANBEWI</h3>
+      <p>Outil de captation LiDAR embarqué pour la production de cartographies 2D accessibles à des usages non spécialistes.</p>
+      <a href="/realisations/" class="card-link">Voir le projet →</a>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+        <img class="tech-badge" src="/assets/images/tech/cicd.svg" alt="CI/CD">
+      </div>
+    </div>
+    <div class="project-card-compact" data-icon="puzzle">
+      <h3>MyActuator ROS2</h3>
+      <p>Portage et intégration complète d'actionneurs MyActuator via ros2_control, avec gestion de la communication série propriétaire.</p>
+      <a href="https://github.com/ioio2995/myactuator_ros2_control" class="card-link" target="_blank" rel="noopener">GitHub →</a>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/ros.svg" alt="ROS 2">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
+    <div class="project-card-compact" data-icon="brain">
+      <h3>Librairie ESP-IDF</h3>
+      <p>Base modulaire pour le développement embarqué ESP-IDF, avec séparation nette entre accès matériel, logique applicative et intégration.</p>
+      <a href="https://github.com/iobewi/iobewi-idf-components" class="card-link" target="_blank" rel="noopener">GitHub →</a>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
     </div>
   </div>
-
   <div class="animate-on-scroll fade-in delay-200" style="text-align: center; margin-top: var(--stack-3);">
-    <a class="btn btn-primary" href="/realisations/">Découvrir les réalisations</a>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
-    <h2>Une approche progressive, au rythme du terrain</h2>
-  </div>
-  <div class="two-col-editorial animate-on-scroll slide-up">
-    <div>
-      <p>Les projets sont abordés de manière progressive, de l’exploration et des retours d’expérience jusqu’au cadrage, au découpage et au développement.</p>
-    </div>
-    <div>
-      <p>Les outils, tests et pratiques de livraison sont introduits au rythme du projet et de ses contraintes, avec un objectif&nbsp;: transmettre des bases techniques exploitables et rendre le projet autonome.</p>
-    </div>
+    <a class="btn btn-primary" href="/realisations/">Toutes les réalisations</a>
+    <a class="btn btn-ghost" href="/open-source/">Contributions open source</a>
   </div>
 </section>
 
 <section class="section container section-major snap-item">
   <div class="cta-hero animate-on-scroll scale-in">
     <h2>Structurons votre prochaine étape</h2>
-    <p><strong>IOBEWI accompagne les équipes dans la structuration et la maturation de leurs projets techniques, en s'adaptant à leur contexte et à leurs dynamiques existantes.</strong></p>
+    <p>Si ces situations vous parlent, ou si vous approchez d'une phase critique — passage en production, recrutement, levée de fonds — c'est le bon moment pour structurer.</p>
+    <p><strong>Un projet qui avance sans structure accumule une dette silencieuse, souvent invisible jusqu'au moment où elle bloque tout. IOBEWI intervient avec l'équipe, avant que ça coince.</strong></p>
     <a class="btn btn-primary" href="/contact/">Échangeons sur votre accompagnement</a>
   </div>
 </section>

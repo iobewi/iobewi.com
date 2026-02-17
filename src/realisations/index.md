@@ -19,10 +19,10 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>R2BEWI — Une convergence d'idées</h2>
+    <h2>R2BEWI — Démonstrateur d'architecture système</h2>
   </div>
   <div class="lead-with-badges animate-on-scroll slide-up delay-100">
-    <p class="lead">Plateforme robotique comme support d'accompagnement</p>
+    <p class="lead">Plateforme multi-SoC conçue pour valider des choix d'architecture en conditions réelles</p>
     <div class="tech-badges">
       <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
       <img class="tech-badge" src="/assets/images/tech/Raspberry_Pi_logo.svg" alt="Raspberry Pi">
@@ -34,31 +34,31 @@ bodyClass: "has-hero"
   <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Contexte</h3>
     <p>
-      R2BEWI est une plateforme robotique conçue par IOBEWI comme support central de travail et d'expérimentation. Elle vise à rassembler, au sein d'un même socle, des problématiques de robotique, de contrôle d'actionneurs, de perception de l'environnement et d'outillage logiciel.
+      R2BEWI est une plateforme conçue pour éprouver, en conditions réelles, les patterns d'architecture au cœur de l'accompagnement IOBEWI. Elle intègre délibérément une hétérogénéité matérielle — Espressif, Raspberry Pi, NVIDIA Jetson — reliée par ROS 2 et micro-ROS, pour valider comment structurer la communication, le découpage des responsabilités et la cohérence d'ensemble dans un système embarqué complexe.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Rôle d'IOBEWI</h3>
     <p>
-      IOBEWI est à l'origine de la conception et de la structuration de R2BEWI, menée comme un projet interne servant de vitrine du savoir-faire et de la méthode de la structure. Ce projet constitue un cadre de référence sur lequel s'appuie aujourd'hui l'accompagnement proposé aux équipes.
+      IOBEWI a conçu et structuré R2BEWI comme terrain d'épreuve de ses propres décisions architecturales. Chaque choix — découpage des couches, protocoles de communication, stratégie de test, intégration mécanique-électronique-firmware — a été justifié et documenté. Ce projet est aujourd'hui la référence concrète sur laquelle s'appuient les accompagnements proposés aux équipes.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-400">
-    <h3>Contraintes principales</h3>
+    <h3>Défis architecturaux adressés</h3>
     <ul>
-      <li>complexité et hétérogénéité matérielle</li>
-      <li>dépendance forte aux cycles de tests physiques</li>
-      <li>nécessité de concilier exploration continue et lisibilité technique</li>
+      <li>faire cohabiter des SoC aux contraintes très différentes au sein d'un même graphe ROS 2</li>
+      <li>gérer la frontière temps réel / best-effort entre micro-ROS et ROS 2 sans perdre la cohérence système</li>
+      <li>maintenir un projet en exploration continue sans sacrifier la reproductibilité ni la lisibilité</li>
     </ul>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-500">
-    <h3>Livrables / résultats</h3>
+    <h3>Ce que R2BEWI valide</h3>
+    <p>Architecture distribuée validée sur un socle multi-SoC (ESP32 + SBC), intégrant communication temps réel et séparation claire des responsabilités.</p>
     <ul>
-      <li>plateforme robotique fonctionnelle conçue en interne</li>
-      <li>socle technique intégrant contrôle, perception et outillage</li>
-      <li>châssis conçu sous Fusion 360 — intégration électronique, tolérances et assemblages pensés dès la phase mécanique</li>
-      <li>cartes électroniques développées spécifiquement pour le projet (contrôle moteur, perception)</li>
-      <li>support de démonstration et d'expérimentation pour l'accompagnement</li>
+      <li>une stratégie d'intégration multi-SoC documentée et reproductible</li>
+      <li>un modèle de découpage des responsabilités entre microcontrôleur et calculateur principal</li>
+      <li>une chaîne mécanique-électronique-firmware pensée comme un système dès la conception</li>
+      <li>un socle d'expérimentation directement transposable aux projets accompagnés</li>
     </ul>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-600">
