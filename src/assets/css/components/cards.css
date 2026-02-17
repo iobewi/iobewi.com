@@ -402,9 +402,14 @@
     box-shadow var(--duration-base) var(--ease-smooth),
     border-color var(--duration-base) var(--ease-smooth);
   box-shadow: var(--shadow-card-base);
-  display: flex;
-  flex-direction: column;
-  gap: var(--stack-1);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--stack-2);
+  row-gap: var(--stack-1);
+}
+
+.project-card-compact > *:not(h3):not(.card-link) {
+  grid-column: 1 / -1;
 }
 
 .project-card-compact:hover {
@@ -436,6 +441,86 @@
 .project-card-compact .card-foot {
   font-size: var(--text-xs);
   margin-top: 0.5rem;
+  text-align: right;
+}
+
+.lead-with-badges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-2);
+  margin-bottom: var(--stack-3);
+}
+
+@media (min-width: 640px) {
+  .lead-with-badges {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--stack-3);
+  }
+}
+
+.lead-with-badges .lead {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.tech-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.project-card-compact .tech-badges {
+  justify-content: flex-end;
+}
+
+.tech-badge {
+  height: 20px;
+  width: auto;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.tech-badge:hover {
+  opacity: 1;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.card-link:hover {
+  color: var(--accent-hover);
+  gap: 0.6rem;
+}
+
+.card-link svg {
+  flex-shrink: 0;
+}
+
+/* Dans les cartes : positionné en haut à droite via grid */
+.project-card-compact .card-link {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+}
+
+/* Dans les sections : aligné en bas à droite */
+.section-link-end {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--stack-2);
 }
 
 /* Project icons via data attribute */

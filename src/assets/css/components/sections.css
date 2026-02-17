@@ -81,6 +81,26 @@
   margin-bottom: var(--stack-2);
 }
 
+.section-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-2);
+}
+
+@media (min-width: 640px) {
+  .section-title-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.section-title-row h2 {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 0;
+}
+
 /* Section dividers */
 .section-divider {
   width: 100%;
