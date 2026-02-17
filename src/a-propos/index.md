@@ -23,19 +23,19 @@ bodyClass: "has-hero"
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p>
-      <strong>IOBEWI est née du parcours technique de son fondateur</strong>, construit sur une progression allant du support et de l'intégration logicielle vers l'administration système, l'ingénierie système et les pratiques DevOps. Bien que principalement orienté logiciel et infrastructure, ce parcours a été régulièrement confronté à des contraintes proches de l'embarqué, notamment à travers des systèmes distribués, des environnements contraints et des problématiques de fiabilité en conditions réelles.
+      <strong>IOBEWI est née du parcours technique de son fondateur</strong>, construit sur une progression allant du support et de l'intégration logicielle vers l'administration système, l'ingénierie système et les pratiques DevOps. Ce parcours s'est développé au contact de systèmes distribués, d'environnements contraints et de problématiques de fiabilité en conditions réelles : des contraintes proches de celles rencontrées en embarqué.
     </p>
   </div>
 
   <div class="content-group animate-on-scroll fade-in delay-200">
     <p>
-      Avec le temps, un besoin de renouer plus directement avec le matériel s'est imposé, conduisant à une réappropriation progressive des plateformes embarquées, des environnements de prototypage jusqu'aux microcontrôleurs. Cette trajectoire a permis de faire cohabiter des méthodes issues du monde système et DevOps avec les contraintes propres aux MCU, à la robotique et aux systèmes embarqués, en prenant ROS et la robotique comme terrain naturel de convergence.
+      En parallèle, la dimension matérielle s'est structurée comme un terrain naturel de convergence&nbsp;: plateformes embarquées, prototypage, microcontrôleurs, intégration mécanique et électronique. Cette trajectoire a permis de transposer des pratiques issues du monde système et DevOps (reproductibilité, outillage, CI/CD, documentation) vers les contraintes propres aux MCU, à la robotique et aux systèmes embarqués, avec ROS comme socle d'intégration.
     </p>
   </div>
 
   <div class="note-block animate-on-scroll fade-in delay-300">
     <p>
-      C'est de cette hybridation entre pratiques logicielles structurantes et ancrage matériel que s'est construit le positionnement d'IOBEWI aujourd'hui.
+      C'est de cette continuité (système, terrain, matériel et transmission) que s'est construit le positionnement d'IOBEWI aujourd'hui.
     </p>
   </div>
 </section>
@@ -47,7 +47,7 @@ bodyClass: "has-hero"
     <div class="content-group animate-on-scroll fade-in delay-100">
       <h3>Accompagnement structuré et contractualisé</h3>
       <p>
-        IOBEWI intervient dans un cadre défini, aux côtés des équipes, pour structurer et faire mûrir les projets, sans s'y substituer.
+        IOBEWI intervient dans un cadre défini, aux côtés des équipes, pour structurer et faire mûrir les projets, sans s'y substituer. Objectif&nbsp;: livrables clairs, transfert des décisions techniques, traçabilité des choix.
       </p>
     </div>
     <div class="content-group animate-on-scroll fade-in delay-200">
