@@ -6,6 +6,7 @@ const path = require('path');
 /**
  * Tests de qualité éditoriale — détection "anti-IA visible"
  *
+ * Scanne les fichiers sources .md, .css et .js du projet.
  * Détecte les patterns caractéristiques d'un texte généré par IA :
  * - Connecteurs de remplissage ("ainsi,", "de plus,", "par ailleurs")
  * - Verbes fades et constructions passives ("permettant de", "visant à")
@@ -13,8 +14,7 @@ const path = require('path');
  * - Emphases marketing vides ("particulièrement adapté", "innovant")
  * - Formules creuses ("il est important de", "à noter que")
  * - Tirets cadratins résiduels
- *
- * Les fichiers sources .md sont scannés (pas le HTML généré).
+ * - Points de suspension mal formés
  */
 
 // Patterns à détecter, organisés par catégorie
@@ -146,23 +146,27 @@ const PATTERNS = [
   },
 ];
 
-// Fichiers à ignorer (docs internes, templates, etc.)
+// Chemins à ignorer (docs internes, générés, dépendances)
 const IGNORED_PATHS = [
   'docs/',
   'node_modules/',
   '_site/',
   'CLAUDE.md',
   'README',
+  'tests/',
 ];
 
-function getMdFiles(dir) {
+// Extensions à scanner
+const EXTENSIONS = ['.md', '.css', '.js'];
+
+function getSourceFiles(dir) {
   let files = [];
   if (!fs.existsSync(dir)) return files;
   for (const item of fs.readdirSync(dir)) {
     const fullPath = path.join(dir, item);
     if (fs.statSync(fullPath).isDirectory()) {
-      files = files.concat(getMdFiles(fullPath));
-    } else if (item.endsWith('.md')) {
+      files = files.concat(getSourceFiles(fullPath));
+    } else if (EXTENSIONS.some(ext => item.endsWith(ext))) {
       files.push(fullPath);
     }
   }
@@ -179,27 +183,53 @@ function getLineContext(content, index, length) {
   return content.slice(start, end === -1 ? undefined : end).trim();
 }
 
+/**
+ * Vérifie si le contexte est une ligne à ignorer selon le type de fichier.
+ * - .md  : ignore les commentaires HTML et Liquid
+ * - .css : ignore les sélecteurs / déclarations CSS (pas les commentaires)
+ * - .js  : rien à ignorer (les patterns prose ne matchent pas le code JS)
+ */
+function isIgnoredContext(context, ext) {
+  if (ext === '.md') {
+    return context.startsWith('<!--') || context.includes('{% comment %}');
+  }
+  if (ext === '.css') {
+    // Ignorer les lignes de code CSS pur (propriétés, sélecteurs) — les patterns
+    // prose ne peuvent apparaître qu'en commentaires, mais on vérifie quand même
+    // que la ligne n'est pas une URL ou une valeur CSS contenant un mot-clé
+    const trimmed = context.trimStart();
+    // Ligne de code CSS (pas un commentaire) : contient ':' ou '{' ou '}' sans '/*'
+    if (!trimmed.startsWith('/*') && !trimmed.startsWith('*') && !trimmed.startsWith('//')) {
+      if (trimmed.includes('{') || trimmed.includes('}') || /^\w[\w-]*\s*:/.test(trimmed)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  return false;
+}
+
 test.describe('Qualité éditoriale — détection anti-IA', () => {
   const srcDir = path.join(__dirname, '../../src');
 
-  test('Aucun connecteur de remplissage ni formule creuse', () => {
-    const files = getMdFiles(srcDir).filter(f => !isIgnored(f));
+  test('Aucun marqueur "IA visible" dans les fichiers sources (.md, .css, .js)', () => {
+    const files = getSourceFiles(srcDir).filter(f => !isIgnored(f));
     const violations = [];
 
     for (const file of files) {
+      const ext = path.extname(file);
       const content = fs.readFileSync(file, 'utf8');
       const relativePath = path.relative(srcDir, file);
 
       for (const { id, label, pattern, example } of PATTERNS) {
-        // Réinitialiser l'index du pattern global
         pattern.lastIndex = 0;
         let match;
         while ((match = pattern.exec(content)) !== null) {
           const context = getLineContext(content, match.index, match[0].length);
-          // Ignorer les occurrences dans les commentaires HTML ou les commentaires Liquid
-          if (context.startsWith('<!--') || context.includes('{% comment %}')) continue;
+          if (isIgnoredContext(context, ext)) continue;
           violations.push({
             file: relativePath,
+            ext,
             label,
             id,
             found: match[0],
