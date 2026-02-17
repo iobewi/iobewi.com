@@ -3,6 +3,7 @@ title: "Mentions légales"
 description: "Informations légales relatives au site iobewi.com, édité par la société IOBEWI SAS."
 layout: layouts/base.njk
 permalink: "/mentions-legales/"
+bodyClass: "has-hero"
 ---
 
 <div class="page-hero snap-item">

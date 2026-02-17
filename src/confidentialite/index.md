@@ -3,6 +3,7 @@ title: "Politique de confidentialité"
 description: "Politique de confidentialité et gestion des données personnelles sur iobewi.com."
 layout: layouts/base.njk
 permalink: "/confidentialite/"
+bodyClass: "has-hero"
 ---
 
 <div class="page-hero snap-item">
