@@ -31,7 +31,7 @@ breadcrumb:
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">
-      Les projets d'accompagnement d'IOBEWI sont confrontés à des contraintes spécifiques qui influencent fortement les choix techniques et méthodologiques. Ces contraintes sont assumées et intégrées dès la phase de cadrage.
+      Les projets d'accompagnement d'IOBEWI sont confrontés à des contraintes spécifiques qui influencent fortement les choix techniques et méthodologiques. Elles sont intégrées dès le cadrage et guident les arbitrages techniques.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
@@ -67,10 +67,10 @@ breadcrumb:
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>Approche système — de la conception à l'intégration</h2>
+    <h2>Approche système : de la conception à l'intégration</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
-    <p class="lead">IOBEWI adopte une démarche intégrée où la mécanique, l'électronique et le logiciel sont pensés simultanément. Cette vision système évite les incohérences tardives et réduit les itérations correctrices.</p>
+    <p class="lead">IOBEWI met en œuvre une démarche intégrée où la mécanique, l'électronique et le logiciel sont pensés simultanément. Cette vision système réduit les incohérences découvertes trop tard et limite les itérations correctrices.</p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Chaîne d'intégration typique</h3>
@@ -81,6 +81,7 @@ breadcrumb:
       <li>Conception PCB</li>
       <li>Fabrication et prototypage</li>
       <li>Intégration firmware</li>
+      <li>Instrumentation et critères d'acceptation</li>
       <li>Tests croisés matériel / logiciel</li>
       <li>Itérations maîtrisées</li>
     </ol>
@@ -115,7 +116,7 @@ breadcrumb:
       <li>Définition d'un périmètre d'intervention réaliste</li>
       <li>Proposition d'un plan de structuration progressif</li>
     </ul>
-    <p><strong>Livrables</strong> : Document de cadrage, identification des risques, plan d'action priorisé.</p>
+    <p><strong>Livrables</strong> : Note de cadrage (risques, périmètre, priorités), backlog priorisé + jalons.</p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Phase 2 : Structuration et prototypage</h3>
@@ -137,7 +138,7 @@ breadcrumb:
       <li>Documentation technique et guides d'utilisation</li>
       <li>Gestion de versions et stratégie de déploiement</li>
     </ul>
-    <p><strong>Livrables</strong> : Pipeline CI/CD, documentation exploitable, environnements reproductibles.</p>
+    <p><strong>Livrables</strong> : Pipeline CI (build + checks + artefacts flashables), documentation exploitable, environnements reproductibles.</p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-500">
     <h3>Phase 4 : Montée en maturité et autonomie</h3>
@@ -190,6 +191,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in">
     <h2>Cas réels et retours d'expérience</h2>
   </div>
+  <p class="card-foot animate-on-scroll fade-in">Exemples issus de plateformes internes et contributives. Ordres de grandeur indicatifs (variables selon contexte), données anonymisées.</p>
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Structuration d'une plateforme robotique hétérogène</h3>
     <p>
@@ -199,7 +201,7 @@ breadcrumb:
       <strong>Approche</strong> : Clarification des interfaces (micro-ROS pour ESP32, ROS 2 pour SBC), découpage fonctionnel (perception, contrôle, navigation), mise en place d'un pipeline CI/CD, documentation progressive.
     </p>
     <p>
-      <strong>Résultat</strong> : Socle technique exploitable, temps de build réduit de 2h à 10min, documentation permettant à un nouveau développeur de démarrer en 1 journée.
+      <strong>Résultat</strong> : Socle technique exploitable, temps de build réduit (~2h → ~10–15 min), documentation suffisante pour qu'un nouveau développeur démarre en 1 journée.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
@@ -211,7 +213,7 @@ breadcrumb:
       <strong>Approche</strong> : Audit du code existant, identification des dépendances, refactoring progressif, conteneurisation de l'environnement, tests automatisés sur les parties critiques.
     </p>
     <p>
-      <strong>Résultat</strong> : Prototype consolidé, reproductibilité garantie, déploiement automatisé, dette technique réduite de 70%.
+      <strong>Résultat</strong> : Prototype consolidé, reproductibilité garantie, déploiement automatisé, réduction nette des frictions de build/déploiement et de la dépendance aux connaissances implicites.
     </p>
   </div>
 </section>
@@ -228,7 +230,7 @@ breadcrumb:
     </div>
     <div>
       <p>
-        L'autonomie ne signifie pas l'absence de support, mais la capacité de l'équipe à comprendre, maintenir et faire évoluer son système sans dépendance forte à un intervenant externe.
+        L'autonomie ne signifie pas l'absence de support, mais la capacité de l'équipe à comprendre, maintenir et faire évoluer son système sans dépendance à une personne clé.
       </p>
     </div>
   </div>

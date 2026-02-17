@@ -11,7 +11,7 @@ bodyClass: "has-hero"
     <div class="page-hero-content">
       <h1>Activités d'accompagnement</h1>
       <p class="lead">
-        IOBEWI couvre l'ensemble des phases techniques nécessaires à la structuration et à la maturation de projets embarqués et robotiques. Chaque activité peut intervenir seule ou s'articuler avec les autres selon le niveau de maturité du projet.
+        IOBEWI couvre toutes les phases techniques nécessaires à la structuration et à la maturation de projets embarqués et robotiques. Chaque activité peut intervenir seule ou s'articuler avec les autres selon le niveau de maturité du projet.
       </p>
     </div>
   </div>
@@ -132,7 +132,7 @@ bodyClass: "has-hero"
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">
-      IOBEWI accompagne la mise en place d'outils favorisant la reproductibilité, la maintenance et l'exploitation des systèmes embarqués. Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
+      IOBEWI accompagne les équipes pour outiller leurs projets embarqués autour de la reproductibilité, la maintenance et l'exploitation. Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">

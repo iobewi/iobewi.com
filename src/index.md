@@ -55,7 +55,7 @@ bodyClass: "has-hero"
       <p>Votre prototype fonctionne, mais reste fragile, difficile à reproduire ou à transmettre à une autre personne.</p>
     </div>
     <div class="proof-card">
-      <p>L'intégration hardware&nbsp;/ software avance en silos — chaque partie tient, mais l'ensemble manque de cohérence.</p>
+      <p>L'intégration hardware&nbsp;/ software avance en silos : chaque partie tient, mais l'ensemble manque de cohérence.</p>
     </div>
     <div class="proof-card">
       <p>La dette technique s'accumule et commence à ralentir les itérations ou à compliquer les recrutements.</p>
@@ -108,13 +108,13 @@ bodyClass: "has-hero"
     <h2>Ce que votre équipe maîtrise à la fin</h2>
   </div>
   <div class="featured-block animate-on-scroll slide-up">
-    <h3>L'accompagnement est actif et ancré dans le terrain — l'objectif est que votre équipe reprenne la main, pas qu'elle reçoive une solution.</h3>
+    <h3>L'accompagnement est actif et ancré dans le terrain : l'objectif est que votre équipe reprenne la main, pas qu'elle reçoive une solution.</h3>
     <ul>
-      <li><strong>Maintenir et faire évoluer l'architecture</strong> — sans dépendance externe, sans "homme-clé".</li>
-      <li><strong>Travailler en autonomie sur un dépôt structuré</strong> — versionné, reproductible, compréhensible par tous.</li>
-      <li><strong>Piloter et adapter la chaîne CI/CD</strong> — intégrée au rythme réel du projet, pas imposée.</li>
-      <li><strong>Prendre des décisions sur un périmètre clair</strong> — composants identifiés, interfaces stabilisées, découpage assumé.</li>
-      <li><strong>Itérer sereinement sur une base solide</strong> — capable d'accueillir de nouvelles personnes ou de monter en charge.</li>
+      <li><strong>Maintenir et faire évoluer l'architecture</strong>, sans dépendance externe, sans "homme-clé".</li>
+      <li><strong>Travailler en autonomie sur un dépôt structuré</strong> (versionné, reproductible, compréhensible par tous).</li>
+      <li><strong>Piloter et adapter la chaîne CI/CD</strong>, intégrée au rythme réel du projet, pas imposée.</li>
+      <li><strong>Prendre des décisions sur un périmètre clair</strong> : composants identifiés, interfaces stabilisées, découpage assumé.</li>
+      <li><strong>Itérer sereinement sur une base solide</strong>, capable d'accueillir de nouvelles personnes ou de monter en charge.</li>
     </ul>
   </div>
 </section>
@@ -199,7 +199,7 @@ bodyClass: "has-hero"
 <section class="section container section-major snap-item">
   <div class="cta-hero animate-on-scroll scale-in">
     <h2>Structurons votre prochaine étape</h2>
-    <p>Si ces situations vous parlent, ou si vous approchez d'une phase critique — passage en production, recrutement, levée de fonds — c'est le bon moment pour structurer.</p>
+    <p>Si ces situations vous parlent, ou si vous approchez d'une phase critique (passage en production, recrutement, levée de fonds), c'est le bon moment pour structurer.</p>
     <p><strong>Un projet qui avance sans structure accumule une dette silencieuse, souvent invisible jusqu'au moment où elle bloque tout. IOBEWI intervient avec l'équipe, avant que ça coince.</strong></p>
     <a class="btn btn-primary" href="/contact/">Échangeons sur votre accompagnement</a>
   </div>

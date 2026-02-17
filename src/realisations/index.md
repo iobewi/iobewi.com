@@ -19,7 +19,7 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>R2BEWI — Démonstrateur d'architecture système</h2>
+    <h2>R2BEWI : Démonstrateur d'architecture système</h2>
   </div>
   <div class="lead-with-badges animate-on-scroll slide-up delay-100">
     <p class="lead">Plateforme multi-SoC conçue pour valider des choix d'architecture en conditions réelles</p>
@@ -34,13 +34,13 @@ bodyClass: "has-hero"
   <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Contexte</h3>
     <p>
-      R2BEWI est une plateforme conçue pour éprouver, en conditions réelles, les patterns d'architecture au cœur de l'accompagnement IOBEWI. Elle intègre délibérément une hétérogénéité matérielle — Espressif, Raspberry Pi, NVIDIA Jetson — reliée par ROS 2 et micro-ROS, pour valider comment structurer la communication, le découpage des responsabilités et la cohérence d'ensemble dans un système embarqué complexe.
+      R2BEWI est une plateforme conçue pour éprouver, en conditions réelles, les patterns d'architecture au cœur de l'accompagnement IOBEWI. Elle intègre délibérément une hétérogénéité matérielle (Espressif, Raspberry Pi, NVIDIA Jetson) reliée par ROS 2 et micro-ROS, pour valider comment structurer la communication, le découpage des responsabilités et la cohérence d'ensemble dans un système embarqué complexe.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Rôle d'IOBEWI</h3>
     <p>
-      IOBEWI a conçu et structuré R2BEWI comme terrain d'épreuve de ses propres décisions architecturales. Chaque choix — découpage des couches, protocoles de communication, stratégie de test, intégration mécanique-électronique-firmware — a été justifié et documenté. Ce projet est aujourd'hui la référence concrète sur laquelle s'appuient les accompagnements proposés aux équipes.
+      IOBEWI a conçu et structuré R2BEWI comme terrain d'épreuve de ses propres décisions architecturales. Chaque choix (découpage des couches, protocoles de communication, stratégie de test, intégration mécanique-électronique-firmware) a été justifié et documenté. Ce projet est aujourd'hui la référence concrète sur laquelle s'appuient les accompagnements proposés aux équipes.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-400">
@@ -62,7 +62,7 @@ bodyClass: "has-hero"
     </ul>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-600">
-    <h3>Origines — projets contributifs</h3>
+    <h3>Origines : projets contributifs</h3>
     <p>Deux plateformes exploratoires dont les enseignements ont directement alimenté la conception de R2BEWI.</p>
   </div>
   <div class="grid-2 animate-on-scroll fade-in delay-700">
@@ -104,7 +104,7 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
-    <h2>SCANBEWI — Outil de cartographie embarquée accessible</h2>
+    <h2>SCANBEWI : Outil de cartographie embarquée accessible</h2>
   </div>
   <div class="lead-with-badges animate-on-scroll fade-in delay-100">
     <p class="lead">Outil de captation LiDAR embarqué pour la cartographie 2D accessible</p>
@@ -116,13 +116,13 @@ bodyClass: "has-hero"
   <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Contexte</h3>
     <p>
-      SCANBEWI est un outil de captation LiDAR et de production de cartographies 2D simplifiées, destiné à un public large. Il s'adresse à des contextes où des acteurs non spécialistes — tels que des agents immobiliers ou des architectes — ont besoin d'une représentation fiable et directement exploitable de l'espace, sans recourir à des outils lourds ou complexes.
+      SCANBEWI est un outil de captation LiDAR et de production de cartographies 2D simplifiées, destiné à un public large. Il s'adresse à des contextes où des acteurs non spécialistes, tels que des agents immobiliers ou des architectes, ont besoin d'une représentation fiable et directement exploitable de l'espace, sans recourir à des outils lourds ou complexes.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Rôle d'IOBEWI</h3>
     <p>
-      IOBEWI a conçu SCANBEWI comme un support d'exploration autour de la simplification des chaînes de captation, de traitement et de restitution des données spatiales. L'accent est mis sur l'accessibilité des usages, tout en respectant les contraintes techniques liées aux systèmes embarquées.
+      IOBEWI a conçu SCANBEWI comme un support d'exploration autour de la simplification des chaînes de captation, de traitement et de restitution des données spatiales. L'accent est mis sur l'accessibilité des usages, tout en respectant les contraintes techniques liées aux systèmes embarqués.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-400">
@@ -139,7 +139,7 @@ bodyClass: "has-hero"
     <ul>
       <li>chaîne de captation LiDAR embarquée simplifiée</li>
       <li>production de cartographies 2D directement exploitables</li>
-      <li>boîtier conçu sous Fusion 360 — compacité, accès maintenance et dissipation thermique passive intégrés dès la conception</li>
+      <li>boîtier conçu sous Fusion 360 : compacité, accès maintenance et dissipation thermique passive intégrés dès la conception</li>
       <li>outil de démonstration pour des usages métiers non métrologiques</li>
       <li>retours d'expérience exploitables pour l'accompagnement</li>
     </ul>

@@ -73,13 +73,13 @@ breadcrumb:
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Contexte</h3>
     <p>
-      Les capteurs <strong>WitMotion</strong> (IMU, magnétomètre, baromètre, GPS) sont utilisés dans de nombreux projets robotiques et embarqués. IOBEWI a développé et publié un driver <strong>ROS 2</strong> en C++ permettant d'intégrer ces capteurs directement dans un graphe ROS 2, avec communication série asynchrone via <strong>asio</strong>.
+      Les capteurs <strong>WitMotion</strong> (IMU, magnétomètre, baromètre, GPS) sont utilisés dans de nombreux projets robotiques et embarqués. IOBEWI a développé et publié un driver <strong>ROS 2</strong> en C++ pour intégrer ces capteurs directement dans un graphe ROS 2, avec communication série asynchrone via <strong>asio</strong>.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
     <h3>Points techniques</h3>
     <ul>
-      <li>Communication série asynchrone (asio) — indépendante de la plateforme</li>
+      <li>Communication série asynchrone (asio), indépendante de la plateforme</li>
       <li>Publication de 12 topics ROS 2 selon les messages activés sur le capteur</li>
       <li>Configuration par fichier ou ligne de commande (port, débit, fréquence, frame)</li>
       <li>Documentation, exemples de lancement et paramètres exposés</li>
@@ -88,7 +88,7 @@ breadcrumb:
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Résultats</h3>
     <p>
-      8 étoiles GitHub et 1 fork — signal de réutilisation réelle par d'autres équipes. Brique publiée, documentée et utilisable sans modification dans un projet ROS 2 standard.
+      À la date de rédaction : 8 étoiles GitHub et 1 fork, un signal de réutilisation réelle par d'autres équipes. Brique publiée, documentée et directement utilisable dans un projet ROS 2 standard.
     </p>
   </div>
   <div class="section-link-end animate-on-scroll fade-in delay-400">
@@ -110,7 +110,7 @@ breadcrumb:
   <div class="content-group animate-on-scroll fade-in delay-100">
     <h3>Contexte</h3>
     <p>
-      Les systèmes de gestion de batterie (BMS) <strong>Daly</strong> sont couramment utilisés dans les projets robotiques mobiles. IOBEWI a développé une intégration complète permettant de monitorer l'état de la batterie directement dans ROS 2, en passant par un microcontrôleur ESP32.
+      Les systèmes de gestion de batterie (BMS) <strong>Daly</strong> sont couramment utilisés dans les projets robotiques mobiles. IOBEWI a développé une intégration complète pour monitorer l'état de la batterie directement dans ROS 2, en passant par un microcontrôleur ESP32.
     </p>
   </div>
   <div class="content-group animate-on-scroll fade-in delay-200">
@@ -125,7 +125,7 @@ breadcrumb:
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Contribution</h3>
     <p>
-      Cette brique logicielle a été publiée sur GitHub et documentée. Elle permet de fiabiliser la gestion énergétique des plateformes mobiles en centralisant les données de batterie dans le graphe ROS 2, facilitant ainsi la supervision et la prise de décision.
+      Cette brique logicielle a été publiée sur GitHub et documentée. Elle centralise les données de batterie dans le graphe ROS 2 et simplifie la supervision énergétique des plateformes mobiles.
     </p>
   </div>
   <div class="section-link-end animate-on-scroll fade-in delay-400">
@@ -160,7 +160,7 @@ breadcrumb:
   </div>
   <div class="content-group animate-on-scroll fade-in delay-300">
     <h3>Démarche</h3>
-    <p>Les composants sont documentés, versionnés et pensés pour s'intégrer dans une architecture cohérente. Le dépôt reflète une approche d'ingénierie structurée visant à améliorer la maintenabilité et la reproductibilité des développements.</p>
+    <p>Les composants sont documentés, versionnés et pensés pour s'intégrer dans une architecture cohérente. Le dépôt reflète une approche d'ingénierie structurée, orientée maintenabilité et reproductibilité.</p>
   </div>
   <div class="section-link-end animate-on-scroll fade-in delay-400">
     <a href="https://github.com/iobewi/iobewi-idf-components" class="card-link" target="_blank" rel="noopener">Explorer le projet <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
