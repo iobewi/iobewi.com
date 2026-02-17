@@ -51,6 +51,51 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
+    <h2>Intégration mécanique &amp; électronique</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">IOBEWI conçoit et intègre des sous-systèmes matériels embarqués en cohérence avec l'architecture logicielle globale. La conception mécanique occupe une place centrale dans cette approche, assurant la cohérence entre volumes, contraintes physiques et architecture électronique.</p>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-200">
+    <h3>Intégration mécanique</h3>
+    <p>Conception sous Fusion 360 orientée systèmes embarqués :</p>
+    <ul>
+      <li>intégration électronique complète dans les volumes</li>
+      <li>gestion des tolérances et des assemblages</li>
+      <li>conception de châssis et structures fonctionnelles</li>
+      <li>optimisation pour impression 3D technique</li>
+      <li>prise en compte maintenance et dissipation thermique</li>
+    </ul>
+    <p>La mécanique est pensée comme support structurant de l'architecture système.</p>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-300">
+    <h3>Conception électronique embarquée</h3>
+    <p>Approche pragmatique orientée cohérence avec le firmware :</p>
+    <ul>
+      <li>schéma et routage PCB sous KiCad (2 à 4 couches selon projet)</li>
+      <li>intégration microcontrôleurs ESP32 et périphériques</li>
+      <li>bus I²C / SPI / UART selon besoins projet</li>
+      <li>gestion d'alimentation adaptée au contexte</li>
+      <li>préparation fabrication et itérations prototypage</li>
+    </ul>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-400">
+    <h3>Prototypage &amp; validation système</h3>
+    <ul>
+      <li>impression 3D technique</li>
+      <li>prototypage matériel itératif</li>
+      <li>tests croisés matériel / firmware</li>
+      <li>ajustements mécaniques et électroniques contrôlés</li>
+    </ul>
+    <p>Objectif : convergence rapide vers un système robuste et cohérent.</p>
+  </div>
+  <div class="animate-on-scroll fade-in delay-500" style="text-align: center; margin-top: var(--stack-3);">
+    <a class="btn btn-primary" href="/contact/">Discuter d'une intégration matérielle</a>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Prototypage et montée en maturité</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
@@ -153,7 +198,7 @@ bodyClass: "has-hero"
     <div>
       <h3>Contributions open source</h3>
       <p>
-        Découvrez les contributions techniques d'IOBEWI à l'écosystème ROS 2, micro-ROS et ESP-IDF. Des briques logicielles réutilisables, documentées et validées par la communauté.
+        Découvrez les contributions techniques d'IOBEWI à l'écosystème ROS 2, micro-ROS et ESP-IDF. Des briques logicielles réutilisables, documentées et validées pour la communauté.
       </p>
       <a class="btn btn-ghost" href="/open-source/">Voir les contributions →</a>
     </div>

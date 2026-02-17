@@ -11,8 +11,8 @@ bodyClass: "has-hero"
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>Structuration et maturation de systèmes embarqués et robotiques</h1>
-        <p class="hero-tagline">Architecture · Outillage · Transmission</p>
-        <p class="lead">Du prototype exploratoire à un socle technique exploitable.</p>
+        <p class="hero-tagline">Architecture · Intégration · Transmission</p>
+        <p class="lead">Du concept à l'intégration système complète.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/contact/">Échanger sur votre accompagnement</a>
           <a class="btn btn-ghost" href="/activites/">Voir les activités</a>
