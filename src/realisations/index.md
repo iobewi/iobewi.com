@@ -147,7 +147,7 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container section-major snap-item">
-  <div class="cta-hero animate-on-scroll scale-in">
+  <div class="cta-block animate-on-scroll scale-in">
     <h2>Échanger autour d'une démarche de convergence technique</h2>
     <p>
       <strong>Ces réalisations illustrent la démarche d'accompagnement d'IOBEWI : partir du terrain, structurer progressivement et rendre les projets exploitables.</strong>

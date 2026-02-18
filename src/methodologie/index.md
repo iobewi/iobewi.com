@@ -157,7 +157,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in">
     <h2>Pratiques d'outillage et d'automatisation</h2>
   </div>
-  <div class="two-col-editorial animate-on-scroll slide-up">
+  <div class="grid-2 animate-on-scroll slide-up">
     <div>
       <h3>Environnements conteneurisés</h3>
       <p>
@@ -171,7 +171,7 @@ breadcrumb:
       </p>
     </div>
   </div>
-  <div class="two-col-editorial animate-on-scroll slide-up delay-200">
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
     <div>
       <h3>Tests et validation</h3>
       <p>
@@ -222,7 +222,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in">
     <h2>Transmission et autonomie</h2>
   </div>
-  <div class="two-col-editorial animate-on-scroll slide-up">
+  <div class="grid-2 animate-on-scroll slide-up">
     <div>
       <p>
         L'objectif final de l'accompagnement est de rendre les équipes autonomes sur leur socle technique. Cela passe par une transmission progressive des pratiques, une documentation exploitable et une validation sur des cas réels.
@@ -237,7 +237,7 @@ breadcrumb:
 </section>
 
 <section class="section container section-major snap-item">
-  <div class="cta-hero animate-on-scroll scale-in">
+  <div class="cta-block animate-on-scroll scale-in">
     <h2>Discuter de votre contexte technique</h2>
     <p>
       <strong>Cette méthodologie s'adapte au contexte de chaque projet. IOBEWI intervient aux côtés des équipes pour structurer, outiller et transmettre.</strong>

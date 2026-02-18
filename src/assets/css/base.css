@@ -104,6 +104,57 @@ img {
   display: block;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 0 var(--stack-1) var(--stack-1) 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+td {
+  padding: var(--stack-1) var(--stack-1) var(--stack-1) 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  thead {
+    display: none;
+  }
+  tr {
+    display: block;
+    padding-block: var(--stack-1);
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child {
+    border-bottom: none;
+  }
+  td {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-bottom: none;
+  }
+  td:first-child {
+    font-weight: 600;
+    padding-bottom: calc(var(--stack-1) * 0.5);
+  }
+}
+
 .container {
   width: min(1100px, 92vw);
   margin: 0 auto;

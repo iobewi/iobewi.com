@@ -83,7 +83,7 @@ bodyClass: "has-hero"
 </section>
 
 <section class="section container section-major snap-item">
-  <div class="cta-hero animate-on-scroll scale-in">
+  <div class="cta-block animate-on-scroll scale-in">
     <h2>Découvrir comment IOBEWI peut accompagner votre projet</h2>
     <p>
       <strong>Une approche progressive, ancrée dans le réel, pour structurer et faire mûrir vos systèmes embarqués.</strong>

@@ -1,0 +1,111 @@
+/* =========================================================
+   UTILS.CSS — Animations
+   ========================================================= */
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================================
+   SCROLL ANIMATIONS
+   ========================================================= */
+
+/* Visible par défaut (progressive enhancement) */
+.animate-on-scroll {
+  opacity: 1;
+}
+
+/* Masqué uniquement si JS actif */
+body.js-ready .animate-on-scroll:not(.is-visible) {
+  opacity: 0;
+}
+
+.animate-on-scroll.is-visible {
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+.fade-in.is-visible {
+  animation: fade-in var(--duration-slow) var(--ease-smooth);
+}
+
+.slide-up.is-visible {
+  animation: slide-up var(--duration-slow) var(--ease-smooth);
+}
+
+.scale-in.is-visible {
+  animation: scale-in var(--duration-slow) var(--ease-smooth);
+}
+
+/* =========================================================
+   DELAYS
+   ========================================================= */
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* =========================================================
+   REVEAL (transition CSS, sans keyframes)
+   ========================================================= */
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--duration-slow) var(--ease-smooth),
+    transform var(--duration-slow) var(--ease-smooth);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   RESPECT USER PREFERENCES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+  }
+}

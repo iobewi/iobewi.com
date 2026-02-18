@@ -207,7 +207,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in">
     <h2>Méthodologie de contribution</h2>
   </div>
-  <div class="two-col-editorial animate-on-scroll slide-up">
+  <div class="grid-2 animate-on-scroll slide-up">
     <div>
       <h3>Principes</h3>
       <ul>
@@ -230,7 +230,7 @@ breadcrumb:
 </section>
 
 <section class="section container section-major snap-item">
-  <div class="cta-hero animate-on-scroll scale-in">
+  <div class="cta-block animate-on-scroll scale-in">
     <h2>Échanger autour de contributions techniques</h2>
     <p>
       <strong>Ces contributions illustrent la capacité d'IOBEWI à structurer des briques logicielles réutilisables et à documenter des choix techniques complexes.</strong>
