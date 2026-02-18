@@ -192,6 +192,38 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
+    <h2>Interactions tangibles &amp; déclenchement physique</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">
+      Certains systèmes embarqués sont conçus pour réagir à une présence physique : un badge NFC/RFID présenté déclenche un flux audio en streaming. IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du tag jusqu'à la diffusion audio embarquée.
+    </p>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-200">
+    <h3>Cas d'usage typiques</h3>
+    <ul>
+      <li>badge ou étiquette NFC/RFID déclenchant un contenu audio en streaming</li>
+      <li>station autonome associée à des objets physiques</li>
+      <li>dispositif de médiation en contexte pédagogique ou muséographique</li>
+      <li>prototypage de flux "objet physique → expérience sonore"</li>
+    </ul>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-300">
+    <h3>Technologies</h3>
+    <ul>
+      <li>NFC/RFID (lecture de tags, format ICF)</li>
+      <li>ESP32 / ESP-IDF</li>
+      <li>HLS audio (streaming M3U8 embarqué)</li>
+      <li>conception mécanique intégrant l'électronique de déclenchement</li>
+    </ul>
+  </div>
+  <div class="animate-on-scroll fade-in delay-400" style="text-align: center; margin-top: var(--stack-3);">
+    <a class="btn btn-primary" href="/contact/">Discuter d'un projet d'interaction tangible</a>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Aller plus loin</h2>
   </div>
   <div class="two-col-editorial animate-on-scroll slide-up">
