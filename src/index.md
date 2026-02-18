@@ -189,6 +189,14 @@ bodyClass: "has-hero"
         <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
       </div>
     </div>
+    <div class="project-card-compact" data-icon="tag">
+      <h3>ICF</h3>
+      <p>Format de capsule pour encoder des métadonnées signées sur des tags NFC/RFID, avec brique de lecture HLS associée sur ESP32.</p>
+      <a href="/open-source/" class="card-link">Voir les contributions →</a>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
   </div>
   <div class="animate-on-scroll fade-in delay-200" style="text-align: center; margin-top: var(--stack-3);">
     <a class="btn btn-primary" href="/realisations/">Toutes les réalisations</a>

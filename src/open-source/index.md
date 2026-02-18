@@ -169,6 +169,42 @@ breadcrumb:
 
 <section class="section container section-major snap-item">
   <div class="section-title animate-on-scroll fade-in">
+    <div class="section-title-row">
+      <h2>ICF : Interactions tangibles &amp; déclenchement physique</h2>
+      <div class="tech-badges">
+        <img class="tech-badge" src="/assets/images/tech/espressif.svg" alt="Espressif">
+      </div>
+    </div>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-100">
+    <h3>Contexte</h3>
+    <p>
+      ICF (IOBEWI Capsule Format) est une bibliothèque Python et CLI pour encoder et décoder des métadonnées de façon compacte sur des puces NFC/RFID. Le format TLV compact avec mécanisme d'authenticité (signature) permet d'associer des informations structurées à un objet physique, qui déclenche à son tour une action sur un système embarqué : par exemple, la lecture d'un flux audio HLS.
+    </p>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-200">
+    <h3>Points techniques</h3>
+    <ul>
+      <li>Format TLV compact avec mécanisme d'authenticité (signature) adapté aux contraintes NFC/RFID</li>
+      <li>Encodage compact adapté aux contraintes des puces NFC/RFID</li>
+      <li>Interface CLI et bibliothèque Python réutilisable</li>
+      <li>Brique embarquée associée : <a href="https://github.com/iobewi/iobewi-idf-components/tree/iobewi_driver_max98357a/components/iobewi_apps_hls_player" target="_blank" rel="noopener"><code>iobewi_apps_hls_player</code></a> (ESP-IDF), lecture de playlists M3U8 en streaming sur ESP32, du téléchargement des segments jusqu'à la sortie PCM audio</li>
+    </ul>
+  </div>
+  <div class="content-group animate-on-scroll fade-in delay-300">
+    <h3>Contribution</h3>
+    <p>
+      Publié sous licence duale MPL 2.0 / CC-BY-SA 4.0 avec spécification de format complète. Le composant HLS associé, développé pour ESP-IDF, est structuré autour de deux tâches concurrentes séparant le téléchargement des segments et le décodage audio.
+    </p>
+  </div>
+  <div class="section-link-end animate-on-scroll fade-in delay-400">
+    <a href="https://github.com/iobewi/icf" class="card-link" target="_blank" rel="noopener">Explorer le projet ICF <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+    <a href="https://github.com/iobewi/iobewi-idf-components/tree/iobewi_driver_max98357a/components/iobewi_apps_hls_player" class="card-link" target="_blank" rel="noopener">Explorer le composant iobewi_apps_hls_player <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+  </div>
+</section>
+
+<section class="section container section-major snap-item">
+  <div class="section-title animate-on-scroll fade-in">
     <h2>Méthodologie de contribution</h2>
   </div>
   <div class="two-col-editorial animate-on-scroll slide-up">
