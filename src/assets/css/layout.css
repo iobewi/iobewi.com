@@ -681,7 +681,7 @@
   letter-spacing: 0.2em;
   color: var(--accent-strong);
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 var(--stack-2);
 }
 
 .lead {

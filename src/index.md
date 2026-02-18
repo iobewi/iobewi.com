@@ -12,7 +12,7 @@ bodyClass: "has-hero"
 <div class="hero-content">
 <h1>Architecture et maîtrise de systèmes embarqués contraints</h1>
 <p class="eyebrow">Contrainte · Hiérarchie · Transmission</p>
-<p class="lead">Du prototype fragile au système que votre équipe maîtrise.</p>
+<p class="lead">Du prototype fragile à un système que votre équipe comprend, maîtrise, et fait évoluer.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="/activites/">Voir les activités</a>
 <a class="btn btn-ghost" href="/realisations/">Découvrir les réalisations</a>
@@ -46,22 +46,19 @@ bodyClass: "has-hero"
 <div class="card">
 <h3>Structuration architecturale</h3>
 <p>Clarifie les responsabilités, sépare les niveaux de criticité et organise le système selon des priorités explicites.</p>
-<p>L'équipe reprend la main. Les décisions d'architecture deviennent délibérées, pas subies.</p>
 </div>
 <div class="card">
 <h3>Intégration hardware / software</h3>
 <p>Organise l'interaction entre contraintes physiques, temps de réaction et couches logicielles pour garantir un comportement prévisible.</p>
-<p>Le système tient à l'échelle. Les interfaces sont stables, documentées, reproductibles.</p>
 </div>
 <div class="card">
 <h3>Sécurisation de l'évolution</h3>
 <p>Stabilise les fondations pour que le système puisse évoluer, accueillir de nouvelles responsabilités et rester cohérent sous croissance.</p>
-<p>L'équipe peut distribuer les responsabilités et faire croître le système sans perdre sa cohérence.</p>
 </div>
 </div>
-<div class="note-block animate-on-scroll fade-in">
-<p>L'exigence d'IOBEWI vient de projets techniques menés sous contrainte réelle, notamment dans des architectures robotiques distribuées où chaque fonction doit trouver sa juste priorité. Le matériel impose ses limites, les temps de réaction ne sont pas négociables, et toutes les fonctions n'ont pas la même priorité. Ce n'est pas une posture : c'est une méthode construite par l'expérience du terrain. Chaque composant est pensé pour tenir sa place dans l'ensemble.</p>
-</div>
+<p class="animate-on-scroll fade-in" style="text-align: left; margin-top: var(--stack-3);">L'objectif n'est pas de livrer un système à votre place, mais de permettre à votre équipe de le structurer et de le faire évoluer sereinement</p>
+<p class="lead animate-on-scroll fade-in" style="margin-top: var(--stack-2);">Le conseil finance la R&amp;D. La R&amp;D produit des contributions open source réutilisables par les équipes que nous accompagnons.</p>
+<p style="text-align: right; margin-top: var(--stack-1);"><a href="/open-source/">Voir les contributions →</a></p>
 </section>
 
 <section class="section container section-major snap-item">

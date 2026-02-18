@@ -10,20 +10,31 @@ bodyClass: "has-hero"
 <div class="container">
 <div class="page-hero-content">
 <p class="eyebrow"><a href="/activites/">← Activités</a></p>
-<h1>Évolution, outillage & intelligence embarquée</h1>
-<p class="lead">Stabiliser les fondations, outiller les cycles de livraison, introduire de l'intelligence locale. Cet axe couvre la fiabilisation du socle technique jusqu'aux capacités décisionnelles embarquées.</p>
+<h1>Évolution, outillage &amp; intelligence embarquée</h1>
+<p class="lead">
+Stabiliser les fondations, outiller les cycles de livraison, introduire de l'intelligence locale.
+Cet axe couvre la fiabilisation du socle technique jusqu'aux capacités décisionnelles embarquées.
+</p>
 </div>
 </div>
 </div>
 
-<section class="section container section-major snap-item">
+<section class="section container snap-item">
+<div class="content-group animate-on-scroll fade-in delay-150">
+<p><strong>Objectif :</strong> permettre au système d’évoluer sans perdre sa cohérence, et à l’équipe de rester autonome.</p>
+</div>
+
 <div class="section-title animate-on-scroll fade-in">
 <h2>Outillage, reproductibilité et exploitation</h2>
 </div>
 <div class="animate-on-scroll slide-up delay-100">
-<p class="lead">IOBEWI accompagne les équipes pour outiller leurs projets embarqués autour de la reproductibilité, la maintenance et l'exploitation. Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.</p>
+<p class="lead">
+IOBEWI accompagne les équipes pour outiller leurs projets embarqués autour de la reproductibilité, la maintenance et l'exploitation.
+Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
+</p>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-200">
+<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
 <li>Difficulté à reproduire un build ou un déploiement</li>
@@ -32,7 +43,7 @@ bodyClass: "has-hero"
 <li>Besoin de fiabilisation sur la durée</li>
 </ul>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-300">
+<div class="card">
 <h3>Technologies</h3>
 <ul>
 <li>ESP-IDF</li>
@@ -41,16 +52,19 @@ bodyClass: "has-hero"
 <li>Gestion de versions et documentation technique</li>
 </ul>
 </div>
-</section>
+</div>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
 <h2>Algorithmes décisionnels embarqués</h2>
 </div>
 <div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Lorsque la maturité du système le permet, IOBEWI accompagne l'intégration d'algorithmes de traitement, de perception ou de décision directement au niveau embarqué. L'objectif est d'apporter des capacités locales d'analyse et d'autonomie, en cohérence avec les contraintes matérielles et énergétiques.</p>
+<p class="lead">
+Lorsque la maturité du système le permet, IOBEWI accompagne l'intégration d'algorithmes de traitement, de perception ou de décision directement au niveau embarqué.
+L'objectif est d'apporter des capacités locales d'analyse et d'autonomie, en cohérence avec les contraintes matérielles et énergétiques.
+</p>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-200">
+<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
 <li>Traitement local de données capteurs</li>
@@ -59,7 +73,7 @@ bodyClass: "has-hero"
 <li>Réduction de dépendance aux traitements distants</li>
 </ul>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-300">
+<div class="card">
 <h3>Technologies</h3>
 <ul>
 <li>Traitement du signal embarqué</li>
@@ -68,16 +82,19 @@ bodyClass: "has-hero"
 <li>Algorithmes embarqués adaptés aux MCU et SBC</li>
 </ul>
 </div>
-</section>
+</div>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Interactions tangibles & déclenchement physique</h2>
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
+<h2>Interactions tangibles &amp; déclenchement physique</h2>
 </div>
 <div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Certains systèmes embarqués sont conçus pour réagir à une présence physique : un badge NFC/RFID présenté déclenche un flux audio en streaming. IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du tag jusqu'à la diffusion audio embarquée.</p>
+<p class="lead">
+Certains systèmes embarqués sont conçus pour réagir à une présence physique : un badge NFC/RFID présenté déclenche un flux audio en streaming.
+IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du tag jusqu'à la diffusion audio embarquée.
+</p>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-200">
+<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
 <li>Badge ou étiquette NFC/RFID déclenchant un contenu audio en streaming</li>
@@ -86,7 +103,7 @@ bodyClass: "has-hero"
 <li>Prototypage de flux "objet physique vers expérience sonore"</li>
 </ul>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-300">
+<div class="card">
 <h3>Technologies</h3>
 <ul>
 <li>NFC/RFID (lecture de tags, format ICF)</li>
@@ -95,23 +112,22 @@ bodyClass: "has-hero"
 <li>Conception mécanique intégrant l'électronique de déclenchement</li>
 </ul>
 </div>
+</div>
 </section>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Ce que l'équipe maîtrise à la fin</h2>
-</div>
-<div class="card animate-on-scroll slide-up">
-<h3>L'accompagnement est actif et ancré dans le terrain : l'objectif est que votre équipe reprenne la main, pas qu'elle reçoive une solution.</h3>
+<section class="section container snap-item">
+<div class="cta-block animate-on-scroll scale-in">
+<h2>À l’issue de l’accompagnement</h2>
+<h3>Le socle technique est stabilisé et les capacités locales sont intégrées de manière cohérente.</h3>
 <ul>
-<li><strong>Maintenir et faire évoluer l'architecture</strong>, sans dépendance externe, sans homme-clé.</li>
-<li><strong>Travailler en autonomie sur un dépôt structuré</strong> : versionné, reproductible, compréhensible par tous.</li>
-<li><strong>Piloter et adapter la chaîne CI/CD</strong>, intégrée au rythme réel du projet, pas imposée.</li>
-<li><strong>Prendre des décisions sur un périmètre clair</strong> : composants identifiés, interfaces stabilisées, découpage assumé.</li>
-<li><strong>Itérer sereinement sur une base solide</strong>, capable d'accueillir de nouvelles personnes ou de monter en charge.</li>
+<li><strong>Travailler sur un dépôt structuré</strong>, versionné et reproductible.</li>
+<li><strong>Piloter une chaîne CI/CD adaptée</strong> au rythme réel du projet.</li>
+<li><strong>Maintenir et faire évoluer l’architecture</strong> sans dépendance externe.</li>
+<li><strong>Introduire des capacités décisionnelles embarquées</strong> en cohérence avec les contraintes matérielles.</li>
+<li><strong>Itérer sereinement</strong> sur une base solide et documentée.</li>
 </ul>
-</div>
 <div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
 <a class="btn btn-primary" href="/contact/">Discuter de la fiabilisation de votre socle technique</a>
+</div>
 </div>
 </section>

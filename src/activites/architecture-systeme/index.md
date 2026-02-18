@@ -16,14 +16,22 @@ bodyClass: "has-hero"
 </div>
 </div>
 
-<section class="section container section-major snap-item">
+<section class="section container snap-item">
+<div class="content-group animate-on-scroll fade-in delay-150">
+<p><strong>Objectif :</strong> rendre le système lisible, cohérent et transmissible.</p>
+</div>
 <div class="section-title animate-on-scroll fade-in">
 <h2>Structuration d'écosystèmes embarqués</h2>
 </div>
 <div class="animate-on-scroll slide-up delay-100">
-<p class="lead">IOBEWI accompagne la structuration d'écosystèmes matériels et logiciels autour de plateformes embarquées existantes. Cela inclut l'intégration mécanique et électronique, l'architecture logicielle, ainsi que la mise en cohérence des différents sous-systèmes constituant le socle technique du projet.</p>
+<p class="lead">
+IOBEWI accompagne la structuration d'écosystèmes matériels et logiciels autour de plateformes embarquées existantes.
+Cela inclut l'intégration mécanique et électronique, l'architecture logicielle, ainsi que la mise en cohérence des
+différents sous-systèmes constituant le socle technique du projet.
+</p>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-200">
+<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
 <li>Plateforme embarquée hétérogène (MCU, SBC, capteurs, actionneurs)</li>
@@ -32,7 +40,7 @@ bodyClass: "has-hero"
 <li>Démonstrateur technique à consolider</li>
 </ul>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-300">
+<div class="card">
 <h3>Technologies</h3>
 <ul>
 <li>ESP32 / ESP-IDF</li>
@@ -41,16 +49,18 @@ bodyClass: "has-hero"
 <li>Prototypage mécanique (FDM, résine)</li>
 </ul>
 </div>
-</section>
-
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
+</div>
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
 <h2>Prototypage et montée en maturité</h2>
 </div>
 <div class="animate-on-scroll slide-up delay-100">
-<p class="lead">À partir de prototypes ou d'idées techniques existantes, IOBEWI aide à transformer des expérimentations en bases exploitables. L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et la formalisation progressive des choix techniques.</p>
+<p class="lead">
+À partir de prototypes ou d'idées techniques existantes, IOBEWI aide à transformer des expérimentations en bases exploitables.
+L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et la formalisation progressive des choix techniques.
+</p>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-200">
+<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
 <li>Prototype fonctionnel nécessitant clarification et structuration</li>
@@ -59,7 +69,7 @@ bodyClass: "has-hero"
 <li>Besoin d'orienter les choix techniques vers des bases plus pérennes</li>
 </ul>
 </div>
-<div class="content-group animate-on-scroll fade-in delay-300">
+<div class="card">
 <h3>Technologies</h3>
 <ul>
 <li>Prototypage rapide matériel</li>
@@ -68,34 +78,22 @@ bodyClass: "has-hero"
 <li>Instrumentation et mesures terrain</li>
 </ul>
 </div>
+</div>
 </section>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Périmètre d'intervention</h2>
-</div>
-<div class="grid-2 animate-on-scroll slide-up">
-<div class="card">
-<h3>Ce que fait IOBEWI</h3>
+<section class="section container snap-item">
+<div class="cta-block animate-on-scroll scale-in">
+<h2>À l’issue de l’accompagnement</h2>
+<h3>L’architecture devient lisible, structurée et transmissible.</h3>
 <ul>
-<li>Structuration matériel / logiciel</li>
-<li>Prototypage et montée en maturité</li>
-<li>Outillage, reproductibilité et exploitation</li>
-<li>Algorithmes décisionnels embarqués</li>
-<li>Accompagnement sur le cycle de vie</li>
+<li><strong>Clarifier les responsabilités</strong> entre couches matérielles et logicielles.</li>
+<li><strong>Stabiliser les interfaces</strong> pour éviter les dépendances implicites.</li>
+<li><strong>Formaliser les choix structurants</strong> afin de rendre le système compréhensible par de nouveaux entrants.</li>
+<li><strong>Documenter l’architecture</strong> pour assurer sa continuité dans le temps.</li>
+<li><strong>Permettre l’évolution</strong> sans rupture ni réécriture brutale.</li>
 </ul>
-</div>
-<div class="card">
-<h3>Ce qu'IOBEWI ne fait pas</h3>
-<ul>
-<li>Intégration clé en main</li>
-<li>Revente de matériel ou licences</li>
-<li>Développement applicatif généraliste</li>
-<li>Fabrication en série ou production industrielle</li>
-</ul>
-</div>
-</div>
 <div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
-<a class="btn btn-primary" href="/contact/">Échanger sur la structuration de votre système</a>
+<a class="btn btn-primary" href="/contact/">Discuter de la structuration de votre système</a>
+</div>
 </div>
 </section>

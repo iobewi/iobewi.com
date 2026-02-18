@@ -349,7 +349,7 @@
   border: 2px solid rgba(var(--c-accent), 0.2);
   border-radius: 20px;
   padding: var(--pad-lg) clamp(32px, 5vw, 56px);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.10);

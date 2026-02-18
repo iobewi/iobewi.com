@@ -7,67 +7,112 @@ bodyClass: "has-hero"
 ---
 
 <div class="page-hero snap-item">
-<div class="container">
-<div class="page-hero-content">
-<p class="eyebrow"><a href="/activites/">← Activités</a></p>
-<h1>Intégration matérielle & cohérence physique</h1>
-<p class="lead">IOBEWI conçoit et intègre des sous-systèmes matériels embarqués en cohérence avec l'architecture logicielle globale. La conception mécanique occupe une place centrale dans cette approche, assurant la cohérence entre volumes, contraintes physiques et architecture électronique.</p>
-</div>
-</div>
+  <div class="container">
+    <div class="page-hero-content">
+      <p class="eyebrow"><a href="/activites/">← Activités</a></p>
+      <h1>Intégration matérielle &amp; cohérence physique</h1>
+      <p class="lead">
+        IOBEWI conçoit et intègre des sous-systèmes matériels embarqués en cohérence avec l'architecture logicielle globale.
+        La conception mécanique occupe une place centrale dans cette approche, assurant la cohérence entre volumes, contraintes physiques
+        et architecture électronique.
+      </p>
+    </div>
+  </div>
 </div>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Intégration mécanique</h2>
-</div>
-<div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Conception sous Fusion 360 orientée systèmes embarqués. La mécanique est pensée comme support structurant de l'architecture système.</p>
-</div>
-<div class="content-group animate-on-scroll fade-in delay-200">
-<ul>
-<li>Intégration électronique complète dans les volumes</li>
-<li>Gestion des tolérances et des assemblages</li>
-<li>Conception de châssis et structures fonctionnelles</li>
-<li>Optimisation pour impression 3D technique</li>
-<li>Prise en compte maintenance et dissipation thermique</li>
-</ul>
-</div>
+<section class="section container snap-item">
+  <div class="content-group animate-on-scroll fade-in delay-150">
+    <p><strong>Objectif :</strong> aligner mécanique, électronique et firmware pour obtenir un système intégrable, maintenable et prévisible.</p>
+  </div>
+
+  <div class="section-title animate-on-scroll fade-in">
+    <h2>Intégration mécanique</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">
+      Conception sous Fusion 360 orientée systèmes embarqués. La mécanique est pensée comme support structurant de l'architecture système.
+    </p>
+  </div>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Ce que cela couvre</h3>
+      <ul>
+        <li>Conception de châssis et structures fonctionnelles</li>
+        <li>Gestion des tolérances et des assemblages</li>
+        <li>Optimisation pour impression 3D technique</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Points d’attention</h3>
+      <ul>
+        <li>Intégration électronique complète dans les volumes</li>
+        <li>Prise en compte maintenance et dissipation thermique</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
+    <h2>Conception électronique embarquée</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">Approche pragmatique orientée cohérence avec le firmware.</p>
+  </div>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Ce que cela couvre</h3>
+      <ul>
+        <li>Schéma et routage PCB sous KiCad (2 à 4 couches selon projet)</li>
+        <li>Intégration microcontrôleurs ESP32 et périphériques</li>
+        <li>Bus I²C / SPI / UART selon besoins projet</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Points d’attention</h3>
+      <ul>
+        <li>Gestion d'alimentation adaptée au contexte</li>
+        <li>Préparation fabrication et itérations prototypage</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
+    <h2>Prototypage &amp; validation système</h2>
+  </div>
+  <div class="animate-on-scroll slide-up delay-100">
+    <p class="lead">Objectif : convergence rapide vers un système robuste et cohérent.</p>
+  </div>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Cas d’usage typiques</h3>
+      <ul>
+        <li>Prototypage matériel itératif</li>
+        <li>Impression 3D technique</li>
+        <li>Ajustements mécaniques et électroniques contrôlés</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Validation croisée</h3>
+      <ul>
+        <li>Tests croisés matériel / firmware</li>
+        <li>Itérations orientées robustesse et intégrabilité</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Conception électronique embarquée</h2>
-</div>
-<div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Approche pragmatique orientée cohérence avec le firmware.</p>
-</div>
-<div class="content-group animate-on-scroll fade-in delay-200">
-<ul>
-<li>Schéma et routage PCB sous KiCad (2 à 4 couches selon projet)</li>
-<li>Intégration microcontrôleurs ESP32 et périphériques</li>
-<li>Bus I²C / SPI / UART selon besoins projet</li>
-<li>Gestion d'alimentation adaptée au contexte</li>
-<li>Préparation fabrication et itérations prototypage</li>
-</ul>
-</div>
+<section class="section container snap-item">
+  <div class="cta-block animate-on-scroll scale-in">
+    <h2>À l’issue de l’accompagnement</h2>
+    <h3>Le système physique et électronique est cohérent avec l’architecture logicielle.</h3>
+    <ul>
+      <li><strong>Intégrer mécanique et électronique</strong> dans une logique système assumée.</li>
+      <li><strong>Maîtriser les contraintes physiques</strong> (volumes, dissipation, maintenance).</li>
+      <li><strong>Aligner firmware et électronique</strong> sur des interfaces claires.</li>
+      <li><strong>Itérer de manière contrôlée</strong> sur les prototypes matériels.</li>
+      <li><strong>Converger vers un ensemble robuste</strong>, exploitable et évolutif.</li>
+    </ul>
+    <div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
+      <a class="btn btn-primary" href="/contact/">Discuter d’une intégration matérielle</a>
+    </div>
+  </div>
 </section>
 
-<section class="section container section-major snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Prototypage & validation système</h2>
-</div>
-<div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Objectif : convergence rapide vers un système robuste et cohérent.</p>
-</div>
-<div class="content-group animate-on-scroll fade-in delay-200">
-<ul>
-<li>Impression 3D technique</li>
-<li>Prototypage matériel itératif</li>
-<li>Tests croisés matériel / firmware</li>
-<li>Ajustements mécaniques et électroniques contrôlés</li>
-</ul>
-</div>
-<div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
-<a class="btn btn-primary" href="/contact/">Discuter d'une intégration matérielle</a>
-</div>
-</section>
