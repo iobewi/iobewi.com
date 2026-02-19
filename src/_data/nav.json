@@ -13,16 +13,7 @@
   },
   {
     "label": "Ressources",
-    "children": [
-      {
-        "label": "Open Source",
-        "url": "/open-source/"
-      },
-      {
-        "label": "Méthodologie",
-        "url": "/methodologie/"
-      }
-    ]
+    "url": "/ressources/"
   },
   {
     "label": "À propos",
