@@ -55,10 +55,10 @@ breadcrumb:
 </button>
 </div>
 <div class="modal" id="modal" aria-hidden="true">
-<div class="modal__backdrop" data-os-close></div>
-<div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-<button class="modal__close" type="button" aria-label="Fermer" data-os-close>×</button>
-<div class="modal__content" id="modal-content">
+<div class="modal-backdrop" data-os-close></div>
+<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<button class="modal-close" type="button" aria-label="Fermer" data-os-close>×</button>
+<div class="modal-content" id="modal-content">
 <h2 id="modal-title">Titre</h2>
 <p class="lead">Description</p>
 </div>
