@@ -19,3 +19,4 @@ playwright-report/
 playwright/.cache/
 
 tmp/
+*.tar

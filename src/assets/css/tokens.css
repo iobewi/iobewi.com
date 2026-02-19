@@ -49,12 +49,6 @@
   --measure: 68ch;
   --measure-narrow: 58ch;
 
-  /* Spacing helpers (valeurs clamp répétées) */
-  --space-responsive-sm: var(--pad-sm);
-  --space-responsive-md: var(--pad-md);
-  --space-responsive-lg: var(--pad-lg);
-  --space-responsive-xl: var(--pad-lg);
-
   /* Padding helpers (container/sections) */
   --padding-container-x: var(--pad-md);
   --padding-container-y: var(--pad-md);
@@ -66,36 +60,6 @@
   --opacity-overlay-light: 0.4;
   --opacity-overlay-medium: 0.6;
   --opacity-overlay-heavy: 0.85;
-
-  /* Couleurs rgba courantes */
-  --color-white-10: rgba(var(--c-white), 0.1);
-  --color-white-12: rgba(var(--c-white), 0.12);
-  --color-white-20: rgba(var(--c-white), 0.2);
-  --color-white-75: rgba(var(--c-white), 0.75);
-  --color-white-85: rgba(var(--c-white), 0.85);
-  --color-white-90: rgba(var(--c-white), 0.9);
-
-  --color-black-10: rgba(var(--c-black), 0.1);
-  --color-black-15: rgba(var(--c-black), 0.15);
-  --color-black-20: rgba(var(--c-black), 0.2);
-  --color-black-30: rgba(var(--c-black), 0.3);
-  --color-black-40: rgba(var(--c-black), 0.4);
-
-  --color-accent-02: rgba(var(--c-accent), 0.02);
-  --color-accent-06: rgba(var(--c-accent), 0.06);
-  --color-accent-20: rgba(var(--c-accent), 0.2);
-  --color-accent-60: rgba(var(--c-accent), 0.6);
-  --color-accent-85: rgba(var(--c-accent), 0.85);
-
-  --color-slate-03: rgba(var(--c-slate), 0.03);
-  --color-slate-04: rgba(var(--c-slate), 0.04);
-  --color-slate-15: rgba(var(--c-slate), 0.15);
-
-  --color-ink-60: rgba(var(--c-ink), 0.6);
-  --color-ink-65: rgba(var(--c-ink), 0.65);
-
-  --color-hero-40: rgba(var(--c-hero-0), 0.4);
-  --color-hero-50: rgba(var(--c-hero-0), 0.5);
 
   /* Breakpoints standardisés */
   --bp-mobile-xs: 480px;
@@ -156,7 +120,6 @@
   /* Card shadows */
   --shadow-card-base: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-card-strong: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.10);
 
   /* Button shadows */
   --shadow-btn: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -173,12 +136,6 @@
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  /* Animation delays for staggering */
-  --stagger-1: 50ms;
-  --stagger-2: 100ms;
-  --stagger-3: 150ms;
-  --stagger-4: 200ms;
 
   /* =========================================================
      HEADER STATES (tokens sémantiques)
