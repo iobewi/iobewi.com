@@ -5,62 +5,9 @@ on:
     branches: [ main, develop ]
 
 jobs:
-  quality:
-    name: Tests Unitaires & Qualité
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout du code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Installation des dépendances
-        run: npm ci
-
-      - name: Installation de Playwright
-        run: npx playwright install --with-deps chromium
-
-      - name: Tests unitaires CSS
-        run: npx playwright test tests/unit/
-        continue-on-error: false
-
-      - name: Vérifier la structure des fichiers
-        run: |
-          echo "## 📁 Structure du projet" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          # Vérifier les dossiers critiques
-          if [ ! -d "src" ]; then
-            echo "❌ Dossier src/ manquant" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-
-          if [ ! -d "tests" ]; then
-            echo "❌ Dossier tests/ manquant" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-
-          echo "✅ Structure du projet valide" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-
-          # Statistiques
-          echo "### Statistiques" >> $GITHUB_STEP_SUMMARY
-          echo "- **Fichiers CSS**: $(find src/assets/css -name "*.css" | wc -l)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Fichiers JS**: $(find src/assets/js -name "*.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Pages Markdown**: $(find src -name "*.md" | wc -l)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Tests E2E**: $(find tests/e2e -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Tests Unit**: $(find tests/unit -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
-
   build:
     name: Build Eleventy
     runs-on: ubuntu-latest
-    needs: quality
     timeout-minutes: 5
 
     steps:
@@ -120,6 +67,65 @@ jobs:
           echo "- **Fichiers CSS**: $(find _site/ -name "*.css" | wc -l)" >> $GITHUB_STEP_SUMMARY
           echo "- **Fichiers JS**: $(find _site/ -name "*.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
           echo "- **Images**: $(find _site/ -name "*.svg" -o -name "*.png" -o -name "*.jpg" | wc -l)" >> $GITHUB_STEP_SUMMARY
+
+  quality:
+    name: Tests Unitaires & Qualité
+    runs-on: ubuntu-latest
+    needs: build
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Download artifact du build
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: _site/
+
+      - name: Installation de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests unitaires (CSS + HTML)
+        run: npx playwright test tests/unit/
+        continue-on-error: false
+
+      - name: Vérifier la structure des fichiers
+        run: |
+          echo "## 📁 Structure du projet" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Vérifier les dossiers critiques
+          if [ ! -d "src" ]; then
+            echo "❌ Dossier src/ manquant" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+          if [ ! -d "tests" ]; then
+            echo "❌ Dossier tests/ manquant" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+          echo "✅ Structure du projet valide" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Statistiques
+          echo "### Statistiques" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers CSS**: $(find src/assets/css -name "*.css" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Fichiers JS**: $(find src/assets/js -name "*.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Pages Markdown**: $(find src -name "*.md" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tests E2E**: $(find tests/e2e -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tests Unit**: $(find tests/unit -name "*.spec.js" | wc -l)" >> $GITHUB_STEP_SUMMARY
 
   test-e2e:
     name: Tests E2E
