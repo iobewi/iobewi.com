@@ -55,7 +55,7 @@ breadcrumb:
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">Les contributions sont publiées comme des briques réutilisables : structurées, documentées et exploitables dans un projet standard.</p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Principes</h3>
 <ul>

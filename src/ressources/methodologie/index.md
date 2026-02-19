@@ -40,7 +40,7 @@ breadcrumb:
       et guident les arbitrages.
     </p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Contraintes matérielles et physiques</h3>
       <ul>
@@ -58,7 +58,7 @@ breadcrumb:
       </ul>
     </div>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-300">
+  <div class="grid animate-on-scroll slide-up delay-300">
     <div class="card">
       <h3>Contraintes organisationnelles</h3>
       <ul>
@@ -86,7 +86,7 @@ breadcrumb:
       Démarche intégrée où mécanique, électronique et logiciel sont pensés simultanément pour réduire les incohérences découvertes trop tard.
     </p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Chaîne d'intégration typique</h3>
       <ol>
@@ -123,7 +123,7 @@ breadcrumb:
       Démarche itérative structurée en phases, chacune introduisant progressivement les outils et pratiques nécessaires.
     </p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Phase 1 : Exploration et cadrage</h3>
       <p><strong>Objectif</strong> : comprendre le contexte, les besoins et les contraintes.</p>
@@ -147,7 +147,7 @@ breadcrumb:
       <p><strong>Livrables</strong> : architecture documentée, prototypes validés, bases structurées.</p>
     </div>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-300">
+  <div class="grid animate-on-scroll slide-up delay-300">
     <div class="card">
       <h3>Phase 3 : Outillage et reproductibilité</h3>
       <p><strong>Objectif</strong> : fiabiliser le socle technique et faciliter l'exploitation.</p>
@@ -177,7 +177,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Pratiques d'outillage et d'automatisation</h2>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-100">
+  <div class="grid animate-on-scroll slide-up delay-100">
     <div class="card">
       <h3>Environnements conteneurisés</h3>
       <p>
@@ -191,7 +191,7 @@ breadcrumb:
       </p>
     </div>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Tests et validation</h3>
       <p>
@@ -214,7 +214,7 @@ breadcrumb:
   <p class="card-foot animate-on-scroll fade-in">
     Exemples issus de plateformes internes et contributives. Ordres de grandeur indicatifs (variables selon contexte), données anonymisées.
   </p>
-  <div class="grid-2 animate-on-scroll slide-up delay-100">
+  <div class="grid animate-on-scroll slide-up delay-100">
     <div class="card">
       <h3>Plateforme robotique hétérogène</h3>
       <p><strong>Contexte</strong> : ESP32 (bas niveau), Raspberry Pi (traitement), LiDAR/IMU, actionneurs.</p>
@@ -234,7 +234,7 @@ breadcrumb:
   <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Transmission et autonomie</h2>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-100">
+  <div class="grid animate-on-scroll slide-up delay-100">
     <div class="card">
       <p>
         L'objectif final est de rendre les équipes autonomes sur leur socle technique : transmission progressive des pratiques,

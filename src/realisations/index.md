@@ -65,7 +65,7 @@ bodyClass: "has-hero"
     <h3>Origines : projets contributifs</h3>
     <p>Deux plateformes exploratoires dont les enseignements ont directement alimenté la conception de R2BEWI.</p>
   </div>
-  <div class="grid-2 animate-on-scroll fade-in delay-700">
+  <div class="grid animate-on-scroll fade-in delay-700">
     <div class="project-card-compact">
       <h3>RHACOBOT</h3>
       <p>Plateforme robotique open source développée en amont, ayant servi de base pour structurer les briques initiales de contrôle d'actionneurs, d'intégration ROS 2 et d'interfaces embarquées.</p>

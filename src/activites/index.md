@@ -37,7 +37,7 @@ bodyClass: "has-hero"
 <div class="animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
 <p class="eyebrow">Socle R&amp;D structurant</p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up" style="margin-bottom: var(--stack-3);">
+<div class="grid animate-on-scroll slide-up" style="margin-bottom: var(--stack-3);">
 <div class="card">
 <h3>Contributions open source</h3>
 <p>Des briques logicielles réutilisables, documentées et validées pour l'écosystème embarqué et robotique.</p>

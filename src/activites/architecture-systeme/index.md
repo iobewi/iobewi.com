@@ -30,7 +30,7 @@ Cela inclut l'intégration mécanique et électronique, l'architecture logiciell
 différents sous-systèmes constituant le socle technique du projet.
 </p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
@@ -59,7 +59,7 @@ différents sous-systèmes constituant le socle technique du projet.
 L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et la formalisation progressive des choix techniques.
 </p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>

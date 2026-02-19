@@ -33,7 +33,7 @@ bodyClass: "has-hero"
       Conception sous Fusion 360 orientée systèmes embarqués. La mécanique est pensée comme support structurant de l'architecture système.
     </p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Ce que cela couvre</h3>
       <ul>
@@ -57,7 +57,7 @@ bodyClass: "has-hero"
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">Approche pragmatique orientée cohérence avec le firmware.</p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Ce que cela couvre</h3>
       <ul>
@@ -80,7 +80,7 @@ bodyClass: "has-hero"
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">Objectif : convergence rapide vers un système robuste et cohérent.</p>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up delay-200">
+  <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Cas d’usage typiques</h3>
       <ul>

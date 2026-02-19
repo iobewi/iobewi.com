@@ -81,7 +81,7 @@ window.ModalHandler = function (options) {
     return `
       <h2 id="modal-title">${itemData.title}</h2>
       <p class="lead">${itemData.lead}</p>
-      <div class="grid-2" style="margin-top: var(--stack-3);">
+      <div class="grid" style="margin-top: var(--stack-3);">
         <div class="card">
           <h3>${itemData.leftTitle}</h3>
           <ul>${itemData.leftList.map((x) => `<li>${x}</li>`).join("")}</ul>

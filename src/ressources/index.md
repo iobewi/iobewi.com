@@ -17,7 +17,7 @@ bodyClass: "has-hero"
 
 <section class="section container snap-item">
 <p class="eyebrow">Socle R&amp;D structurant</p>
-<div class="grid-2 animate-on-scroll slide-up">
+<div class="grid animate-on-scroll slide-up">
 <div class="card">
 <h3>Contributions open source</h3>
 <p> Des briques logicielles réutilisables, documentées et validées pour l'écosystème embarqué et robotique.</p>

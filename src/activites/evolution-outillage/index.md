@@ -33,7 +33,7 @@ IOBEWI accompagne les équipes pour outiller leurs projets embarqués autour de 
 Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
 </p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
@@ -63,7 +63,7 @@ Lorsque la maturité du système le permet, IOBEWI accompagne l'intégration d'a
 L'objectif est d'apporter des capacités locales d'analyse et d'autonomie, en cohérence avec les contraintes matérielles et énergétiques.
 </p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
@@ -93,7 +93,7 @@ Certains systèmes embarqués sont conçus pour réagir à une présence physiqu
 IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du tag jusqu'à la diffusion audio embarquée.
 </p>
 </div>
-<div class="grid-2 animate-on-scroll slide-up delay-200">
+<div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
 <h3>Cas d'usage typiques</h3>
 <ul>
