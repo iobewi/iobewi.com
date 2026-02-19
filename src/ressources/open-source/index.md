@@ -27,36 +27,42 @@ breadcrumb:
 <div class="content-group animate-on-scroll fade-in delay-150">
 <p><strong>Objectif :</strong> partager des briques réutilisables, structurées et maintenables, plutôt que des solutions clé en main.</p>
 </div>
-<div class="content-group animate-on-scroll fade-in" style="margin-top: var(--stack-3);">
-<p class="eyebrow">Contributions : sélectionnez un projet pour voir les détails</p>
-</div>
-<div class="os-layout animate-on-scroll slide-up" style="margin-top: var(--stack-3);">
-<div class="os-list" role="list">
-<button class="card os-item is-active" type="button" role="listitem" data-os-key="myactuator" aria-controls="os-detail" aria-selected="true">
+<div class="grid animate-on-scroll slide-up" style="margin-top: var(--stack-3);">
+<button class="card os-tile" type="button" data-os-key="myactuator">
 <h3>ROS 2 / ros2_control : Intégration MyActuator</h3>
 <p>Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.</p>
+<span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-item" type="button" role="listitem" data-os-key="witmotion" aria-controls="os-detail" aria-selected="false">
+<button class="card os-tile" type="button" data-os-key="witmotion">
 <h3>ROS 2 : Driver IMU WitMotion</h3>
 <p>Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone.</p>
+<span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-item" type="button" role="listitem" data-os-key="daly" aria-controls="os-detail" aria-selected="false">
+<button class="card os-tile" type="button" data-os-key="daly">
 <h3>micro-ROS : Support BMS Daly via ESP32</h3>
 <p>Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.</p>
+<span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-item" type="button" role="listitem" data-os-key="idf" aria-controls="os-detail" aria-selected="false">
+<button class="card os-tile" type="button" data-os-key="idf">
 <h3>ESP-IDF : Librairie de composants</h3>
 <p>Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.</p>
+<span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-item" type="button" role="listitem" data-os-key="icf" aria-controls="os-detail" aria-selected="false">
+<button class="card os-tile" type="button" data-os-key="icf">
 <h3>ICF : Interactions tangibles & déclenchement physique</h3>
 <p>Format et outillage NFC/RFID pour relier un objet physique à une action embarquée (ex : audio HLS).</p>
+<span class="pillar-link">Voir les détails →</span>
 </button>
 </div>
-<aside id="os-detail" class="card os-detail" aria-live="polite">
-<h3 class="os-detail-title">Chargement...</h3>
-<p class="os-detail-lead">Sélectionnez une contribution dans la liste.</p>
-</aside>
+<div class="os-modal" id="os-modal" aria-hidden="true">
+<div class="os-modal__backdrop" data-os-close></div>
+<div class="os-modal__panel" role="dialog" aria-modal="true" aria-labelledby="os-modal-title">
+<button class="os-modal__close" type="button" aria-label="Fermer" data-os-close>×</button>
+<div class="os-modal__content" id="os-modal-content">
+<h2 id="os-modal-title">Titre</h2>
+<p class="lead">Description</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -99,6 +105,11 @@ breadcrumb:
 
 <script>
 (() => {
+  const modal = document.getElementById("os-modal");
+  const content = document.getElementById("os-modal-content");
+  const closeEls = modal ? modal.querySelectorAll("[data-os-close]") : [];
+  const tiles = Array.from(document.querySelectorAll(".os-tile"));
+  if (!modal || !content || !tiles.length) return;
   const data = {
     myactuator: {
       title: "ROS 2 / ros2_control : Intégration MyActuator",
@@ -111,26 +122,22 @@ breadcrumb:
         "Documentation et exemples d'utilisation"
       ],
       rightTitle: "Résultats",
-      rightText: "Publiée sur GitHub avec documentation et exemples d'usage, conçue pour respecter les conventions ros2_control. Brique réutilisable et structurée, éprouvée sur les plateformes robotiques internes d'IOBEWI.",
-      links: [
-        { label: "Explorer le projet", url: "https://github.com/ioio2995/myactuator_ros2_control" }
-      ]
+      rightText: "Publiée sur GitHub avec documentation et exemples. Brique réutilisable et structurée, éprouvée sur plateformes internes.",
+      links: [{ label: "Explorer le projet", url: "https://github.com/ioio2995/myactuator_ros2_control" }]
     },
     witmotion: {
       title: "ROS 2 : Driver IMU WitMotion",
-      lead: "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone.",
+      lead: "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone (asio).",
       leftTitle: "Points techniques",
       leftList: [
         "Communication série asynchrone (asio), indépendante de la plateforme",
-        "Publication de topics ROS 2 selon les messages activés sur le capteur",
+        "Publication de topics ROS 2 selon les messages activés",
         "Configuration (port, débit, fréquence, frame)",
         "Documentation et exemples de lancement"
       ],
       rightTitle: "Résultats",
-      rightText: "Brique publiée, documentée et directement utilisable dans un projet ROS 2 standard. Signal de réutilisation par d'autres équipes (étoiles/forks).",
-      links: [
-        { label: "Explorer le projet", url: "https://github.com/ioio2995/witmotion_ros2" }
-      ]
+      rightText: "Brique publiée, documentée et directement utilisable dans un projet ROS 2 standard.",
+      links: [{ label: "Explorer le projet", url: "https://github.com/ioio2995/witmotion_ros2" }]
     },
     daly: {
       title: "micro-ROS : Support BMS Daly via ESP32",
@@ -138,15 +145,13 @@ breadcrumb:
       leftTitle: "Fonctionnalités",
       leftList: [
         "Lecture tension, courant, SoC",
-        "Publication des données dans ROS 2 via micro-ROS",
-        "Alertes et diagnostics en temps réel",
+        "Publication dans ROS 2 via micro-ROS",
+        "Alertes et diagnostics",
         "Intégration supervision énergétique"
       ],
       rightTitle: "Contribution",
-      rightText: "Publiée sur GitHub et documentée. Centralise les données batterie dans le graphe ROS 2 et simplifie la supervision énergétique.",
-      links: [
-        { label: "Explorer le projet", url: "https://github.com/ioio2995/uros_DalyBMS" }
-      ]
+      rightText: "Publiée sur GitHub et documentée. Centralise les données batterie dans le graphe ROS 2.",
+      links: [{ label: "Explorer le projet", url: "https://github.com/ioio2995/uros_DalyBMS" }]
     },
     idf: {
       title: "ESP-IDF : Librairie de composants",
@@ -159,62 +164,69 @@ breadcrumb:
         "Applications de référence"
       ],
       rightTitle: "Démarche",
-      rightText: "Composants documentés, versionnés et pensés pour s'intégrer dans une architecture cohérente, orientée maintenabilité et reproductibilité.",
-      links: [
-        { label: "Explorer le projet", url: "https://github.com/iobewi/iobewi-idf-components" }
-      ]
+      rightText: "Composants documentés, versionnés et pensés pour une architecture cohérente (maintenabilité, reproductibilité).",
+      links: [{ label: "Explorer le projet", url: "https://github.com/iobewi/iobewi-idf-components" }]
     },
     icf: {
       title: "ICF : Interactions tangibles & déclenchement physique",
-      lead: "Format et outillage NFC/RFID pour relier un objet physique à une action embarquée (ex : audio HLS).",
+      lead: "Format et outillage NFC/RFID (TLV compact + authenticité) pour déclencher des actions embarquées (ex : audio HLS).",
       leftTitle: "Points techniques",
       leftList: [
         "Format TLV compact + mécanisme d'authenticité (signature)",
-        "Interface CLI et bibliothèque Python réutilisable",
+        "CLI + bibliothèque Python réutilisable",
         "Chaîne embarquée associée (ESP-IDF) pour lecture HLS M3U8"
       ],
       rightTitle: "Contribution",
-      rightText: "Publié sous licence duale MPL 2.0 / CC-BY-SA 4.0 avec spécification complète. Composant HLS associé structuré et documenté.",
+      rightText: "Publié sous licence duale MPL 2.0 / CC-BY-SA 4.0 avec spécification. Composant HLS associé structuré et documenté.",
       links: [
         { label: "Explorer le projet ICF", url: "https://github.com/iobewi/icf" },
         { label: "Explorer iobewi_apps_hls_player", url: "https://github.com/iobewi/iobewi-idf-components/tree/iobewi_driver_max98357a/components/iobewi_apps_hls_player" }
       ]
     }
   };
-  const items = Array.from(document.querySelectorAll(".os-item"));
-  const detail = document.getElementById("os-detail");
-  if (!items.length || !detail) return;
-  function render(key) {
+  let lastFocus = null;
+  function render(key){
     const d = data[key];
     if (!d) return;
-    detail.innerHTML = `
-      <h3 class="os-detail-title">${d.title}</h3>
-      <p class="os-detail-lead">${d.lead}</p>
+    content.innerHTML = `
+      <h2 id="os-modal-title">${d.title}</h2>
+      <p class="lead">${d.lead}</p>
       <div class="grid-2" style="margin-top: var(--stack-3);">
         <div class="card">
-          <h4>${d.leftTitle}</h4>
-          <ul>${d.leftList.map(li => `<li>${li}</li>`).join("")}</ul>
+          <h3>${d.leftTitle}</h3>
+          <ul>${d.leftList.map(x => `<li>${x}</li>`).join("")}</ul>
         </div>
         <div class="card">
-          <h4>${d.rightTitle}</h4>
+          <h3>${d.rightTitle}</h3>
           <p>${d.rightText}</p>
         </div>
       </div>
       <div class="section-link-end" style="margin-top: var(--stack-3);">
-        ${d.links.map(l => `<a href="${l.url}" class="card-link" target="_blank" rel="noopener">${l.label} <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>`).join("")}
+        ${d.links.map(l => `<a class="card-link" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join("")}
       </div>
     `;
   }
-  function setActive(btn) {
-    items.forEach(b => {
-      const active = b === btn;
-      b.classList.toggle("is-active", active);
-      b.setAttribute("aria-selected", active ? "true" : "false");
-    });
-    render(btn.dataset.osKey);
+  function openModal(key, opener){
+    render(key);
+    lastFocus = opener || document.activeElement;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.documentElement.classList.add("is-modal-open");
+    const closeBtn = modal.querySelector(".os-modal__close");
+    closeBtn && closeBtn.focus();
   }
-  items.forEach(btn => btn.addEventListener("click", () => setActive(btn)));
-  const initial = items.find(b => b.classList.contains("is-active")) || items[0];
-  setActive(initial);
+  function closeModal(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.documentElement.classList.remove("is-modal-open");
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  }
+  tiles.forEach(btn => {
+    btn.addEventListener("click", () => openModal(btn.dataset.osKey, btn));
+  });
+  closeEls.forEach(el => el.addEventListener("click", closeModal));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
 })();
 </script>
