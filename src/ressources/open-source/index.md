@@ -28,38 +28,38 @@ breadcrumb:
 <p><strong>Objectif :</strong> partager des briques réutilisables, structurées et maintenables, plutôt que des solutions clé en main.</p>
 </div>
 <div class="grid animate-on-scroll slide-up" style="margin-top: var(--stack-3);">
-<button class="card os-tile" type="button" data-os-key="myactuator">
+<button class="card" type="button" data-os-key="myactuator">
 <h3>ROS 2 / ros2_control : Intégration MyActuator</h3>
 <p>Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.</p>
 <span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-tile" type="button" data-os-key="witmotion">
+<button class="card" type="button" data-os-key="witmotion">
 <h3>ROS 2 : Driver IMU WitMotion</h3>
 <p>Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone.</p>
 <span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-tile" type="button" data-os-key="daly">
+<button class="card" type="button" data-os-key="daly">
 <h3>micro-ROS : Support BMS Daly via ESP32</h3>
 <p>Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.</p>
 <span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-tile" type="button" data-os-key="idf">
+<button class="card" type="button" data-os-key="idf">
 <h3>ESP-IDF : Librairie de composants</h3>
 <p>Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.</p>
 <span class="pillar-link">Voir les détails →</span>
 </button>
-<button class="card os-tile" type="button" data-os-key="icf">
+<button class="card" type="button" data-os-key="icf">
 <h3>ICF : Interactions tangibles & déclenchement physique</h3>
 <p>Format et outillage NFC/RFID pour relier un objet physique à une action embarquée (ex : audio HLS).</p>
 <span class="pillar-link">Voir les détails →</span>
 </button>
 </div>
-<div class="os-modal" id="os-modal" aria-hidden="true">
-<div class="os-modal__backdrop" data-os-close></div>
-<div class="os-modal__panel" role="dialog" aria-modal="true" aria-labelledby="os-modal-title">
-<button class="os-modal__close" type="button" aria-label="Fermer" data-os-close>×</button>
-<div class="os-modal__content" id="os-modal-content">
-<h2 id="os-modal-title">Titre</h2>
+<div class="modal" id="modal" aria-hidden="true">
+<div class="modal__backdrop" data-os-close></div>
+<div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<button class="modal__close" type="button" aria-label="Fermer" data-os-close>×</button>
+<div class="modal__content" id="modal-content">
+<h2 id="modal-title">Titre</h2>
 <p class="lead">Description</p>
 </div>
 </div>
@@ -105,10 +105,10 @@ breadcrumb:
 
 <script>
 (() => {
-  const modal = document.getElementById("os-modal");
-  const content = document.getElementById("os-modal-content");
+  const modal = document.getElementById("modal");
+  const content = document.getElementById("modal-content");
   const closeEls = modal ? modal.querySelectorAll("[data-os-close]") : [];
-  const tiles = Array.from(document.querySelectorAll(".os-tile"));
+  const tiles = Array.from(document.querySelectorAll("button.card[data-os-key]"));
   if (!modal || !content || !tiles.length) return;
   const data = {
     myactuator: {
@@ -189,7 +189,7 @@ breadcrumb:
     const d = data[key];
     if (!d) return;
     content.innerHTML = `
-      <h2 id="os-modal-title">${d.title}</h2>
+      <h2 id="modal-title">${d.title}</h2>
       <p class="lead">${d.lead}</p>
       <div class="grid-2" style="margin-top: var(--stack-3);">
         <div class="card">
@@ -212,7 +212,7 @@ breadcrumb:
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.documentElement.classList.add("is-modal-open");
-    const closeBtn = modal.querySelector(".os-modal__close");
+    const closeBtn = modal.querySelector(".modal-close");
     closeBtn && closeBtn.focus();
   }
   function closeModal(){
