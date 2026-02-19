@@ -2,15 +2,15 @@
 title: "Méthodologie"
 description: "L'approche progressive d'IOBEWI pour structurer et faire mûrir des projets embarqués et robotiques."
 layout: layouts/base.njk
-permalink: "/methodologie/"
+permalink: "/ressources/methodologie/"
 bodyClass: "has-hero"
 breadcrumb:
   - label: "Accueil"
     url: "/"
-  - label: "Activités"
-    url: "/activites/"
+  - label: "Ressources"
+    url: "/ressources/"
   - label: "Méthodologie"
-    url: "/methodologie/"
+    url: "/ressources/methodologie/"
 ---
 
 {% comment %}<div class="container">{% include "partials/breadcrumb.njk" %}</div>{% endcomment %}

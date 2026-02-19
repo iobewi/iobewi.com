@@ -2,15 +2,15 @@
 title: "Open Source"
 description: "Contributions et travaux open source d'IOBEWI autour de ROS 2, micro-ROS et des systèmes embarqués."
 layout: layouts/base.njk
-permalink: "/open-source/"
+permalink: "/ressources/open-source/"
 bodyClass: "has-hero"
 breadcrumb:
   - label: "Accueil"
     url: "/"
-  - label: "Activités"
-    url: "/activites/"
+  - label: "Ressources"
+    url: "/ressources/"
   - label: "Open Source"
-    url: "/open-source/"
+    url: "/ressources/open-source/"
 ---
 
 {% comment %}<div class="container">{% include "partials/breadcrumb.njk" %}</div>{% endcomment %}
