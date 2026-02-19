@@ -5,6 +5,7 @@ on:
 
 jobs:
   enforce:
+    name: Enforce develop -> main only
     runs-on: ubuntu-latest
     steps:
       - run: |
