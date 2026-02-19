@@ -20,7 +20,7 @@ test.describe('Page d\'accueil', () => {
     // Vérifier le titre principal
     const h1 = page.locator('h1').first();
     await expect(h1).toBeVisible();
-    await expect(h1).toContainText(/structuration|accompagnement|iobewi/i);
+    await expect(h1).toContainText(/architecture|maîtrise|embarqués/i);
   });
 
   test('Affiche la navigation principale', async ({ page }) => {

@@ -45,7 +45,7 @@ bodyClass: "has-hero"
 </div>
 <div class="card">
 <h3>Méthodologie</h3>
-<p>Structuration, CI/CD, documentation, formalisation des pratiques — les fondations d'un accompagnement rigoureux.</p>
+<p>Structuration, CI/CD, documentation, formalisation des pratiques : les fondations d'un accompagnement rigoureux.</p>
 <a class="pillar-link" href="/methodologie/">Découvrir la méthodologie →</a>
 </div>
 </div>
