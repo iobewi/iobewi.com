@@ -77,7 +77,7 @@ bodyClass: "has-hero"
 
   <div class="note-block animate-on-scroll fade-in delay-600">
     <p>
-      Pour comprendre en détail l'approche progressive et les contraintes assumées, consultez la page <a href="/methodologie/">Méthodologie et approche technique →</a>
+      Pour comprendre en détail l'approche progressive et les contraintes assumées, consultez la page <a href="/ressources/methodologie/">Méthodologie et approche technique →</a>
     </p>
   </div>
 </section>

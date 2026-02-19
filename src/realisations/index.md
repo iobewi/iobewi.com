@@ -98,7 +98,7 @@ bodyClass: "has-hero"
   <p>Les enseignements issus de ces deux plateformes ont naturellement convergé vers R2BEWI, en combinant la robustesse mécanique de l'une avec les enjeux de perception et d'algorithmie embarquée de l'autre.</p>
   <div class="note-block animate-on-scroll fade-in delay-800">
     <p>
-    Pour approfondir les contributions techniques et comprendre les choix d'architecture, consultez la page <a href="/open-source/">Contributions open source →</a></p>
+    Pour approfondir les contributions techniques et comprendre les choix d'architecture, consultez la page <a href="/ressources/open-source/">Contributions open source →</a></p>
   </div>
 </section>
 

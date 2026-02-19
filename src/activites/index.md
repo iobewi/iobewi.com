@@ -41,12 +41,12 @@ bodyClass: "has-hero"
 <div class="card">
 <h3>Contributions open source</h3>
 <p>Des briques logicielles réutilisables, documentées et validées pour l'écosystème embarqué et robotique.</p>
-<a class="pillar-link" href="/open-source/">Voir les contributions →</a>
+<a class="pillar-link" href="/ressources/open-source/">Voir les contributions →</a>
 </div>
 <div class="card">
 <h3>Méthodologie</h3>
 <p>Structuration, CI/CD, documentation, formalisation des pratiques : les fondations d'un accompagnement rigoureux.</p>
-<a class="pillar-link" href="/methodologie/">Découvrir la méthodologie →</a>
+<a class="pillar-link" href="/ressources/methodologie/">Découvrir la méthodologie →</a>
 </div>
 </div>
 </section>

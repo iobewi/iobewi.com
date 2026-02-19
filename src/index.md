@@ -58,7 +58,7 @@ bodyClass: "has-hero"
 </div>
 <p class="animate-on-scroll fade-in" style="text-align: left; margin-top: var(--stack-3);">L'objectif n'est pas de livrer un système à votre place, mais de permettre à votre équipe de le structurer et de le faire évoluer sereinement</p>
 <p class="lead animate-on-scroll fade-in" style="margin-top: var(--stack-2);">Le conseil finance la R&amp;D. La R&amp;D produit des contributions open source réutilisables par les équipes que nous accompagnons.</p>
-<p style="text-align: right; margin-top: var(--stack-1);"><a href="/open-source/">Voir les contributions →</a></p>
+<p style="text-align: right; margin-top: var(--stack-1);"><a href="/ressources/open-source/">Voir les contributions →</a></p>
 </section>
 
 <section class="section container section-major snap-item">
@@ -67,7 +67,7 @@ bodyClass: "has-hero"
 <p>Si votre projet approche d'une phase critique (passage en production, recrutement, montée en charge), c'est le bon moment pour structurer.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="/contact/">Échanger sur votre projet</a>
-<a class="btn btn-ghost" href="/methodologie/">Comprendre l'approche</a>
+<a class="btn btn-ghost" href="/ressources/methodologie/">Comprendre l'approche</a>
 </div>
 </div>
 </section>
