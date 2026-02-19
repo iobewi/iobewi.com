@@ -71,9 +71,9 @@ IOBEWI transpose des pratiques d'outillage, d'automatisation et de reproductibil
 <section class="section container section-major snap-item">
   <div class="cta-block animate-on-scroll scale-in">
     <h2>Découvrir comment IOBEWI peut accompagner votre projet</h2>
-    <p>
-      <strong>Une approche progressive, ancrée dans le réel, pour structurer et faire mûrir vos systèmes embarqués.</strong>
-    </p>
-    <a class="btn btn-primary" href="/contact/">Prendre contact</a>
+    <p>Une approche progressive, ancrée dans le réel, pour structurer et faire mûrir vos systèmes embarqués.</p>
+    <div class="btn-wrapper animate-on-scroll fade-in delay-300">
+      <a class="btn btn-primary" href="/contact/">Prendre contact</a>
+    </div>
   </div>
 </section>

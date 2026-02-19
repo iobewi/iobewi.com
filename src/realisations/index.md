@@ -44,10 +44,10 @@ IOBEWI est une structure récente, construite sur un travail préparatoire de lo
 <section class="section container section-major snap-item">
 <div class="cta-block animate-on-scroll scale-in">
 <h2>Échanger autour d'une démarche de convergence technique</h2>
-<p>
-<strong>Ces réalisations illustrent la démarche d'accompagnement d'IOBEWI : partir du terrain, structurer progressivement et rendre les projets exploitables.</strong>
-</p>
+<p>Ces réalisations illustrent la démarche d'accompagnement d'IOBEWI : partir du terrain, structurer progressivement et rendre les projets exploitables.</p>
+<div class="btn-wrapper animate-on-scroll fade-in delay-300">
 <a class="btn btn-primary" href="/contact/">Discuter de votre projet</a>
+</div>
 </div>
 </section>
 
