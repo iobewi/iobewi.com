@@ -373,6 +373,15 @@
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   margin-bottom: var(--stack-2);
   color: var(--ink);
+  text-align: center;
+}
+
+.cta-block h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  margin-bottom: var(--stack-2);
+  color: var(--ink);
+  text-align: left;
+  font-weight: 600;
 }
 
 .cta-block p {
@@ -383,8 +392,30 @@
   margin: 0 auto var(--stack-3);
 }
 
+.cta-block ul {
+  margin: var(--stack-2) 0 var(--stack-3);
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.cta-block li {
+  margin-bottom: var(--stack-1);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.cta-block li strong {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
 .cta-block .hero-actions {
   justify-content: center;
+}
+
+.cta-block .btn-wrapper {
+  text-align: center;
+  margin-top: var(--stack-3);
 }
 
 .cta-block .btn {

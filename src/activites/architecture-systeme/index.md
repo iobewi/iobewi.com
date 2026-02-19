@@ -92,7 +92,7 @@ L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et 
 <li><strong>Documenter l’architecture</strong> pour assurer sa continuité dans le temps.</li>
 <li><strong>Permettre l’évolution</strong> sans rupture ni réécriture brutale.</li>
 </ul>
-<div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
+<div class="btn-wrapper animate-on-scroll fade-in delay-300">
 <a class="btn btn-primary" href="/contact/">Discuter de la structuration de votre système</a>
 </div>
 </div>

@@ -126,7 +126,7 @@ IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du 
 <li><strong>Introduire des capacités décisionnelles embarquées</strong> en cohérence avec les contraintes matérielles.</li>
 <li><strong>Itérer sereinement</strong> sur une base solide et documentée.</li>
 </ul>
-<div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
+<div class="btn-wrapper animate-on-scroll fade-in delay-300">
 <a class="btn btn-primary" href="/contact/">Discuter de la fiabilisation de votre socle technique</a>
 </div>
 </div>

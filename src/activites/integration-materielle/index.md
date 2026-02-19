@@ -110,7 +110,7 @@ bodyClass: "has-hero"
       <li><strong>Itérer de manière contrôlée</strong> sur les prototypes matériels.</li>
       <li><strong>Converger vers un ensemble robuste</strong>, exploitable et évolutif.</li>
     </ul>
-    <div class="animate-on-scroll fade-in delay-300" style="text-align: center; margin-top: var(--stack-3);">
+    <div class="btn-wrapper animate-on-scroll fade-in delay-300">
       <a class="btn btn-primary" href="/contact/">Discuter d’une intégration matérielle</a>
     </div>
   </div>

@@ -56,6 +56,8 @@ bodyClass: "has-hero"
 <h2>Cadre d’intervention</h2>
 <p><strong>IOBEWI intervient comme structure d’accompagnement technique.</strong> L’objectif est de renforcer les équipes et de structurer les systèmes existants, non de se substituer à elles.</p>
 <p> L’intervention porte sur l’architecture, la cohérence technique et la montée en maturité, sans intégration clé en main ni production industrielle.</p>
+<div class="btn-wrapper animate-on-scroll fade-in delay-300">
 <a class="btn btn-primary" href="/contact/">Discuter de la structuration de votre projet</a>
+</div>
 </div>
 </section>
