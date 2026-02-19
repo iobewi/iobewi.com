@@ -12,231 +12,244 @@ breadcrumb:
   - label: "Méthodologie"
     url: "/ressources/methodologie/"
 ---
-
-{% comment %}<div class="container">{% include "partials/breadcrumb.njk" %}</div>{% endcomment %}
 <div class="page-hero snap-item">
   <div class="container">
     <div class="page-hero-content">
+      <p class="eyebrow"><a href="/ressources/">← Ressources</a></p>
       <h1>Méthodologie et approche technique</h1>
       <p class="lead">
-        IOBEWI accompagne les projets techniques selon une démarche progressive, ancrée dans les contraintes réelles des systèmes embarqués et robotiques. Cette approche vise à structurer des bases exploitables, en respectant le rythme du projet et les besoins des équipes.
+        IOBEWI accompagne les projets techniques selon une démarche progressive, ancrée dans les contraintes réelles des systèmes embarqués et robotiques.
+        Cette approche vise à structurer des bases exploitables, en respectant le rythme du projet et les besoins des équipes.
       </p>
     </div>
   </div>
 </div>
-
-<section class="section container section-major snap-item">
+<section class="section container snap-item">
+  <div class="content-group animate-on-scroll fade-in delay-150">
+    <p><strong>Objectif :</strong> structurer un socle technique exploitable, réduire la dette implicite et sécuriser l’évolution du système.</p>
+  </div>
+  <!-- ===================================================== -->
+  <!-- Contraintes -->
+  <!-- ===================================================== -->
   <div class="section-title animate-on-scroll fade-in">
     <h2>Contraintes notables des systèmes embarqués et robotiques</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">
-      Les projets d'accompagnement d'IOBEWI sont confrontés à des contraintes spécifiques qui influencent fortement les choix techniques et méthodologiques. Elles sont intégrées dès le cadrage et guident les arbitrages techniques.
+      Les contraintes spécifiques de l’embarqué influencent les choix techniques et méthodologiques. Elles sont intégrées dès le cadrage
+      et guident les arbitrages.
     </p>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Contraintes matérielles et physiques</h3>
-    <ul>
-      <li><strong>Dépendance forte au matériel</strong> : Tout choix logiciel doit être validé sur le matériel cible (MCU, capteurs, actionneurs). Les simulations ne suffisent pas.</li>
-      <li><strong>Cycles de test physiques</strong> : Les itérations nécessitent du temps de manipulation, d'assemblage et de mesure. La rapidité du développement logiciel est limitée par le matériel.</li>
-      <li><strong>Hétérogénéité des plateformes</strong> : Un projet peut combiner des microcontrôleurs (ESP32), des SBC (Raspberry Pi, Jetson), des capteurs variés et des protocoles multiples (I2C, SPI, CAN, UART).</li>
-    </ul>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Contraintes matérielles et physiques</h3>
+      <ul>
+        <li><strong>Dépendance forte au matériel</strong> : validation sur cible (MCU, capteurs, actionneurs).</li>
+        <li><strong>Cycles de test physiques</strong> : manipulation, assemblage, mesure.</li>
+        <li><strong>Hétérogénéité des plateformes</strong> : MCU + SBC + bus variés (I2C, SPI, CAN, UART).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Déploiement et reproductibilité</h3>
+      <ul>
+        <li><strong>Environnements de build complexes</strong> : ESP-IDF, cross-compilation, ROS 2.</li>
+        <li><strong>Tests embarqués limités</strong> : besoin de tests d’intégration sur matériel.</li>
+        <li><strong>Documentation implicite</strong> : choix non formalisés, reprise difficile.</li>
+      </ul>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-300">
-    <h3>Contraintes de déploiement et de reproductibilité</h3>
-    <ul>
-      <li><strong>Environnements de build complexes</strong> : Les chaînes d'outillage embarqué (ESP-IDF, cross-compilation, ROS 2) nécessitent des configurations précises et reproductibles.</li>
-      <li><strong>Tests embarqués limités</strong> : Les tests unitaires classiques ne couvrent pas les interactions matériel/logiciel. Les tests d'intégration nécessitent du matériel physique.</li>
-      <li><strong>Documentation implicite</strong> : Les projets embarqués cumulent souvent des choix techniques non documentés, rendant la reprise difficile.</li>
-    </ul>
+  <div class="grid-2 animate-on-scroll slide-up delay-300">
+    <div class="card">
+      <h3>Contraintes organisationnelles</h3>
+      <ul>
+        <li><strong>Ressources limitées</strong> : montée en compétence progressive.</li>
+        <li><strong>Équipes pluridisciplinaires</strong> : coordination mécanique/électronique/logiciel.</li>
+        <li><strong>Prototypes en évolution</strong> : objectifs et matériel changent fréquemment.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Point de méthode</h3>
+      <p>
+        Ces contraintes ne sont pas des obstacles, mais des réalités assumées. L'approche d'IOBEWI consiste à les intégrer dès le départ,
+        en adaptant l’outillage et la structuration au contexte réel du projet.
+      </p>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-400">
-    <h3>Contraintes organisationnelles</h3>
-    <ul>
-      <li><strong>Ressources limitées</strong> : Les projets sont souvent menés par de petites équipes, avec des budgets et des délais serrés. La montée en compétence doit être progressive.</li>
-      <li><strong>Équipes pluridisciplinaires</strong> : Les projets embarqués mêlent mécanique, électronique et logiciel. La coordination et la transmission sont essentielles.</li>
-      <li><strong>Prototypes en évolution permanente</strong> : Les projets passent par des phases d'exploration où le matériel et les objectifs changent fréquemment.</li>
-    </ul>
-  </div>
-  <div class="note-block animate-on-scroll fade-in delay-500">
-    <p>
-      Ces contraintes ne sont pas des obstacles, mais des réalités assumées. L'approche d'IOBEWI consiste à les intégrer dès le départ, en adaptant les pratiques d'outillage et de structuration au contexte réel du projet.
-    </p>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
+  <!-- ===================================================== -->
+  <!-- Approche système -->
+  <!-- ===================================================== -->
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Approche système : de la conception à l'intégration</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
-    <p class="lead">IOBEWI met en œuvre une démarche intégrée où la mécanique, l'électronique et le logiciel sont pensés simultanément. Cette vision système réduit les incohérences découvertes trop tard et limite les itérations correctrices.</p>
+    <p class="lead">
+      Démarche intégrée où mécanique, électronique et logiciel sont pensés simultanément pour réduire les incohérences découvertes trop tard.
+    </p>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Chaîne d'intégration typique</h3>
-    <ol>
-      <li>Analyse des contraintes fonctionnelles et physiques</li>
-      <li>Conception mécanique et architecture des volumes</li>
-      <li>Architecture électronique adaptée à l'intégration</li>
-      <li>Conception PCB</li>
-      <li>Fabrication et prototypage</li>
-      <li>Intégration firmware</li>
-      <li>Instrumentation et critères d'acceptation</li>
-      <li>Tests croisés matériel / logiciel</li>
-      <li>Itérations maîtrisées</li>
-    </ol>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Chaîne d'intégration typique</h3>
+      <ol>
+        <li>Analyse des contraintes fonctionnelles et physiques</li>
+        <li>Conception mécanique et architecture des volumes</li>
+        <li>Architecture électronique adaptée à l'intégration</li>
+        <li>Conception PCB</li>
+        <li>Fabrication et prototypage</li>
+        <li>Intégration firmware</li>
+        <li>Instrumentation et critères d'acceptation</li>
+        <li>Tests croisés matériel / logiciel</li>
+        <li>Itérations maîtrisées</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Rôle structurant de la mécanique</h3>
+      <p>La conception mécanique intervient en amont et conditionne :</p>
+      <ul>
+        <li>la gestion des contraintes thermiques</li>
+        <li>la fiabilité des assemblages</li>
+        <li>l'accessibilité à la maintenance</li>
+        <li>la robustesse globale du système</li>
+      </ul>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-300">
-    <h3>Rôle structurant de la mécanique</h3>
-    <p>La conception mécanique intervient en amont et conditionne :</p>
-    <ul>
-      <li>la gestion des contraintes thermiques</li>
-      <li>la fiabilité des assemblages</li>
-      <li>l'accessibilité à la maintenance</li>
-      <li>la robustesse globale du système</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
+  <!-- ===================================================== -->
+  <!-- Phases -->
+  <!-- ===================================================== -->
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Approche progressive par phases</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">
-      L'accompagnement d'IOBEWI suit une démarche itérative, structurée en phases distinctes. Chaque phase s'appuie sur les enseignements de la précédente et introduit progressivement les outils et pratiques nécessaires.
+      Démarche itérative structurée en phases, chacune introduisant progressivement les outils et pratiques nécessaires.
     </p>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Phase 1 : Exploration et cadrage</h3>
-    <p><strong>Objectif</strong> : Comprendre le contexte, les besoins et les contraintes du projet.</p>
-    <ul>
-      <li>Analyse de l'état existant (matériel, logiciel, documentation)</li>
-      <li>Identification des zones de fragilité et des dépendances critiques</li>
-      <li>Définition d'un périmètre d'intervention réaliste</li>
-      <li>Proposition d'un plan de structuration progressif</li>
-    </ul>
-    <p><strong>Livrables</strong> : Note de cadrage (risques, périmètre, priorités), backlog priorisé + jalons.</p>
+  <div class="grid-2 animate-on-scroll slide-up delay-200">
+    <div class="card">
+      <h3>Phase 1 : Exploration et cadrage</h3>
+      <p><strong>Objectif</strong> : comprendre le contexte, les besoins et les contraintes.</p>
+      <ul>
+        <li>Analyse de l'état existant (matériel, logiciel, documentation)</li>
+        <li>Identification des zones de fragilité et dépendances critiques</li>
+        <li>Définition d'un périmètre réaliste</li>
+        <li>Plan de structuration progressif</li>
+      </ul>
+      <p><strong>Livrables</strong> : note de cadrage, backlog priorisé + jalons.</p>
+    </div>
+    <div class="card">
+      <h3>Phase 2 : Structuration et prototypage</h3>
+      <p><strong>Objectif</strong> : transformer les expérimentations en bases exploitables.</p>
+      <ul>
+        <li>Clarification architecture matériel/logiciel</li>
+        <li>Découpage fonctionnel et interfaces</li>
+        <li>Prototypage itératif avec retours terrain</li>
+        <li>Documentation progressive</li>
+      </ul>
+      <p><strong>Livrables</strong> : architecture documentée, prototypes validés, bases structurées.</p>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-300">
-    <h3>Phase 2 : Structuration et prototypage</h3>
-    <p><strong>Objectif</strong> : Transformer les expérimentations en bases techniques exploitables.</p>
-    <ul>
-      <li>Clarification de l'architecture matériel/logiciel</li>
-      <li>Découpage fonctionnel et identification des interfaces</li>
-      <li>Prototypage itératif avec retours terrain</li>
-      <li>Documentation progressive des choix techniques</li>
-    </ul>
-    <p><strong>Livrables</strong> : Architecture documentée, prototypes validés, bases techniques structurées.</p>
+  <div class="grid-2 animate-on-scroll slide-up delay-300">
+    <div class="card">
+      <h3>Phase 3 : Outillage et reproductibilité</h3>
+      <p><strong>Objectif</strong> : fiabiliser le socle technique et faciliter l'exploitation.</p>
+      <ul>
+        <li>Environnements reproductibles (conteneurs, scripts)</li>
+        <li>CI/CD adapté à l’embarqué</li>
+        <li>Documentation et guides</li>
+        <li>Gestion de versions et stratégie de déploiement</li>
+      </ul>
+      <p><strong>Livrables</strong> : pipeline CI, docs exploitables, environnements reproductibles.</p>
+    </div>
+    <div class="card">
+      <h3>Phase 4 : Montée en maturité et autonomie</h3>
+      <p><strong>Objectif</strong> : rendre l'équipe autonome sur son socle technique.</p>
+      <ul>
+        <li>Transmission des pratiques et des outils</li>
+        <li>Formation et accompagnement</li>
+        <li>Consolidation documentation et processus</li>
+        <li>Validation sur cas réels</li>
+      </ul>
+      <p><strong>Livrables</strong> : autonomie, processus documentés, socle pérenne.</p>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-400">
-    <h3>Phase 3 : Outillage et reproductibilité</h3>
-    <p><strong>Objectif</strong> : Fiabiliser le socle technique et faciliter l'exploitation.</p>
-    <ul>
-      <li>Mise en place d'environnements de développement reproductibles (conteneurs, scripts)</li>
-      <li>Intégration de tests automatisés (CI/CD adapté à l'embarqué)</li>
-      <li>Documentation technique et guides d'utilisation</li>
-      <li>Gestion de versions et stratégie de déploiement</li>
-    </ul>
-    <p><strong>Livrables</strong> : Pipeline CI (build + checks + artefacts flashables), documentation exploitable, environnements reproductibles.</p>
-  </div>
-  <div class="content-group animate-on-scroll fade-in delay-500">
-    <h3>Phase 4 : Montée en maturité et autonomie</h3>
-    <p><strong>Objectif</strong> : Rendre l'équipe autonome sur son socle technique.</p>
-    <ul>
-      <li>Transmission des pratiques et des outils</li>
-      <li>Formation et accompagnement des équipes</li>
-      <li>Consolidation de la documentation et des processus</li>
-      <li>Validation de l'autonomie sur des cas réels</li>
-    </ul>
-    <p><strong>Livrables</strong> : Équipe autonome, processus documentés, socle technique pérenne.</p>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
+  <!-- ===================================================== -->
+  <!-- Outillage -->
+  <!-- ===================================================== -->
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Pratiques d'outillage et d'automatisation</h2>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up">
-    <div>
+  <div class="grid-2 animate-on-scroll slide-up delay-100">
+    <div class="card">
       <h3>Environnements conteneurisés</h3>
       <p>
-        L'utilisation de conteneurs (Docker, Podman) permet de garantir la reproductibilité des environnements de développement et de build, même dans des contextes embarqués complexes (ESP-IDF, cross-compilation, ROS 2).
+        Les conteneurs garantissent la reproductibilité des environnements de développement et de build, même avec ESP-IDF, ROS 2 et cross-compilation.
       </p>
     </div>
-    <div>
+    <div class="card">
       <h3>CI/CD adapté à l'embarqué</h3>
       <p>
-        Les pipelines d'intégration continue sont adaptés aux contraintes de l'embarqué : build cross-compilé, tests sur matériel physique (quand possible), génération de firmware flashable, validation de l'intégration ROS 2.
+        Pipelines adaptés : build cross-compilé, tests (quand possible sur matériel), génération d’artefacts flashables, validation d’intégration.
       </p>
     </div>
   </div>
   <div class="grid-2 animate-on-scroll slide-up delay-200">
-    <div>
+    <div class="card">
       <h3>Tests et validation</h3>
       <p>
-        La stratégie de tests combine tests unitaires (logique pure), tests d'intégration (simulation ROS 2) et tests physiques (validation matériel). L'objectif est de couvrir un maximum de cas sans dépendre uniquement du matériel.
+        Combinaison de tests unitaires (logique pure), tests d’intégration (simulation ROS 2) et tests physiques (validation matériel).
       </p>
     </div>
-    <div>
+    <div class="card">
       <h3>Documentation technique</h3>
       <p>
-        La documentation est intégrée au code et maintenue en continu. Elle couvre l'architecture, les choix techniques, les interfaces matérielles, les procédures de build et de déploiement. L'objectif est de faciliter la reprise et la transmission.
+        Documentation intégrée au code : architecture, choix techniques, interfaces matérielles, procédures de build et déploiement.
       </p>
     </div>
   </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
+  <!-- ===================================================== -->
+  <!-- Retours d'expérience -->
+  <!-- ===================================================== -->
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Cas réels et retours d'expérience</h2>
   </div>
-  <p class="card-foot animate-on-scroll fade-in">Exemples issus de plateformes internes et contributives. Ordres de grandeur indicatifs (variables selon contexte), données anonymisées.</p>
-  <div class="content-group animate-on-scroll fade-in delay-100">
-    <h3>Structuration d'une plateforme robotique hétérogène</h3>
-    <p>
-      <strong>Contexte</strong> : Plateforme combinant ESP32 (contrôle bas niveau), Raspberry Pi (traitement), capteurs LiDAR et IMU, actionneurs motorisés.
-    </p>
-    <p>
-      <strong>Approche</strong> : Clarification des interfaces (micro-ROS pour ESP32, ROS 2 pour SBC), découpage fonctionnel (perception, contrôle, navigation), mise en place d'un pipeline CI/CD, documentation progressive.
-    </p>
-    <p>
-      <strong>Résultat</strong> : Socle technique exploitable, temps de build réduit (~2h → ~10–15 min), documentation suffisante pour qu'un nouveau développeur démarre en 1 journée.
-    </p>
+  <p class="card-foot animate-on-scroll fade-in">
+    Exemples issus de plateformes internes et contributives. Ordres de grandeur indicatifs (variables selon contexte), données anonymisées.
+  </p>
+  <div class="grid-2 animate-on-scroll slide-up delay-100">
+    <div class="card">
+      <h3>Plateforme robotique hétérogène</h3>
+      <p><strong>Contexte</strong> : ESP32 (bas niveau), Raspberry Pi (traitement), LiDAR/IMU, actionneurs.</p>
+      <p><strong>Approche</strong> : interfaces (micro-ROS/ROS 2), découpage, CI/CD, documentation progressive.</p>
+      <p><strong>Résultat</strong> : socle exploitable, temps de build réduit, onboarding accéléré.</p>
+    </div>
+    <div class="card">
+      <h3>Prototype exploratoire en montée en maturité</h3>
+      <p><strong>Contexte</strong> : prototype fragile (code non structuré, déploiement manuel).</p>
+      <p><strong>Approche</strong> : audit, refactoring progressif, conteneurisation, tests ciblés.</p>
+      <p><strong>Résultat</strong> : reproductibilité garantie, déploiement automatisé, réduction de dépendances implicites.</p>
+    </div>
   </div>
-  <div class="content-group animate-on-scroll fade-in delay-200">
-    <h3>Montée en maturité d'un prototype exploratoire</h3>
-    <p>
-      <strong>Contexte</strong> : Prototype fonctionnel mais fragile (code non structuré, dépendances implicites, déploiement manuel).
-    </p>
-    <p>
-      <strong>Approche</strong> : Audit du code existant, identification des dépendances, refactoring progressif, conteneurisation de l'environnement, tests automatisés sur les parties critiques.
-    </p>
-    <p>
-      <strong>Résultat</strong> : Prototype consolidé, reproductibilité garantie, déploiement automatisé, réduction nette des frictions de build/déploiement et de la dépendance aux connaissances implicites.
-    </p>
-  </div>
-</section>
-
-<section class="section container section-major snap-item">
-  <div class="section-title animate-on-scroll fade-in">
+  <!-- ===================================================== -->
+  <!-- Transmission -->
+  <!-- ===================================================== -->
+  <div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
     <h2>Transmission et autonomie</h2>
   </div>
-  <div class="grid-2 animate-on-scroll slide-up">
-    <div>
+  <div class="grid-2 animate-on-scroll slide-up delay-100">
+    <div class="card">
       <p>
-        L'objectif final de l'accompagnement est de rendre les équipes autonomes sur leur socle technique. Cela passe par une transmission progressive des pratiques, une documentation exploitable et une validation sur des cas réels.
+        L'objectif final est de rendre les équipes autonomes sur leur socle technique : transmission progressive des pratiques,
+        documentation exploitable, validation sur cas réels.
       </p>
     </div>
-    <div>
+    <div class="card">
       <p>
-        L'autonomie ne signifie pas l'absence de support, mais la capacité de l'équipe à comprendre, maintenir et faire évoluer son système sans dépendance à une personne clé.
+        L'autonomie ne signifie pas l'absence de support, mais la capacité à comprendre, maintenir et faire évoluer le système
+        sans dépendance à une personne clé.
       </p>
     </div>
   </div>
 </section>
-
-<section class="section container section-major snap-item">
+<section class="section container snap-item">
   <div class="cta-block animate-on-scroll scale-in">
     <h2>Discuter de votre contexte technique</h2>
     <p>

@@ -428,3 +428,38 @@
   transform: scale(1.05) translateY(-2px);
   box-shadow: 0 8px 24px rgba(var(--c-accent), 0.3);
 }
+
+/* =========================================================
+   DETAILS / SUMMARY (Accordéons natifs)
+   ========================================================= */
+
+details.card > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--stack-2);
+}
+
+details.card > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.card > summary h3 {
+  margin-bottom: var(--stack-1);
+  color: var(--accent-strong);
+}
+
+details.card > summary p {
+  margin: 0;
+  color: var(--ink-secondary);
+  font-size: var(--text-base);
+}
+
+details.card[open] > summary {
+  margin-bottom: var(--stack-3);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--stack-2);
+}
+
+details.card > summary:hover h3 {
+  color: var(--accent-hover);
+}
