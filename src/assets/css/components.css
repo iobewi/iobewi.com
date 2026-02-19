@@ -36,6 +36,16 @@
   will-change: transform;
 }
 
+button.card {
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+}
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
@@ -355,9 +365,9 @@
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 20, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 10, 20, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .modal-panel {
