@@ -1,5 +1,8 @@
 {
   "myactuator": {
+    "key": "myactuator",
+    "cardTitle": "ROS 2 / ros2_control : Intégration MyActuator",
+    "cardDescription": "Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.",
     "title": "ROS 2 / ros2_control : Intégration MyActuator",
     "lead": "Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.",
     "leftTitle": "Points techniques",
@@ -19,6 +22,9 @@
     ]
   },
   "witmotion": {
+    "key": "witmotion",
+    "cardTitle": "ROS 2 : Driver IMU WitMotion",
+    "cardDescription": "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone.",
     "title": "ROS 2 : Driver IMU WitMotion",
     "lead": "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone (asio).",
     "leftTitle": "Points techniques",
@@ -38,6 +44,9 @@
     ]
   },
   "daly": {
+    "key": "daly",
+    "cardTitle": "micro-ROS : Support BMS Daly via ESP32",
+    "cardDescription": "Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.",
     "title": "micro-ROS : Support BMS Daly via ESP32",
     "lead": "Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.",
     "leftTitle": "Fonctionnalités",
@@ -57,6 +66,9 @@
     ]
   },
   "idf": {
+    "key": "idf",
+    "cardTitle": "ESP-IDF : Librairie de composants",
+    "cardDescription": "Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.",
     "title": "ESP-IDF : Librairie de composants",
     "lead": "Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.",
     "leftTitle": "Organisation",
@@ -76,6 +88,9 @@
     ]
   },
   "icf": {
+    "key": "icf",
+    "cardTitle": "ICF : Interactions tangibles & déclenchement physique",
+    "cardDescription": "Format et outillage NFC/RFID pour relier un objet physique à une action embarquée (ex : audio HLS).",
     "title": "ICF : Interactions tangibles & déclenchement physique",
     "lead": "Format et outillage NFC/RFID (TLV compact + authenticité) pour déclencher des actions embarquées (ex : audio HLS).",
     "leftTitle": "Points techniques",
