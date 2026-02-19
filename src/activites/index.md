@@ -34,20 +34,9 @@ bodyClass: "has-hero"
 <a class="pillar-link" href="/activites/evolution-outillage/">Explorer →</a>
 </div>
 </div>
-<div class="animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
-<p class="eyebrow">Socle R&amp;D structurant</p>
-</div>
-<div class="grid animate-on-scroll slide-up" style="margin-bottom: var(--stack-3);">
-<div class="card">
-<h3>Contributions open source</h3>
-<p>Des briques logicielles réutilisables, documentées et validées pour l'écosystème embarqué et robotique.</p>
-<a class="pillar-link" href="/ressources/open-source/">Voir les contributions →</a>
-</div>
-<div class="card">
-<h3>Méthodologie</h3>
-<p>Structuration, CI/CD, documentation, formalisation des pratiques : les fondations d'un accompagnement rigoureux.</p>
-<a class="pillar-link" href="/ressources/methodologie/">Découvrir la méthodologie →</a>
-</div>
+<div class="animate-on-scroll fade-in" style="text-align: left; max-width: 600px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: var(--stack-3); margin-top: var(--stack-3);">
+<p>L’accompagnement s’appuie sur un socle technique structuré : contributions open source et méthodologie formalisée.</p>
+<a class="pillar-link" href="/ressources/">→ Découvrir le socle technique</a>
 </div>
 </section>
 

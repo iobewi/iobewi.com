@@ -33,6 +33,7 @@ breadcrumb:
 <div class="modal" id="modal" aria-hidden="true">
 <div class="modal-backdrop" data-modal-close></div>
 <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-header">
 <button class="modal-close" type="button" aria-label="Fermer" data-modal-close>
 <span class="close-icon">
 <span></span>
@@ -40,6 +41,7 @@ breadcrumb:
 <span></span>
 </span>
 </button>
+</div>
 <div class="modal-content" id="modal-content">
 <h2 id="modal-title">Titre</h2>
 <p class="lead">Description</p>

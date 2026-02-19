@@ -46,6 +46,13 @@ button.card {
   border-color: rgba(var(--c-accent), 0.2);
 }
 
+.card.is-morphing {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--c-accent), 0.3);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .pillar-link {
   display: block;
   text-align: right;
@@ -354,78 +361,130 @@ button.card {
 
 .modal.is-open {
   display: block;
+  animation: modalFadeIn 0.3s ease;
 }
 
 .modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 20, 0.3);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: backdropFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(16px);
+  }
 }
 
 .modal-panel {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(920px, calc(100% - 2 * var(--stack-3)));
+  top: 42%;
+  transform: translate(-50%, -42%);
+  width: min(800px, calc(100% - 2 * var(--stack-3)));
   max-height: calc(100% - 2 * var(--stack-3));
   overflow: auto;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 12px 32px rgba(0, 0, 0, 0.24),
+    0 32px 96px rgba(0, 0, 0, 0.32);
   padding: var(--stack-3);
+  animation: panelSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -42%) scale(1);
+  }
+}
+
+.modal-header {
+  position: sticky;
+  top: calc(-1 * var(--stack-3) + 16px);
+  z-index: 10;
+  text-align: right;
+  margin: calc(-1 * var(--stack-3)) calc(-1 * var(--stack-3)) 0 calc(-1 * var(--stack-3));
+  pointer-events: none;
 }
 
 .modal-close {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  width: 40px;
-  height: 40px;
-  border: none;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 16px 0 0;
   background: transparent;
+  border: none;
   cursor: pointer;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.modal-close:hover {
-  opacity: 0.7;
+  transition: transform 0.2s ease;
+  padding: 0;
+  pointer-events: auto;
 }
 
 .close-icon {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  width: 24px;
-  height: 18px;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .close-icon span {
   display: block;
   width: 100%;
   height: 2px;
-  background: var(--ink);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: var(--muted);
+  position: absolute;
+  transition: background 0.2s ease;
   border-radius: 2px;
 }
 
-.modal.is-open .close-icon span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+.close-icon span:nth-child(1) {
+  transform: rotate(45deg);
 }
 
-.modal.is-open .close-icon span:nth-child(2) {
+.close-icon span:nth-child(2) {
   opacity: 0;
 }
 
-.modal.is-open .close-icon span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+.close-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+.modal-close:hover .close-icon span {
+  background: var(--ink);
 }
 
 html.is-modal-open,
@@ -537,3 +596,13 @@ html.is-modal-open body {
   box-shadow: 0 8px 24px rgba(var(--c-accent), 0.3);
 }
 
+
+/* =========================================================
+   CONTENT NARROW (lecture premium, largeur réduite)
+   ========================================================= */
+
+.content-narrow {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
