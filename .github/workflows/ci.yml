@@ -149,15 +149,8 @@ jobs:
       - name: Installation de Playwright
         run: npx playwright install --with-deps chromium
 
-      - name: Lancer serveur HTTP pour tests E2E
-        run: |
-          npx http-server _site -p 8080 &
-          sleep 2
-
       - name: Tests E2E
         run: npx playwright test tests/e2e/
-        env:
-          BASE_URL: http://localhost:8080
 
       - name: Upload des rapports de test
         if: always()

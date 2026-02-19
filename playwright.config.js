@@ -39,7 +39,7 @@ module.exports = defineConfig({
 
   // Configuration du serveur web pour les tests
   webServer: {
-    command: 'npx @11ty/eleventy --serve --port=8080',
+    command: 'npx http-server _site -p 8080',
     port: 8080,
     timeout: 120000,
     reuseExistingServer: !process.env.CI,
