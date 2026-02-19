@@ -2,64 +2,128 @@
 
 Ce dossier contient les workflows GitHub Actions pour l'intégration et le déploiement continus.
 
+## Architecture
+
+Le projet utilise une architecture **optimisée** avec workflows dépendants pour éviter les exécutions redondantes :
+
+```
+Pull Request → ci.yml (quality → build → test-e2e) → Merge → pages.yml (déploiement)
+```
+
+---
+
 ## Workflows disponibles
 
-### 🧪 `test.yml` - Tests E2E et Validation
+### 🔄 `ci.yml` - Pipeline CI Complet
 
 **Déclencheurs** :
-- Push sur `main` et `upgrade-ux`
-- Pull requests vers `main`
+- Pull requests vers `main` et `develop`
 
-**Actions** :
-1. Installation des dépendances
-2. Installation de Playwright avec Chromium
-3. Exécution des 30 tests (E2E + validation CSS)
-4. Upload des rapports et vidéos en cas d'échec
-5. Commentaire automatique sur les PR en cas d'échec
+**Jobs** (exécutés séquentiellement) :
+
+#### 1️⃣ **quality** - Tests Unitaires & Qualité
+- Tests unitaires CSS (Playwright)
+- Vérification structure du projet (src/, tests/)
+- Statistiques du code (CSS, JS, Markdown, tests)
+
+**Durée** : ~1 minute
+
+#### 2️⃣ **build** - Build Eleventy
+- Build du site (`npm run build`)
+- Vérification pages principales (index, activités, réalisations, etc.)
+- Upload du site généré (`_site/`) comme artifact
+- Statistiques du build (taille, fichiers)
+
+**Durée** : ~30-60 secondes
+
+**Dépendances** : Requiert `quality` ✅
+
+**Artefacts** :
+- `site-build` : Site complet (conservé 7 jours)
+
+#### 3️⃣ **test-e2e** - Tests E2E
+- Download de l'artifact `site-build`
+- Lancement serveur HTTP local
+- Exécution tests E2E Playwright
+- Upload des rapports en cas d'échec
 
 **Durée** : ~1-2 minutes
 
+**Dépendances** : Requiert `build` ✅
+
 **Artefacts en cas d'échec** :
-- Rapport HTML Playwright
-- Screenshots des tests échoués
-- Vidéos des sessions de test
+- `playwright-report` : Rapport HTML, screenshots, vidéos
+
+**Durée totale du pipeline** : ~3-4 minutes
 
 ---
 
-### 🏗️ `build.yml` - Build et Validation
+### 🔒 `enforce-branch.yml` - Protection Branche Main
 
 **Déclencheurs** :
-- Push sur `main` et `upgrade-ux`
 - Pull requests vers `main`
 
 **Actions** :
-1. Installation des dépendances
-2. Build Eleventy (`npm run build`)
-3. Vérification que toutes les pages sont générées
-4. Statistiques du build (taille, nombre de fichiers)
-5. Upload du site généré
+- Vérifie que la PR provient uniquement de `develop`
+- Bloque toutes les autres branches (feature, hotfix, etc.)
 
-**Durée** : ~30-60 secondes
+**Durée** : ~5 secondes
 
-**Artefacts** :
-- Site complet dans `_site/` (disponible 7 jours)
+**Pourquoi** : Garantit un workflow Git propre (`feature → develop → main`)
 
 ---
 
-### 🔍 `quality.yml` - Qualité du Code
+### 🚀 `pages.yml` - Déploiement GitHub Pages
 
 **Déclencheurs** :
-- Push sur `main` et `upgrade-ux`
-- Pull requests vers `main`
+- Automatique : quand `ci.yml` se termine avec succès sur `main`
+- Manuel : `workflow_dispatch`
 
 **Actions** :
-1. Tests unitaires CSS (validation)
-2. Vérification de la structure du projet
-3. Détection de fichiers problématiques (backup, temporaires)
-4. Statistiques du code (CSS, JS, tests)
-5. Résumé dans le GitHub Actions Summary
+1. Télécharge l'artifact `site-build` créé par `ci.yml`
+2. Upload vers GitHub Pages
+3. Déploiement automatique
 
-**Durée** : ~30-60 secondes
+**Durée** : ~30-40 secondes
+
+**Important** : ✅ Garantie de cohérence — ce qui est testé dans `ci.yml` = ce qui est déployé
+
+**URL de déploiement** : `https://VOTRE_ORG.github.io/iobewi.com/`
+
+---
+
+## Flux de travail complet
+
+### Développement d'une fonctionnalité
+
+```bash
+# 1. Créer une branche feature
+git checkout -b feature/nouvelle-fonctionnalite
+
+# 2. Développer et tester localement
+npm test
+
+# 3. Créer une PR vers develop
+# → Déclenche ci.yml (quality → build → test-e2e)
+
+# 4. Si CI ✅, merger vers develop
+# → Rien ne se passe (pas de déploiement)
+
+# 5. Créer une PR de develop vers main
+# → Déclenche ci.yml + enforce-branch.yml
+
+# 6. Si tout ✅, merger vers main
+# → ci.yml se termine avec succès
+# → pages.yml se déclenche automatiquement (workflow_run)
+# → Réutilise l'artifact site-build déjà testé
+# → Déploiement en ~30s
+```
+
+### Protection contre les erreurs
+
+- ❌ PR depuis `feature/xxx` vers `main` → **Bloquée** (enforce-branch.yml)
+- ❌ Tests échouent → **Merge impossible** (ci.yml required)
+- ❌ Build échoue → **Pas de déploiement** (pipeline interrompu)
 
 ---
 
@@ -68,9 +132,8 @@ Ce dossier contient les workflows GitHub Actions pour l'intégration et le dépl
 Ajoutez ces badges dans votre README.md :
 
 ```markdown
-![Tests](https://github.com/VOTRE_ORG/iobewi.com/workflows/Tests%20E2E%20et%20Validation/badge.svg)
-![Build](https://github.com/VOTRE_ORG/iobewi.com/workflows/Build%20et%20Validation/badge.svg)
-![Quality](https://github.com/VOTRE_ORG/iobewi.com/workflows/Qualité%20du%20Code/badge.svg)
+![CI Pipeline](https://github.com/VOTRE_ORG/iobewi.com/workflows/CI%20Pipeline/badge.svg)
+![GitHub Pages](https://github.com/VOTRE_ORG/iobewi.com/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 ```
 
 Remplacez `VOTRE_ORG` par le nom de votre organisation ou utilisateur GitHub.
@@ -85,60 +148,134 @@ Remplacez `VOTRE_ORG` par le nom de votre organisation ou utilisateur GitHub.
 2. **Résolution d'écran** : Vérifiez que les tests sont indépendants de la résolution
 3. **Ressources** : GitHub Actions a des ressources limitées, certains tests peuvent être plus lents
 
-### Le build échoue
+### Le build échoue dans ci.yml
 
 1. Vérifiez que toutes les dépendances sont dans `package.json`
 2. Vérifiez que `npm ci` fonctionne en local
-3. Consultez les logs du build dans Actions
+3. Consultez les logs du job `build` dans Actions
 
 ### Les artefacts ne sont pas disponibles
 
-1. Les artefacts sont conservés 3-7 jours
-2. Vérifiez que le workflow a bien échoué (les artefacts ne sont uploadés qu'en cas d'échec pour les tests)
+1. Les artefacts sont conservés 7 jours
+2. L'artifact `site-build` est créé uniquement si le job `build` réussit
+3. L'artifact `playwright-report` est créé uniquement si les tests E2E échouent
+
+### Le déploiement GitHub Pages échoue
+
+1. Vérifiez que GitHub Pages est activé dans Settings → Pages
+2. Vérifiez les permissions du workflow (Settings → Actions → General)
+3. Consultez les logs de `pages.yml`
+
+### L'artifact site-build n'est pas trouvé par pages.yml
+
+1. Vérifiez que `ci.yml` s'est bien terminé avec succès sur `main`
+2. L'artifact `site-build` doit exister (conservé 7 jours)
+3. Si l'artifact est expiré, re-déclenchez `ci.yml` manuellement (workflow_dispatch)
+4. Vérifiez que `dawidd6/action-download-artifact` a les bonnes permissions (`actions: read`)
+
+---
+
+## Optimisations
+
+### Pourquoi des jobs dépendants au lieu de workflows parallèles ?
+
+**Ancienne architecture** (3 workflows en parallèle) :
+```
+PR → quality.yml (tests unitaires)
+  → build.yml (build)
+  → test.yml (tests E2E)
+```
+❌ Problèmes :
+- Les 3 workflows font `npm ci` (3× installation)
+- `test.yml` refait le build déjà fait par `build.yml`
+- Exécution inutile si quality échoue
+
+**Nouvelle architecture** (jobs dépendants + réutilisation d'artifacts) :
+```
+PR → ci.yml → quality → build → test-e2e
+                         ↓
+                    (artifact site-build)
+                         ↓
+Merge → pages.yml réutilise l'artifact → déploiement
+```
+✅ Avantages :
+- `npm ci` fait 1 seule fois (quality)
+- `test-e2e` réutilise l'artifact de `build`
+- `pages.yml` réutilise le même artifact (pas de rebuild)
+- Si quality échoue, rien ne s'exécute après
+- **Garantie : ce qui est testé = ce qui est déployé**
+- **~50% plus rapide et économique**
+
+### Performance
+
+- **Durée totale d'une PR** : ~3-4 minutes (au lieu de ~5-6 minutes)
+- **Durée déploiement** : ~30s (au lieu de ~1min30)
+- **Coût** : Réduit de ~50% (moins de minutes Actions consommées)
+- **Cache** : npm cache activé (`cache: 'npm'`)
+- **Artifacts** : Réutilisés entre jobs et workflows
 
 ---
 
 ## Personnalisation
 
-### Ajouter un workflow de déploiement
+### Ajouter un workflow de notification
 
-Créez `deploy.yml` pour déployer automatiquement sur votre hébergement :
+Créez `notify.yml` pour être alerté en cas d'échec :
 
 ```yaml
-name: Deploy
+name: Notify on Failure
 
 on:
-  push:
-    branches: [ main ]
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types: [completed]
+    branches: [main]
 
 jobs:
-  deploy:
+  notify:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification
+        run: |
+          # Slack, Discord, Email, etc.
+```
+
+### Modifier les branches surveillées
+
+Dans `ci.yml`, modifiez :
+
+```yaml
+on:
+  pull_request:
+    branches: [ main, develop, staging ]  # Ajoutez vos branches
+```
+
+### Ajouter des checks supplémentaires
+
+Ajoutez un job au pipeline `ci.yml` :
+
+```yaml
+jobs:
+  quality:
+    # ... existant ...
+
+  lint:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
       - run: npm ci
-      - run: npm run build
-      - name: Deploy to hosting
-        run: |
-          # Vos commandes de déploiement ici
+      - run: npm run lint
+
+  build:
+    needs: [quality, lint]  # Attend quality ET lint
+    # ... existant ...
 ```
-
-### Modifier les branches surveillées
-
-Dans chaque workflow, modifiez :
-
-```yaml
-on:
-  push:
-    branches: [ main, develop, staging ]  # Ajoutez vos branches
-```
-
-### Ajouter des notifications
-
-Pour recevoir des notifications Slack/Discord/Email en cas d'échec, ajoutez des steps avec les actions correspondantes.
 
 ---
 
@@ -146,12 +283,37 @@ Pour recevoir des notifications Slack/Discord/Email en cas d'échec, ajoutez des
 
 - **Secrets** : Utilisez GitHub Secrets pour les tokens et clés API
 - **Permissions** : Les workflows ont accès en lecture au code par défaut
-- **Dependencies** : Les actions utilisées sont épinglées sur une version majeure (`@v4`)
+- **Dependencies** : Les actions officielles sont épinglées sur une version majeure (`@v4`)
+- **Protection branches** : `enforce-branch.yml` empêche les merges directs vers `main`
+- **Action tierce** : `dawidd6/action-download-artifact@v6` est utilisée dans `pages.yml` pour télécharger les artifacts entre workflows (nécessaire car `actions/download-artifact` ne supporte pas ce cas d'usage)
 
 ---
 
-## Performance
+## Monitoring
 
-Les 3 workflows s'exécutent en parallèle, donc le temps total est celui du workflow le plus long (~2 minutes pour les tests).
+### GitHub Actions Summary
 
-**Coût** : GitHub Actions est gratuit pour les dépôts publics. Pour les dépôts privés, vous avez 2000 minutes/mois gratuites.
+Chaque job génère un résumé visible dans l'interface GitHub :
+
+- **quality** : Structure du projet + statistiques du code
+- **build** : Statistiques du build (taille, fichiers générés)
+- **test-e2e** : Résultat des tests E2E
+
+### Consulter l'historique
+
+1. **Actions** → **CI Pipeline** → Sélectionner une exécution
+2. Cliquer sur un job pour voir les logs détaillés
+3. Télécharger les artifacts si disponibles
+
+---
+
+## Coût et limites
+
+**GitHub Actions gratuit** :
+- Dépôts publics : Illimité
+- Dépôts privés : 2000 minutes/mois
+
+**Consommation estimée** :
+- 1 PR complète (CI) : ~4 minutes
+- 1 déploiement (Pages) : ~1 minute
+- **~20 PR/mois** = ~100 minutes (~5% du quota gratuit)

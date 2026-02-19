@@ -1,0 +1,14 @@
+name: Enforce develop -> main only
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "::error::PR vers main autorisé uniquement depuis develop."
+            exit 1
+          fi
