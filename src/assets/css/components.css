@@ -12,6 +12,13 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
+.grid.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--stack-4);
+  align-items: stretch;
+}
+
 
 /* =========================================================
    CARDS
@@ -66,6 +73,40 @@ button.card {
 
 .pillar-link:hover {
   transform: translateX(4px);
+}
+
+.card.card-pillar {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--stack-3);
+  height: 100%;
+}
+
+.card-head {
+  margin-bottom: var(--stack-2);
+}
+
+.card-kicker {
+  margin: var(--stack-1) 0 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--accent-strong);
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-bullets {
+  margin: var(--stack-3) 0 0;
+  padding-left: 1.1em;
+}
+
+.card-foot {
+  margin-top: var(--stack-2);
+
 }
 
 .project-card-compact {
@@ -377,6 +418,7 @@ button.card {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -387,6 +429,7 @@ button.card {
     opacity: 0;
     backdrop-filter: blur(0px);
   }
+
   to {
     opacity: 1;
     backdrop-filter: blur(16px);
@@ -417,6 +460,7 @@ button.card {
     opacity: 0;
     transform: translate(-50%, -40%) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -42%) scale(1);
@@ -605,4 +649,56 @@ html.is-modal-open body {
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* =========================================================
+   SECTION CONCLUSION (phrase de conclusion forte)
+   ========================================================= */
+
+.section-conclusion {
+  margin-top: var(--stack-3);
+  padding: var(--stack-2) 0;
+  font-size: var(--text-lead);
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  border-top: 2px solid rgba(var(--c-accent), 0.15);
+  border-bottom: 2px solid rgba(var(--c-accent), 0.15);
+}
+
+/* =========================================================
+   HIGHLIGHT CARD (carte mise en avant pour modèle économique)
+   ========================================================= */
+
+.highlight-card {
+  background: linear-gradient(135deg,
+      rgba(var(--c-accent), 0.06) 0%,
+      rgba(var(--c-accent), 0.02) 100%);
+  border: 1px solid rgba(var(--c-accent), 0.25);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: var(--pad-sm);
+  box-shadow: var(--shadow-card-base);
+}
+
+.highlight-card h3 {
+  font-size: var(--text-lead);
+  margin-bottom: var(--stack-2);
+  color: var(--accent-strong);
+}
+
+.highlight-card p {
+  line-height: 1.6;
+  margin-bottom: var(--stack-1);
+}
+
+.highlight-card a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.highlight-card a:hover {
+  color: var(--accent-hover);
 }

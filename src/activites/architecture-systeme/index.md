@@ -11,7 +11,7 @@ bodyClass: "has-hero"
 <div class="page-hero-content">
 <p class="eyebrow"><a href="/activites/">← Activités</a></p>
 <h1>Architecture & structuration système</h1>
-<p class="lead">Clarifier les responsabilités, hiérarchiser les couches, rendre le système lisible et transmissible. IOBEWI accompagne la structuration d'écosystèmes embarqués et la montée en maturité des projets techniques.</p>
+<p class="lead">Clarifier les responsabilités, hiérarchiser les couches, rendre le système lisible et transmissible. IOBEWI accompagne la structuration d’écosystèmes embarqués hétérogènes et la montée en maturité de systèmes déjà existants.</p>
 </div>
 </div>
 </div>
@@ -26,8 +26,8 @@ bodyClass: "has-hero"
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">
 IOBEWI accompagne la structuration d'écosystèmes matériels et logiciels autour de plateformes embarquées existantes.
-Cela inclut l'intégration mécanique et électronique, l'architecture logicielle, ainsi que la mise en cohérence des
-différents sous-systèmes constituant le socle technique du projet.
+Cela inclut la clarification des niveaux de criticité, la séparation explicite des responsabilités, l’intégration 
+mécanique et électronique, ainsi que l’architecture logicielle assurant la cohérence des sous-systèmes.
 </p>
 </div>
 <div class="grid animate-on-scroll slide-up delay-200">
@@ -37,11 +37,12 @@ différents sous-systèmes constituant le socle technique du projet.
 <li>Plateforme embarquée hétérogène (MCU, SBC, capteurs, actionneurs)</li>
 <li>Projet existant manquant de structuration globale</li>
 <li>Besoin de clarification des interfaces matériel / logiciel</li>
-<li>Démonstrateur technique à consolider</li>
+<li>Démonstrateur fonctionnel nécessitant structuration et hiérarchisation</li>
 </ul>
 </div>
 <div class="card">
 <h3>Technologies</h3>
+<p>Les technologies sont mobilisées comme supports d’architecture, non comme finalité.</p>
 <ul>
 <li>ESP32 / ESP-IDF</li>
 <li>SBC (Raspberry Pi, Jetson)</li>
@@ -55,7 +56,7 @@ différents sous-systèmes constituant le socle technique du projet.
 </div>
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">
-À partir de prototypes ou d'idées techniques existantes, IOBEWI aide à transformer des expérimentations en bases exploitables.
+À partir de prototypes ou d'idées techniques existantes, IOBEWI aide à transformer des expérimentations en bases exploitables en définissant des fondations techniques proportionnées à l’ambition du projet.
 L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et la formalisation progressive des choix techniques.
 </p>
 </div>
@@ -83,8 +84,8 @@ L'accompagnement porte sur le cadrage fonctionnel, le découpage des besoins et 
 
 <section class="section container snap-item">
 <div class="cta-block animate-on-scroll scale-in">
-<h2>À l’issue de l’accompagnement</h2>
-<h3>L’architecture devient lisible, structurée et transmissible.</h3>
+<h2>À l’issue de l’accompagnement, l’architecture cesse d’être implicite.</h2>
+<h3>Elle devient lisible, structurée et transmissible.</h3>
 <ul>
 <li><strong>Clarifier les responsabilités</strong> entre couches matérielles et logicielles.</li>
 <li><strong>Stabiliser les interfaces</strong> pour éviter les dépendances implicites.</li>
