@@ -22,7 +22,7 @@ avec une conviction simple : un système n’est robuste que lorsqu’il est con
 
 <section class="section container section-major snap-item">
 
-<p class="eyebrow">Trajectoire</p>
+<p class="eyebrow">Origine</p>
 
 <p>
 IOBEWI s’est construite à partir du parcours de son fondateur :
@@ -30,7 +30,7 @@ d’abord au cœur des systèmes en production, où la robustesse est une néces
 puis vers des architectures distribuées et automatisées, jusqu’aux environnements cloud.
 </p>
 
-<p class="eyebrow" style="margin-top: var(--stack-3);">Point de bascule</p>
+<p class="eyebrow" style="margin-top: var(--stack-3);">Convergence</p>
 
 <p>
 Mais quelle que soit la hauteur d’abstraction atteinte,

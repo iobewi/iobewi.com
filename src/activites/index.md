@@ -86,7 +86,7 @@ Trois leviers complémentaires pour structurer, intégrer et faire évoluer des 
 
 <p class="eyebrow" style="margin-top: var(--stack-4);" >Socle transversal</p>
 <p class="lead" style="max-width: 72ch;">
-Les interventions s’appuient sur un socle interne d’outillage, de méthode et de briques réutilisables, maintenu dans la durée.
+Les interventions s’appuient sur une méthode structurée de capitalisation et de réutilisation de briques techniques, soutenue par un outillage maintenu dans la durée.
 </p>
 
 <article class="card" style="grid-column: 1 / -1;">
