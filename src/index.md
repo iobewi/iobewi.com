@@ -10,9 +10,9 @@ bodyClass: "has-hero"
 <section class="hero">
 <div class="container hero-grid">
 <div class="hero-content">
-<h1>Architecture et maîtrise de systèmes embarqués contraints</h1>
+<h1>Structuration de systèmes embarqués complexes</h1>
 <p class="eyebrow">Contrainte · Hiérarchie · Transmission</p>
-<p class="lead">Du prototype fragile à un système que votre équipe comprend, maîtrise, et fait évoluer.</p>
+<p class="lead">D'un prototype exploratoire à un système que votre équipe comprend, maîtrise et exploite en conditions réelles.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="/activites/">Voir les activités</a>
 <a class="btn btn-ghost" href="/realisations/">Découvrir les réalisations</a>
@@ -24,8 +24,8 @@ bodyClass: "has-hero"
 
 <section class="section container section-major snap-item">
 <div class="animate-on-scroll fade-in">
-<h2>La complexité ne vient pas des briques techniques.</h2>
-<p class="lead">Elle vient de leur accumulation non hiérarchisée.</p>
+<h2>Un système n’est pas maîtrisé parce qu’il fonctionne.</h2>
+<p class="lead">Il l’est parce qu’il reste compréhensible lorsqu’il évolue.</p>
 <table class="diagnostic-table">
 <thead><tr><th>Constat</th><th>Conséquence</th></tr></thead>
 <tbody>
@@ -34,7 +34,7 @@ bodyClass: "has-hero"
 <tr><td>Le prototype fonctionne en conditions simples</td><td>Le comportement sous charge devient imprévisible</td></tr>
 </tbody>
 </table>
-<p>C'est précisément là qu'une structuration devient nécessaire.</p>
+<p class="section-conclusion">C’est précisément là qu’une structuration devient indispensable pour éviter qu’un système complexe ne dérive vers l’imprévisible.</p>
 </div>
 </section>
 
@@ -53,18 +53,16 @@ bodyClass: "has-hero"
 </div>
 <div class="card">
 <h3>Sécurisation de l'évolution</h3>
-<p>Stabilise les fondations pour que le système puisse évoluer, accueillir de nouvelles responsabilités et rester cohérent sous croissance.</p>
+<p>Stabilise les fondations, industrialise les processus et outille la reproductibilité pour permettre une exploitation opérationnelle maîtrisée et soutenable.</p>
 </div>
 </div>
 <p class="animate-on-scroll fade-in" style="text-align: left; margin-top: var(--stack-3);">L'objectif n'est pas de livrer un système à votre place, mais de permettre à votre équipe de le structurer et de le faire évoluer sereinement</p>
-<p class="lead animate-on-scroll fade-in" style="margin-top: var(--stack-2);">Le conseil finance la R&amp;D. La R&amp;D produit des contributions open source réutilisables par les équipes que nous accompagnons.</p>
-<p style="text-align: right; margin-top: var(--stack-1);"><a href="/ressources/open-source/">Voir les contributions →</a></p>
 </section>
 
 <section class="section container section-major snap-item">
 <div class="cta-block animate-on-scroll scale-in">
 <h2>Structurons votre prochaine étape</h2>
-<p>Si votre projet approche d'une phase critique (passage en production, recrutement, montée en charge), c'est le bon moment pour structurer.</p>
+<p>Si votre projet approche d'une phase critique (mise en exploitation, industrialisation, montée en charge), c'est le bon moment pour structurer.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="/contact/">Échanger sur votre projet</a>
 <a class="btn btn-ghost" href="/ressources/methodologie/">Comprendre l'approche</a>

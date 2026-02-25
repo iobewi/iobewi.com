@@ -2,148 +2,157 @@
   "r2bewi": {
     "key": "r2bewi",
     "cardTitle": "R2BEWI",
-    "cardDescription": "Démonstrateur d'architecture système multi-SoC pour valider des choix d'architecture en conditions réelles",
-    "title": "R2BEWI : Démonstrateur d'architecture système",
-    "lead": "Plateforme multi-SoC conçue pour valider des choix d'architecture en conditions réelles",
+    "cardKicker": "Démonstrateur d’architecture",
+    "cardDescription": "Démonstrateur multi-SoC (ESP32 + SBC) conçu pour valider un découpage d’architecture distribuée, la gestion des frontières temps réel et la reproductibilité d’un système embarqué complexe.",
+    "cardTags": [
+      "Architecture  multi-SoC",
+      "Frontière  temps réel",
+      "Reproductibilité"
+    ],
+    "title": "R2BEWI : Démonstrateur d’architecture distribuée",
+    "lead": "Plateforme multi-SoC conçue pour éprouver des choix d’architecture distribuée en conditions réelles et rendre les décisions techniques traçables et transmissibles.",
     "techBadges": [
-      {"src": "/assets/images/tech/espressif.svg", "alt": "Espressif"},
-      {"src": "/assets/images/tech/Raspberry_Pi_logo.svg", "alt": "Raspberry Pi"},
-      {"src": "/assets/images/tech/Nvidia-jetson-Logo.svg", "alt": "NVIDIA Jetson"},
-      {"src": "/assets/images/tech/ros.svg", "alt": "ROS 2"},
-      {"src": "/assets/images/tech/uros.svg", "alt": "micro-ROS"}
+      {
+        "src": "/assets/images/tech/espressif.svg",
+        "alt": "Espressif"
+      },
+      {
+        "src": "/assets/images/tech/Raspberry_Pi_logo.svg",
+        "alt": "Raspberry Pi"
+      },
+      {
+        "src": "/assets/images/tech/Nvidia-jetson-Logo.svg",
+        "alt": "NVIDIA Jetson"
+      },
+      {
+        "src": "/assets/images/tech/ros.svg",
+        "alt": "ROS 2"
+      },
+      {
+        "src": "/assets/images/tech/uros.svg",
+        "alt": "micro-ROS"
+      }
     ],
     "sections": [
       {
         "title": "Contexte",
-        "content": "R2BEWI est une plateforme conçue pour éprouver, en conditions réelles, les patterns d'architecture au cœur de l'accompagnement IOBEWI. Elle intègre délibérément une hétérogénéité matérielle (Espressif, Raspberry Pi, NVIDIA Jetson) reliée par ROS 2 et micro-ROS, pour valider comment structurer la communication, le découpage des responsabilités et la cohérence d'ensemble dans un système embarqué complexe."
+        "content": "R2BEWI est un banc d’essai volontairement hétérogène (ESP32, Raspberry Pi, NVIDIA Jetson) relié par ROS 2 et micro-ROS. L’objectif n’est pas la performance brute, mais la validation d’une architecture lisible : structurer la communication, clarifier le découpage des responsabilités et maintenir la cohérence d’ensemble malgré des contraintes matérielles divergentes."
       },
       {
-        "title": "Rôle d'IOBEWI",
-        "content": "IOBEWI a conçu et structuré R2BEWI comme terrain d'épreuve de ses propres décisions architecturales. Chaque choix (découpage des couches, protocoles de communication, stratégie de test, intégration mécanique-électronique-firmware) a été justifié et documenté. Ce projet est aujourd'hui la référence concrète sur laquelle s'appuient les accompagnements proposés aux équipes."
+        "title": "Rôle d’IOBEWI",
+        "content": "R2BEWI a été conçu comme une preuve d’architecture. Chaque choix — découpage des couches, protocoles de communication, stratégie de validation, intégration mécanique-électronique-firmware — est explicité et documenté. Le projet sert aujourd’hui de référence concrète pour illustrer la méthode de structuration proposée aux équipes."
       },
       {
         "title": "Défis architecturaux adressés",
         "list": [
-          "faire cohabiter des SoC aux contraintes très différentes au sein d'un même graphe ROS 2",
-          "gérer la frontière temps réel / best-effort entre micro-ROS et ROS 2 sans perdre la cohérence système",
-          "maintenir un projet en exploration continue sans sacrifier la reproductibilité ni la lisibilité"
+          "Faire cohabiter des SoC aux contraintes très différentes dans un même graphe ROS 2",
+          "Maintenir une frontière claire entre micro-ROS temps réel et ROS 2 best-effort",
+          "Explorer et itérer sans sacrifier la reproductibilité ni la lisibilité du système"
         ]
       },
       {
         "title": "Ce que R2BEWI valide",
-        "content": "Architecture distribuée validée sur un socle multi-SoC (ESP32 + SBC), intégrant communication temps réel et séparation claire des responsabilités.",
+        "content": "Architecture distribuée validée sur un socle multi-SoC intégrant contraintes temps réel, séparation claire des responsabilités et discipline d’évolution.",
         "list": [
-          "une stratégie d'intégration multi-SoC documentée et reproductible",
-          "un modèle de découpage des responsabilités entre microcontrôleur et calculateur principal",
-          "une chaîne mécanique-électronique-firmware pensée comme un système dès la conception",
-          "un socle d'expérimentation directement transposable aux projets accompagnés"
+          "Une stratégie d’intégration multi-cibles documentée et reconstruisible",
+          "Un modèle clair de découpage microcontrôleur ↔ calculateur principal",
+          "Une intégration mécanique-électronique-firmware pensée comme un système cohérent",
+          "Des patterns directement transposables dans les projets accompagnés"
         ]
       }
     ],
     "relatedProjects": [
       {
         "title": "RHACOBOT",
-        "description": "Plateforme robotique open source développée en amont, ayant servi de base pour structurer les briques initiales de contrôle d'actionneurs, d'intégration ROS 2 et d'interfaces embarquées.",
+        "description": "Plateforme robotique open source d’expérimentation ayant permis de formaliser les premières briques d’intégration ROS 2 et de contrôle d’actionneurs.",
         "url": "https://github.com/iobewi/rhacobot",
         "techBadges": [
-          {"src": "/assets/images/tech/ros.svg", "alt": "ROS 2"},
-          {"src": "/assets/images/tech/espressif.svg", "alt": "Espressif"},
-          {"src": "/assets/images/tech/Raspberry_Pi_logo.svg", "alt": "Raspberry Pi"}
+          {
+            "src": "/assets/images/tech/ros.svg",
+            "alt": "ROS 2"
+          },
+          {
+            "src": "/assets/images/tech/espressif.svg",
+            "alt": "Espressif"
+          },
+          {
+            "src": "/assets/images/tech/Raspberry_Pi_logo.svg",
+            "alt": "Raspberry Pi"
+          }
         ]
       },
       {
         "title": "TRXBEWI",
-        "description": "Plateforme robotique basée sur un châssis de type crawler, intégrant des capteurs de perception (LiDAR, vision) et destinée à explorer des problématiques de navigation et de traitement embarqué.",
+        "description": "Plateforme robotique crawler orientée perception ayant permis d’explorer l’intégration capteurs, traitement embarqué et robustesse mécanique.",
         "url": "https://github.com/iobewi/trxbewi",
         "techBadges": [
-          {"src": "/assets/images/tech/ros.svg", "alt": "ROS 2"},
-          {"src": "/assets/images/tech/Raspberry_Pi_logo.svg", "alt": "Raspberry Pi"},
-          {"src": "/assets/images/tech/Nvidia-jetson-Logo.svg", "alt": "NVIDIA Jetson"}
+          {
+            "src": "/assets/images/tech/ros.svg",
+            "alt": "ROS 2"
+          },
+          {
+            "src": "/assets/images/tech/Raspberry_Pi_logo.svg",
+            "alt": "Raspberry Pi"
+          },
+          {
+            "src": "/assets/images/tech/Nvidia-jetson-Logo.svg",
+            "alt": "NVIDIA Jetson"
+          }
         ]
       }
     ],
-    "note": "Pour approfondir les contributions techniques et comprendre les choix d'architecture, consultez la page <a href=\"/ressources/open-source/\">Contributions open source →</a>"
+    "note": "Pour approfondir les contributions techniques et comprendre les choix d’architecture, consultez la page <a href=\"/ressources/open-source/\">Contributions open source →</a>"
   },
   "scanbewi": {
     "key": "scanbewi",
     "cardTitle": "SCANBEWI",
-    "cardDescription": "Outil de captation LiDAR embarqué pour la cartographie 2D accessible à un public large",
-    "title": "SCANBEWI : Outil de cartographie embarquée accessible",
-    "lead": "Outil de captation LiDAR embarqué pour la cartographie 2D accessible",
+    "cardKicker": "Exploration usage & simplification",
+    "cardTags": [
+      "Pipeline embarqué",
+      "Compromis usage/technique",
+      "Intégration maîtrisée"
+    ],
+    "cardDescription": "Chaîne LiDAR embarquée orientée usage : simplification de la captation, du traitement et de la restitution 2D sous contraintes d’autonomie et d’intégration physique.",
+    "title": "SCANBEWI : Chaîne LiDAR embarquée",
+    "lead": "Chaîne LiDAR embarquée conçue pour produire une cartographie 2D exploitable, avec un compromis assumé entre précision, simplicité et robustesse.",
     "techBadges": [
-      {"src": "/assets/images/tech/espressif.svg", "alt": "Espressif"},
-      {"src": "/assets/images/tech/cicd.svg", "alt": "CI/CD"}
+      {
+        "src": "/assets/images/tech/espressif.svg",
+        "alt": "Espressif"
+      },
+      {
+        "src": "/assets/images/tech/cicd.svg",
+        "alt": "CI/CD"
+      }
     ],
     "sections": [
       {
         "title": "Contexte",
-        "content": "SCANBEWI est un outil de captation LiDAR et de production de cartographies 2D simplifiées, destiné à un public large. Il s'adresse à des contextes où des acteurs non spécialistes, tels que des agents immobiliers ou des architectes, ont besoin d'une représentation fiable et directement exploitable de l'espace, sans recourir à des outils lourds ou complexes."
+        "content": "SCANBEWI explore une chaîne complète de captation et de restitution LiDAR embarquée. Le projet cible des usages non spécialistes nécessitant une représentation spatiale fiable, sans dépendre d’outils lourds ou complexes."
       },
       {
-        "title": "Rôle d'IOBEWI",
-        "content": "IOBEWI a conçu SCANBEWI comme un support d'exploration autour de la simplification des chaînes de captation, de traitement et de restitution des données spatiales. L'accent est mis sur l'accessibilité des usages, tout en respectant les contraintes techniques liées aux systèmes embarqués."
+        "title": "Rôle d’IOBEWI",
+        "content": "Le projet sert de support d’exploration autour de la simplification de bout en bout : acquisition, traitement, restitution, mais aussi intégration physique (boîtier, maintenance, dissipation thermique) et contraintes d’autonomie. L’objectif est de formaliser une méthode applicable à des usages métiers concrets."
       },
       {
         "title": "Contraintes principales",
         "list": [
-          "compromis entre précision et simplicité d'usage",
-          "dépendance au matériel de captation embarqué",
-          "nécessité de rendre les résultats lisibles pour des non-spécialistes",
-          "contraintes de calcul et d'autonomie"
+          "Compromis précision / simplicité / temps de traitement",
+          "Dépendance aux caractéristiques du capteur et à son intégration physique",
+          "Restitution compréhensible pour des utilisateurs non spécialistes",
+          "Contraintes de calcul embarqué et d’autonomie énergétique"
         ]
       },
       {
         "title": "Livrables / résultats",
         "list": [
-          "chaîne de captation LiDAR embarquée simplifiée",
-          "production de cartographies 2D directement exploitables",
-          "boîtier conçu sous Fusion 360 : compacité, accès maintenance et dissipation thermique passive intégrés dès la conception",
-          "outil de démonstration pour des usages métiers non métrologiques",
-          "retours d'expérience exploitables pour l'accompagnement"
+          "Pipeline LiDAR embarqué simplifié et reproductible",
+          "Production de cartographies 2D directement exploitables",
+          "Boîtier conçu sous Fusion 360 intégrant compacité, maintenance et dissipation passive",
+          "Démonstrateur orienté usage plutôt que performance métrologique",
+          "Retour d’expérience structuré pour des accompagnements futurs"
         ]
       }
-    ]
-  },
-  "rhacobot": {
-    "key": "rhacobot",
-    "cardTitle": "RHACOBOT",
-    "cardDescription": "Plateforme robotique open source pour structurer les briques de contrôle d'actionneurs et d'intégration ROS 2",
-    "title": "RHACOBOT : Plateforme robotique open source",
-    "lead": "Plateforme robotique open source développée en amont, ayant servi de base pour structurer les briques initiales de contrôle d'actionneurs, d'intégration ROS 2 et d'interfaces embarquées",
-    "techBadges": [
-      {"src": "/assets/images/tech/ros.svg", "alt": "ROS 2"},
-      {"src": "/assets/images/tech/espressif.svg", "alt": "Espressif"},
-      {"src": "/assets/images/tech/Raspberry_Pi_logo.svg", "alt": "Raspberry Pi"}
-    ],
-    "sections": [
-      {
-        "title": "Objectif",
-        "content": "Plateforme exploratoire développée pour expérimenter les patterns d'intégration ROS 2 / micro-ROS dans un contexte robotique concret. Les enseignements de ce projet ont directement alimenté la conception de R2BEWI."
-      }
-    ],
-    "links": [
-      {"label": "Voir le projet sur GitHub", "url": "https://github.com/iobewi/rhacobot"}
-    ]
-  },
-  "trxbewi": {
-    "key": "trxbewi",
-    "cardTitle": "TRXBEWI",
-    "cardDescription": "Plateforme robotique crawler pour explorer les problématiques de navigation et de traitement embarqué",
-    "title": "TRXBEWI : Plateforme robotique crawler",
-    "lead": "Plateforme robotique basée sur un châssis de type crawler, intégrant des capteurs de perception (LiDAR, vision) et destinée à explorer des problématiques de navigation et de traitement embarqué",
-    "techBadges": [
-      {"src": "/assets/images/tech/ros.svg", "alt": "ROS 2"},
-      {"src": "/assets/images/tech/Raspberry_Pi_logo.svg", "alt": "Raspberry Pi"},
-      {"src": "/assets/images/tech/Nvidia-jetson-Logo.svg", "alt": "NVIDIA Jetson"}
-    ],
-    "sections": [
-      {
-        "title": "Objectif",
-        "content": "Plateforme exploratoire centrée sur les enjeux de perception et d'algorithmie embarquée. Les apprentissages de ce projet ont naturellement convergé vers R2BEWI, en combinant la robustesse mécanique avec les contraintes de traitement temps réel."
-      }
-    ],
-    "links": [
-      {"label": "Voir le projet sur GitHub", "url": "https://github.com/iobewi/trxbewi"}
     ]
   }
 }
