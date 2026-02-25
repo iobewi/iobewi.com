@@ -12,9 +12,7 @@ bodyClass: "has-hero"
       <p class="eyebrow"><a href="/activites/">← Activités</a></p>
       <h1>Intégration matérielle &amp; cohérence physique</h1>
       <p class="lead">
-        IOBEWI conçoit et intègre des sous-systèmes matériels embarqués en cohérence avec l'architecture logicielle globale.
-        La conception mécanique occupe une place centrale dans cette approche, assurant la cohérence entre volumes, contraintes physiques
-        et architecture électronique.
+        IOBEWI accompagne l’équipe dans l’intégration de sous-systèmes matériels embarqués en assurant la cohérence entre architecture logicielle, contraintes physiques et implémentation électronique.
       </p>
     </div>
   </div>
@@ -30,16 +28,16 @@ bodyClass: "has-hero"
   </div>
   <div class="animate-on-scroll slide-up delay-100">
     <p class="lead">
-      Conception sous Fusion 360 orientée systèmes embarqués. La mécanique est pensée comme support structurant de l'architecture système.
+      IOBEWI accompagne la conception mécanique comme support structurant de l'architecture système. Les volumes, interfaces et contraintes physiques sont pensés en cohérence avec l'ensemble du système.
     </p>
   </div>
   <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Ce que cela couvre</h3>
       <ul>
-        <li>Conception de châssis et structures fonctionnelles</li>
+        <li>Structuration des volumes et des interfaces mécaniques</li>
         <li>Gestion des tolérances et des assemblages</li>
-        <li>Optimisation pour impression 3D technique</li>
+        <li>Prototypage mécanique adapté aux itérations système</li>
       </ul>
     </div>
     <div class="card">
@@ -55,13 +53,15 @@ bodyClass: "has-hero"
     <h2>Conception électronique embarquée</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
-    <p class="lead">Approche pragmatique orientée cohérence avec le firmware.</p>
+    <p class="lead">
+      IOBEWI accompagne l'équipe pour que l'électronique soit pensée en cohérence avec les interfaces et les besoins du firmware, garantissant une intégration claire entre matériel et logique embarquée.
+    </p>
   </div>
   <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
       <h3>Ce que cela couvre</h3>
       <ul>
-        <li>Schéma et routage PCB sous KiCad (2 à 4 couches selon projet)</li>
+        <li>Conception de cartes embarquées adaptées aux contraintes d’intégration</li>
         <li>Intégration microcontrôleurs ESP32 et périphériques</li>
         <li>Bus I²C / SPI / UART selon besoins projet</li>
       </ul>
@@ -78,7 +78,9 @@ bodyClass: "has-hero"
     <h2>Prototypage &amp; validation système</h2>
   </div>
   <div class="animate-on-scroll slide-up delay-100">
-    <p class="lead">Objectif : convergence rapide vers un système robuste et cohérent.</p>
+    <p class="lead">
+      IOBEWI accompagne les itérations de prototypage et de validation afin d’éviter les dérives d’intégration et de converger vers un système robuste et cohérent.
+    </p>
   </div>
   <div class="grid animate-on-scroll slide-up delay-200">
     <div class="card">
@@ -101,8 +103,8 @@ bodyClass: "has-hero"
 
 <section class="section container snap-item">
   <div class="cta-block animate-on-scroll scale-in">
-    <h2>À l’issue de l’accompagnement</h2>
-    <h3>Le système physique et électronique est cohérent avec l’architecture logicielle.</h3>
+    <h2>L’intégration matérielle cesse d’être empirique.</h2>
+    <h3>Elle devient cohérente, maîtrisée et alignée avec l’architecture logicielle.</h3>
     <ul>
       <li><strong>Intégrer mécanique et électronique</strong> dans une logique système assumée.</li>
       <li><strong>Maîtriser les contraintes physiques</strong> (volumes, dissipation, maintenance).</li>

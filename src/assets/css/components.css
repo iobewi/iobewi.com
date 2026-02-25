@@ -12,6 +12,13 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
+.grid.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--stack-4);
+  align-items: stretch;
+}
+
 
 /* =========================================================
    CARDS
@@ -66,6 +73,440 @@ button.card {
 
 .pillar-link:hover {
   transform: translateX(4px);
+}
+
+.card.card-pillar {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--stack-3);
+  height: 100%;
+}
+
+.card-head {
+  margin-bottom: var(--stack-2);
+}
+
+.card-kicker {
+  margin: var(--stack-1) 0 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--accent-strong);
+}
+
+.card-body {
+  flex: 1;
+}
+
+.card-bullets {
+  margin: var(--stack-1) 0 0;
+  padding-left: 1.1em;
+}
+
+.card-tags {
+  margin-top: var(--stack-2);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.card-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.card--note {
+  cursor: default;
+  transform: none;
+}
+
+.card--note:hover {
+  transform: none;
+  box-shadow: var(--shadow-card-base);
+}
+
+.card--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--stack-4);
+  padding: 0;
+  max-width: 1320px;
+  margin: var(--stack-1) auto 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.card--split:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.card-split-col {
+  min-width: 0;
+  padding: 0 var(--stack-2);
+}
+
+.card-split-col .card-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-strong);
+
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+
+.card-split-col li {
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Principle Highlight :Bloc signature central
+   ========================================================= */
+.principle-highlight {
+  max-width: 900px;
+  margin: var(--stack-4) auto;
+  padding: var(--stack-4) var(--stack-3);
+  background: linear-gradient(135deg, rgba(var(--c-accent), 0.02) 0%, rgba(var(--c-accent), 0.05) 100%);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-lg);
+}
+
+.principle-highlight h2 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: var(--accent-strong);
+  margin: 0 0 var(--stack-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.principle-highlight .big {
+  font-size: clamp(1.05rem, 2vw, 1.15rem);
+  color: var(--text);
+  margin: 0 0 var(--stack-2) 0;
+  line-height: 1.6;
+}
+
+.principle-highlight .highlight-quote {
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin: 0;
+  padding-left: var(--stack-2);
+  border-left: 3px solid var(--accent);
+}
+
+/* =========================================================
+   Transformation Flow :Rupture → Réponse alternée
+   ========================================================= */
+.transformation-flow {
+  display: grid;
+  gap: var(--stack-3);
+  margin-top: var(--stack-2);
+}
+
+.transformation-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--stack-2);
+  align-items: center;
+  padding: var(--stack-2);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease;
+}
+
+.transformation-pair:hover {
+  border-color: var(--accent);
+}
+
+.transformation-rupture {
+  text-align: right;
+  padding-right: var(--stack-2);
+}
+
+.transformation-rupture strong {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.transformation-rupture p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.transformation-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.transformation-response {
+  padding-left: var(--stack-2);
+}
+
+.transformation-response strong {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-strong);
+  margin-bottom: 0.5rem;
+}
+
+.transformation-response p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Mobile : empile verticalement */
+@media (max-width: 768px) {
+  .transformation-pair {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--stack-2);
+  }
+
+  .transformation-rupture {
+    text-align: left;
+    padding-right: 0;
+  }
+
+  .transformation-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .transformation-response {
+    padding-left: 0;
+  }
+}
+
+/* =========================================================
+   Méthodologie :Panels (non-interactifs)
+   ========================================================= */
+.method-panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.55);
+  padding: var(--stack-4);
+  box-shadow: none;
+  margin-bottom: var(--stack-2);
+  padding-top: var(--stack-2);
+  padding-bottom: var(--stack-2);
+}
+
+.method-panel__head {
+  padding-bottom: var(--stack-2);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--stack-1);
+}
+
+.method-panel__title {
+  margin: 0 0 var(--stack-2);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.method-panel__lead {
+  margin: 0;
+  color: var(--muted);
+  max-width: 78ch;
+  font-size: var(--text-lead);
+  line-height: 1.7;
+}
+
+.method-rows {
+  display: grid;
+  gap: var(--stack-1);
+}
+
+.method-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--stack-3);
+  align-items: start;
+  padding-top: var(--stack-1);
+}
+
+.method-row:first-child {
+  padding-top: 0;
+}
+
+.method-row+.method-row {
+  border-top: 1px dashed var(--border);
+}
+
+.method-row__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  font-weight: 700;
+  padding-left: var(--stack-3);
+  position: relative;
+}
+
+.method-row__kicker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+.method-row__body {
+  min-width: 0;
+}
+
+.method-bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.method-bullets li {
+  margin: 0 0 0.45rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .method-row {
+    grid-template-columns: 1fr;
+    gap: var(--stack-2);
+  }
+
+  .method-row__kicker {
+    padding-left: var(--stack-3);
+  }
+}
+
+/* =========================================================
+   Timeline / Frise :4 étapes
+   ========================================================= */
+.timeline--steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--stack-2);
+  padding: var(--stack-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+/* Ligne de frise (desktop) */
+.timeline--steps::before {
+  content: "";
+  position: absolute;
+  left: var(--stack-3);
+  right: var(--stack-3);
+  top: 44px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Étape */
+.timeline-step {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* Marqueur (dot + numéro) */
+.timeline-mark {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  z-index: 1;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+  margin-top: 6px;
+}
+
+.timeline-num {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1;
+  margin-top: -4px;
+}
+
+/* Contenu */
+.timeline-body h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.05rem;
+}
+
+.timeline-body p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 34ch;
+}
+
+/* Mobile : frise verticale */
+@media (max-width: 768px) {
+  .timeline--steps {
+    grid-template-columns: 1fr;
+    padding: var(--stack-2);
+  }
+
+  .timeline--steps::before {
+    left: 26px;
+    right: auto;
+    top: var(--stack-3);
+    bottom: var(--stack-3);
+    width: 1px;
+    height: auto;
+  }
+
+  .timeline-step {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    gap: 0.75rem;
+  }
+
+  .timeline-body p {
+    max-width: 72ch;
+  }
 }
 
 .project-card-compact {
@@ -137,6 +578,7 @@ button.card {
 }
 
 .card-foot {
+  margin-top: var(--stack-2);
   color: var(--muted);
   font-size: var(--text-sm);
 }
@@ -377,6 +819,7 @@ button.card {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -387,6 +830,7 @@ button.card {
     opacity: 0;
     backdrop-filter: blur(0px);
   }
+
   to {
     opacity: 1;
     backdrop-filter: blur(16px);
@@ -417,6 +861,7 @@ button.card {
     opacity: 0;
     transform: translate(-50%, -40%) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -42%) scale(1);
@@ -605,4 +1050,56 @@ html.is-modal-open body {
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* =========================================================
+   SECTION CONCLUSION (phrase de conclusion forte)
+   ========================================================= */
+
+.section-conclusion {
+  margin-top: var(--stack-3);
+  padding: var(--stack-2) 0;
+  font-size: var(--text-lead);
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  border-top: 2px solid rgba(var(--c-accent), 0.15);
+  border-bottom: 2px solid rgba(var(--c-accent), 0.15);
+}
+
+/* =========================================================
+   HIGHLIGHT CARD (carte mise en avant pour modèle économique)
+   ========================================================= */
+
+.highlight-card {
+  background: linear-gradient(135deg,
+      rgba(var(--c-accent), 0.06) 0%,
+      rgba(var(--c-accent), 0.02) 100%);
+  border: 1px solid rgba(var(--c-accent), 0.25);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: var(--pad-sm);
+  box-shadow: var(--shadow-card-base);
+}
+
+.highlight-card h3 {
+  font-size: var(--text-lead);
+  margin-bottom: var(--stack-2);
+  color: var(--accent-strong);
+}
+
+.highlight-card p {
+  line-height: 1.6;
+  margin-bottom: var(--stack-1);
+}
+
+.highlight-card a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.highlight-card a:hover {
+  color: var(--accent-hover);
 }

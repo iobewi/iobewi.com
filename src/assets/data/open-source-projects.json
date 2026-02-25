@@ -1,19 +1,26 @@
 {
   "myactuator": {
     "key": "myactuator",
-    "cardTitle": "ROS 2 / ros2_control : Intégration MyActuator",
-    "cardDescription": "Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.",
+    "cardTitle": "ROS 2 / ros2_control : MyActuator",
+    "cardKicker": "Stabiliser l’interface actionneur dans ROS 2.",
+    "cardDescription": "Intégration ros2_control pour piloter des actionneurs MyActuator avec une séparation claire des responsabilités.",
+    "cardTags": [
+      "Interface stable",
+      "Contrôle",
+      "Intégration reproductible"
+    ],
     "title": "ROS 2 / ros2_control : Intégration MyActuator",
-    "lead": "Intégration ros2_control pour piloter des actionneurs MyActuator dans un système ROS 2.",
+    "modalKicker": "Stabiliser l’interface actionneur dans ROS 2.",
+    "lead": "Brique d’intégration ros2_control pour actionneurs MyActuator, conçue pour clarifier l’interface hardware, sécuriser le contrôle et rendre l’intégration traçable.",
     "leftTitle": "Points techniques",
     "leftList": [
       "Gestion de la communication série propriétaire des actionneurs",
       "Respect des interfaces ros2_control (hardware_interface, controller_interface)",
-      "Intégration dans un pipeline de contrôle temps réel",
-      "Documentation et exemples d'utilisation"
+      "Découpage clair : driver bas niveau vs interface ros2_control",
+      "Exemples reproductibles + documentation d’intégration"
     ],
-    "rightTitle": "Résultats",
-    "rightText": "Publiée sur GitHub avec documentation et exemples. Brique réutilisable et structurée, éprouvée sur plateformes internes.",
+    "rightTitle": "Ce que ça valide",
+    "rightText": "Validation d’un pattern d’intégration actionneur ROS 2 : interface stable, responsabilités explicites, configuration maîtrisée et mise en œuvre reproductible sur plateforme réelle.",
     "links": [
       {
         "label": "Explorer le projet",
@@ -24,18 +31,25 @@
   "witmotion": {
     "key": "witmotion",
     "cardTitle": "ROS 2 : Driver IMU WitMotion",
-    "cardDescription": "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone.",
+    "cardKicker": "Fiabiliser l’acquisition IMU série.",
+    "cardDescription": "Driver ROS 2 C++ pour capteurs WitMotion avec communication série asynchrone et intégration standard.",
+    "cardTags": [
+      "Acquisition",
+      "Asynchrone",
+      "ROS 2 standard"
+    ],
     "title": "ROS 2 : Driver IMU WitMotion",
-    "lead": "Driver C++ ROS 2 pour capteurs WitMotion avec communication série asynchrone (asio).",
+    "modalKicker": "Fiabiliser l’acquisition IMU série.",
+    "lead": "Driver ROS 2 en C++ pour capteurs WitMotion, structuré pour une acquisition série robuste et une intégration sans friction dans un graphe ROS 2 standard.",
     "leftTitle": "Points techniques",
     "leftList": [
       "Communication série asynchrone (asio), indépendante de la plateforme",
-      "Publication de topics ROS 2 selon les messages activés",
-      "Configuration (port, débit, fréquence, frame)",
-      "Documentation et exemples de lancement"
+      "Publication ROS 2 conditionnée aux messages activés (configuration)",
+      "Paramétrage : port, débit, fréquence, frame_id",
+      "Exemples de lancement + documentation d’intégration"
     ],
-    "rightTitle": "Résultats",
-    "rightText": "Brique publiée, documentée et directement utilisable dans un projet ROS 2 standard.",
+    "rightTitle": "Ce que ça valide",
+    "rightText": "Validation d’un driver capteur ROS 2 orienté intégration : acquisition stable, configuration claire, publication conforme, et mise en service reproductible.",
     "links": [
       {
         "label": "Explorer le projet",
@@ -45,19 +59,26 @@
   },
   "daly": {
     "key": "daly",
-    "cardTitle": "micro-ROS : Support BMS Daly via ESP32",
-    "cardDescription": "Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.",
+    "cardTitle": "micro-ROS : BMS Daly via ESP32",
+    "cardKicker": "Remonter l’énergie dans le graphe ROS 2.",
+    "cardDescription": "Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS pour diagnostic et exploitation.",
+    "cardTags": [
+      "Énergie",
+      "micro-ROS",
+      "Supervision"
+    ],
     "title": "micro-ROS : Support BMS Daly via ESP32",
-    "lead": "Supervision batterie Daly dans ROS 2 via ESP32 et micro-ROS.",
+    "modalKicker": "Remonter l’énergie dans le graphe ROS 2.",
+    "lead": "Support Daly BMS via ESP32 + micro-ROS pour exposer les mesures batterie dans ROS 2 et outiller le diagnostic énergétique d’un système embarqué.",
     "leftTitle": "Fonctionnalités",
     "leftList": [
-      "Lecture tension, courant, SoC",
-      "Publication dans ROS 2 via micro-ROS",
-      "Alertes et diagnostics",
-      "Intégration supervision énergétique"
+      "Lecture tension, courant, SoC (télémétrie batterie)",
+      "Publication ROS 2 via micro-ROS (nœud embarqué)",
+      "Diagnostics / alertes exploitables côté supervision",
+      "Socle pour stratégies d’autonomie et de sécurité énergétique"
     ],
-    "rightTitle": "Contribution",
-    "rightText": "Publiée sur GitHub et documentée. Centralise les données batterie dans le graphe ROS 2.",
+    "rightTitle": "Ce que ça valide",
+    "rightText": "Validation d’une chaîne microcontrôleur → ROS 2 pour supervision énergétique : acquisition fiable, publication structurée et intégration exploitable par des nœuds de décision/sécurité.",
     "links": [
       {
         "label": "Explorer le projet",
@@ -68,18 +89,25 @@
   "idf": {
     "key": "idf",
     "cardTitle": "ESP-IDF : Librairie de composants",
-    "cardDescription": "Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.",
+    "cardKicker": "Structurer un socle embarqué maintenable.",
+    "cardDescription": "Base modulaire pour organiser drivers, bibliothèques, middleware et apps de référence sous ESP-IDF.",
+    "cardTags": [
+      "Architecture",
+      "Réutilisation",
+      "CI/validation"
+    ],
     "title": "ESP-IDF : Librairie de composants",
-    "lead": "Base modulaire pour structurer le développement de systèmes embarqués sous ESP-IDF.",
+    "modalKicker": "Structurer un socle embarqué maintenable.",
+    "lead": "Socle de composants ESP-IDF structuré pour réduire la dette technique : découpage en couches, exemples de référence, conventions et outillage d’intégration.",
     "leftTitle": "Organisation",
     "leftList": [
-      "Composants d'interfaçage matériel",
-      "Bibliothèques indépendantes du matériel",
-      "Modules d'intégration",
-      "Applications de référence"
+      "Drivers : interfaçage matériel (I2C/SPI/UART, capteurs, actionneurs…)",
+      "Librairies : logique indépendante du matériel (helpers, protocoles, outils)",
+      "Middleware : assemblage et intégration (services, bus, patterns)",
+      "Apps de référence : exemples reproductibles et testables"
     ],
-    "rightTitle": "Démarche",
-    "rightText": "Composants documentés, versionnés et pensés pour une architecture cohérente (maintenabilité, reproductibilité).",
+    "rightTitle": "Ce que ça valide",
+    "rightText": "Validation d’un modèle de structuration ESP-IDF orienté durée : composants versionnés, intégration reproductible, documentation normative, et base exploitable par une équipe sur le long terme.",
     "links": [
       {
         "label": "Explorer le projet",
@@ -89,18 +117,26 @@
   },
   "icf": {
     "key": "icf",
-    "cardTitle": "ICF : Interactions tangibles & déclenchement physique",
-    "cardDescription": "Format et outillage NFC/RFID pour relier un objet physique à une action embarquée (ex : audio HLS).",
+    "cardTitle": "ICF : Interactions tangibles",
+    "cardKicker": "Relier un objet physique à une action embarquée.",
+    "cardDescription": "Format + outillage NFC/RFID pour déclencher des actions embarquées (ex : audio HLS) avec approche reproductible.",
+    "cardTags": [
+      "NFC/RFID",
+      "Format",
+      "Chaîne embarquée"
+    ],
     "title": "ICF : Interactions tangibles & déclenchement physique",
-    "lead": "Format et outillage NFC/RFID (TLV compact + authenticité) pour déclencher des actions embarquées (ex : audio HLS).",
+    "modalKicker": "Relier un objet physique à une action embarquée.",
+    "lead": "Format et outillage NFC/RFID (TLV compact + mécanisme d’authenticité) pour déclencher des comportements embarqués. Exploration orientée produit : contraintes réelles, intégration et reproductibilité.",
     "leftTitle": "Points techniques",
     "leftList": [
-      "Format TLV compact + mécanisme d'authenticité (signature)",
-      "CLI + bibliothèque Python réutilisable",
-      "Chaîne embarquée associée (ESP-IDF) pour lecture HLS M3U8"
+      "Format TLV compact + mécanisme d’authenticité (signature)",
+      "CLI + bibliothèque Python réutilisable (génération/validation d’artefacts)",
+      "Chaîne embarquée associée (ESP-IDF) : lecture NFC + déclenchement applicatif",
+      "Exemple concret : lecteur HLS M3U8 (pipeline streaming)"
     ],
-    "rightTitle": "Contribution",
-    "rightText": "Publié sous licence duale MPL 2.0 / CC-BY-SA 4.0 avec spécification. Composant HLS associé structuré et documenté.",
+    "rightTitle": "Ce que ça valide",
+    "rightText": "Validation d’un pattern “phygital” : artefact physique → donnée vérifiable → comportement embarqué. Découpage clair (format/outillage/runtime) et chaîne d’intégration documentée.",
     "links": [
       {
         "label": "Explorer le projet ICF",

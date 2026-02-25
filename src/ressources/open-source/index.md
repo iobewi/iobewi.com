@@ -18,14 +18,21 @@ breadcrumb:
 <div class="page-hero-content">
 <p class="eyebrow"><a href="/ressources/">← Ressources</a></p>
 <h1>Contributions et travaux open source</h1>
-<p class="lead">IOBEWI contribue à l'écosystème de la robotique embarquée en publiant des briques réutilisables et documentées, construites sur des contraintes réelles de terrain.</p>
+<p class="lead">IOBEWI publie des briques open source issues de contraintes réelles : drivers, bibliothèques et patterns d’intégration pensés pour rester lisibles, testables et maintenables dans la durée.</p>
 </div>
 </div>
 </div>
 
 <section class="section container snap-item">
-<div class="content-group animate-on-scroll fade-in delay-150">
-<p><strong>Objectif :</strong> partager des briques réutilisables, structurées et maintenables, plutôt que des solutions clé en main.</p>
+<p class="eyebrow">Open source comme cadre d’expérimentation structuré</p>
+
+<div class="lead" style="max-width: 72ch;">
+  <p>Chaque contribution vise à clarifier une interface, stabiliser un découpage ou formaliser un pattern d’intégration.</p>
+  <p>
+    L’objectif n’est pas de livrer un produit fini,
+    mais de produire des briques reproductibles
+    servant de base saine à des architectures embarquées complexes.
+  </p>
 </div>
 <div class="grid animate-on-scroll slide-up" style="margin-top: var(--stack-3);" id="projects-grid">
 <!-- Tuiles générées dynamiquement depuis /assets/data/open-source-projects.json -->
@@ -48,42 +55,41 @@ breadcrumb:
 </div>
 </div>
 </div>
-</section>
 
-<section class="section container snap-item">
-<div class="section-title animate-on-scroll fade-in">
-<h2>Méthodologie de contribution</h2>
-</div>
-<div class="animate-on-scroll slide-up delay-100">
-<p class="lead">Les contributions sont publiées comme des briques réutilisables : structurées, documentées et exploitables dans un projet standard.</p>
-</div>
-<div class="grid animate-on-scroll slide-up delay-200">
-<div class="card">
-<h3>Principes</h3>
-<ul>
-<li>Partager des briques réutilisables, pas des solutions complètes clé en main</li>
-<li>Documenter les choix techniques et les contraintes</li>
-<li>Respecter les conventions et les standards de l'écosystème</li>
-<li>Capitaliser sur les retours de la communauté</li>
+<p class="eyebrow" style="margin-top: var(--stack-4);" >Méthodologie de contribution</p>
+<p class="lead" style="margin-bottom: var(--stack-2);">Clarifier les responsabilités, stabiliser les interfaces, documenter les décisions, livrer des exemples reproductibles.</p>
+
+<div class="card card--note card--split">
+<div class="card-split-col">
+<p class="card-eyebrow">Principes</p>
+<ul class="card-bullets">
+<li>Publier des briques ciblées (drivers, librairies, middleware), pas des démonstrations isolées</li>
+<li>Stabiliser les interfaces avant d’ajouter des fonctionnalités</li>
+<li>Documenter les choix d’architecture, les contraintes et les limites connues</li>
+<li>Fournir des exemples reproductibles et un minimum de validation</li>
+<li>Maintenir une traçabilité claire (versions, évolutions, breaking changes)</li>
 </ul>
 </div>
-<div class="card">
-<h3>Bénéfices</h3>
-<ul>
-<li>Validation des choix techniques par des pairs</li>
-<li>Amélioration continue via les retours utilisateurs</li>
-<li>Visibilité et crédibilité technique</li>
-<li>Contribution à l'écosystème robotique embarqué</li>
+
+<div class="card-split-col">
+<p class="card-eyebrow">Bénéfices</p>
+<ul class="card-bullets">
+<li>Réduction de la dette technique via des briques éprouvées</li>
+<li>Validation des choix par retours terrain et pairs</li>
+<li>Accélération de l’intégration dans des architectures réelles</li>
+<li>Capitalisation durable au service des projets accompagnés</li>
 </ul>
 </div>
 </div>
 </section>
 
-<section class="section container snap-item">
+<section class="section container section-major snap-item">
 <div class="cta-block animate-on-scroll scale-in">
-<h2>Échanger autour de contributions techniques</h2>
-<p><strong>Ces contributions illustrent la capacité d'IOBEWI à structurer des briques logicielles réutilisables et à documenter des choix techniques complexes.</strong></p>
-<a class="btn btn-primary" href="/contact/">Prendre contact</a>
+<h2>Échanger autour d’une contribution ou d’un besoin similaire</h2>
+<p><strong>Ces briques montrent une capacité à structurer, documenter et faire évoluer des composants techniques sans perte de cohérence.</strong></p>
+<div class="btn-wrapper animate-on-scroll fade-in delay-300">
+<a class="btn btn-primary" href="/contact/">Discuter de votre contexte</a>
+</div>
 </div>
 </section>
 

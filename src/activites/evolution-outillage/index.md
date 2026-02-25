@@ -1,6 +1,6 @@
 ---
-title: "Évolution, outillage & intelligence embarquée"
-description: "Stabilisation des fondations techniques, outillage des cycles de livraison et introduction d'intelligence décisionnelle embarquée."
+title: "Évolution & outillage technique"
+description: "Stabilisation des fondations techniques, outillage des cycles de livraison et structuration de la maturité technique embarquée."
 layout: layouts/base.njk
 permalink: "/activites/evolution-outillage/"
 bodyClass: "has-hero"
@@ -10,124 +10,163 @@ bodyClass: "has-hero"
 <div class="container">
 <div class="page-hero-content">
 <p class="eyebrow"><a href="/activites/">← Activités</a></p>
-<h1>Évolution, outillage &amp; intelligence embarquée</h1>
+<h1>Évolution &amp; outillage technique</h1>
 <p class="lead">
-Stabiliser les fondations, outiller les cycles de livraison, introduire de l'intelligence locale.
-Cet axe couvre la fiabilisation du socle technique jusqu'aux capacités décisionnelles embarquées.
+Un système qui évolue sans outillage se fragilise. IOBEWI structure les fondations techniques afin de rendre l’évolution maîtrisée, traçable et durable.
 </p>
 </div>
 </div>
 </div>
 
 <section class="section container snap-item">
+
 <div class="content-group animate-on-scroll fade-in delay-150">
-<p><strong>Objectif :</strong> permettre au système d’évoluer sans perdre sa cohérence, et à l’équipe de rester autonome.</p>
+<p><strong>Objectif :</strong> permettre au système d’évoluer sans perdre sa cohérence, et à l’équipe de rester autonome dans le temps.</p>
 </div>
+
+<!-- SECTION 1 -->
 
 <div class="section-title animate-on-scroll fade-in">
-<h2>Outillage, reproductibilité et exploitation</h2>
+<h2>Environnements reproductibles &amp; fondations techniques</h2>
 </div>
+
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">
-IOBEWI accompagne les équipes pour outiller leurs projets embarqués autour de la reproductibilité, la maintenance et l'exploitation.
-Cet accompagnement porte sur l'organisation du code, les environnements de développement, les tests, la documentation et les pratiques de livraison.
+IOBEWI accompagne la structuration des environnements de développement afin qu’ils cessent d’être implicites. L’environnement devient un artefact du projet : versionné, reproductible et partageable.
 </p>
 </div>
+
 <div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
-<h3>Cas d'usage typiques</h3>
+<h3>Ce que cela couvre</h3>
 <ul>
-<li>Difficulté à reproduire un build ou un déploiement</li>
-<li>Dette technique croissante</li>
-<li>Absence de tests ou de documentation exploitable</li>
-<li>Besoin de fiabilisation sur la durée</li>
+<li>Devcontainers / Docker adaptés au contexte embarqué</li>
+<li>Toolchains figées (ESP-IDF versionnée, dépendances verrouillées)</li>
+<li>Parité DEV / TEST</li>
+<li>Environnements jetables et reconstruisibles</li>
 </ul>
 </div>
 <div class="card">
-<h3>Technologies</h3>
+<h3>Positionnement</h3>
 <ul>
-<li>ESP-IDF</li>
-<li>Environnements conteneurisés</li>
-<li>CI/CD embarqué</li>
-<li>Gestion de versions et documentation technique</li>
+<li>L’environnement devient un artefact du projet</li>
+<li>Réduction des divergences entre postes</li>
+<li>Stabilisation des fondations techniques</li>
 </ul>
 </div>
 </div>
 
-<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
-<h2>Algorithmes décisionnels embarqués</h2>
+<!-- SECTION 2 -->
+
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); padding-top: var(--stack-3);">
+<h2>Validation automatisée &amp; invariants techniques</h2>
 </div>
+
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">
-Lorsque la maturité du système le permet, IOBEWI accompagne l'intégration d'algorithmes de traitement, de perception ou de décision directement au niveau embarqué.
-L'objectif est d'apporter des capacités locales d'analyse et d'autonomie, en cohérence avec les contraintes matérielles et énergétiques.
+Ce qui fonctionne aujourd’hui doit fonctionner demain, ailleurs. IOBEWI structure les mécanismes de validation afin d’éviter les dérives invisibles et garantir la reproductibilité.
 </p>
 </div>
+
 <div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
-<h3>Cas d'usage typiques</h3>
+<h3>Ce que cela couvre</h3>
 <ul>
-<li>Traitement local de données capteurs</li>
-<li>Perception embarquée</li>
-<li>Logique décisionnelle distribuée</li>
-<li>Réduction de dépendance aux traitements distants</li>
+<li>Builds reproductibles</li>
+<li>Tests unitaires firmware</li>
+<li>Tests d’intégration matériel / logiciel</li>
+<li>Exécution automatisée et vérification des artefacts</li>
 </ul>
 </div>
 <div class="card">
-<h3>Technologies</h3>
+<h3>Enjeux</h3>
 <ul>
-<li>Traitement du signal embarqué</li>
-<li>Perception (LiDAR, vision, capteurs)</li>
-<li>Architectures distribuées</li>
-<li>Algorithmes embarqués adaptés aux MCU et SBC</li>
+<li>Détection précoce des régressions</li>
+<li>Fiabilisation des cycles de livraison</li>
+<li>Réduction de la dette technique implicite</li>
 </ul>
 </div>
 </div>
 
-<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); border-top: 0px solid var(--border); padding-top: var(--stack-3);">
-<h2>Interactions tangibles &amp; déclenchement physique</h2>
+<!-- SECTION 3 -->
+
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); padding-top: var(--stack-3);">
+<h2>Traçabilité &amp; versionning des artefacts</h2>
 </div>
+
 <div class="animate-on-scroll slide-up delay-100">
 <p class="lead">
-Certains systèmes embarqués sont conçus pour réagir à une présence physique : un badge NFC/RFID présenté déclenche un flux audio en streaming.
-IOBEWI accompagne la conception de ces chaînes d'interaction, de la lecture du tag jusqu'à la diffusion audio embarquée.
+Chaque firmware doit être traçable, reconstruisible et identifiable. IOBEWI structure la correspondance entre code, artefacts et images déployées afin d’assurer une continuité technique maîtrisée.
 </p>
 </div>
+
 <div class="grid animate-on-scroll slide-up delay-200">
 <div class="card">
-<h3>Cas d'usage typiques</h3>
+<h3>Ce que cela couvre</h3>
 <ul>
-<li>Badge ou étiquette NFC/RFID déclenchant un contenu audio en streaming</li>
-<li>Station autonome associée à des objets physiques</li>
-<li>Dispositif de médiation en contexte pédagogique ou muséographique</li>
-<li>Prototypage de flux "objet physique vers expérience sonore"</li>
+<li>Releases taguées et versionnées</li>
+<li>Artefacts attachés aux builds</li>
+<li>Correspondance commit ↔ binaire ↔ cible</li>
+<li>Historique reconstructible des versions déployées</li>
 </ul>
 </div>
 <div class="card">
-<h3>Technologies</h3>
+<h3>Impact</h3>
 <ul>
-<li>NFC/RFID (lecture de tags, format ICF)</li>
-<li>ESP32 / ESP-IDF</li>
-<li>HLS audio (streaming M3U8 embarqué)</li>
-<li>Conception mécanique intégrant l'électronique de déclenchement</li>
+<li>Capacité à identifier précisément une version en production</li>
+<li>Reconstruction possible d’un état passé</li>
+<li>Maîtrise des cycles d’évolution</li>
 </ul>
 </div>
 </div>
+
+<!-- SECTION 4 -->
+
+<div class="section-title animate-on-scroll fade-in" style="margin-top: var(--stack-3); padding-top: var(--stack-3);">
+<h2>Documentation structurée &amp; assistance maîtrisée</h2>
+</div>
+
+<div class="animate-on-scroll slide-up delay-100">
+<p class="lead">
+IOBEWI accompagne la formalisation de l’architecture, des décisions techniques et des interfaces. Des modèles linguistiques peuvent être déployés localement, au sein de l’infrastructure du client, comme un outil intégré à la chaîne d’ingénierie. Ils accélèrent la structuration documentaire sans externalisation du code ni exposition des données sensibles.
+</p>
+</div>
+
+<div class="grid animate-on-scroll slide-up delay-200">
+<div class="card">
+<h3>Ce que cela couvre</h3>
+<ul>
+<li>Documentation d’architecture structurée et versionnée</li>
+<li>Traçabilité des décisions techniques</li>
+<li>Modèles exécutés localement, intégrés à la chaîne d’outillage</li>
+</ul>
+</div>
+<div class="card">
+<h3>Positionnement</h3>
+<ul>
+<li>Outils d’assistance intégrés à l’environnement projet</li>
+<li>Aucune dépendance à des services tiers</li>
+<li>Préservation de la propriété intellectuelle</li>
+<li>Transmission facilitée aux nouveaux entrants</li>
+</ul>
+</div>
+</div>
+
 </section>
 
 <section class="section container snap-item">
 <div class="cta-block animate-on-scroll scale-in">
-<h2>À l’issue de l’accompagnement</h2>
-<h3>Le socle technique est stabilisé et les capacités locales sont intégrées de manière cohérente.</h3>
-<ul>
-<li><strong>Travailler sur un dépôt structuré</strong>, versionné et reproductible.</li>
-<li><strong>Piloter une chaîne CI/CD adaptée</strong> au rythme réel du projet.</li>
-<li><strong>Maintenir et faire évoluer l’architecture</strong> sans dépendance externe.</li>
-<li><strong>Introduire des capacités décisionnelles embarquées</strong> en cohérence avec les contraintes matérielles.</li>
-<li><strong>Itérer sereinement</strong> sur une base solide et documentée.</li>
-</ul>
-<div class="btn-wrapper animate-on-scroll fade-in delay-300">
-<a class="btn btn-primary" href="/contact/">Discuter de la fiabilisation de votre socle technique</a>
-</div>
+  <h2>L’évolution cesse d’être fragile face au changement.</h2>
+  <h3>Elle devient maîtrisée, traçable et durable.</h3>
+  <ul>
+    <li><strong>Stabiliser les fondations techniques</strong> du projet.</li>
+    <li><strong>Garantir la traçabilité</strong> des artefacts et des versions déployées.</li>
+    <li><strong>Structurer les cycles de livraison</strong> sur des bases reproductibles.</li>
+    <li><strong>Réduire la dépendance aux individus</strong> et renforcer l’autonomie.</li>
+    <li><strong>Permettre une évolution maîtrisée</strong>, durable et transmissible.</li>
+  </ul>
+  <div class="btn-wrapper animate-on-scroll fade-in delay-300">
+    <a class="btn btn-primary" href="/contact/">Structurer l’évolution de votre système</a>
+  </div>
 </div>
 </section>
